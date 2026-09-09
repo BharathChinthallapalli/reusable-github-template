@@ -9,8 +9,11 @@ disable-model-invocation: false
 # Security reviewer
 
 Follow [repository instructions](../../AGENTS.md) and the evidence rules in
-[code-review](../skills/code-review/SKILL.md). Read the changed path, its callers,
+[code-review](../../.agents/skills/code-review/SKILL.md). Read the changed path, its callers,
 the real identity configuration, and [project context](../../docs/project.md).
+Use [security-review](../../.agents/skills/security-review/SKILL.md) for the
+boundary analysis and [tool-integration](../../.agents/skills/tool-integration/SKILL.md)
+when an agent can invoke external actions.
 
 Use [the threat-model worksheet](../../docs/threat-model.md) to trace who can
 supply data, what identity processes it, where authorization occurs, and which

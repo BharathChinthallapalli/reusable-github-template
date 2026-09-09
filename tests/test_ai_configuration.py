@@ -71,6 +71,24 @@ class AIConfigurationTests(unittest.TestCase):
         (self.root / ".github/skills/empty").mkdir(parents=True)
         self.assert_invalid(".github/skills/empty/SKILL.md")
 
+    def test_canonical_skills_are_discovered_and_validated(self):
+        path = self.write_definition(".agents/skills/inspect/SKILL.md",
+                                     "name: inspect\ndescription: Inspect canonical skills.")
+        errors, notes = check(self.root)
+        self.assertEqual(errors, [])
+        self.assertTrue(any(".agents/skills/inspect/SKILL.md" in note for note in notes))
+        path.write_text("missing metadata", encoding="utf-8")
+        self.assert_invalid(".agents/skills/inspect/SKILL.md")
+
+    def test_same_skill_in_canonical_and_legacy_roots_is_rejected(self):
+        self.skill()
+        self.write_definition(".agents/skills/inspect/SKILL.md",
+                              "name: inspect\ndescription: Duplicated discovery.")
+        errors, _ = check(self.root)
+        self.assertTrue(any("duplicate skill name" in error
+                            and ".agents/skills/inspect/SKILL.md" in error
+                            and ".github/skills/inspect/SKILL.md" in error for error in errors), errors)
+
     def test_invalid_frontmatter_is_reported_with_file_context(self):
         path = self.skill()
         for content in ("No header", "---\nname: inspect", "---\n---", "---\n[]\n---", "---\nname: [\n---"):
@@ -201,6 +219,17 @@ class AIConfigurationTests(unittest.TestCase):
             outside = Path(external)
             (outside / "PRIVATE-MARKER.agent.md").write_text("not metadata", encoding="utf-8")
             link = self.root / ".github/agents"
+            link.parent.mkdir()
+            link.symlink_to(outside, target_is_directory=True)
+            errors, notes = check(self.root)
+            self.assertTrue(any("outside selected root" in error for error in errors))
+            self.assertNotIn("PRIVATE-MARKER", "\n".join(errors + notes))
+
+    def test_external_canonical_skill_directory_is_not_traversed(self):
+        with tempfile.TemporaryDirectory() as external:
+            outside = Path(external)
+            (outside / "PRIVATE-MARKER").mkdir()
+            link = self.root / ".agents/skills"
             link.parent.mkdir()
             link.symlink_to(outside, target_is_directory=True)
             errors, notes = check(self.root)

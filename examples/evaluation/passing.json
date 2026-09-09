@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "task": {
+    "id": "synthetic-task",
+    "case_set_id": "synthetic-cases-v1"
+  },
+  "acceptance": {
+    "required_cases": [
+      "answer"
+    ],
+    "max_regressions": 0
+  },
+  "baseline": {
+    "provenance": {
+      "code": "synthetic:code",
+      "config": "synthetic:config",
+      "data": "synthetic:data",
+      "model": "synthetic:model",
+      "evaluator": "synthetic:evaluator",
+      "environment": "synthetic:environment"
+    },
+    "cases": [
+      {
+        "id": "answer",
+        "expected": {
+          "status": "labeled",
+          "label": "answer grounded in source"
+        },
+        "outcome": "pass",
+        "evidence": "synthetic:answer-observation",
+        "measurements": {
+          "latency_ms": 12.5
+        }
+      },
+      {
+        "id": "unanswerable",
+        "expected": {
+          "status": "labeled",
+          "label": "decline unsupported answer"
+        },
+        "outcome": "pass",
+        "evidence": "synthetic:unanswerable-observation"
+      }
+    ]
+  },
+  "candidate": {
+    "provenance": {
+      "code": "synthetic:code",
+      "config": "synthetic:config",
+      "data": "synthetic:data",
+      "model": "synthetic:model",
+      "evaluator": "synthetic:evaluator",
+      "environment": "synthetic:environment"
+    },
+    "cases": [
+      {
+        "id": "answer",
+        "expected": {
+          "status": "labeled",
+          "label": "answer grounded in source"
+        },
+        "outcome": "pass",
+        "evidence": "synthetic:answer-observation",
+        "measurements": {
+          "latency_ms": 12.5
+        }
+      },
+      {
+        "id": "unanswerable",
+        "expected": {
+          "status": "labeled",
+          "label": "decline unsupported answer"
+        },
+        "outcome": "pass",
+        "evidence": "synthetic:unanswerable-observation"
+      }
+    ]
+  }
+}

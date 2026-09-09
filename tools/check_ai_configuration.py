@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from dataclasses import dataclass
 import json
 from pathlib import Path
 import re
@@ -22,6 +23,14 @@ except ModuleNotFoundError as exc:
 ROOT = Path(__file__).resolve().parents[1]
 SKILL_NAME = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
 HOST_LIMITATION = "Host discovery and invocation: NOT CHECKED. Static validity does not establish host support or actual tool access."
+
+
+@dataclass(frozen=True)
+class Definition:
+    path: Path
+    kind: str
+    name: str
+    metadata: dict
 
 
 class UniqueKeySafeLoader(yaml.SafeLoader):
@@ -155,25 +164,27 @@ def directory_entries(folder: Path, root: Path, errors: list[str]) -> list[Path]
         return []
 
 
-def check(root: Path) -> tuple[list[str], list[str]]:
-    """Return invalid metadata and declared configuration; never run file content."""
+def inspect_definitions(root: Path) -> tuple[list[Definition], list[str], list[str]]:
+    """Load validated definitions and diagnostics without executing their content."""
     errors: list[str] = []
     notes = [HOST_LIMITATION]
     try:
         root = root.resolve(strict=True)
         if not root.is_dir():
-            return [f"Invalid root: not a directory: {root}"], notes
+            return [], [f"Invalid root: not a directory: {root}"], notes
     except (OSError, RuntimeError) as exc:
-        return [f"Invalid root: {exc}"], notes
+        return [], [f"Invalid root: {exc}"], notes
 
     definitions: list[tuple[str, Path]] = []
-    for folder in directory_entries(root / ".github/skills", root, errors):
-        if within_root(folder, root, errors) and folder.is_dir():
-            definitions.append(("skill", folder / "SKILL.md"))
+    for skill_root in (".agents/skills", ".github/skills"):
+        for folder in directory_entries(root / skill_root, root, errors):
+            if within_root(folder, root, errors) and folder.is_dir():
+                definitions.append(("skill", folder / "SKILL.md"))
     for path in directory_entries(root / ".github/agents", root, errors):
         if path.name.endswith(".md"):
             definitions.append(("agent", path))
 
+    validated: list[Definition] = []
     names: dict[str, dict[str, str]] = {"skill": {}, "agent": {}}
     for kind, path in definitions:
         relative = path.relative_to(root).as_posix()
@@ -191,8 +202,15 @@ def check(root: Path) -> tuple[list[str], list[str]]:
                 names[kind][name] = relative
             if len(errors) == previous_errors:
                 notes.append(describe_metadata(relative, kind, name, metadata))
+                validated.append(Definition(Path(relative), kind, name, metadata))
     notes.append(f"Inspected {sum(kind == 'skill' for kind, _ in definitions)} skill and "
                  f"{sum(kind == 'agent' for kind, _ in definitions)} agent definitions.")
+    return validated, errors, notes
+
+
+def check(root: Path) -> tuple[list[str], list[str]]:
+    """Return invalid metadata and declared configuration; never run file content."""
+    _, errors, notes = inspect_definitions(root)
     return errors, notes
 
 

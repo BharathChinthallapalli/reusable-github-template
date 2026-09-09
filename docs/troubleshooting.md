@@ -57,7 +57,7 @@ dependencies. A workflow skipped by a filter can leave a required check pending;
 a skipped job has different reporting behavior. If a merge queue is used, check
 the `merge_group` trigger. Preserve the `Repository checks` name used by this
 template's ruleset. Follow [required-check troubleshooting](https://docs.github.com/en/pull-requests/how-tos/merge-and-close-pull-requests/troubleshooting-required-status-checks)
-and the [Actions diagnosis guide](../.github/skills/github-actions-debug/references/diagnosis.md).
+and the [Actions diagnosis guide](../.agents/skills/github-actions-debug/references/diagnosis.md).
 
 ## AI instructions, skills or agents are missing
 
@@ -69,5 +69,5 @@ frontmatter or settings; repository files alone do not start an agent session.
 
 For application failures involving an external dependency, retry, queue, cache
 or authorization boundary, select relevant checks from
-[verification](../.github/skills/verify-change/references/verification.md) and
+[verification](../.agents/skills/verify-change/references/verification.md) and
 record operational recovery in [operations](operations.md).

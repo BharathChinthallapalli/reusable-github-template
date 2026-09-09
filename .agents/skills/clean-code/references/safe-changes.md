@@ -32,6 +32,21 @@ Check each meaningful structural increment. Avoid combining it with unrelated
 renames, dependency updates, or formatting sweeps. Preserve error types,
 serialized shapes, ordering, and side effects that callers depend on.
 
+When a notebook or transport handler contains logic needed by another caller,
+extract the demonstrated reusable operation into the existing module structure.
+Keep examples, presentation and request parsing at their respective entrypoints;
+pass explicit inputs to the shared operation. Importing that module should not
+unexpectedly train a model, download data, open credentials or start a server.
+Characterize existing outputs and failures before moving the logic, then verify
+both the notebook or handler and its new consumer. A single-use exploration does
+not need an application architecture merely to look reusable.
+
+When persistence changes, exercise round trips, malformed or interrupted writes,
+and the relevant recovery path. Publish complete artifacts atomically when that
+is the storage contract; an atomic rename alone does not establish crash durability
+or concurrent-writer coordination. Compare canonical saved state with any lossy
+display or export format. Use the existing storage interface and actual guarantees.
+
 If a baseline failure blocks evidence, identify it and find a narrower valid
 check where possible. Do not rewrite expected results simply to make the new
 implementation pass. Finish with the relevant repository checks and a diff

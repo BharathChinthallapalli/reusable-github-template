@@ -10,6 +10,7 @@ Routine edits do not need one. Start from [the outline](template.md).
 | [0001: Independent repository foundation](0001-repository-foundation.md) | Superseded | Replaced by 0002; retained as history |
 | [0002: Validate AI metadata](0002-validate-ai-metadata.md) | Accepted | Shared template and development checks |
 | [0003: Portable Git checks](0003-portable-git-checks.md) | Accepted | Staged commit checks and independent CI invocation |
+| [0004: Portable engineering capabilities](0004-portable-engineering-capabilities.md) | Accepted | Shared skill location, expanded task workflows, catalog and offline evaluation gate |
 
 This index is navigation. Read each relevant decision's current status and
 reasoning, and compare its assumptions with repository evidence. Update the

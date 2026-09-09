@@ -135,8 +135,8 @@ def check_ruleset(root: Path, errors: list[str]) -> None:
 
 
 def check_docs(root: Path, errors: list[str]) -> None:
-    files = [root / name for name in ("README.md", "AGENTS.md", "CONTRIBUTING.md", "SECURITY.md", "SUPPORT.md")]
-    for folder in ("docs", ".github/agents", ".github/skills", ".github/instructions"):
+    files = [root / name for name in ("README.md", "AGENTS.md", "CLAUDE.md", "CONTRIBUTING.md", "SECURITY.md", "SUPPORT.md")]
+    for folder in ("docs", ".github/agents", ".agents/skills", ".github/skills", ".github/instructions"):
         files.extend((root / folder).rglob("*.md"))
     files.append(root / ".github/copilot-instructions.md")
     for path in files:

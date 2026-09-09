@@ -22,7 +22,7 @@ The practical application is clear project vocabulary, explicit interfaces,
 small verifiable changes, and architecture choices justified by the current
 problem. No framework, module-size rule, fixed test quota, or infrastructure
 stack follows automatically from these sources. Code-quality judgments retain
-the [clean-code skill's source boundary](../../.github/skills/clean-code/references/sources.md).
+the [clean-code skill's source boundary](../../.agents/skills/clean-code/references/sources.md).
 
 Pocock's August TDD guide acknowledges configuration tests that merely repeat
 implementation, unclear test boundaries, and imperfect instruction adherence.

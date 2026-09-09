@@ -17,6 +17,10 @@ their internal engineering standards.
   creator material, reported failures, confirmed fixes, and research limits.
 - [Public repository review](repository-review.md): 494 public account repositories,
   two targeted AI repositories, complete inventories, source samples, and hook decisions.
+- [Capability expansion](capability-expansion.md): all 32 substantiated improvement
+  families mapped to shipped agents, skills, tools, assets and guidance in version 2.0.
+- [Capability validation](capability-validation.md): bounded plan challenges,
+  independent review findings and five concrete forward task exercises.
 
 ## How the research affected the deliverable
 

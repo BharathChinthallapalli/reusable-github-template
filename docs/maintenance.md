@@ -8,7 +8,7 @@ Treat initializer arguments, `template.json`, required check names, supported ru
 
 For a template release:
 
-1. Prepare [the validation environment](using-the-template.md) in a clean checkout. Run foundation and AI configuration checks, offline unit tests, and the separate [hook checks and integration tests](git-hooks.md).
+1. Prepare [the validation environment](using-the-template.md) in a clean checkout. Run foundation, AI configuration and catalog freshness checks, offline unit tests, and the separate [hook checks and integration tests](git-hooks.md).
 2. Initialize a disposable copy with realistic owner, team, and reporting values. Confirm the generated files contain the intended identities and the checks still pass.
 3. Review changes to workflow triggers, permissions, action sources, required checks, and scripts that write files.
 4. Update the release notes with the user-visible change, migration steps, changed settings, and known compatibility limits.
@@ -25,7 +25,7 @@ for every edit. Preserve current project facts and verify the behavior that chan
 | --- | --- | --- |
 | Initializer arguments or project markers | `tools/initialize.py`, `template.json`, declared customization files, `tests/test_initialize.py`, README setup | Preview, intended writes, repeat behavior and initialized-copy checks |
 | Required files or repository checks | `tools/check_repository.py`, `tests/test_check_repository.py`, CI and [command map](project.md) | Relevant missing/invalid-file cases and local-link checks |
-| Agent/skill metadata or routing | Definitions, `AGENTS.md`, Copilot instructions, AI checker/tests and [AI assistance](ai-assistance.md) | Static diagnostics; separate host discovery/invocation evidence for runtime claims |
+| Agent/skill metadata or routing | Definitions, `AGENTS.md`, Copilot instructions, generated catalog, AI checker/tests and [AI assistance](ai-assistance.md) | Static diagnostics and catalog freshness; separate host discovery/invocation evidence for runtime claims |
 | Hook selection, revision, arguments or filters | `.pre-commit-config.yaml`, `tests/integration`, CI and [hook guide](git-hooks.md) | Clean-checkout scan, affected rejection/acceptance cases, staged-content behavior |
 | Tooling dependency or Python version | `requirements-dev.txt`, CI setup, hook environment, setup docs and Dependabot configuration | Fresh environment plus relevant offline and integration lanes |
 | Workflow trigger, permission or check name | CI, reusable-workflow consumers, ruleset recipe, live rules and [GitHub setup](github-setup.md) | Actual run at the changed SHA; no absent required context |
@@ -106,6 +106,48 @@ managed hooks. CI runs independently of local installation. [pre-commit: usage](
 Merge the [optional AI evaluation guidance](ai-evaluation.md) and maintenance
 matrix with project procedures. They add no model service, runtime or application
 framework, and do not replace application tests or authorize deployment.
+
+## Adopt version 2.0
+
+Version 2.0 moves the canonical skills from `.github/skills` to `.agents/skills`,
+expands the bundle to 21 skills and 10 agents, and adds reusable task assets,
+Copilot prerequisite setup, a generated catalog and an offline evaluation
+report gate. The directory move is the incompatible contract that warrants a
+major version; application stack and initializer inputs are unchanged.
+
+1. Inventory project-specific skills and their callers before moving files.
+   Preserve local customizations, move the existing five template skills to
+   `.agents/skills`, then merge the new skills. Remove the old copies after
+   verifying the move. Update local instruction and reference links. The AI
+   checker recognizes both roots for migration, but rejects duplicate names.
+2. Merge the agent profiles, root routing, scoped guidance and VS Code settings.
+   Keep current project facts and custom roles. Add the thin `CLAUDE.md` import
+   only after reconciling any existing Claude instructions. Use
+   [the host table](ai-assistance.md) for actual discovery support; copying
+   files does not activate background work or provide native agents everywhere.
+3. Add `tools/ai_catalog.py`, the updated metadata checker and their tests. Run
+   `python tools/check_ai_configuration.py`, then
+   `python tools/ai_catalog.py --write`. Review the catalog and commit it.
+   Include the read-only `python tools/ai_catalog.py` command in CI. The
+   existing `Repository checks` job name is retained.
+4. Add the offline `tools/check_evaluation.py`, its tests and synthetic examples.
+   Its unit tests belong to the existing offline lane. Adopt its input schema
+   only if useful to the application's actual evaluation runner; a synthetic
+   passing example must never become the application's quality gate.
+5. Merge the Copilot setup workflow with any existing reserved setup job rather
+   than creating duplicate jobs. Reconcile actual application prerequisites,
+   runtimes, permissions and pins, then inspect a real run. Setup failure does
+   not prevent cloud-agent startup; CI evidence remains separate.
+6. Run source and initialized-copy checks, inspect relevant skill behavior on
+   concrete tasks, and verify discovery in the actual client. Record the adopted
+   template revision and deviations. New templates receive the bundle; existing
+   generated projects require a reviewed migration and do not update themselves.
+
+Use [the capability map](research/capability-expansion.md) to select relevant
+project execution work without losing the bundled procedures. Read
+[working examples](working-with-agents.md) for feature, failure, evaluation and
+delivery tasks. Stop the migration once the changed contracts are verified;
+additional agents or frameworks require a demonstrated task need.
 
 ## Periodically inspect operational drift
 

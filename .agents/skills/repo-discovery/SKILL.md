@@ -10,6 +10,9 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
 2. Inspect manifests, lockfiles, runtime configuration, CI and directory layout
    as text. Do not run manifest scripts or install dependencies merely to inspect
    the repository. A tools directory alone does not establish the app stack.
+   Establish whether this is one application, a workspace, independent examples,
+   a library, documentation or notebooks. Locate the task's actual project root;
+   nested demo workflows do not establish root CI and a notebook is not a service.
 3. Locate the entrypoint relevant to the user's task: route, command, worker,
    event handler or workflow. Follow its actual calls to state and side effects.
    Identify the observable outcome, scoped domain terms, and public contracts
@@ -18,6 +21,8 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
    confidence labels. Separate declared dependencies from observed use.
 5. Explain the behavior and constraints with paths and symbols. Identify the
    smallest likely change boundary, open questions and the checks that cover it.
+   For onboarding, give one traceable operation and a runnable command derived
+   from its manifest; distinguish source inspection from a command actually run.
    A proposed capacity or reliability change needs a demonstrated bottleneck or
    agreed requirement, not an invented workload or service target.
 

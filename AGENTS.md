@@ -17,16 +17,35 @@ Read each selected SKILL.md and only the references needed by the current task.
 
 | Work | Procedure |
 | --- | --- |
-| Enter an unfamiliar repository area or investigate its design | [repo-discovery](.github/skills/repo-discovery/SKILL.md) |
-| Implement, repair, or refactor code | [clean-code](.github/skills/clean-code/SKILL.md), then [verify-change](.github/skills/verify-change/SKILL.md) |
-| Review a diff or a meaningful completed implementation | [code-review](.github/skills/code-review/SKILL.md) |
-| Diagnose a GitHub Actions failure or pending required check | [github-actions-debug](.github/skills/github-actions-debug/SKILL.md) |
+| Enter an unfamiliar repository area or investigate its design | [repo-discovery](.agents/skills/repo-discovery/SKILL.md) |
+| Implement, repair, or refactor code | [clean-code](.agents/skills/clean-code/SKILL.md), then [verify-change](.agents/skills/verify-change/SKILL.md) |
+| Review a diff or a meaningful completed implementation | [code-review](.agents/skills/code-review/SKILL.md) |
+| Diagnose a GitHub Actions failure or pending required check | [github-actions-debug](.agents/skills/github-actions-debug/SKILL.md) |
 | Investigate missing agents, skills, or loaded metadata | [AI diagnostics](docs/ai-assistance.md) |
-| Change an AI model, prompt, retrieval pipeline or evaluator | [verify-change](.github/skills/verify-change/SKILL.md) and [evaluation contract](docs/ai-evaluation.md) |
+
+Use the following procedures for the work they name. The
+[generated capability catalog](docs/ai-catalog.md) lists every skill and agent,
+its purpose and declared availability. Skills live once in `.agents/skills`.
+
+| Work | Relevant procedures |
+| --- | --- |
+| Verify current claims or learn from repositories and community fixes | [evidence-research](.agents/skills/evidence-research/SKILL.md) |
+| Design a material change and challenge alternatives | [implementation-planning](.agents/skills/implementation-planning/SKILL.md) |
+| Split independent work and preserve a useful handoff | [task-orchestration](.agents/skills/task-orchestration/SKILL.md) |
+| Refresh project facts, instructions, decisions or onboarding docs | [context-maintenance](.agents/skills/context-maintenance/SKILL.md) |
+| Design independent assertions and regression coverage | [test-design](.agents/skills/test-design/SKILL.md) |
+| Reproduce and repair runtime or logic failures | [systematic-debugging](.agents/skills/systematic-debugging/SKILL.md) |
+| Evaluate AI behavior or run a finite optimization experiment | [ai-evaluation](.agents/skills/ai-evaluation/SKILL.md), [bounded-experiments](.agents/skills/bounded-experiments/SKILL.md) |
+| Build retrieval or change datasets and splits | [rag-development](.agents/skills/rag-development/SKILL.md), [data-contracts](.agents/skills/data-contracts/SKILL.md) |
+| Integrate model providers, tools or MCP boundaries | [tool-integration](.agents/skills/tool-integration/SKILL.md) |
+| Investigate latency, memory, throughput or cost | [performance-analysis](.agents/skills/performance-analysis/SKILL.md) |
+| Assess a concrete trust boundary or denied operation | [security-review](.agents/skills/security-review/SKILL.md) |
+| Verify a UI, API or CLI consumer flow | [interface-validation](.agents/skills/interface-validation/SKILL.md) |
+| Upgrade dependencies or prepare a delivered artifact | [dependency-maintenance](.agents/skills/dependency-maintenance/SKILL.md), [release-delivery](.agents/skills/release-delivery/SKILL.md) |
 
 For implementation, perform the useful workflow directly even when no custom
 agent is selected. When supported, `engineer` coordinates bounded help from
-`architect`, `debugger`, `reviewer`, or `security-reviewer`. Delegate independent
+the specialists in the catalog. Delegate independent
 work when it resolves a concrete uncertainty; keep one writer per file area.
 If custom-agent invocation is unavailable, apply the same procedures yourself.
 An ordinary documentation edit does not require a multi-agent review chain.
@@ -61,6 +80,7 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
+python3 tools/ai_catalog.py
 python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s tests/integration -v
 ```
@@ -80,3 +100,9 @@ Keep the required CI job name `Repository checks` aligned with the ruleset.
 For missing AI customizations, distinguish static validity, host discovery, and
 observed invocation using [AI diagnostics](docs/ai-assistance.md). For a failure,
 record evidence and recovery in the [troubleshooting guide](docs/troubleshooting.md).
+
+The evaluation report checker is optional for project AI comparisons:
+`python3 tools/check_evaluation.py path/to/report.json`. Read
+[its contract](docs/evaluation-reports.md); validating a report is not executing
+a model or proving the reported evidence authentic. Never use synthetic example
+reports as application-quality evidence.

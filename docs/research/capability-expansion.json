@@ -1,0 +1,809 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-09",
+  "status": "Shipped capability map; execution and validation limits are explicit.",
+  "status_definitions": {
+    "bundled": "The reusable procedure, agent routing, reference or repository tooling is present in the mapped files; this is not a claim of host activation or completed project execution.",
+    "project-configured execution (procedure shipped)": "The reusable procedure and working record are present; actual application, provider, storage, browser or deployment execution uses project configuration and task authorization."
+  },
+  "research_scope": {
+    "account_repository_inventory": 494,
+    "accounts": [
+      {
+        "account": "bcherny",
+        "repositories": 271,
+        "detailed_source_repositories": 7,
+        "detailed_source_files": 41,
+        "overview": "232 nonempty root READMEs; 30 alternative primary files; one blank site; eight empty repositories. Read scope usually the opening passage, not every README.",
+        "exclusive_tiers": {
+          "overview": 227,
+          "alternative_primary_file": 28,
+          "detailed_sample": 7,
+          "directory_only": 1,
+          "empty_metadata_only": 8
+        },
+        "pagination": [
+          100,
+          100,
+          71,
+          0
+        ]
+      },
+      {
+        "account": "karpathy",
+        "repositories": 63,
+        "detailed_source_repositories": 8,
+        "detailed_source_files": 36,
+        "overview": "63 primary overviews: 52 complete, five prose without code blocks, six selected sections.",
+        "pagination": [
+          63,
+          0
+        ]
+      },
+      {
+        "account": "johnpapa",
+        "repositories": 160,
+        "detailed_source_repositories": 8,
+        "detailed_source_files": 45,
+        "detailed_file_scope": "Non-README files.",
+        "overview": "155 README introductions/headings; three repositories without a root README; two empty repositories.",
+        "pagination": [
+          100,
+          60,
+          0,
+          0
+        ]
+      }
+    ],
+    "baseline_detailed_account_repositories": 23,
+    "additional_ai_targets": [
+      "patchy631/ai-engineering-hub",
+      "GokuMohandas/Made-With-ML"
+    ],
+    "additional_ai_target_count": 2,
+    "focused_followup": {
+      "repository": "johnpapa/running-agent",
+      "head": "0673b9111746838c110855419f21153bcaa51166",
+      "files": [
+        {
+          "path": "README.md",
+          "blob_sha": "9dfda3e0a25c403da850aa84a67966ae424b5846",
+          "url": "https://github.com/johnpapa/running-agent/blob/0673b9111746838c110855419f21153bcaa51166/README.md"
+        },
+        {
+          "path": "AGENTS.md",
+          "blob_sha": "c0ba5bc1e7f340a86d2e342db0097d88f486087a",
+          "url": "https://github.com/johnpapa/running-agent/blob/0673b9111746838c110855419f21153bcaa51166/AGENTS.md"
+        }
+      ],
+      "observation": "UI workflow instructions request browser evidence, responsive screenshots and accessibility checks. Source also overgeneralizes every-interaction full-suite execution and hard-coded counts; use changed-flow evidence and actual results instead. No app source or tests executed."
+    },
+    "coverage_records": [
+      "docs/research/repository-review.md",
+      "docs/research/repository-inventory/bcherny.json",
+      "docs/research/repository-inventory/karpathy.json",
+      "docs/research/repository-inventory/johnpapa.json",
+      "docs/research/repository-inventory/ai-repositories-coverage.json"
+    ],
+    "limits": [
+      "All 494 returned account repositories have metadata records; inventory and overview coverage are not full source audits.",
+      "Account source sampling covers 23 repositories, plus selected-source reviews of the two AI targets; the running-agent README/AGENTS follow-up is separately recorded.",
+      "Enumeration is the unique population returned by the connector; total_count and incomplete_results were unavailable. Private, hidden, deleted and newly unindexed repositories are outside coverage.",
+      "Cross-account metadata and file retrievals are not an atomic snapshot.",
+      "Many hub demos and large/binary assets were not read. Made With ML CSVs were inspected by header and one row, and notebooks by selected cells, not a complete data/notebook audit.",
+      "Source inspection did not execute upstream code, install upstream dependencies, verify upstream CI or deploy a service.",
+      "Commit-linked URLs identify revisions where available; default-branch URLs are mutable. Recorded blob hashes identify file content and are not commit hashes."
+    ]
+  },
+  "coverage_summary": {
+    "families": 32,
+    "families_with_shipped_artifacts": 32,
+    "skills": 21,
+    "agents": 10,
+    "status_counts": {
+      "bundled": 17,
+      "project-configured execution (procedure shipped)": 15
+    }
+  },
+  "role_bundling": [
+    "Architect owns material planning; engineer owns coordination. A separate planner profile would duplicate those responsibilities.",
+    "Context maintenance covers documentation and handoffs; discovery plus maintained setup handles onboarding. Separate prose-only roles would multiply sources of truth.",
+    "Debugging and tool integration share resilience/observability references; test design owns persistence. These are boundary-specific procedures, not independent always-running services.",
+    "AI engineer routes evaluation, retrieval, data, model and tool work to focused skills. Model/prompt identity and serving checks use those contracts plus release delivery.",
+    "Researcher, test engineer, AI engineer and release engineer provide distinct work products, while existing evaluator, reviewer, debugger, security reviewer, architect and engineer responsibilities remain available.",
+    "Performance retains a dedicated measurement procedure because comparable workload and metric semantics require explicit treatment; multiple agent names or agreement are not acceptance evidence."
+  ],
+  "bounded_design_challenges": [
+    {
+      "lens": "user outcome",
+      "challenge": "Does the expansion support a concrete request or merely increase the number of profiles?",
+      "disposition": "Map all 32 families to a working procedure/artifact, route by the actual task, and preserve direct execution when no custom agent is selected."
+    },
+    {
+      "lens": "evidence",
+      "challenge": "Could overview inventory, a mutable source link or a static pass be mistaken for verified implementation behavior?",
+      "disposition": "Retain source tiers/revisions, independent oracles and explicit unrun/inconclusive states; keep upstream inspection separate from local and host execution."
+    },
+    {
+      "lens": "runtime",
+      "challenge": "Would a neutral template silently select providers, publish artifacts or require unavailable infrastructure?",
+      "disposition": "Ship executable local metadata/report tools and reusable integration procedures; actual external execution uses the adopted project and existing authorization."
+    },
+    {
+      "lens": "maintainability",
+      "challenge": "Would separate agents for every family duplicate instructions and drift?",
+      "disposition": "Use 21 canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata."
+    },
+    {
+      "lens": "integration",
+      "challenge": "Could parallel file edits, stale output identity or a failing dependency be hidden by a successful summary?",
+      "disposition": "Give shared files one writer, inspect actual handoffs, bind checks to the combined artifact and require machine-detectable failure paths."
+    }
+  ],
+  "challenge_stop_rule": "Close a challenge by revising the plan, supplying acceptance evidence or recording a bounded unresolved limit. Reopen only for a new finding, changed requirement or failed gate; no indefinite debate or mandatory multi-agent chain.",
+  "artifacts": [
+    ".agents/skills/ai-evaluation/SKILL.md",
+    ".agents/skills/ai-evaluation/assets/evaluation-plan.md",
+    ".agents/skills/bounded-experiments/SKILL.md",
+    ".agents/skills/bounded-experiments/assets/experiment-record.md",
+    ".agents/skills/bounded-experiments/assets/trials.tsv",
+    ".agents/skills/clean-code/SKILL.md",
+    ".agents/skills/clean-code/references/design-decisions.md",
+    ".agents/skills/clean-code/references/safe-changes.md",
+    ".agents/skills/context-maintenance/SKILL.md",
+    ".agents/skills/context-maintenance/assets/context-refresh.md",
+    ".agents/skills/data-contracts/SKILL.md",
+    ".agents/skills/data-contracts/assets/data-contract.md",
+    ".agents/skills/dependency-maintenance/SKILL.md",
+    ".agents/skills/dependency-maintenance/assets/upgrade-record.md",
+    ".agents/skills/evidence-research/SKILL.md",
+    ".agents/skills/evidence-research/assets/evidence-ledger.md",
+    ".agents/skills/implementation-planning/SKILL.md",
+    ".agents/skills/implementation-planning/assets/change-plan.md",
+    ".agents/skills/interface-validation/SKILL.md",
+    ".agents/skills/interface-validation/assets/interface-cases.md",
+    ".agents/skills/performance-analysis/SKILL.md",
+    ".agents/skills/performance-analysis/assets/measurement-record.md",
+    ".agents/skills/rag-development/SKILL.md",
+    ".agents/skills/rag-development/assets/corpus-contract.md",
+    ".agents/skills/release-delivery/SKILL.md",
+    ".agents/skills/release-delivery/assets/release-record.md",
+    ".agents/skills/repo-discovery/SKILL.md",
+    ".agents/skills/repo-discovery/references/evidence.md",
+    ".agents/skills/security-review/SKILL.md",
+    ".agents/skills/security-review/assets/threat-path-record.md",
+    ".agents/skills/systematic-debugging/SKILL.md",
+    ".agents/skills/systematic-debugging/assets/diagnosis-record.md",
+    ".agents/skills/systematic-debugging/references/runtime-boundaries.md",
+    ".agents/skills/task-orchestration/SKILL.md",
+    ".agents/skills/task-orchestration/assets/task-handoff.md",
+    ".agents/skills/test-design/SKILL.md",
+    ".agents/skills/test-design/assets/behavior-case-matrix.md",
+    ".agents/skills/test-design/references/persistence.md",
+    ".agents/skills/tool-integration/SKILL.md",
+    ".agents/skills/tool-integration/assets/boundary-contract.md",
+    ".github/agents/ai-engineer.agent.md",
+    ".github/agents/architect.agent.md",
+    ".github/agents/debugger.agent.md",
+    ".github/agents/engineer.agent.md",
+    ".github/agents/release-engineer.agent.md",
+    ".github/agents/researcher.agent.md",
+    ".github/agents/security-reviewer.agent.md",
+    ".github/agents/test-engineer.agent.md",
+    ".github/copilot-instructions.md",
+    ".github/dependabot.yml",
+    ".github/workflows/ci.yml",
+    ".github/workflows/copilot-setup-steps.yml",
+    "AGENTS.md",
+    "CLAUDE.md",
+    "docs/ai-assistance.md",
+    "docs/ai-catalog.md",
+    "docs/decisions/README.md",
+    "docs/evaluation-reports.md",
+    "docs/extending-ci.md",
+    "docs/maintenance.md",
+    "docs/operations.md",
+    "docs/project.md",
+    "docs/threat-model.md",
+    "docs/troubleshooting.md",
+    "docs/using-the-template.md",
+    "docs/working-with-agents.md",
+    "tests/test_ai_catalog.py",
+    "tests/test_ai_configuration.py",
+    "tests/test_evaluation.py",
+    "tools/ai_catalog.py",
+    "tools/check_ai_configuration.py",
+    "tools/check_evaluation.py"
+  ],
+  "families": [
+    {
+      "id": "research",
+      "family": "Evidence-first research and coverage accounting",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/evidence-research/SKILL.md",
+        ".agents/skills/evidence-research/assets/evidence-ledger.md",
+        ".github/agents/researcher.agent.md"
+      ],
+      "shipped_behavior": "Record coverage, revisions, observations, inference and adoption decisions.",
+      "execution_boundary": "Source access and execution evidence must be established for each new investigation.",
+      "sources": [
+        "https://github.com/karpathy/rendergit/blob/14d7a58c0f4d815a3447f25e9ef1088c7e9ade84/rendergit.py",
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md"
+      ],
+      "excluded_implementation": "No claim that overview inventory equals every-line audit; no automatic execution of external repositories"
+    },
+    {
+      "id": "plan",
+      "family": "Acceptance-led planning and multiple independent challenges",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/implementation-planning/SKILL.md",
+        ".agents/skills/implementation-planning/assets/change-plan.md",
+        ".github/agents/architect.agent.md"
+      ],
+      "shipped_behavior": "Compare feasible alternatives, challenge concrete failures, resolve findings and stop at sufficient acceptance evidence.",
+      "execution_boundary": "Material planning uses the actual project contracts; routine edits do not acquire a fixed review chain.",
+      "sources": [
+        "https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md",
+        "https://github.com/karpathy/llm-council/blob/92e1fccb1bdcf1bab7221aa9ed90f9dc72529131/backend/council.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py"
+      ],
+      "excluded_implementation": "No indefinite debate or fixed approval chain for trivial edits"
+    },
+    {
+      "id": "orchestration",
+      "family": "Bounded specialist delegation and independent synthesis",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/task-orchestration/SKILL.md",
+        ".agents/skills/task-orchestration/assets/task-handoff.md",
+        ".github/agents/engineer.agent.md"
+      ],
+      "shipped_behavior": "Partition independent work, assign one writer per shared area and integrate evidence-bearing handoffs.",
+      "execution_boundary": "A supported running host provides delegation; the procedure also works locally when custom agents cannot be invoked.",
+      "sources": [
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py",
+        "https://github.com/karpathy/llm-council/blob/92e1fccb1bdcf1bab7221aa9ed90f9dc72529131/backend/council.py"
+      ],
+      "excluded_implementation": "No paid-model council prerequisite or consensus-as-truth"
+    },
+    {
+      "id": "context",
+      "family": "Living project context and instruction drift repair",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/context-maintenance/SKILL.md",
+        ".agents/skills/context-maintenance/assets/context-refresh.md",
+        "docs/project.md",
+        "docs/decisions/README.md"
+      ],
+      "shipped_behavior": "Refresh facts and handoffs from current commands, code and accepted decisions; preserve unfinished work.",
+      "execution_boundary": "Do not promote unverified preferences or temporary observations into policy.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/johnpapa/vscode-peacock/blob/main/AGENTS.md"
+      ],
+      "excluded_implementation": "Do not install detected MCP services automatically or overwrite existing policy"
+    },
+    {
+      "id": "onboarding",
+      "family": "Repository-aware environment setup",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/repo-discovery/SKILL.md",
+        ".agents/skills/context-maintenance/SKILL.md",
+        ".github/workflows/copilot-setup-steps.yml",
+        "docs/using-the-template.md"
+      ],
+      "shipped_behavior": "Combine repository discovery, maintained setup commands and the Copilot setup workflow.",
+      "execution_boundary": "The workflow prepares repository tools; application runtime, devcontainer choices and actual cloud-agent execution depend on the adopted project.",
+      "sources": [
+        "https://github.com/johnpapa/lite-server/blob/main/.github/workflows/copilot-setup-steps.yml",
+        "https://github.com/johnpapa/cloud-coding-with-codespaces/blob/main/.devcontainer/devcontainer.json",
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md"
+      ],
+      "excluded_implementation": "Devcontainer image/runtime selection remains conditional on project; no global Git settings"
+    },
+    {
+      "id": "discovery",
+      "family": "Monorepo, collection, docs, notebook and package classification",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/repo-discovery/SKILL.md",
+        ".agents/skills/repo-discovery/references/evidence.md"
+      ],
+      "shipped_behavior": "Classify applications, example collections, workspaces, notebooks, courses, generators and documentation from concrete evidence.",
+      "execution_boundary": "Repository shape may overlap; an index or neighboring example does not establish the active runtime.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md"
+      ],
+      "excluded_implementation": "No rigid classifier-score assumptions; a directory collection is not automatically a workspace"
+    },
+    {
+      "id": "testing",
+      "family": "Independent behavior oracles and test design",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/test-design/SKILL.md",
+        ".agents/skills/test-design/assets/behavior-case-matrix.md",
+        ".github/agents/test-engineer.agent.md"
+      ],
+      "shipped_behavior": "Select regression, boundary and consumer cases with independent expectations and nonzero failure propagation.",
+      "execution_boundary": "The project supplies its real harness and supported-environment runs.",
+      "sources": [
+        "https://github.com/karpathy/micrograd/blob/7bc720e951fe422b8f8814aa5aa1b64121d26b4c/test/test_engine.py",
+        "https://github.com/karpathy/minbpe/blob/1acefe89412b20245db5a22d2a02001e547dc602/tests/test_tokenizer.py",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/test/typecheck.test.ts"
+      ],
+      "excluded_implementation": "No mandatory PyTorch or language test framework; avoid implementation-mirroring tests"
+    },
+    {
+      "id": "runtime-boundary",
+      "family": "Real host, process, browser and transport boundary tests",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/systematic-debugging/references/runtime-boundaries.md",
+        ".agents/skills/test-design/references/persistence.md",
+        ".agents/skills/interface-validation/SKILL.md",
+        "docs/ai-assistance.md"
+      ],
+      "shipped_behavior": "Record process, remote workspace, host, transport and consumer identity; distinguish simulated from actual execution.",
+      "execution_boundary": "Static metadata, source inspection and local substitutes do not prove actual host or integration behavior.",
+      "sources": [
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/tests/test_execution.py",
+        "https://github.com/johnpapa/vscode-peacock/blob/main/AGENTS.md",
+        "https://github.com/karpathy/minbpe/blob/1acefe89412b20245db5a22d2a02001e547dc602/tests/test_tokenizer.py"
+      ],
+      "excluded_implementation": "No automatic assertion that static metadata validation proves host invocation"
+    },
+    {
+      "id": "debugging",
+      "family": "Hypothesis-led failure reproduction and repair",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/systematic-debugging/SKILL.md",
+        ".agents/skills/systematic-debugging/assets/diagnosis-record.md",
+        ".agents/skills/systematic-debugging/references/runtime-boundaries.md",
+        ".github/agents/debugger.agent.md"
+      ],
+      "shipped_behavior": "Trace the first causal error, compare hypotheses and choose the smallest discriminating experiment.",
+      "execution_boundary": "A confirmed repair requires the original reproduction and relevant recovery evidence.",
+      "sources": [
+        "https://github.com/bcherny/anthropic-stream-repro/blob/main/README.md",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/tests/test_execution.py",
+        "https://github.com/johnpapa/mcp-starwars/blob/main/src/caching.ts"
+      ],
+      "excluded_implementation": "Do not weaken tests, catch-all errors or reset user work to make symptoms disappear"
+    },
+    {
+      "id": "ai-evaluation",
+      "family": "Machine-readable evaluation contracts and honest outcomes",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/ai-evaluation/SKILL.md",
+        ".agents/skills/ai-evaluation/assets/evaluation-plan.md",
+        "docs/evaluation-reports.md",
+        "tools/check_evaluation.py",
+        "tests/test_evaluation.py",
+        ".github/agents/ai-engineer.agent.md"
+      ],
+      "shipped_behavior": "Define versioned cases, outcomes and acceptance; provide an offline JSON report gate and negative-case tests.",
+      "execution_boundary": "The report checker is executable locally; it does not run a model, authenticate evidence or establish label quality.",
+      "sources": [
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/evaluation_geval.py",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/evaluate.py",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/tests/model/test_behavioral.py"
+      ],
+      "excluded_implementation": "No universal numeric pass threshold or provider-error-to-quality conversion"
+    },
+    {
+      "id": "experiments",
+      "family": "Bounded reproducible experimentation and optimization",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/bounded-experiments/SKILL.md",
+        ".agents/skills/bounded-experiments/assets/experiment-record.md",
+        ".agents/skills/bounded-experiments/assets/trials.tsv"
+      ],
+      "shipped_behavior": "Freeze a baseline and evaluator, bound attempts and resources, preserve rejected trials and retain only verified improvements.",
+      "execution_boundary": "Actual runners, datasets and paid resources use project configuration and existing task authorization.",
+      "sources": [
+        "https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py"
+      ],
+      "excluded_implementation": "No infinite agent loop, shared-branch resets or holdout optimization"
+    },
+    {
+      "id": "rag",
+      "family": "Retrieval engineering and evidence-grounded answers",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/rag-development/SKILL.md",
+        ".agents/skills/rag-development/assets/corpus-contract.md",
+        ".agents/skills/ai-evaluation/SKILL.md"
+      ],
+      "shipped_behavior": "Trace ingestion, identities, access filtering, retrieval, citations, updates and answer support.",
+      "execution_boundary": "The project chooses the corpus, index and providers; no ready-made benchmark or service is installed.",
+      "sources": [
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/eval-and-observability/data/test.csv",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/evaluation_geval.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/deploy-agentic-rag/server.py"
+      ],
+      "excluded_implementation": "No universal chunk size, embedding model, vector database or cloud dependency"
+    },
+    {
+      "id": "data",
+      "family": "Data validation, splits and lineage",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/data-contracts/SKILL.md",
+        ".agents/skills/data-contracts/assets/data-contract.md",
+        ".agents/skills/rag-development/assets/corpus-contract.md"
+      ],
+      "shipped_behavior": "Record schema, provenance, transformations, partitions, rejected records and consumer impact.",
+      "execution_boundary": "Real data checks use approved project data and tooling; repository licenses do not settle dataset or model rights.",
+      "sources": [
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/tests/data/test_dataset.py",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/evaluate.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/Kitfile"
+      ],
+      "excluded_implementation": "Dataset library, model weights and sample personal data are project choices"
+    },
+    {
+      "id": "models",
+      "family": "Model, prompt, evaluator and serving consistency",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/ai-evaluation/SKILL.md",
+        ".agents/skills/data-contracts/SKILL.md",
+        ".agents/skills/tool-integration/assets/boundary-contract.md",
+        ".agents/skills/release-delivery/SKILL.md",
+        ".github/agents/ai-engineer.agent.md"
+      ],
+      "shipped_behavior": "Tie effective model, prompt, evaluator, data transformation and delivered artifact identities to the comparison and consumer contract.",
+      "execution_boundary": "Serving and preprocessing compatibility must be checked through the selected project pipeline; no model framework or hardware is bundled.",
+      "sources": [
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/predict.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/evaluate.py"
+      ],
+      "excluded_implementation": "No framework adoption or training hardware implied"
+    },
+    {
+      "id": "mcp",
+      "family": "Tool schemas, MCP protocol and integration validation",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/tool-integration/SKILL.md",
+        ".agents/skills/tool-integration/assets/boundary-contract.md"
+      ],
+      "shipped_behavior": "Define schemas, identity, side effects, machine-distinguishable failures, retries and transport checks, including protocol-only stdio stdout.",
+      "execution_boundary": "Actual SDK/protocol versions, credentials and host exchanges come from the project and current official documentation.",
+      "sources": [
+        "https://github.com/johnpapa/mcp-starwars/blob/main/src/schemas.ts",
+        "https://github.com/johnpapa/mcp-starwars/blob/main/src/caching.ts",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py"
+      ],
+      "excluded_implementation": "No auto-installed server, wildcard credentials or local maintainer paths; current official protocol controls syntax"
+    },
+    {
+      "id": "dataflow",
+      "family": "Actual provider and external data-flow accounting",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/tool-integration/assets/boundary-contract.md",
+        ".agents/skills/rag-development/SKILL.md",
+        ".agents/skills/security-review/SKILL.md",
+        ".github/agents/security-reviewer.agent.md"
+      ],
+      "shipped_behavior": "Record effective inference, embedding, memory, search, evaluation and telemetry destinations separately.",
+      "execution_boundary": "A README label or one configured model does not establish the deployed data flow.",
+      "sources": [
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/deploy-agentic-rag/server.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/Kitfile"
+      ],
+      "excluded_implementation": "Do not label a service local/private from README or a single configured model"
+    },
+    {
+      "id": "security",
+      "family": "Trust boundaries, secrets and denied-operation validation",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/security-review/SKILL.md",
+        ".agents/skills/security-review/assets/threat-path-record.md",
+        ".github/agents/security-reviewer.agent.md",
+        "docs/threat-model.md"
+      ],
+      "shipped_behavior": "Trace concrete trust boundaries and verify denied operations without unintended state changes.",
+      "execution_boundary": "Instructions and hooks do not enforce an operating-system sandbox or grant access.",
+      "sources": [
+        "https://github.com/bcherny/sandbox-runtime",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py",
+        "https://github.com/johnpapa/mcp-starwars/blob/main/src/caching.ts"
+      ],
+      "excluded_implementation": "Hooks/instructions are not an OS sandbox; no permission bypass defaults"
+    },
+    {
+      "id": "resilience",
+      "family": "Timeout, retry, idempotency, cache and lifecycle failure contracts",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/systematic-debugging/references/runtime-boundaries.md",
+        ".agents/skills/tool-integration/assets/boundary-contract.md",
+        "docs/operations.md"
+      ],
+      "shipped_behavior": "Select bounded retry, idempotency, cancellation, partial-result, recovery and cache/lifecycle checks for the actual failing boundary.",
+      "execution_boundary": "Recovery policy and actual runtime failure tests depend on the operation; no outage or chaos infrastructure is provisioned.",
+      "sources": [
+        "https://github.com/johnpapa/mcp-starwars/blob/main/src/caching.ts",
+        "https://github.com/karpathy/arxiv-sanity-lite/blob/d7a303b410b0246fbd19087e37f1885f7ca8a9dc/arxiv_daemon.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/tests/test_execution.py",
+        "https://github.com/karpathy/llm-council/blob/92e1fccb1bdcf1bab7221aa9ed90f9dc72529131/backend/council.py"
+      ],
+      "excluded_implementation": "No chaos infrastructure or remote outage testing required for the template"
+    },
+    {
+      "id": "observability",
+      "family": "Structured outcomes, correlation and diagnostic evidence",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/systematic-debugging/references/runtime-boundaries.md",
+        ".agents/skills/tool-integration/assets/boundary-contract.md",
+        ".agents/skills/performance-analysis/assets/measurement-record.md",
+        "docs/evaluation-reports.md"
+      ],
+      "shipped_behavior": "Correlate operations and artifact versions; preserve useful redacted diagnostics and separate errors from quality and resource measurements.",
+      "execution_boundary": "The project supplies telemetry and evidence locations; raw protected payload logging is not a default.",
+      "sources": [
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/evaluate.py",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py"
+      ],
+      "excluded_implementation": "No hosted telemetry default or logging prompt/user content by default"
+    },
+    {
+      "id": "artifact",
+      "family": "Validate generated and distributed consumer artifacts",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/release-delivery/SKILL.md",
+        ".agents/skills/release-delivery/assets/release-record.md",
+        ".agents/skills/test-design/references/persistence.md",
+        ".github/agents/release-engineer.agent.md"
+      ],
+      "shipped_behavior": "Inspect distributed contents, bind artifact identity and verify the built output through its consumer.",
+      "execution_boundary": "Packaging format, runtime and smoke commands follow the adopted project; source-only success does not verify the package.",
+      "sources": [
+        "https://github.com/johnpapa/vscode-peacock/blob/main/scripts/check-vsix-contents.js",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/test/typecheck.test.ts",
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/Kitfile"
+      ],
+      "excluded_implementation": "No VSIX-specific packaging or universal size threshold"
+    },
+    {
+      "id": "promotion",
+      "family": "Verification-bound release and rollback",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/release-delivery/SKILL.md",
+        ".agents/skills/release-delivery/assets/release-record.md",
+        "docs/operations.md"
+      ],
+      "shipped_behavior": "Promote the evaluated artifact, retain recovery identity and report prepared, published, deployed and healthy separately.",
+      "execution_boundary": "Publication/deployment and remote smoke checks require the existing task scope and configured target.",
+      "sources": [
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/deploy/jobs/workloads.sh",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/.github/workflows/ci.yml"
+      ],
+      "excluded_implementation": "No automatic deployment or registry/cloud credentials just to enable the skill"
+    },
+    {
+      "id": "dependencies",
+      "family": "Dependency/runtime upgrade and compatibility maintenance",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/dependency-maintenance/SKILL.md",
+        ".agents/skills/dependency-maintenance/assets/upgrade-record.md",
+        "docs/maintenance.md",
+        ".github/dependabot.yml"
+      ],
+      "shipped_behavior": "Assess release notes, compatibility, resolved dependencies, consumer behavior and rollback for focused upgrades.",
+      "execution_boundary": "New versions and supported lanes need current evidence; no blanket major-upgrade policy is imposed.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/.github/workflows/ci.yml",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py"
+      ],
+      "excluded_implementation": "No mass major upgrades or latest-version policy without compatibility evidence"
+    },
+    {
+      "id": "ci",
+      "family": "Intentional CI matrix and machine-detectable gates",
+      "status": "bundled",
+      "artifacts": [
+        ".github/workflows/ci.yml",
+        ".github/workflows/copilot-setup-steps.yml",
+        "tools/check_ai_configuration.py",
+        "tools/check_evaluation.py",
+        "tests/test_ai_configuration.py",
+        "tests/test_evaluation.py",
+        "docs/extending-ci.md"
+      ],
+      "shipped_behavior": "Wire static metadata/catalog checks and offline report-tool tests into machine-detectable gates while retaining the Repository checks contract.",
+      "execution_boundary": "Bundled workflow configuration is distinct from an observed GitHub run; application CI is configured separately.",
+      "sources": [
+        "https://github.com/karpathy/llm.c/blob/f1e2ace651495b74ae22d45d1723443fd00ecd3a/dev/loss_checker_ci.py",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/.github/workflows/ci.yml",
+        "https://github.com/johnpapa/lite-server/blob/main/.github/workflows/copilot-setup-steps.yml"
+      ],
+      "excluded_implementation": "No tests that print failure and exit zero; no optionalizing required tests"
+    },
+    {
+      "id": "docs",
+      "family": "Developer documentation and interface maintenance",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/context-maintenance/SKILL.md",
+        "docs/maintenance.md",
+        "docs/project.md"
+      ],
+      "shipped_behavior": "Keep source, command, decision and documentation relationships aligned in the existing context workflow.",
+      "execution_boundary": "No separate documentation agent or site generator is required to maintain the same source of truth.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/johnpapa/vscode-peacock/blob/main/AGENTS.md",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/predict.py"
+      ],
+      "excluded_implementation": "No boilerplate docs site generator or social publishing workflow"
+    },
+    {
+      "id": "ui",
+      "family": "Responsive and accessible UI verification",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/interface-validation/SKILL.md",
+        ".agents/skills/interface-validation/assets/interface-cases.md",
+        ".github/agents/test-engineer.agent.md"
+      ],
+      "shipped_behavior": "Verify changed flows, states, keyboard/focus, labels and relevant responsive views with explicit evidence limits.",
+      "execution_boundary": "Actual browser/runtime checks are project-configured; source, snapshots and unit tests do not establish interactive accessibility.",
+      "sources": [
+        "https://github.com/johnpapa/running-agent/blob/0673b9111746838c110855419f21153bcaa51166/AGENTS.md",
+        "https://github.com/johnpapa/vscode-peacock/blob/main/AGENTS.md"
+      ],
+      "excluded_implementation": "Do not copy hard-coded screenshot counts, fixed test counts, arbitrary component sizes or Angular requirements"
+    },
+    {
+      "id": "performance",
+      "family": "Measure before optimizing and preserve workload equivalence",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/performance-analysis/SKILL.md",
+        ".agents/skills/performance-analysis/assets/measurement-record.md",
+        ".agents/skills/bounded-experiments/SKILL.md"
+      ],
+      "shipped_behavior": "Measure comparable workloads with explicit units, included work, repetitions, failures and correctness constraints.",
+      "execution_boundary": "No performance improvement is claimed without actual project measurements; estimates and measured spend remain distinct.",
+      "sources": [
+        "https://github.com/karpathy/autoresearch/blob/228791fb499afffb54b46200aca536f79142f117/program.md",
+        "https://github.com/bcherny/undux",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py"
+      ],
+      "excluded_implementation": "No unsupported speedup claims, fixed GPU budget or score-only product decision"
+    },
+    {
+      "id": "persistence",
+      "family": "Persistence, atomic publication and recovery contracts",
+      "status": "project-configured execution (procedure shipped)",
+      "artifacts": [
+        ".agents/skills/test-design/references/persistence.md",
+        ".agents/skills/test-design/assets/behavior-case-matrix.md",
+        ".agents/skills/data-contracts/SKILL.md"
+      ],
+      "shipped_behavior": "Test save/load, version compatibility, partial writes, publication visibility, crash promises and concurrent-writer contracts.",
+      "execution_boundary": "Choose only promised storage behavior; atomic replacement does not itself prove crash durability or prevent lost updates.",
+      "sources": [
+        "https://github.com/karpathy/arxiv-sanity-lite/blob/d7a303b410b0246fbd19087e37f1885f7ca8a9dc/compute.py",
+        "https://github.com/karpathy/minbpe/blob/1acefe89412b20245db5a22d2a02001e547dc602/tests/test_tokenizer.py",
+        "https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/nanochat/checkpoint_manager.py"
+      ],
+      "excluded_implementation": "Atomic rename alone does not establish full crash durability or distributed coordination"
+    },
+    {
+      "id": "clean-code",
+      "family": "Cohesive reusable logic and explicit side effects",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/clean-code/SKILL.md",
+        ".agents/skills/clean-code/references/safe-changes.md",
+        ".agents/skills/clean-code/references/design-decisions.md",
+        ".agents/skills/repo-discovery/references/evidence.md"
+      ],
+      "shipped_behavior": "Retain cohesive logic, explicit side effects, consumer contracts and evidence-based extraction across module, notebook and generated boundaries.",
+      "execution_boundary": "Keep the existing clean-code source authority; the research adds boundary examples without imposing framework layers or size rules.",
+      "sources": [
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/predict.py",
+        "https://github.com/bcherny/json-schema-to-typescript/blob/5caacfc53671f9c891bb4e2a78bccc6190ed3ef4/test/typecheck.test.ts",
+        "https://github.com/johnpapa/vscode-peacock/blob/main/AGENTS.md"
+      ],
+      "excluded_implementation": "Preserve existing clean-code source authority; no universal layer count, line count or folder layout"
+    },
+    {
+      "id": "catalog",
+      "family": "Discoverable capability catalog with semantic checks",
+      "status": "bundled",
+      "artifacts": [
+        "AGENTS.md",
+        "tools/ai_catalog.py",
+        "tools/check_ai_configuration.py",
+        "tests/test_ai_catalog.py",
+        "docs/ai-catalog.md"
+      ],
+      "shipped_behavior": "Generate the capability catalog from real metadata, validate definitions and reject stale catalog output.",
+      "execution_boundary": "Counts describe available files, not readiness or observed agent invocation.",
+      "sources": [
+        "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/hugging-face-skills/scripts/generate_agents.py",
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md"
+      ],
+      "excluded_implementation": "Asset count is not readiness; avoid generated instruction duplication and always-loading every skill body"
+    },
+    {
+      "id": "cross-host",
+      "family": "Repository guidance across supported coding hosts",
+      "status": "bundled",
+      "artifacts": [
+        "AGENTS.md",
+        "CLAUDE.md",
+        ".github/copilot-instructions.md",
+        "docs/ai-assistance.md",
+        ".github/workflows/copilot-setup-steps.yml"
+      ],
+      "shipped_behavior": "Keep one canonical skill directory, thin host pointers and a documented host discovery/invocation check.",
+      "execution_boundary": "A template cannot activate all hosts globally; custom-agent menus and supported invocation differ by client.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/johnpapa/lite-server/blob/main/.github/workflows/copilot-setup-steps.yml"
+      ],
+      "excluded_implementation": "Cannot activate every host globally from a template; no claim installed profiles imply running agents"
+    },
+    {
+      "id": "community",
+      "family": "Troubleshooting feedback into maintained practices",
+      "status": "bundled",
+      "artifacts": [
+        ".agents/skills/evidence-research/SKILL.md",
+        ".agents/skills/systematic-debugging/SKILL.md",
+        ".agents/skills/context-maintenance/SKILL.md",
+        "docs/troubleshooting.md"
+      ],
+      "shipped_behavior": "Turn reproduced failures and confirmed corrections into maintained context, runbooks and decision-aware guidance.",
+      "execution_boundary": "Community repetition is a hypothesis signal, not proof of a current defect or authority to change policy.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/bcherny/anthropic-stream-repro/blob/main/README.md"
+      ],
+      "excluded_implementation": "Do not promote repeated forum advice into authority without current evidence"
+    },
+    {
+      "id": "learning",
+      "family": "Progressive examples and repository tours",
+      "status": "bundled",
+      "artifacts": [
+        "docs/working-with-agents.md",
+        "docs/ai-catalog.md",
+        "docs/using-the-template.md",
+        ".agents/skills/repo-discovery/SKILL.md"
+      ],
+      "shipped_behavior": "Provide task prompts and progressive repository tours linked to the relevant working procedures.",
+      "execution_boundary": "Examples demonstrate how to request work; they are not evidence that a project integration has already run.",
+      "sources": [
+        "https://github.com/johnpapa/ai-ready/blob/main/skills/ai-ready/references/detection-tables.md",
+        "https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/madewithml/predict.py"
+      ],
+      "excluded_implementation": "No imported courses, tutorial datasets or unmaintained educational frameworks"
+    }
+  ]
+}

@@ -18,11 +18,12 @@ On Windows PowerShell, create it with `py -3.12 -m venv .venv` and activate with
 change is needed. On macOS/Linux, `.venv/bin/python` also works without activation.
 Reuse the environment; reinstall dependencies when `requirements-dev.txt` changes.
 
-From that environment, run the three offline checks (also supported in a ZIP):
+From that environment, run the offline checks (also supported in a ZIP):
 
 ```bash
 python tools/check_repository.py
 python tools/check_ai_configuration.py
+python tools/ai_catalog.py
 python -m unittest discover -s tests -v
 ```
 
@@ -38,7 +39,7 @@ The all-files command checks tracked files; unstaged new files are not covered.
 ## Set up the shared template once
 
 1. Extract the ZIP and open the `reusable-github-template` folder in VS Code.
-2. Prepare the validation environment and run the three checks above.
+2. Prepare the validation environment and run the checks above.
 3. Create an empty GitHub repository named `repository-template` in the intended
    account or organization. Select the visibility appropriate for your team.
 4. Push the extracted files, including `.github` and the other dotfiles. From

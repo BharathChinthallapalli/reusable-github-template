@@ -7,8 +7,9 @@ Repository: `@@GITHUB_OWNER@@/@@PROJECT_SLUG@@` · Owner: @@CODEOWNER@@
 ## Start here
 
 This is a reusable repository foundation for applications, services, automation,
-and AI projects. It provides repository tooling and collaboration conventions.
-Application code, application tests, and deployment are added for each project.
+and AI projects. It bundles 21 reusable engineering skills, 10 specialist agents,
+task records, AI evaluation tooling, CI and collaboration conventions. Application
+code, application tests, providers and deployment use each project's requirements.
 
 1. Follow [template setup](docs/using-the-template.md) to create your template
    repository, then use GitHub's **Use this template** for each new project.
@@ -37,6 +38,7 @@ python3 -m pip install -r requirements-dev.txt
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
+python3 tools/ai_catalog.py
 python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s tests/integration -v
 ```
@@ -59,23 +61,35 @@ not certify an application's behavior, security, or production readiness.
 | Git checks | Ten portable checks, staged-commit validation, all-files CI, real Git integration tests |
 | Maintenance | Dependabot for GitHub Actions and validation dependencies; release-note categories; template version tracking |
 | Governance | Disabled ruleset for import; explicit activation instructions |
-| AI assistance | Default clean-code guidance, five custom agents, five automatically selectable skills, scoped instructions |
+| AI assistance | [Specialist agents and shared skills](docs/ai-catalog.md), default task routing, clean-code guidance, scoped instructions |
 | Engineering | Domain and acceptance context, maintained architecture decisions, operations and troubleshooting guides |
 | AI experiments | Optional [evaluation contract](docs/ai-evaluation.md) for baselines, outcomes, budgets and provenance |
+| Working assets | Research, plans, handoffs, tests, experiments, data/tool contracts, dependency and release records bundled with their skills |
+| Executable AI tooling | Static catalog with drift checks, [offline evaluation-report gate](docs/evaluation-reports.md), Copilot environment setup |
 | Adoption | Safe initializer, repository checker, AI configuration diagnostics, tooling tests, stack and Azure extension guides |
-| Evidence | [Company comparison and current sources](docs/research/README.md) |
+| Evidence | [Company comparison and current sources](docs/research/README.md); [32 capability families mapped to shipped improvements](docs/research/capability-expansion.md) |
 
 ## Default AI assistance
 
 New repositories inherit the agents, skills, and workspace defaults. In a
 supported Copilot session, repository instructions apply automatically and route
 relevant work to clean-code, discovery, verification, review, and CI-debugging
-procedures. Select `engineer` for coordinated implementation, or choose a
-specialist directly. See [AI assistance](docs/ai-assistance.md) for the inventory
+procedures. The expanded catalog covers research, planning, orchestration,
+debugging, test design, AI/data/retrieval/tool engineering, security, performance,
+interfaces, dependency upgrades, context maintenance and release delivery.
+Select `engineer` for coordinated implementation, or choose a specialist directly.
+See [example tasks](docs/working-with-agents.md) and [AI assistance](docs/ai-assistance.md)
+for the inventory
 and a discovery check that separates valid files from observed host behavior.
 Use [troubleshooting](docs/troubleshooting.md) for reproducible failure reports
 and state-aware Git or CI recovery. Skills load as needed; these files do not start
 agents in the background or consume model usage on their own.
+
+Skills use one canonical `.agents/skills` folder for supported Copilot and Codex
+clients. `CLAUDE.md` imports the shared instructions for Claude Code. Custom-agent
+menus and invocation differ by client; the [host guide](docs/ai-assistance.md)
+records those boundaries. The Copilot setup workflow prepares repository tools;
+CI remains the independent required-check source.
 
 ## Project status
 

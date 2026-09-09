@@ -49,6 +49,9 @@ what callers need to know; avoid duplicating implementation details. The
 | Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
 | Repository validation | `python3 tools/check_repository.py` |
 | Static agent and skill diagnostics | `python3 tools/check_ai_configuration.py` |
+| Check capability catalog freshness | `python3 tools/ai_catalog.py` |
+| Regenerate catalog after changing metadata | `python3 tools/ai_catalog.py --write` |
+| Gate a project AI evaluation report | `python3 tools/check_evaluation.py path/to/report.json` using [the report contract](evaluation-reports.md) |
 | Activate commit checks per clone | `python3 -m pre_commit install` after [hook preflight](git-hooks.md) |
 | Check all tracked working-tree files | `python3 -m pre_commit run --all-files` |
 | Repository tooling tests | `python3 -m unittest discover -s tests -v` |

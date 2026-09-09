@@ -50,14 +50,19 @@ class RepositoryCheckTests(unittest.TestCase):
         self.assertTrue(any("broken local link" in error for error in errors))
 
     def test_broken_ai_reference_fails(self):
-        for relative in (".github/agents/probe.agent.md", ".github/skills/probe/SKILL.md"):
+        for relative in (".github/agents/probe.agent.md", ".github/skills/probe/SKILL.md",
+                         ".agents/skills/probe/SKILL.md", "CLAUDE.md"):
             with self.subTest(path=relative):
                 path = self.root / relative
                 path.parent.mkdir(parents=True, exist_ok=True)
+                original = path.read_bytes() if path.exists() else None
                 path.write_text("[Required procedure](missing-procedure.md)\n", encoding="utf-8")
                 errors, _ = check(self.root)
                 self.assertTrue(any(relative in error and "broken local link" in error for error in errors))
-                path.unlink()
+                if original is None:
+                    path.unlink()
+                else:
+                    path.write_bytes(original)
 
     def test_initialized_markers_fail(self):
         path = self.root / "template.json"

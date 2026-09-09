@@ -3,8 +3,11 @@
 Use this optional worksheet when a change affects a model, prompt, retrieval,
 agent tool behavior, training data or evaluation logic. Link the completed
 record from the change or decision. Ordinary repository checks do not establish
-AI quality. This template supplies guidance; it has no model runner or sample
-evaluation result. Record actual commands in [project context](project.md).
+AI quality. The [AI evaluation skill](../.agents/skills/ai-evaluation/SKILL.md)
+provides a reusable workflow. An [offline report gate](evaluation-reports.md)
+validates comparison evidence, with clearly synthetic contract examples. There
+is no model runner or measured application benchmark. Record actual evaluation
+commands in [project context](project.md).
 
 ## Agree on the comparison before running
 

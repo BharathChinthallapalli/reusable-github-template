@@ -7,6 +7,35 @@ The uninitialized repository is a language-neutral foundation. Python under
 tools/ maintains the foundation; it does not define the application's stack.
 Use real repository evidence for architecture, dependencies, and commands.
 
+## Default skills and specialist routing
+
+Use the relevant bundled skills without waiting for the user to name them.
+Read each selected SKILL.md and only the references needed by the current task.
+
+| Work | Procedure |
+| --- | --- |
+| Enter an unfamiliar repository area or investigate its design | [repo-discovery](.github/skills/repo-discovery/SKILL.md) |
+| Implement, repair, or refactor code | [clean-code](.github/skills/clean-code/SKILL.md), then [verify-change](.github/skills/verify-change/SKILL.md) |
+| Review a diff or a meaningful completed implementation | [code-review](.github/skills/code-review/SKILL.md) |
+| Diagnose a GitHub Actions failure | [github-actions-debug](.github/skills/github-actions-debug/SKILL.md) |
+
+For implementation, perform the useful workflow directly even when no custom
+agent is selected. When supported, `engineer` coordinates bounded help from
+`architect`, `debugger`, `reviewer`, or `security-reviewer`. Delegate independent
+work when it resolves a concrete uncertainty; keep one writer per file area.
+If custom-agent invocation is unavailable, apply the same procedures yourself.
+An ordinary documentation edit does not require a multi-agent review chain.
+
+Before code edits, load the clean-code skill. Prefer intention-revealing names,
+cohesive functions, explicit side effects, and established error contracts.
+Extract concepts or shared rules demonstrated by the code. Preserve observable
+behavior during refactoring and verify meaningful changes at a stable public
+seam. Avoid arbitrary function-size rules, speculative layers, unrelated folder
+reorganizations, and performance claims without evidence.
+
+See [AI assistance](docs/ai-assistance.md) for discovery, configuration, and host
+limitations. These files guide a running session; they do not start one.
+
 ## Work
 
 - Keep changes focused. Preserve unrelated local edits and existing conventions.

@@ -1,25 +1,34 @@
 # Validation record
 
-Template version: 1.0.0. Prepared 9 September 2026.
+Template version: 1.1.0. Prepared 9 September 2026.
 
 ## Results
 
 - Linux with Python 3.12.14: repository checker passed.
-- All 25 unit tests passed in the uninitialized template.
-- A disposable project initialized successfully; its checker and all 25 tests passed.
+- All 26 unit tests passed in the uninitialized template.
+- A disposable project initialized successfully; its checker and all 26 tests passed.
 - Repeating initialization with identical inputs left every deliverable file unchanged.
-- Six YAML files and both JSON files parsed; local workflow and issue-form structure checks passed.
+- YAML and JSON configuration parsed; workflow, issue-form, and AI frontmatter checks passed.
 - Action commit references and ruleset fields were checked against current first-party sources.
+- All five skills passed the skill format validator; five agent profiles use documented fields and explicit tool scopes.
+- A new regression test first demonstrated missing checks for broken agent/skill references, then passed after extending the existing link checker.
+- An independent static review checked discovery, routing, clean-code scope, and host limitations. Its reviewer-evidence handoff finding was corrected.
 
 Tests exercise macOS-style ancestor symlinks and managed enterprise usernames.
 Native macOS and Windows runs were not performed in this environment.
 
 ## Scope
 
-This record concerns the delivered repository foundation. No application,
-GitHub-hosted CI run, ruleset import, remote team permissions, or Azure deployment
-has been exercised. The repository must be uploaded and configured to verify
-those surfaces.
+This record concerns local preparation of the repository foundation. Published
+v1.0.0 passed [GitHub CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34393922313).
+For later commits, inspect [their CI runs](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/ci.yml)
+for evidence tied to that exact revision. No application, ruleset import,
+remote team permissions, or Azure deployment has been exercised.
+
+Custom-agent and skill invocation inside VS Code or Copilot cloud was not
+executed in this environment. Static validation establishes file format and
+links, not host activation or model compliance. Follow the discovery check in
+[AI assistance](docs/ai-assistance.md) in the actual client.
 
 ## Local commands
 

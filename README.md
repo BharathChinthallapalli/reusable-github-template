@@ -47,10 +47,20 @@ not certify an application's behavior, security, or production readiness.
 | CI | SHA-pinned actions, read-only token, clean checkout, timeout, cancellation, merge-group trigger |
 | Maintenance | Dependabot for GitHub Actions; release-note categories; template version tracking |
 | Governance | Disabled ruleset for import; explicit activation instructions |
-| AI assistance | AGENTS.md, short Copilot instructions, scoped workflow and Python guidance |
+| AI assistance | Default clean-code guidance, five custom agents, five automatically selectable skills, scoped instructions |
 | Engineering | Project context, architecture decision record, operations and threat-model worksheets |
 | Adoption | Safe initializer, repository checker, tooling tests, stack and Azure extension guides |
 | Evidence | [Company comparison and current sources](docs/research/README.md) |
+
+## Default AI assistance
+
+New repositories inherit the agents, skills, and workspace defaults. In a
+supported Copilot session, repository instructions apply automatically and route
+relevant work to clean-code, discovery, verification, review, and CI-debugging
+procedures. Select `engineer` for coordinated implementation, or choose a
+specialist directly. See [AI assistance](docs/ai-assistance.md) for the inventory
+and a short discovery check. Skills load as needed; these files do not start
+agents in the background or consume model usage on their own.
 
 ## Project status
 

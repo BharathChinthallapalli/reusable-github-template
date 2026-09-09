@@ -11,6 +11,8 @@ their internal engineering standards.
 - [Design decision](../decisions/0001-repository-foundation.md): why the foundation
   stays independent of the application stack.
 - [Validation record](../../VALIDATION.md): local evidence and limits.
+- [AI defaults](../ai-assistance.md): version 1.1.0 agents, skills, clean-code
+  guidance, current discovery settings, and host validation steps.
 
 ## How the research affected the deliverable
 

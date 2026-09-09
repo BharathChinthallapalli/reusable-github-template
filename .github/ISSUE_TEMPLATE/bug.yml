@@ -22,17 +22,31 @@ body:
     id: reproduce
     attributes:
       label: How can we reproduce it?
-      description: Include minimal steps or a safe example.
+      description: Include minimal steps, prerequisites and synthetic input. State whether it happens every time.
     validations:
       required: true
   - type: input
     id: version
     attributes:
-      label: Version or commit and environment
-      placeholder: 'Commit SHA, operating system, runtime, browser if relevant'
+      label: Client, runtime and environment
+      description: Give relevant versions; include the editor and extension for AI assistance problems. Say unknown if unavailable.
+      placeholder: 'Operating system, runtime version, browser or editor/extension version'
     validations:
       required: true
+  - type: input
+    id: revision
+    attributes:
+      label: Application version or commit SHA
+      description: Identify the revision that failed, rather than only the current branch name. Say unknown if unavailable.
+    validations:
+      required: true
+  - type: input
+    id: execution
+    attributes:
+      label: CI run, attempt and event, if applicable
+      placeholder: 'Run URL, attempt number, pull_request / push / merge_group'
   - type: textarea
     id: evidence
     attributes:
       label: Sanitized logs or screenshots
+      description: Include the first relevant error and enough surrounding context to understand it. Remove tokens, cookies, connection strings and personal data; do not upload complete environment dumps.

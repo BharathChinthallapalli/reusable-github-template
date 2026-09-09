@@ -17,17 +17,38 @@
 Record the intended users, the task they need to complete, how success is
 observed, and what is outside scope. Replace this guidance with real facts.
 
+For each agreed outcome, record an input or starting condition, the observable
+result, and how to verify it. Include relevant failure behavior. A completed
+file, passing build, or generated screen alone does not establish user success.
+
+## Domain terms
+
+Define terms whose meaning affects behavior or naming. State their scope and
+source; different domains may use the same word differently. Leave unknown
+meanings unresolved rather than inventing a shared definition.
+
+| Term | Meaning and scope | Source or owner |
+| --- | --- | --- |
+| Not yet defined | Add terms when the application domain is known | Not yet confirmed |
+
 ## Architecture
 
 Document actual entrypoints, modules, data stores, trust boundaries, and
 external services. Link to code and decisions. Add a diagram when relationships
 are clearer visually; do not draw services that have not been selected.
 
+For each relevant module, link its public contract: inputs, outputs, invariants,
+failure behavior, side effects, and the behavioral checks that cover it. Show
+what callers need to know; avoid duplicating implementation details. The
+[decision index](decisions/README.md) helps locate rationale and current status.
+
 ## Commands
 
 | Task | Current command |
 | --- | --- |
+| Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
 | Repository validation | `python3 tools/check_repository.py` |
+| Static agent and skill diagnostics | `python3 tools/check_ai_configuration.py` |
 | Repository tooling tests | `python3 -m unittest discover -s tests -v` |
 | Application install, run, lint, typecheck, test, build | Record verified commands after adding the application |
 
@@ -36,6 +57,18 @@ and safe sample values. Never document real secrets. Keep commands aligned with 
 
 ## Operational constraints
 
-Record permissions, data location, retention, latency, availability, cost limits,
-and support ownership when these are known. Link to [operations](operations.md)
-and the [threat model](threat-model.md). Mark assumptions explicitly.
+Record constraints as observed facts, agreed requirements, or unverified
+assumptions. Attach a source, owner, or measurement and date. Do not invent
+traffic forecasts, service targets, or budgets to fill the table.
+
+| Constraint | Current evidence |
+| --- | --- |
+| Workload and access patterns: frequency, payload sizes, concurrency, reads/writes | Unknown until the application is defined |
+| Permissions, data location, and retention | Not yet confirmed |
+| Latency and availability requirements | Not yet agreed |
+| Cost limit and support ownership | Not yet agreed |
+
+Before changing the architecture for capacity or reliability, identify the
+demonstrated bottleneck or required capability and the check that would show an
+improvement. Link to [operations](operations.md) and the
+[threat model](threat-model.md) for details relevant to the project.

@@ -6,6 +6,9 @@ Read README.md, docs/project.md, and relevant manifests before editing.
 The uninitialized repository is a language-neutral foundation. Python under
 tools/ maintains the foundation; it does not define the application's stack.
 Use real repository evidence for architecture, dependencies, and commands.
+Use the project's domain terms and observable acceptance criteria. Read current
+decision status before relying on historical design guidance; see
+[decision maintenance](docs/decisions/README.md).
 
 ## Default skills and specialist routing
 
@@ -17,7 +20,8 @@ Read each selected SKILL.md and only the references needed by the current task.
 | Enter an unfamiliar repository area or investigate its design | [repo-discovery](.github/skills/repo-discovery/SKILL.md) |
 | Implement, repair, or refactor code | [clean-code](.github/skills/clean-code/SKILL.md), then [verify-change](.github/skills/verify-change/SKILL.md) |
 | Review a diff or a meaningful completed implementation | [code-review](.github/skills/code-review/SKILL.md) |
-| Diagnose a GitHub Actions failure | [github-actions-debug](.github/skills/github-actions-debug/SKILL.md) |
+| Diagnose a GitHub Actions failure or pending required check | [github-actions-debug](.github/skills/github-actions-debug/SKILL.md) |
+| Investigate missing agents, skills, or loaded metadata | [AI diagnostics](docs/ai-assistance.md) |
 
 For implementation, perform the useful workflow directly even when no custom
 agent is selected. When supported, `engineer` coordinates bounded help from
@@ -50,10 +54,14 @@ limitations. These files guide a running session; they do not start one.
 From the repository root:
 
 ```bash
+python3 -m pip install -r requirements-dev.txt
 python3 tools/check_repository.py
+python3 tools/check_ai_configuration.py
 python3 -m unittest discover -s tests -v
 ```
 
+Install validation dependencies in an activated virtual environment; see
+[local setup](docs/using-the-template.md). Reuse it when already prepared.
 These commands validate repository tooling only. Run the application commands
 recorded in docs/project.md when application code changes. Do not report an
 unrun test, successful deployment, or activated GitHub setting as verified.
@@ -61,3 +69,6 @@ unrun test, successful deployment, or activated GitHub setting as verified.
 The initializer touches only its declared files. Preserve its preview behavior,
 input validation, and refusal to overwrite an already initialized project.
 Keep the required CI job name `Repository checks` aligned with the ruleset.
+For missing AI customizations, distinguish static validity, host discovery, and
+observed invocation using [AI diagnostics](docs/ai-assistance.md). For a failure,
+record evidence and recovery in the [troubleshooting guide](docs/troubleshooting.md).

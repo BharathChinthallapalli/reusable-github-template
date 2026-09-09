@@ -1,10 +1,38 @@
 # Create and reuse the template
 
+## Prepare local validation
+
+The initializer and foundation checker run with Python 3.12+ alone. The AI
+configuration checker and full test suite also require the pinned development
+dependency. Create a virtual environment in the repository root:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements-dev.txt
+```
+
+On Windows PowerShell, create it with `py -3.12 -m venv .venv` and activate with
+`.venv\Scripts\Activate.ps1`. If activation is unavailable, invoke
+`.venv\Scripts\python.exe` directly for the commands below; no shell policy
+change is needed. On macOS/Linux, `.venv/bin/python` also works without activation.
+Reuse the environment; reinstall dependencies when `requirements-dev.txt` changes.
+
+From that environment, run all three checks:
+
+```bash
+python tools/check_repository.py
+python tools/check_ai_configuration.py
+python -m unittest discover -s tests -v
+```
+
+Static AI validation does not inspect your editor. Complete the separate
+[host discovery check](ai-assistance.md) in the actual client.
+
 ## Set up the shared template once
 
 1. Extract the ZIP and open the `reusable-github-template` folder in VS Code.
-2. Run `python3 tools/check_repository.py` and
-   `python3 -m unittest discover -s tests -v`.
+2. Prepare the validation environment and run the three checks above.
 3. Create an empty GitHub repository named `repository-template` in the intended
    account or organization. Select the visibility appropriate for your team.
 4. Push the extracted files, including `.github` and the other dotfiles. From
@@ -35,7 +63,7 @@ markers. Do not run the project initializer in the shared source.
    the preview, then repeat it with `--write`.
 3. Inspect `git diff`. CODEOWNERS must name an existing user or visible team with
    explicit write access. The script validates syntax, not remote membership.
-4. Run both local checks. Commit and push the initialized project.
+4. Run the three local checks. Commit and push the initialized project.
 5. Follow [GitHub setup](github-setup.md) and select the project license.
 6. Add the application, its commands, and meaningful CI. Replace README's
    template introduction with the project's actual purpose and quick start.

@@ -1,6 +1,9 @@
 # 0001: Keep the shared foundation independent of the application stack
 
-Status: Accepted for the template, subject to review by adopting projects.
+Status: Superseded
+Date: 2026-09-09 (status review; original decision date not recorded)
+Scope: Shared template, subject to review by adopting projects.
+Superseded by: [0002: Validate AI metadata](0002-validate-ai-metadata.md)
 
 ## Context
 

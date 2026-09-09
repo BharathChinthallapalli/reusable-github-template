@@ -11,6 +11,9 @@ whole system. Expand only when another boundary affects the task.
 | What changes or leaves the process? | Storage adapter, queue producer, outbound client and transaction |
 | What observes the result? | Return type, response mapping, event consumer and behavioral test |
 | Which versions are selected? | Runtime files, dependency constraints, lockfile and CI setup |
+| What do domain terms mean here? | Scoped definitions, owner decisions, code usage and examples |
+| What must callers know? | Public inputs/outputs, invariants, errors, side effects and contract tests |
+| Which constraints justify a change? | Measured workload/access patterns, agreed targets, incident evidence and dated assumptions |
 
 Distinguish three kinds of statement:
 
@@ -27,6 +30,15 @@ root and configuration selection before claiming the active storage backend.
 Treat documentation as a claim to compare with code. Generated files, fixtures
 and abandoned modules may describe paths that are never executed. Resolve
 contradictions explicitly and cite the evidence supporting the current path.
+
+An ADR's date does not establish precedence. Read status and supersession links,
+then check scope and assumptions. An index may be stale; unresolved conflicts
+between Accepted decisions need investigation and an explicit resolution.
+
+For a bottleneck claim, identify the operation, observed symptom, measurement or
+reproduction, and expected improvement. If measurements are unavailable, propose
+the smallest useful check and label the diagnosis as unverified. Do not fill in
+latency, availability, traffic, or budget numbers from a typical system.
 
 Deliver a compact map of the relevant entrypoint, calls, boundaries and checks;
 include unresolved questions only when they affect the proposed work.

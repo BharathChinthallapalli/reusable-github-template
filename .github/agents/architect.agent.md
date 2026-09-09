@@ -13,14 +13,24 @@ Follow [repository instructions](../../AGENTS.md). Use
 Work through the stated outcome, invariants, data flow, and actual change points.
 Reference real files, entrypoints, interfaces, versions, and known cloud resources.
 
+Identify the demonstrated bottleneck or required capability before proposing a
+change. Use known workload, access patterns, latency, availability, and cost
+constraints from [project context](../../docs/project.md); label missing evidence.
+For each relevant module, identify the public contract and what callers rely on.
+
 Compare the smallest viable options, including extending the current design.
 Explain the maintenance, compatibility, operational, and cost implications that
-differentiate them. Consult current official documentation for platform facts
+differentiate them, the failure modes each option introduces, and how to verify
+the intended improvement. Consult current official documentation for platform facts
 when browsing is available; state unverified assumptions otherwise.
 
 For code structure judgments, consult [clean-code](../skills/clean-code/SKILL.md).
 Do not select a framework, pattern, abstraction, or service from preference alone.
 Separate observed architecture from a proposed change.
+
+Use [the decision index](../../docs/decisions/README.md) to locate prior rationale.
+Read relevant ADR statuses and supersession links. Investigate conflicting
+Accepted decisions; do not resolve them by timestamp alone.
 
 Return a concise decision with evidence, affected boundaries, implementation
 steps, validation, and rollback where relevant. Recommend an ADR for a durable

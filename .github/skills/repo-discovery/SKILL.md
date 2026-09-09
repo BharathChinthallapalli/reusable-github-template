@@ -12,10 +12,19 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
    the repository. A tools directory alone does not establish the app stack.
 3. Locate the entrypoint relevant to the user's task: route, command, worker,
    event handler or workflow. Follow its actual calls to state and side effects.
+   Identify the observable outcome, scoped domain terms, and public contracts
+   that matter to the task; distinguish documented intent from executed behavior.
 4. Use [the evidence guide](references/evidence.md) for a focused trace and
    confidence labels. Separate declared dependencies from observed use.
 5. Explain the behavior and constraints with paths and symbols. Identify the
    smallest likely change boundary, open questions and the checks that cover it.
+   A proposed capacity or reliability change needs a demonstrated bottleneck or
+   agreed requirement, not an invented workload or service target.
+
+When prior decisions affect the task, use the
+[decision index](../../../docs/decisions/README.md) to locate relevant ADRs. Read
+their current statuses and supersession links. Investigate unresolved Accepted
+conflicts against scope and evidence; a newer date alone does not settle them.
 
 Inspect deployed resources only when the task requires it and existing access
 allows it. Configuration names are not proof that resources exist or are live.

@@ -6,7 +6,8 @@ This template supplies files and a working scaffold check. Repository administra
 
 On the template repository, select **Use this template → Create a new repository**, choose the owner and visibility, and copy the default branch only. A generated repository starts its own history; later template changes do not automatically propagate. [GitHub: creating from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
 
-Clone the new repository. From its root, using Python 3.12, substitute your real values in this example:
+Clone the new repository and prepare [the validation environment](using-the-template.md).
+From its root, using Python 3.12, substitute your real values in this example:
 
 ```bash
 python tools/initialize.py \
@@ -18,6 +19,7 @@ python tools/initialize.py \
   --description 'Internal policy Q&A service.' \
   --write
 python tools/check_repository.py
+python tools/check_ai_configuration.py
 python -m unittest discover -s tests -v
 ```
 
@@ -59,8 +61,8 @@ The JSON file alone enforces nothing. Importing and enforcement are separate ope
 ## 5. Enable suitable security features
 
 Under repository security settings, verify dependency graph and Dependabot
-alerts/updates. The included Dependabot file requests weekly GitHub Actions
-version updates. Review the first update PR to confirm it runs.
+alerts/updates. The included Dependabot file requests weekly GitHub Actions and
+Python validation-dependency updates. Review the first update PR to confirm it runs.
 
 When application manifests exist, add their ecosystems and evaluate code
 scanning, dependency review, secret scanning, and push protection. For private or

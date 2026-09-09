@@ -18,6 +18,17 @@ entrypoint, callers, configuration, and existing tests before choosing a design.
 Use the current language and dependencies. Keep changes at the smallest useful
 boundary and preserve unrelated edits.
 
+For a feature spanning several layers, implement a small end-to-end slice first.
+Check its observable behavior before expanding it. Where a behavior warrants an
+automated test, establish an independently justified expected result, observe
+the relevant failure, implement the change, and rerun the check. Use the existing
+fast feedback loop; routine documentation or configuration edits need focused
+validation rather than a forced test-first ceremony.
+
+Use the agreed domain terms and module contracts in project context. Consult
+[decision conventions](../../docs/decisions/README.md) when a relevant design
+choice is recorded or changes; investigate unresolved Accepted conflicts.
+
 For independent work that merits a specialist, delegate a bounded question:
 
 - `architect`: a design or boundary decision that blocks implementation.

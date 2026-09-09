@@ -8,7 +8,7 @@ Treat initializer arguments, `template.json`, required check names, supported ru
 
 For a template release:
 
-1. Run `python tools/check_repository.py` and `python -m unittest discover -s tests -v` from a clean checkout.
+1. Prepare [the validation environment](using-the-template.md) in a clean checkout. Run the foundation checker, AI configuration checker, and full test suite documented there.
 2. Initialize a disposable copy with realistic owner, team, and reporting values. Confirm the generated files contain the intended identities and the checks still pass.
 3. Review changes to workflow triggers, permissions, action sources, required checks, and scripts that write files.
 4. Update the release notes with the user-visible change, migration steps, changed settings, and known compatibility limits.
@@ -18,7 +18,7 @@ Use a consistent version policy. For this template, reserve major versions for i
 
 ## Keep dependencies current
 
-Review Dependabot pull requests on a regular schedule. The base configuration covers GitHub Actions; add package ecosystems and directories when an application actually introduces them. Dependabot can update action and reusable workflow references. [GitHub: updating Actions with Dependabot](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/auto-update-actions).
+Review Dependabot pull requests on a regular schedule. The base configuration covers GitHub Actions and the pinned Python validation dependency; add application ecosystems and directories when introduced. Dependabot can update action and reusable workflow references. [GitHub: updating Actions with Dependabot](https://docs.github.com/en/code-security/how-tos/secure-your-supply-chain/secure-your-dependencies/auto-update-actions).
 
 For an action update, verify the upstream repository and commit, read release notes for changed runtime requirements or permissions, and confirm CI completes. Preserve full commit SHA references. A version comment helps reviewers understand the intended release but is not the executed reference. [GitHub: secure use](https://docs.github.com/en/actions/reference/security/secure-use).
 
@@ -36,6 +36,20 @@ Compare a generated project's recorded template version with the desired release
 If a migration adds a required check, first ship the workflow and observe a successful run. Then update the live ruleset and the versioned recipe. If it removes or renames a check, coordinate the live rule change so that no required context is left permanently absent. Keep evidence of the settings change with the migration.
 
 For multiple repositories, prefer the versioned reusable-workflow approach in [extending CI](extending-ci.md). Use explicit consumer upgrade PRs and a small pilot group. Do not assume changes in the template repository repair existing consumers.
+
+## Adopt version 1.2
+
+This update adds `tools/check_ai_configuration.py`, its tests, and
+`requirements-dev.txt`. Install the pinned development dependency in your
+validation environment and include the new command in CI; keep the existing
+`Repository checks` job name. The initializer and foundation checker still run
+without external packages. Review the new pip Dependabot entry if your project
+already has one for the root directory; merge entries instead of duplicating them.
+
+Merge the project-context, decision-status, troubleshooting, and agent guidance
+with your project's actual facts. Do not replace its decisions with this
+template's examples. Use [decision maintenance](decisions/README.md) to mark
+superseded choices and verify [host discovery](ai-assistance.md) in the target client.
 
 ## Periodically inspect operational drift
 

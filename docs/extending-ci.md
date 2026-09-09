@@ -5,7 +5,9 @@ The base workflow is named **CI** and exposes one job named **Repository checks*
 Its commands are:
 
 ```bash
+python -m pip install --disable-pip-version-check -r requirements-dev.txt
 python tools/check_repository.py
+python tools/check_ai_configuration.py
 python -m unittest discover -s tests -v
 ```
 

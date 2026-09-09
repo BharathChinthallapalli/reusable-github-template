@@ -5,7 +5,9 @@ actual project's purpose, architecture, commands, and operational constraints.
 Follow `AGENTS.md` for repository work and validation. There is no application
 stack until its manifests and code are added.
 
-For tooling changes run `python3 tools/check_repository.py` and
+Prepare the validation environment described in `docs/using-the-template.md`.
+For tooling changes run `python3 tools/check_repository.py`,
+`python3 tools/check_ai_configuration.py`, and
 `python3 -m unittest discover -s tests -v` from the root. These checks exercise
 the template tools, not application behavior. State what was actually tested.
 

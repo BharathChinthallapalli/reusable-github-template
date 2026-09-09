@@ -1,7 +1,7 @@
 # Capability expansion and research coverage
 
 The template now maps **all 32 reusable improvement families** to shipped procedures,
-references, records or repository tooling. The actual inventory is **21 shared skills
+references, records or repository tooling. The actual inventory is **24 shared skills
 and 10 agent profiles**. Multiple families deliberately share a procedure; the count
 of profiles is not a measure of readiness. The [machine-readable map](capability-expansion.json)
 retains every family ID, source URL, execution boundary and repository-root-relative
@@ -60,7 +60,7 @@ or an already completed integration. All artifact links below refer to shipped p
 | Evidence-first research and coverage accounting | bundled | Record coverage, revisions, observations, inference and adoption decisions. [evidence-research](../../.agents/skills/evidence-research/SKILL.md); [evidence-ledger.md](../../.agents/skills/evidence-research/assets/evidence-ledger.md); [researcher.agent.md](../../.github/agents/researcher.agent.md) |
 | Acceptance-led planning and multiple independent challenges | bundled | Compare feasible alternatives, challenge concrete failures, resolve findings and stop at sufficient acceptance evidence. [implementation-planning](../../.agents/skills/implementation-planning/SKILL.md); [change-plan.md](../../.agents/skills/implementation-planning/assets/change-plan.md); [architect.agent.md](../../.github/agents/architect.agent.md) |
 | Bounded specialist delegation and independent synthesis | bundled | Partition independent work, assign one writer per shared area and integrate evidence-bearing handoffs. [task-orchestration](../../.agents/skills/task-orchestration/SKILL.md); [task-handoff.md](../../.agents/skills/task-orchestration/assets/task-handoff.md); [engineer.agent.md](../../.github/agents/engineer.agent.md) |
-| Living project context and instruction drift repair | bundled | Refresh facts and handoffs from current commands, code and accepted decisions; preserve unfinished work. [context-maintenance](../../.agents/skills/context-maintenance/SKILL.md); [context-refresh.md](../../.agents/skills/context-maintenance/assets/context-refresh.md); [project.md](../../docs/project.md); [README.md](../../docs/decisions/README.md) |
+| Living project context and instruction drift repair | bundled | Refresh facts and handoffs from current commands, code and accepted decisions; preserve unfinished work. [context-maintenance](../../.agents/skills/context-maintenance/SKILL.md); [context-refresh.md](../../.agents/skills/context-maintenance/assets/context-refresh.md); [project.md](../../docs/project.md); [README.md](../../docs/adr/README.md) |
 | Repository-aware environment setup | bundled | Combine repository discovery, maintained setup commands and the Copilot setup workflow. [repo-discovery](../../.agents/skills/repo-discovery/SKILL.md); [context-maintenance](../../.agents/skills/context-maintenance/SKILL.md); [copilot-setup-steps.yml](../../.github/workflows/copilot-setup-steps.yml); [using-the-template.md](../../docs/using-the-template.md) |
 | Monorepo, collection, docs, notebook and package classification | bundled | Classify applications, example collections, workspaces, notebooks, courses, generators and documentation from concrete evidence. [repo-discovery](../../.agents/skills/repo-discovery/SKILL.md); [evidence.md](../../.agents/skills/repo-discovery/references/evidence.md) |
 | Independent behavior oracles and test design | bundled | Select regression, boundary and consumer cases with independent expectations and nonzero failure propagation. [test-design](../../.agents/skills/test-design/SKILL.md); [behavior-case-matrix.md](../../.agents/skills/test-design/assets/behavior-case-matrix.md); [test-engineer.agent.md](../../.github/agents/test-engineer.agent.md) |
@@ -122,7 +122,7 @@ provider or application test has run.
 | User outcome | Does the expansion support a concrete request or merely increase the number of profiles? | Map all 32 families to a working procedure/artifact, route by the actual task, and preserve direct execution when no custom agent is selected. |
 | Evidence | Could overview inventory, a mutable source link or a static pass be mistaken for verified implementation behavior? | Retain source tiers/revisions, independent oracles and explicit unrun/inconclusive states; keep upstream inspection separate from local and host execution. |
 | Runtime | Would a neutral template silently select providers, publish artifacts or require unavailable infrastructure? | Ship executable local metadata/report tools and reusable integration procedures; actual external execution uses the adopted project and existing authorization. |
-| Maintainability | Would separate agents for every family duplicate instructions and drift? | Use 21 canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata. |
+| Maintainability | Would separate agents for every family duplicate instructions and drift? | Use the canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata. |
 | Integration | Could parallel file edits, stale output identity or a failing dependency be hidden by a successful summary? | Give shared files one writer, inspect actual handoffs, bind checks to the combined artifact and require machine-detectable failure paths. |
 
 The stopping rule is to resolve a finding through a plan change, acceptance evidence
@@ -143,3 +143,12 @@ records belong in [AI assistance](../ai-assistance.md), and task examples in
 [template setup guide](../using-the-template.md); application gates use the
 [CI extension guide](../extending-ci.md). A reusable procedure is available immediately,
 but successful project execution must still be demonstrated against the relevant runtime.
+
+## Version 3 follow-up
+
+The original 32-family map is retained; the current catalog additionally exposes
+`triage-issue`, `write-adr` and `release-notes`. [Cloudflare Agents research](cloudflare-agents.md)
+informs the added [ADRs](../adr/README.md), [Agent Design Document gate](../add/README.md),
+[runbooks](../runbooks/README.md) and [lifecycle hooks](../../hooks/README.md).
+The concrete additions and host limits are documented at those entrypoints;
+they are not claims of deploying the Cloudflare SDK.

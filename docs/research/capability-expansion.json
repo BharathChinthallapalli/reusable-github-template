@@ -98,7 +98,7 @@
   "coverage_summary": {
     "families": 32,
     "families_with_shipped_artifacts": 32,
-    "skills": 21,
+    "skills": 24,
     "agents": 10,
     "status_counts": {
       "bundled": 17,
@@ -132,7 +132,7 @@
     {
       "lens": "maintainability",
       "challenge": "Would separate agents for every family duplicate instructions and drift?",
-      "disposition": "Use 21 canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata."
+      "disposition": "Use the canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata."
     },
     {
       "lens": "integration",
@@ -198,7 +198,7 @@
     "CLAUDE.md",
     "docs/ai-assistance.md",
     "docs/ai-catalog.md",
-    "docs/decisions/README.md",
+    "docs/adr/README.md",
     "docs/evaluation-reports.md",
     "docs/extending-ci.md",
     "docs/maintenance.md",
@@ -276,7 +276,7 @@
         ".agents/skills/context-maintenance/SKILL.md",
         ".agents/skills/context-maintenance/assets/context-refresh.md",
         "docs/project.md",
-        "docs/decisions/README.md"
+        "docs/adr/README.md"
       ],
       "shipped_behavior": "Refresh facts and handoffs from current commands, code and accepted decisions; preserve unfinished work.",
       "execution_boundary": "Do not promote unverified preferences or temporary observations into policy.",

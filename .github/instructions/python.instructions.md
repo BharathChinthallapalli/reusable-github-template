@@ -1,5 +1,5 @@
 ---
-applyTo: "tools/**/*.py,tests/**/*.py"
+applyTo: "tools/**/*.py,tests/**/*.py,hooks/**/*.py"
 ---
 
 Repository tooling supports Python 3.12 or newer. Keep initialization and the
@@ -10,3 +10,7 @@ Validate all initializer inputs and target paths before the first write.
 Keep initialization repeatable and preserve files edited after initialization.
 Use unittest and temporary directories for tests that modify files.
 Add tests for meaningful failure paths; avoid tests that only repeat constants.
+
+Run `python -I -m ruff check .` for repository Python correctness. Hook adapters
+parse host input as data, never execute requested command text, and report
+scanner failures without echoing raw arguments or potential credentials.

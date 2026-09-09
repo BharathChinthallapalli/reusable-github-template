@@ -136,7 +136,7 @@ def check_ruleset(root: Path, errors: list[str]) -> None:
 
 def check_docs(root: Path, errors: list[str]) -> None:
     files = [root / name for name in ("README.md", "AGENTS.md", "CLAUDE.md", "CONTRIBUTING.md", "SECURITY.md", "SUPPORT.md")]
-    for folder in ("docs", ".github/agents", ".agents/skills", ".github/skills", ".github/instructions"):
+    for folder in ("docs", ".github/agents", ".agents/skills", ".github/skills", ".github/instructions", "hooks"):
         files.extend((root / folder).rglob("*.md"))
     files.append(root / ".github/copilot-instructions.md")
     for path in files:
@@ -165,7 +165,7 @@ def check(root: Path) -> tuple[list[str], list[str]]:
     check_workflow(root, errors)
     check_ruleset(root, errors)
     check_docs(root, errors)
-    for folder in ("tools", "tests"):
+    for folder in ("tools", "tests", "hooks"):
         for path in (root / folder).rglob("*.py"):
             try:
                 ast.parse(path.read_text(encoding="utf-8"), filename=str(path))

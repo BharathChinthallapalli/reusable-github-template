@@ -1,72 +1,81 @@
 # Validation record
 
-Template version: 2.0.0. Prepared 9 September 2026.
+Template version: 3.0.0. Prepared 9 September 2026.
 
 ## Results and scope
 
 - Linux, Python 3.12.14 and Git 2.51.1; pre-commit 4.6.2, PyYAML 6.0.3.
-- All **80 offline tooling tests** passed in both the uninitialized source and an initialized disposable project. The lane includes 16 evaluation-report CLI tests and 10 catalog CLI tests, alongside metadata, foundation and initializer tests.
-- All **15 real Git integration tests** passed with no skips or failures. The warm-cache lane completed in 9.552 seconds. The existing ten checks still cover staged-content behavior, malformed files, synthetic private-key markers, path edge cases, hook collisions, bypass detection in a clean clone and the documented LFS exception.
-- Foundation checks, static diagnostics for **21 skills and 10 agents**, catalog freshness and all-files hook scans passed in both source and initialized copies. All 21 skill entrypoints also passed the skill format validator.
-- Initialization preview changed no deliverable; writing customized exactly six declared files; repeating identical inputs preserved every deliverable byte.
-- Independent forward exercises produced a feature plan, bounded delegation, independently derived regression cases, a first-cause diagnosis and an AI selection decision. A separate implementation review challenged code, host claims and coverage, including 625 evaluation outcome combinations. See [capability validation](docs/research/capability-validation.md) for inputs, outcomes, findings and limits.
+- **136 offline tests** pass in the source and a disposable initialized project: the prior 80 tests plus 24 hook CLI, 18 design-gate and 14 installer tests.
+- The existing **15 real Git integration tests** pass locally. The seven new real-scanner cases require Ruff 0.16.6 and Gitleaks 8.30.1; local absence is reported as a skip, while CI requires the tools and runs those cases as a failing gate if setup is missing.
+- Foundation checks, static diagnostics for **24 skills and 10 agents**, catalog freshness, scoped design coverage/bindings and all-files Git hook scans pass in source and initialized copies. All 24 skill entrypoints pass the skill format validator.
+- Initialization preview changes no deliverable; writing customizes exactly six declared files; repeating identical inputs preserves deliverable bytes. The sealed design remains valid because project identity customization is outside its protected implementation scope.
+- Independent review resolved input-controlled secret suppression, scanner module shadowing, host path/error differences, literal command variants, setup usability and generated-bytecode handling. See [hook verification](docs/research/hook-validation.md) for evidence and limits.
 
-Tests use synthetic fixtures and disposable repositories. No actual credential
-or model/provider call was needed. Hook revisions and dependencies retain the
-version 1.3 pins; source/top-level pins do not lock the entire transitive closure.
-Native Windows/macOS execution and editor discovery/invocation were not performed.
+Offline tests use synthetic fixtures and controlled subprocesses. No candidate
+command under inspection was executed, and no real credential or model/provider
+call was used. The local environment could not obtain the real scanner executables;
+actual scanner checks and pinned installation are configured to run in GitHub CI.
+The delivery response records whether the exact delivered commit passed. Native
+Windows/macOS execution and live Copilot/VS Code/Codex hook invocation were not
+performed locally. The Windows command override and six installer targets are
+configured and tested structurally; the configured runtime test target is Linux CI.
 
-## Commands
+## Commands and evidence levels
 
-In [the prepared environment](docs/using-the-template.md), from a Git checkout:
+Use [the prepared environment](docs/using-the-template.md). Install the pinned
+scanner before the complete hook checks:
 
 ```bash
-python -m pre_commit validate-config
+python tools/install_hook_tools.py
+python hooks/agent_hooks.py --event session
+python hooks/agent_hooks.py --event check
 python -m pre_commit run --all-files
 python tools/check_repository.py
 python tools/check_ai_configuration.py --json
 python tools/ai_catalog.py
+python tools/check_design.py
 python -m unittest discover -s tests -v
 python -m unittest discover -s tests/integration -v
 ```
 
-The offline lane is separate from Git integration. ZIPs can run foundation, AI,
-catalog and unit checks after dependency setup without Git initialization.
-The all-files hook command uses tracked working-tree files; a clean CI checkout
-supplies revision-specific evidence. The evaluation checker tests synthetic
-reports; an application must supply its own real runner and acceptance evidence.
+The offline lane uses controlled scanner fixtures, independent of real tool
+installation. Git integration exercises actual Git/pre-commit. The agent hook
+integration class requires real pinned tools; CI sets
+`REQUIRE_AGENT_HOOK_TOOLS=1` so missing prerequisites cannot silently pass as skips.
+Application testing, AI quality evaluation and native host invocation remain
+separate evidence categories.
 
 ## Published evidence
 
-Version 1.3 passed [GitHub CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34402368104).
-For version 2.0, match [CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/ci.yml)
-and [Copilot setup runs](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/copilot-setup-steps.yml)
-to the delivered commit. This file cannot contain the hash of its own future
-commit; the delivery report records that exact revision and observed results.
-A successful setup workflow proves prerequisite setup, not cloud-agent invocation.
+Version 2.0 passed [GitHub CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34405570005).
+For version 3.0, match [CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/ci.yml)
+and [Copilot setup](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/copilot-setup-steps.yml)
+to the delivered commit. The delivery response records the exact observed runs;
+this file cannot contain the hash of its own future commit.
+
+CI prepares the checksum-pinned scanner, checks current design bindings, runs
+Ruff/Gitleaks, verifies repository metadata/catalog, and executes both test lanes.
+Setup success proves prerequisites, not that a cloud agent selected or executed a
+hook. [Host verification](hooks/README.md) requires the actual client and its trust
+controls; current Codex requires review through `/hooks`.
 
 ## Boundaries
 
-Foundation checks cover expected files, markers, local Markdown links, Python
-syntax, limited workflow properties and required-job agreement. They are not a
-complete GitHub schema or security analysis. AI diagnostics validate core
-metadata; the catalog checks drift from those definitions. None proves client
-discovery, invocation, effective permissions or instruction compliance. Use
-[host diagnostics](docs/ai-assistance.md) in the actual client.
+The foundation checker validates expected files, markers, links and syntax, with
+limited workflow checks. Metadata validation and catalog generation do not prove
+native activation. The ADD gate checks structure, explicit coverage, accepted
+ADR references and current content bindings; it cannot approve business actions,
+authenticate a reviewer or certify semantic correctness. Sealing preserves status.
 
-The [offline evaluation gate](docs/evaluation-reports.md) validates a report's
-shape and declared decision contract. It does not authenticate its provenance,
-execute a model or establish application quality. The task exercises used
-supplied evidence and did not execute fictional applications.
+The [agent hooks](hooks/README.md) reject detected secrets and known command/path
+violations. They do not sandbox arbitrary programs or reverse post-edit effects;
+host timeouts, interactive input and uncovered tools retain documented limits.
+The working-tree scanner does not scan repository history. A live ruleset is
+needed for merge enforcement; no rule, access grant, cloud deployment or model
+service was activated by this update.
 
-[Git checks](docs/git-hooks.md) are bypassable and do not scan history or detect
-every secret. A live ruleset is needed for required-check merge enforcement.
-No ruleset, cloud infrastructure, application deployment or model service was
-activated by this expansion. Existing generated repositories require a reviewed
-[version 2 migration](docs/maintenance.md).
-
-The [research map](docs/research/capability-expansion.md) accounts for 32
-substantiated improvement families; the 494-repository inventory remains an
-inventory with tiered overview and source samples. External projects were not
-executed or certified. Application behavior, performance and production readiness
-require project-specific evidence.
+The [evaluation report gate](docs/evaluation-reports.md) remains an offline evidence
+contract with synthetic examples, not a model runner. The [32-family research map](docs/research/capability-expansion.md)
+retains the original inventory/source-review limits. [Cloudflare research](docs/research/cloudflare-agents.md)
+adds focused pinned source observations. Existing generated projects need a
+reviewed [version 3 migration](docs/maintenance.md).

@@ -75,7 +75,7 @@ already has one for the root directory; merge entries instead of duplicating the
 
 Merge the project-context, decision-status, troubleshooting, and agent guidance
 with your project's actual facts. Do not replace its decisions with this
-template's examples. Use [decision maintenance](decisions/README.md) to mark
+template's examples. Use [decision maintenance](adr/README.md) to mark
 superseded choices and verify [host discovery](ai-assistance.md) in the target client.
 
 ## Adopt version 1.3
@@ -148,6 +148,45 @@ project execution work without losing the bundled procedures. Read
 [working examples](working-with-agents.md) for feature, failure, evaluation and
 delivery tasks. Stop the migration once the changed contracts are verified;
 additional agents or frameworks require a demonstrated task need.
+
+## Adopt version 3.0
+
+Version 3.0 moves decision records into `docs/adr`, adds Agent Design Documents
+and a bound-file gate, adds operational runbooks, and registers lifecycle hooks
+for Copilot/VS Code and current Codex. Three task skills bring the catalog to
+24 skills and 10 agents. The ADR path move and additional failing CI gates are
+incompatible template contracts and require a reviewed migration.
+
+1. Move existing decisions to `docs/adr`, preserving status, rationale and
+   supersession links. Update callers and retain a small compatibility pointer
+   at `docs/decisions/README.md` if useful. Reconcile existing project decisions;
+   do not replace them with the template's historical examples.
+2. Merge `docs/add`, the design checker and its tests. List actual protected
+   implementation files in a ready ADD, document real behavior and checks, then
+   review and seal the record. The pre-edit `--paths` mode permits work in progress;
+   the default CI mode requires an accurate current binding. Never use resealing
+   as a substitute for resolving a design or implementation defect.
+3. Merge `hooks`, `ruff.toml`, the pinned development dependency and the scanner
+   installer. Review its platform/archive digests. Install tools in the prepared
+   environment and run `python hooks/agent_hooks.py --event check`. Resolve real
+   findings before adopting the gate; do not add a blanket scanner exclusion.
+4. Reconcile `.github/hooks` and `.codex/hooks.json` with existing hooks. Avoid
+   duplicate handlers and preserve current host policy. Codex requires project
+   trust and hook review through `/hooks`; the template cannot bypass that step.
+   Inspect actual host event traces using [the hook guide](../hooks/README.md).
+5. Add the three task skills and shared `hooks/prompts` procedures, regenerate
+   the catalog, and merge runbook guidance with actual project recovery commands.
+   Their folder presence does not itself create native slash commands in every host.
+6. Merge CI and Copilot prerequisite setup. Keep `Repository checks` as the
+   required job name. CI must require real scanner integration prerequisites,
+   while the offline unit lane uses controlled fixtures. Confirm all new steps
+   on the migrated revision before depending on live merge enforcement.
+
+The hooks are repository-owned early checks with documented host and command
+coverage limits. They do not create OS isolation or organization-level enforcement.
+Ruff checks do not format application files automatically; post-edit findings
+need repair and cannot undo a completed write. Complete [ADD validation](add/README.md)
+and [hook verification](../hooks/README.md) on a disposable initialized copy too.
 
 ## Periodically inspect operational drift
 

@@ -10,6 +10,7 @@ development dependencies for these checks. Create a virtual environment in the r
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements-dev.txt
+python tools/install_hook_tools.py
 ```
 
 On Windows PowerShell, create it with `py -3.12 -m venv .venv` and activate with
@@ -24,8 +25,15 @@ From that environment, run the offline checks (also supported in a ZIP):
 python tools/check_repository.py
 python tools/check_ai_configuration.py
 python tools/ai_catalog.py
+python tools/check_design.py
 python -m unittest discover -s tests -v
 ```
+
+The installer downloads the pinned Gitleaks archive for the current supported
+platform and checks its SHA-256 before extracting the executable locally. Ruff
+comes from the pinned Python dependencies. For complete working-tree checks run
+`python hooks/agent_hooks.py --event check`. See [agent hooks](../hooks/README.md)
+for setup failures, native host trust and exact coverage.
 
 Static AI validation does not inspect your editor. Complete the separate
 [host discovery check](ai-assistance.md) in the actual client.

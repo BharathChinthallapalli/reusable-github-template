@@ -8,7 +8,7 @@ tools/ maintains the foundation; it does not define the application's stack.
 Use real repository evidence for architecture, dependencies, and commands.
 Use the project's domain terms and observable acceptance criteria. Read current
 decision status before relying on historical design guidance; see
-[decision maintenance](docs/decisions/README.md).
+[decision maintenance](docs/adr/README.md).
 
 ## Default skills and specialist routing
 
@@ -60,6 +60,33 @@ reorganizations, and performance claims without evidence.
 See [AI assistance](docs/ai-assistance.md) for discovery, configuration, and host
 limitations. These files guide a running session; they do not start one.
 
+## Decisions and the agent design gate
+
+Respect the scope and current status of [accepted ADRs](docs/adr/README.md).
+Historical, proposed and superseded decisions do not override current accepted
+contracts. Resolve contradictions from evidence and the task's authorization;
+record a replacement decision when that contract changes.
+
+Before changing agent instructions, skills, hook policy or gated tooling, read the
+applicable [Agent Design Document](docs/add/README.md). Declare every affected
+protected path in one ready design before editing. Run
+`python3 tools/check_design.py --paths path/to/file` to check planned coverage.
+This planning check permits fingerprint drift while a multi-file change is in
+progress. New protected paths need an explicit design entry before creation.
+
+After implementation and review, update the design's actual behavior, failures
+and validation evidence. Run `python3 tools/check_design.py --seal docs/add/ID.md`,
+then `python3 tools/check_design.py`. The final gate checks all protected paths,
+accepted ADR references and bound contents. Never reseal an inaccurate design
+just to clear CI. Ready/sealed means a reviewable design bound to files; it does
+not grant deployment, data access or business approval. Existing task authorization
+still applies, and ordinary application/docs edits outside the protected scope
+do not require a new design document.
+
+Use [runbooks](docs/runbooks/README.md) for operational execution and recovery.
+Use `/triage-issue`, `/write-adr` and `/release-notes` through supported skill
+commands or their shared [prompt procedures](hooks/README.md).
+
 ## Work
 
 - Keep changes focused. Preserve unrelated local edits and existing conventions.
@@ -77,15 +104,19 @@ From the repository root:
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
+python3 tools/install_hook_tools.py
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
 python3 tools/ai_catalog.py
+python3 tools/check_design.py
+python3 hooks/agent_hooks.py --event check
 python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s tests/integration -v
 ```
 
-Install validation dependencies in an activated virtual environment; see
+Install validation dependencies and the checksum-pinned scanner in an activated
+virtual environment; see
 [local setup](docs/using-the-template.md). Reuse it when already prepared.
 Git checks require a checkout and prepared hook environments. Use the separate
 offline lane for ZIPs. Follow [hook setup](docs/git-hooks.md) per clone; never
@@ -106,3 +137,10 @@ The evaluation report checker is optional for project AI comparisons:
 [its contract](docs/evaluation-reports.md); validating a report is not executing
 a model or proving the reported evidence authentic. Never use synthetic example
 reports as application-quality evidence.
+
+Agent lifecycle hooks provide early rejection and post-edit feedback; Git/CI
+checks remain independent. Follow [hook setup and limits](hooks/README.md). Do not
+disable a failing hook, alter its scanner configuration or bypass host trust to
+complete a task. Diagnose a rejection from its sanitized rule and current files;
+never echo secret-bearing payloads into logs. A post-edit failure cannot undo the
+edit, and command-pattern checks cannot sandbox arbitrary code.

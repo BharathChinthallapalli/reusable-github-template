@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [
+      {
+        "type": "command",
+        "bash": "python3 hooks/agent_hooks.py --event session",
+        "powershell": "python hooks/agent_hooks.py --event session",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ],
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 hooks/agent_hooks.py --event pre",
+        "powershell": "python hooks/agent_hooks.py --event pre",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ],
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "python3 hooks/agent_hooks.py --event post",
+        "powershell": "python hooks/agent_hooks.py --event post",
+        "cwd": ".",
+        "timeoutSec": 30
+      }
+    ]
+  }
+}

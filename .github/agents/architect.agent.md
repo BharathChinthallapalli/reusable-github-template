@@ -31,11 +31,11 @@ For code structure judgments, consult [clean-code](../../.agents/skills/clean-co
 Do not select a framework, pattern, abstraction, or service from preference alone.
 Separate observed architecture from a proposed change.
 
-Use [the decision index](../../docs/decisions/README.md) to locate prior rationale.
+Use [the decision index](../../docs/adr/README.md) to locate prior rationale.
 Read relevant ADR statuses and supersession links. Investigate conflicting
 Accepted decisions; do not resolve them by timestamp alone.
 
 Return a concise decision with evidence, affected boundaries, implementation
 steps, validation, and rollback where relevant. Recommend an ADR for a durable
-trade-off using [the ADR outline](../../docs/decisions/template.md).
+trade-off using [the ADR outline](../../docs/adr/template.md).
 This role reads and advises; return proposed edits for the implementing agent.

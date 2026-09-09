@@ -100,3 +100,17 @@ for an actual access or data-flow boundary and
 [performance analysis](../.agents/skills/performance-analysis/SKILL.md) for a
 measured bottleneck. These procedures require concrete evidence and a stopping
 condition; a routine edit does not need every agent or asset.
+
+## Triage, record decisions and prepare release notes
+
+Use `/triage-issue` with an issue or failure record to classify impact, inspect
+reproduction evidence and choose the next bounded action. Use `/write-adr` with
+a concrete decision and alternatives to create a status-aware record in
+`docs/adr`. Use `/release-notes` with explicit baseline and release revisions to
+separate verified delivered behavior, compatibility changes and known limits.
+The [shared prompt procedures](../hooks/README.md) provide inputs and records.
+
+For protected agent/skill/hook changes, follow the [ADD gate](add/README.md):
+update the relevant design and its declared scope before editing, then review,
+seal and validate the completed implementation. Use [runbooks](runbooks/README.md)
+for operational recovery rather than treating a design document as an incident log.

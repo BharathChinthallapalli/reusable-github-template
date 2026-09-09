@@ -30,7 +30,7 @@ fast feedback loop; routine documentation or configuration edits need focused
 validation rather than a forced test-first ceremony.
 
 Use the agreed domain terms and module contracts in project context. Consult
-[decision conventions](../../docs/decisions/README.md) when a relevant design
+[decision conventions](../../docs/adr/README.md) when a relevant design
 choice is recorded or changes; investigate unresolved Accepted conflicts.
 
 For independent work that merits a specialist, delegate a bounded question:

@@ -7,7 +7,7 @@ Repository: `@@GITHUB_OWNER@@/@@PROJECT_SLUG@@` · Owner: @@CODEOWNER@@
 ## Start here
 
 This is a reusable repository foundation for applications, services, automation,
-and AI projects. It bundles 21 reusable engineering skills, 10 specialist agents,
+and AI projects. It bundles 24 reusable engineering skills, 10 specialist agents,
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
@@ -35,10 +35,13 @@ does not create a GitHub repository or grant access.
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
+python3 tools/install_hook_tools.py
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
 python3 tools/ai_catalog.py
+python3 tools/check_design.py
+python3 hooks/agent_hooks.py --event check
 python3 -m unittest discover -s tests -v
 python3 -m unittest discover -s tests/integration -v
 ```
@@ -62,6 +65,8 @@ not certify an application's behavior, security, or production readiness.
 | Maintenance | Dependabot for GitHub Actions and validation dependencies; release-note categories; template version tracking |
 | Governance | Disabled ruleset for import; explicit activation instructions |
 | AI assistance | [Specialist agents and shared skills](docs/ai-catalog.md), default task routing, clean-code guidance, scoped instructions |
+| Agent design | [ADRs](docs/adr/README.md), [Agent Design Documents and bound-file gate](docs/add/README.md), [operational runbooks](docs/runbooks/README.md) |
+| Agent hooks and commands | [Pre-tool checks, post-edit Ruff/Gitleaks and three task commands](hooks/README.md); host-specific configuration |
 | Engineering | Domain and acceptance context, maintained architecture decisions, operations and troubleshooting guides |
 | AI experiments | Optional [evaluation contract](docs/ai-evaluation.md) for baselines, outcomes, budgets and provenance |
 | Working assets | Research, plans, handoffs, tests, experiments, data/tool contracts, dependency and release records bundled with their skills |

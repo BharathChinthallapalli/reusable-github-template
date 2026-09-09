@@ -6,7 +6,7 @@ description: Plan a material implementation or redesign by comparing feasible al
 # Plan a change that can be checked
 
 Start from the user's outcome and the repository's actual contracts. Read current
-decision status through the [decision index](../../../docs/decisions/README.md).
+decision status through the [decision index](../../../docs/adr/README.md).
 Use [repo-discovery](../repo-discovery/SKILL.md) if the affected behavior is unclear.
 Record important unknowns instead of selecting a stack, workload or service target
 without evidence.

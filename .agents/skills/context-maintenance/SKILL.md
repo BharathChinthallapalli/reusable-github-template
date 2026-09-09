@@ -28,7 +28,7 @@ deduplicate existing advice, reconcile the accepted decision and update the
 relevant runbook. Mark superseded workarounds with their replacement and evidence;
 repeated forum claims alone do not establish a current fix.
 
-Consult the [decision index](../../../docs/decisions/README.md) for ADR status and
+Consult the [decision index](../../../docs/adr/README.md) for ADR status and
 supersession. If two accepted decisions conflict, investigate scope and evidence;
 the newer timestamp alone does not settle the conflict. Follow the
 [change-dependency map](../../../docs/maintenance.md) for related files.

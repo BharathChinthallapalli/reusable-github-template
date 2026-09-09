@@ -40,7 +40,7 @@ are clearer visually; do not draw services that have not been selected.
 For each relevant module, link its public contract: inputs, outputs, invariants,
 failure behavior, side effects, and the behavioral checks that cover it. Show
 what callers need to know; avoid duplicating implementation details. The
-[decision index](decisions/README.md) helps locate rationale and current status.
+[decision index](adr/README.md) helps locate rationale and current status.
 
 ## Commands
 
@@ -49,6 +49,9 @@ what callers need to know; avoid duplicating implementation details. The
 | Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
 | Repository validation | `python3 tools/check_repository.py` |
 | Static agent and skill diagnostics | `python3 tools/check_ai_configuration.py` |
+| Install pinned secret scanner | `python3 tools/install_hook_tools.py` after dependency setup |
+| Validate agent designs and file bindings | `python3 tools/check_design.py` |
+| Check Ruff and Gitleaks on the working tree | `python3 hooks/agent_hooks.py --event check` |
 | Check capability catalog freshness | `python3 tools/ai_catalog.py` |
 | Regenerate catalog after changing metadata | `python3 tools/ai_catalog.py --write` |
 | Gate a project AI evaluation report | `python3 tools/check_evaluation.py path/to/report.json` using [the report contract](evaluation-reports.md) |

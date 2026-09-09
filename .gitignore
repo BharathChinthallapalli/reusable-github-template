@@ -30,3 +30,6 @@ Thumbs.db
 .terraform/
 *.tfstate
 *.tfstate.*
+
+# Pinned local hook executables installed by tools/install_hook_tools.py.
+.tools/

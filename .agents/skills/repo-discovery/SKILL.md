@@ -27,7 +27,7 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
    agreed requirement, not an invented workload or service target.
 
 When prior decisions affect the task, use the
-[decision index](../../../docs/decisions/README.md) to locate relevant ADRs. Read
+[decision index](../../../docs/adr/README.md) to locate relevant ADRs. Read
 their current statuses and supersession links. Investigate unresolved Accepted
 conflicts against scope and evidence; a newer date alone does not settle them.
 

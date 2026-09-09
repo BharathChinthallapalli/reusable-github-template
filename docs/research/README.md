@@ -8,7 +8,7 @@ their internal engineering standards.
   Vercel, and historical Google/Azure examples; observed files and adopted patterns.
 - [GitHub guidance](github-guidance.md): template behavior, ownership, rulesets,
   Actions security, dependency maintenance, feature availability, and verified action commits.
-- [Design decision](../decisions/0001-repository-foundation.md): why the foundation
+- [Design decision](../adr/0001-repository-foundation.md): why the foundation
   stays independent of the application stack.
 - [Validation record](../../VALIDATION.md): local evidence and limits.
 - [AI defaults](../ai-assistance.md): agents, skills, clean-code
@@ -19,6 +19,10 @@ their internal engineering standards.
   two targeted AI repositories, complete inventories, source samples, and hook decisions.
 - [Capability expansion](capability-expansion.md): all 32 substantiated improvement
   families mapped to shipped agents, skills, tools, assets and guidance in version 2.0.
+- [Cloudflare Agents lessons](cloudflare-agents.md): 25 pinned source/design/workflow
+  files informing agent contracts, durable state, approval recovery and maintained evidence.
+- [Hook and design-gate verification](hook-validation.md): concrete review findings,
+  corrections, real-scanner test boundaries and native host limits.
 - [Capability validation](capability-validation.md): bounded plan challenges,
   independent review findings and five concrete forward task exercises.
 

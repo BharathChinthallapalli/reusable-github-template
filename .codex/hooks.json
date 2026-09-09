@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event session --host codex",
+            "timeout": 30,
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event session --host codex\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event pre --host codex",
+            "timeout": 30,
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event pre --host codex\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event post --host codex",
+            "timeout": 30,
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event post --host codex\""
+          }
+        ]
+      }
+    ]
+  }
+}

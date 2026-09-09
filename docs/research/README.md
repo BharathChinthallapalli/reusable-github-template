@@ -15,6 +15,8 @@ their internal engineering standards.
   guidance, current discovery settings, and host validation steps.
 - [Community lessons](community-lessons.md): version 1.2 adjustments, original
   creator material, reported failures, confirmed fixes, and research limits.
+- [Public repository review](repository-review.md): 494 public account repositories,
+  two targeted AI repositories, complete inventories, source samples, and hook decisions.
 
 ## How the research affected the deliverable
 

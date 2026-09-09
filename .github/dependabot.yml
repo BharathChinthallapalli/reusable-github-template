@@ -22,5 +22,5 @@ updates:
     open-pull-requests-limit: 5
     groups:
       repository-tools-compatible:
-        patterns: ['PyYAML']
+        patterns: ['PyYAML', 'pre-commit']
         update-types: [minor, patch]

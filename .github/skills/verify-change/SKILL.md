@@ -18,6 +18,9 @@ description: "Choose and run proportionate checks for a code or configuration ch
    for meaningful failures; avoid tests that merely repeat implementation text.
 5. Run required repository gates and relevant application checks. Broaden only
    for an unresolved risk, affected boundary or documented gate.
+   For AI behavior changes, use the [evaluation contract](../../../docs/ai-evaluation.md)
+   to compare a baseline, distinguish missing labels and execution errors, and
+   preserve independent acceptance cases within an agreed budget.
 6. Report the revision or working tree checked, exact commands, results and
    material limitations. Distinguish passed, failed, blocked and not run.
 

@@ -19,8 +19,8 @@ Application code, application tests, and deployment are added for each project.
    security features, and repository settings.
 
 Requires Python 3.12 or newer for repository tools. The initializer and foundation
-checker use the standard library; AI configuration validation and the full test
-suite use the dependency in `requirements-dev.txt`. Python is a tooling dependency,
+checker use the standard library; AI validation and Git checks use the development
+dependencies in `requirements-dev.txt`. Python is a tooling dependency,
 not a choice of application language. Follow [environment setup](docs/using-the-template.md)
 before running the full checks. On Windows, use the prepared environment's Python.
 
@@ -34,10 +34,17 @@ does not create a GitHub repository or grant access.
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
+python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
 python3 -m unittest discover -s tests -v
+python3 -m unittest discover -s tests/integration -v
 ```
+
+In each clone, activate commit checks with `python3 -m pre_commit install` after
+the [hook installation preflight](docs/git-hooks.md). CI checks tracked files
+independently. Hook commands require Git; ZIP validation and setup are explained
+in [environment setup](docs/using-the-template.md).
 
 `Repository checks` validates this foundation and tests its setup tools. It does
 not certify an application's behavior, security, or production readiness.
@@ -49,10 +56,12 @@ not certify an application's behavior, security, or production readiness.
 | Collaboration | Issue forms, PR template, contribution guide, support and security reporting |
 | Ownership | CODEOWNERS populated by the initializer; reviewer permissions configured in GitHub |
 | CI | SHA-pinned actions, read-only token, clean checkout, timeout, cancellation, merge-group trigger |
+| Git checks | Ten portable checks, staged-commit validation, all-files CI, real Git integration tests |
 | Maintenance | Dependabot for GitHub Actions and validation dependencies; release-note categories; template version tracking |
 | Governance | Disabled ruleset for import; explicit activation instructions |
 | AI assistance | Default clean-code guidance, five custom agents, five automatically selectable skills, scoped instructions |
 | Engineering | Domain and acceptance context, maintained architecture decisions, operations and troubleshooting guides |
+| AI experiments | Optional [evaluation contract](docs/ai-evaluation.md) for baselines, outcomes, budgets and provenance |
 | Adoption | Safe initializer, repository checker, AI configuration diagnostics, tooling tests, stack and Azure extension guides |
 | Evidence | [Company comparison and current sources](docs/research/README.md) |
 

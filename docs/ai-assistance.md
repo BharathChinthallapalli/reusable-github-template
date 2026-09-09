@@ -1,6 +1,6 @@
 # Default agents, skills, and clean code
 
-Template version 1.2.0 includes five custom agents and five skills. Every new
+Template version 1.3.0 includes five custom agents and five skills. Every new
 repository created from this version receives their files and VS Code settings.
 The project initializer keeps them generic and ready for the new project.
 

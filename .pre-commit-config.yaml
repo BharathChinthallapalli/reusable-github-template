@@ -1,0 +1,39 @@
+minimum_pre_commit_version: '4.6.2'
+default_install_hook_types: [pre-commit]
+default_stages: [pre-commit]
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c # frozen: v6.0.0
+    hooks:
+      # End options before filenames: a tracked --help must remain a filename.
+      - id: check-merge-conflict
+        args: [--assume-in-merge, --]
+      - id: check-json
+        args: [--]
+      - id: check-yaml
+        args: [--allow-multiple-documents, --]
+      - id: check-toml
+        args: [--]
+      - id: detect-private-key
+        args: [--]
+      - id: check-case-conflict
+        args: [--]
+        types: []
+      - id: check-illegal-windows-names
+        types: []
+      - id: check-symlinks
+        args: [--]
+      - id: check-added-large-files
+        # Apply the 1 MiB policy to modified files and clean CI checkouts too.
+        args: [--enforce-all, --maxkb=1024, --]
+  - repo: local
+    hooks:
+      - id: protect-env-files
+        name: Keep environment files out of Git
+        language: fail
+        entry: 'Environment file rejected. Commit sanitized .env.example files instead.'
+        files: '(^|/)\.env(?:\.[^/]*)?$'
+        exclude: '(^|/)\.env(?:\.[^/]+)?\.example$'
+        # Filename-only policy includes symlinks without following their targets.
+        types: []

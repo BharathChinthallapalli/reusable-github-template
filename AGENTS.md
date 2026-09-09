@@ -22,6 +22,7 @@ Read each selected SKILL.md and only the references needed by the current task.
 | Review a diff or a meaningful completed implementation | [code-review](.github/skills/code-review/SKILL.md) |
 | Diagnose a GitHub Actions failure or pending required check | [github-actions-debug](.github/skills/github-actions-debug/SKILL.md) |
 | Investigate missing agents, skills, or loaded metadata | [AI diagnostics](docs/ai-assistance.md) |
+| Change an AI model, prompt, retrieval pipeline or evaluator | [verify-change](.github/skills/verify-change/SKILL.md) and [evaluation contract](docs/ai-evaluation.md) |
 
 For implementation, perform the useful workflow directly even when no custom
 agent is selected. When supported, `engineer` coordinates bounded help from
@@ -47,6 +48,8 @@ limitations. These files guide a running session; they do not start one.
 - Do not add dependencies, frameworks, external services, or cloud resources without a concrete need.
 - Keep credentials out of source, examples, and logs. Use synthetic test data.
 - Explain relevant trade-offs and update documentation when behavior changes.
+- Follow [the change-dependency map](docs/maintenance.md) when changing an interface or check.
+- For a material design, challenge concrete failure modes and the cost of the simplest alternative. Resolve findings and stop when acceptance evidence is sufficient; repeat only for new evidence or a failed gate.
 - Follow the task's authorization. Do not change access, publish, or deploy merely to validate code.
 
 ## Validation
@@ -55,13 +58,18 @@ From the repository root:
 
 ```bash
 python3 -m pip install -r requirements-dev.txt
+python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
 python3 tools/check_ai_configuration.py
 python3 -m unittest discover -s tests -v
+python3 -m unittest discover -s tests/integration -v
 ```
 
 Install validation dependencies in an activated virtual environment; see
 [local setup](docs/using-the-template.md). Reuse it when already prepared.
+Git checks require a checkout and prepared hook environments. Use the separate
+offline lane for ZIPs. Follow [hook setup](docs/git-hooks.md) per clone; never
+unset managed hook paths or bypass a failing check merely to complete a task.
 These commands validate repository tooling only. Run the application commands
 recorded in docs/project.md when application code changes. Do not report an
 unrun test, successful deployment, or activated GitHub setting as verified.

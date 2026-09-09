@@ -49,11 +49,18 @@ what callers need to know; avoid duplicating implementation details. The
 | Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
 | Repository validation | `python3 tools/check_repository.py` |
 | Static agent and skill diagnostics | `python3 tools/check_ai_configuration.py` |
+| Activate commit checks per clone | `python3 -m pre_commit install` after [hook preflight](git-hooks.md) |
+| Check all tracked working-tree files | `python3 -m pre_commit run --all-files` |
 | Repository tooling tests | `python3 -m unittest discover -s tests -v` |
+| Git hook integration tests | `python3 -m unittest discover -s tests/integration -v` |
 | Application install, run, lint, typecheck, test, build | Record verified commands after adding the application |
 
 Record runtime versions, package manager, lockfile, required configuration names,
 and safe sample values. Never document real secrets. Keep commands aligned with CI.
+
+For an AI application, record its project-owned evaluation command and complete
+the relevant [evaluation contract](ai-evaluation.md). Model quality, data contracts,
+ordinary code checks and host discovery need separate evidence.
 
 ## Operational constraints
 

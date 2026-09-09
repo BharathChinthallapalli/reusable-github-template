@@ -8,6 +8,8 @@
 | State mutation | Expected state, error behavior and rollback or retry where relevant |
 | Interface or adapter | Contract at the boundary and an affected caller |
 | Workflow configuration | Trigger, permissions, required job names and relevant run logs |
+| Git hooks | Actual staged commits, rejection status, restored unstaged work and independent clean-checkout CI |
+| AI behavior or evaluation | Frozen comparison, independent expected outcomes, per-case failures, effective inputs and bounded execution |
 | Documentation only | Paths, examples and consistency with the implemented behavior |
 
 Choose entries that match the actual diff. A reversible wording edit usually

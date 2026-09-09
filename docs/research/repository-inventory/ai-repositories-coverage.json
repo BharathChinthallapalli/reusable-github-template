@@ -1,0 +1,284 @@
+{
+  "inspected_date": "2026-09-09",
+  "method": "Read-only GitHub API source snapshots; repository code was not executed.",
+  "repositories": [
+    {
+      "ci_result_verified": false,
+      "commit_tree_sha": "6e29d312a22a1e31e3f91e8fd042651055cafeb8",
+      "deployed": false,
+      "executed_upstream_code": false,
+      "head_committed_at": "2026-08-26T21:04:15Z",
+      "head_sha": "2c9b106168d4540b88e727e4aa316c06c856c2b7",
+      "inspected_files": [
+        {
+          "blob_sha": "6c65ab12125814c5233f873c4c1af2765ff87d51",
+          "path": "README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/README.md"
+        },
+        {
+          "blob_sha": "84ee68d33c9b68bae6c139f591996f021a02b23a",
+          "path": "LICENSE",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/LICENSE"
+        },
+        {
+          "blob_sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+          "path": ".gitmodules",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/.gitmodules"
+        },
+        {
+          "blob_sha": "8a1afc6710cfd86ee7d427bdf2dcc0cc159ce2bd",
+          "path": "build-code-harness/README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/README.md"
+        },
+        {
+          "blob_sha": "79089594843c8054d02393207a6dab053df3f2ef",
+          "path": "build-code-harness/pyproject.toml",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/pyproject.toml"
+        },
+        {
+          "blob_sha": "5bef9969d5913bb140f1ca1ea4efff11a724ed72",
+          "path": "build-code-harness/.env.example",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/.env.example"
+        },
+        {
+          "blob_sha": "0d0e78dd665bccd4f5ef85719fc31b60bd490384",
+          "path": "build-code-harness/code_harness.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/code_harness.py"
+        },
+        {
+          "blob_sha": "589935404b897a9e9fb1de7e3102262befdde41a",
+          "path": "build-code-harness/workspace/account.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/workspace/account.py"
+        },
+        {
+          "blob_sha": "679db5e08cf28558f88105d2d011ece50d1b4474",
+          "path": "build-code-harness/workspace/tests/test_account.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/build-code-harness/workspace/tests/test_account.py"
+        },
+        {
+          "blob_sha": "973e7313793f951ce7b902ad93aaa529b7ca79c0",
+          "path": "deploy-agentic-rag/README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/deploy-agentic-rag/README.md"
+        },
+        {
+          "blob_sha": "1d732df20de56c8e0470b4dc161446ce3515b671",
+          "path": "deploy-agentic-rag/server.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/deploy-agentic-rag/server.py"
+        },
+        {
+          "blob_sha": "c556fb37e43433bc974dbdf598bae9a776ef00cd",
+          "path": "eval-and-observability/README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/eval-and-observability/README.md"
+        },
+        {
+          "blob_sha": "43439265dae041e0490b7520cc11f233f561b83e",
+          "path": "eval-and-observability/demo.ipynb",
+          "scope": "code_and_markdown_cells_without_execution",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/eval-and-observability/demo.ipynb"
+        },
+        {
+          "blob_sha": "7defdc9de12811dafe8a80ff2cd09e2136a8c460",
+          "path": "eval-and-observability/data/test.csv",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/eval-and-observability/data/test.csv"
+        },
+        {
+          "blob_sha": "7f6570fd146115f811879a3120c57a2d5047c828",
+          "path": "groundX-doc-pipeline/README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/README.md"
+        },
+        {
+          "blob_sha": "c8940999db215a6e958779618c0ba41c8f56c398",
+          "path": "groundX-doc-pipeline/pyproject.toml",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/pyproject.toml"
+        },
+        {
+          "blob_sha": "e6f92dd92bd06a199c792dce4b589deddce5d179",
+          "path": "groundX-doc-pipeline/evaluation_geval.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/evaluation_geval.py"
+        },
+        {
+          "blob_sha": "db6603f1376fad4bc3d9511fafe29d1b0681ceea",
+          "path": "groundX-doc-pipeline/run_evaluation_cli.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/groundX-doc-pipeline/run_evaluation_cli.py"
+        },
+        {
+          "blob_sha": "b5cff7a321fd4bab6213720fcaff06f9e8031bb5",
+          "path": "hugging-face-skills/.github/workflows/generate-agents.yml",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/hugging-face-skills/.github/workflows/generate-agents.yml"
+        },
+        {
+          "blob_sha": "f5e206952f289e8d645013188e7855812fa4331a",
+          "path": "hugging-face-skills/.github/workflows/push-evals-leaderboard.yml",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/hugging-face-skills/.github/workflows/push-evals-leaderboard.yml"
+        },
+        {
+          "blob_sha": "f68bde86d1df81d0cb96fa74c1d0f0b7a41fbc36",
+          "path": "hugging-face-skills/agents/AGENTS.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/hugging-face-skills/agents/AGENTS.md"
+        },
+        {
+          "blob_sha": "6dec5a0aaab3bdb9e12115d5611bcabc61f67d44",
+          "path": "hugging-face-skills/scripts/generate_agents.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/hugging-face-skills/scripts/generate_agents.py"
+        },
+        {
+          "blob_sha": "ae241800cdb65f8694d962ea625868c217e61108",
+          "path": "kitops-mcp/ml-project/Kitfile",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/Kitfile"
+        },
+        {
+          "blob_sha": "f49a4e16e68b128803cc2dcea614603632b04eac",
+          "path": "kitops-mcp/ml-project/docs/LICENSE",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/docs/LICENSE"
+        },
+        {
+          "blob_sha": "2f975fb8f56822387d43e4a8c3c0c5cab254b0e3",
+          "path": "kitops-mcp/ml-project/docs/README.md",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/docs/README.md"
+        },
+        {
+          "blob_sha": "78e3fce397dd5f0122cd22e8e9c11324e2af68df",
+          "path": "kitops-mcp/ml-project/train.py",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/train.py"
+        },
+        {
+          "blob_sha": "ae7bd821360dba9a94ada298218d38db1eda3b3e",
+          "path": "kitops-mcp/ml-project/requirements.txt",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/requirements.txt"
+        },
+        {
+          "blob_sha": "92a64a75925cd85b9c4a6919c45126abdc4b6530",
+          "path": "kitops-mcp/ml-project/data/sample.csv",
+          "scope": "full_text",
+          "url": "https://github.com/patchy631/ai-engineering-hub/blob/2c9b106168d4540b88e727e4aa316c06c856c2b7/kitops-mcp/ml-project/data/sample.csv"
+        }
+      ],
+      "installed_dependencies": false,
+      "network_calls_to_providers": false,
+      "not_inspected": [
+        "eval-and-observability/data_gen.ipynb (13 MB file endpoint yielded empty content; not necessary to fetch for source-only lesson)",
+        "binary models or PDFs",
+        "remaining independent demos",
+        "third-party runtime implementation"
+      ],
+      "partial_files": [
+        {
+          "blob_sha": "de8e0160f00912ff2f71696fd6cde3cc9569cf9c",
+          "path": "build-code-harness/uv.lock",
+          "scope": "lines1-65; resolution metadata, registry and hash entries"
+        }
+      ],
+      "recursive_tree_entries": 1950,
+      "ref": "main",
+      "repository": "patchy631/ai-engineering-hub",
+      "root_configuration": {
+        "agents": false,
+        "copilot_instructions": false,
+        "github_workflows": false,
+        "pre_commit": false,
+        "root_dependency_manifest": false
+      },
+      "tree_truncated": false
+    },
+    {
+      "repository": "GokuMohandas/Made-With-ML",
+      "ref": "main",
+      "head_sha": "3361aeb8ddfc2affdba9f545c978c38c85cee764",
+      "head_committed_at": "2026-03-04T23:44:17Z",
+      "commit_tree_sha": "836548557605dde112445051aff7a4c90266b8b7",
+      "tracked_files_in_complete_tree": 56,
+      "tree_truncated": false,
+      "inspected_paths": [
+        ".github/workflows/documentation.yaml",
+        ".github/workflows/json_to_md.py",
+        ".github/workflows/serve.yaml",
+        ".github/workflows/workloads.yaml",
+        ".gitignore",
+        ".pre-commit-config.yaml",
+        "LICENSE",
+        "Makefile",
+        "README.md",
+        "datasets/dataset.csv",
+        "datasets/holdout.csv",
+        "datasets/projects.csv",
+        "datasets/tags.csv",
+        "deploy/cluster_compute.yaml",
+        "deploy/cluster_env.yaml",
+        "deploy/jobs/workloads.sh",
+        "deploy/jobs/workloads.yaml",
+        "deploy/services/serve_model.py",
+        "deploy/services/serve_model.yaml",
+        "madewithml/config.py",
+        "madewithml/data.py",
+        "madewithml/evaluate.py",
+        "madewithml/models.py",
+        "madewithml/predict.py",
+        "madewithml/serve.py",
+        "madewithml/train.py",
+        "madewithml/utils.py",
+        "mkdocs.yml",
+        "notebooks/benchmarks.ipynb",
+        "notebooks/madewithml.ipynb",
+        "pyproject.toml",
+        "requirements.txt",
+        "tests/code/conftest.py",
+        "tests/code/test_data.py",
+        "tests/code/test_predict.py",
+        "tests/code/test_train.py",
+        "tests/code/test_tune.py",
+        "tests/code/utils.py",
+        "tests/data/conftest.py",
+        "tests/data/test_dataset.py",
+        "tests/model/conftest.py",
+        "tests/model/test_behavioral.py"
+      ],
+      "read_scope": {
+        "text_files": "Complete files retrieved; relevant source and configuration inspected.",
+        "csv_files": "Header and one data row of each; no full dataset/statistical audit.",
+        "course_notebook": "Complete JSON parsed; headings and selected ingestion/splitting/dataset/holdout cells inspected, not every cell.",
+        "benchmark_notebook": "Complete JSON parsed; setup, SDK/model identifiers, data/prediction/retry/normalization/evaluation and experiment sections inspected, not every cell.",
+        "notebook_outputs_as_current_evidence": false
+      },
+      "executed_upstream_code": false,
+      "installed_dependencies": false,
+      "ci_result_verified": false,
+      "deployed": false,
+      "root_configuration": {
+        "agents": false,
+        "skills": false,
+        "copilot_instructions": false
+      },
+      "detailed_notes": "made-with-ml-notes.md"
+    }
+  ],
+  "official_cross_checks": [
+    "https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax",
+    "https://docs.crewai.com/v1.15.20/en/learn/tool-hooks"
+  ]
+}

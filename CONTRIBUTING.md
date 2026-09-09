@@ -5,6 +5,7 @@ commands. Open an issue for a substantial design change so maintainers can
 agree on the outcome before implementation.
 
 1. Create a short-lived branch from the default branch.
+   Prepare [repository checks and commit hooks](docs/git-hooks.md) in your clone.
 2. Make one coherent change; include a regression test for a meaningful failure.
 3. Run repository checks and the relevant application checks. List actual
    commands and results in the PR.
@@ -26,3 +27,6 @@ Before adding a dependency, explain its purpose, alternatives, maintenance,
 license, and runtime impact. Commit its lockfile and extend dependency updates.
 Review AI-generated contributions using the same tests and ownership rules as
 other code. The contributor remains responsible for the change.
+
+For model, prompt, retrieval or evaluator changes, use the optional
+[evaluation contract](docs/ai-evaluation.md) to record actual outcomes and budgets.

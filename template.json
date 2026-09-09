@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "template_version": "1.0.0",
+  "initialized": false,
+  "project": {
+    "name": "@@PROJECT_NAME@@",
+    "slug": "@@PROJECT_SLUG@@",
+    "owner": "@@GITHUB_OWNER@@",
+    "codeowner": "@@CODEOWNER@@",
+    "security_contact": "@@SECURITY_CONTACT@@",
+    "description": "@@PROJECT_DESCRIPTION@@"
+  },
+  "customize_files": [
+    "README.md",
+    "SECURITY.md",
+    "SUPPORT.md",
+    ".github/CODEOWNERS",
+    "docs/project.md"
+  ],
+  "license_decision": "unselected"
+}

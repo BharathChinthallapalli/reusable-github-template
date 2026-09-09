@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible failure.
+title: 'Bug: '
+body:
+  - type: markdown
+    attributes:
+      value: 'For vulnerabilities, use the private reporting route in SECURITY.md. Remove secrets and personal data from examples.'
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened?
+      description: Describe the failure and its impact.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: How can we reproduce it?
+      description: Include minimal steps or a safe example.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit and environment
+      placeholder: 'Commit SHA, operating system, runtime, browser if relevant'
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Sanitized logs or screenshots

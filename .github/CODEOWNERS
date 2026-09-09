@@ -1,0 +1,7 @@
+# Run tools/initialize.py to activate ownership with a real user or visible team.
+# Every named owner needs explicit write access. Last matching pattern wins.
+# * @@CODEOWNER@@
+# /.github/ @@CODEOWNER@@
+# /AGENTS.md @@CODEOWNER@@
+# /tools/ @@CODEOWNER@@
+# /template.json @@CODEOWNER@@

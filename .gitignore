@@ -1,0 +1,32 @@
+# Local secrets. Keep only sanitized examples in version control.
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Local runtime and generated output.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+.next/
+dist/
+build/
+coverage/
+*.log
+.DS_Store
+Thumbs.db
+
+# Local cloud/tool state, if these tools are added later.
+.azure/
+.terraform/
+*.tfstate
+*.tfstate.*

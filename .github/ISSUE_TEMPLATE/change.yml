@@ -1,0 +1,28 @@
+name: Change proposal
+description: Propose an improvement with a clear outcome.
+title: 'Proposal: '
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Who has what problem?
+      description: Describe the current workflow and who is affected.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: What outcome would solve it?
+      description: Include observable acceptance criteria.
+    validations:
+      required: true
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach and alternatives
+      description: Explain the smallest useful change and alternatives considered.
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints and impact
+      description: Relevant access, data, compatibility, cost, or timing constraints.

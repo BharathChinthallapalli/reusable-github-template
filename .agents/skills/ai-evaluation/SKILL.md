@@ -49,3 +49,6 @@ and [slice evaluation](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb
 and the error-state lessons in
 [the Hub evaluation review](../../../docs/research/repository-inventory/ai-repositories-notes.md).
 These sources motivate the procedure; they are not required dependencies.
+
+For Foundry evaluations or production trace correlation, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

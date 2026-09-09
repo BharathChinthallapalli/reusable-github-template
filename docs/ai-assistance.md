@@ -1,6 +1,6 @@
 # Default agents, skills, and clean code
 
-Version 3.0.0 bundles **24 skills and 10 agents**. New repositories receive the
+Version 3.1.0 bundles **34 skills and 13 agents**. New repositories receive the
 files, routing instructions and VS Code settings automatically. The
 [generated catalog](ai-catalog.md) lists every capability, its trigger, declared
 tools and invocation flags. [Working examples](working-with-agents.md) show how
@@ -36,6 +36,20 @@ schedule work, consume model usage on their own, or override workspace trust,
 account access, tool permissions or organization policy. A repository cannot
 force every client to load every skill or guarantee a particular automatic
 selection. Keep procedures concise and load only the relevant references.
+
+## Documentation, architecture and cloud tasks
+
+Use [engineering workflows](engineering-workflows.md) to select discovery, workload
+design, principal review, proof of value or operational handoff. The existing
+`architect` remains the solution-design profile; `principal-architect` reviews
+shared decisions; `solutions-engineer` implements a bounded demonstration or
+integration; `documentation-writer` edits and verifies reader-facing material.
+They are available by default and do not form a mandatory hierarchy.
+
+[Azure skills](azure-capabilities.md) use the actual project toolchain and exposed
+cloud tools. No MCP configuration or Azure account access is installed with them.
+[Agentic-workflow authoring](agentic-workflows.md) is available without enabling
+an engine, recurring run or external write. Read the applicable reference only.
 
 ## Agent hooks and design gate
 

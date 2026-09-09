@@ -37,3 +37,26 @@ When the job uses `environment: prod`, its normal subject carries the environmen
 Keep infrastructure definitions in version control once the target is selected. Review their proposed changes before applying them. A deployment workflow also needs sensible concurrency, timeouts, retained failure evidence, and a named operator; successful authentication alone proves none of those properties.
 
 For authentication failures, compare issuer, audience, subject, environment spelling, and repository ID configuration first. For authorization failures after login, inspect Azure role and resource scope. Inspect only needed claims and identifiers; do not print raw identity or access tokens into logs.
+
+
+## Reusable Azure task procedures
+
+Use [azure-prepare](../.agents/skills/azure-prepare/SKILL.md) for a concrete
+application/IaC plan, [azure-validate](../.agents/skills/azure-validate/SKILL.md) for
+current evidence, and [azure-deploy](../.agents/skills/azure-deploy/SKILL.md) for an
+already-authorized rollout. These phases preserve existing Bicep, Terraform, azd
+or other project tooling. Reuse an existing equivalent plan and checks whose
+input identities, target and acceptance scope still match; do not generate new
+infrastructure just to satisfy a phase name. The general
+[release-delivery](../.agents/skills/release-delivery/SKILL.md) skill remains the
+artifact/release coordinator.
+
+The records distinguish static/local checks from live prerequisites and observed
+user outcomes. Missing tools, credentials, incomplete previews and stale evidence
+remain unverified. A plan status or ready ADD cannot grant permissions or prove a
+deployment. Useful local preparation can proceed before Azure access exists.
+
+For inventory/topology use [azure-resource-discovery](../.agents/skills/azure-resource-discovery/SKILL.md).
+See [Azure capability coverage](azure-capabilities.md) for diagnostics, identity,
+cost, AI evaluation, data lineage and SDK/MCP extensions, and the explicit routes
+for service-specific work not bundled in this foundation.

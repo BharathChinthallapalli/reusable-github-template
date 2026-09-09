@@ -42,3 +42,11 @@ does not prove a host loaded the revised context; use
 Report what changed and why, with remaining contradictions or unverified facts.
 Resume the active task after a context refresh instead of treating the handoff as
 completion of the user's implementation request.
+
+When several instructions repeat a procedure, trace their actual consumers before
+extracting a shared skill. Consolidate only rules that must change together;
+preserve host-specific contracts and update every caller. Keep a source and
+revision for externally learned guidance. Recheck examples and commands after a
+schema or interface change. A one-off workaround or generated preference is not
+stable policy. Route reader-facing tutorials and guides to
+[documentation-writing](../documentation-writing/SKILL.md).

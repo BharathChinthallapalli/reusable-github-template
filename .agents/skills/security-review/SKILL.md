@@ -36,3 +36,6 @@ status. Separate a demonstrated defect from a plausible unresolved concern.
 Recommend the smallest correction that preserves the intended capability, then
 use [verify-change](../verify-change/SKILL.md) when implementing it.
 State the inspected scope and material limits; a clean result is not certification.
+
+For Azure identity, data-plane permissions or cloud trust boundaries, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

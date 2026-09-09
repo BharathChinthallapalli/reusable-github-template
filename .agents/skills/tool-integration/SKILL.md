@@ -40,3 +40,6 @@ Sources: [MCP transport contract](https://modelcontextprotocol.io/specification/
 [John Papa integration observations](../../../docs/research/repository-inventory/johnpapa-notes.md),
 and [nanochat execution-boundary tests](https://github.com/karpathy/nanochat/blob/92d63d4e8bb4df75c3b71618f31ddde2378b2bcd/tests/test_execution.py).
 The latter illustrate failure testing, not adversarial process isolation.
+
+For Azure/Foundry SDK, MCP or service integrations, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

@@ -21,3 +21,10 @@ Integration record:
 - Conflicts resolved with evidence:
 - Combined-state checks and result:
 - Unfinished scope explicitly retained:
+
+For a campaign only:
+- Finite target set and selection evidence:
+- Idempotency or duplicate-work key:
+- Runtime/model/output budget and stop condition:
+- No-change outcome and already-delivered detection:
+- Actual artifacts versus completed runs:

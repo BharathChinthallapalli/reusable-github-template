@@ -39,3 +39,6 @@ The procedure adapts Made With ML's
 [dataset checks](https://github.com/GokuMohandas/Made-With-ML/blob/3361aeb8ddfc2affdba9f545c978c38c85cee764/tests/data/test_dataset.py)
 and minbpe's
 [persistence and boundary tests](https://github.com/karpathy/minbpe/blob/1acefe89412b20245db5a22d2a02001e547dc602/tests/test_tokenizer.py).
+
+For Azure/Foundry exports or trace-derived evaluation datasets, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

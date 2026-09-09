@@ -41,3 +41,6 @@ Report confirmed cause versus workaround or unresolved hypothesis. For GitHub
 workflow failures or missing required checks, use
 [github-actions-debug](../github-actions-debug/SKILL.md) for event/SHA and job-level
 diagnosis instead of rerunning an unrelated workflow.
+
+For Azure service incidents or Foundry trace failures, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

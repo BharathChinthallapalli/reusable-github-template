@@ -114,3 +114,15 @@ For protected agent/skill/hook changes, follow the [ADD gate](add/README.md):
 update the relevant design and its declared scope before editing, then review,
 seal and validate the completed implementation. Use [runbooks](runbooks/README.md)
 for operational recovery rather than treating a design document as an incident log.
+
+## Write, design, prove and operate a solution
+
+[Engineering workflows](engineering-workflows.md) contains complete task examples
+and distinct roles for discovery, solution architecture, principal review,
+documentation and operational handoff. Begin at the stage the request needs;
+an agreed feature or documentation correction does not need a new discovery cycle.
+
+Use [Azure capabilities](azure-capabilities.md) for actual Azure work and
+[agentic-workflow authoring](agentic-workflows.md) for GitHub Agentic Workflows.
+These procedures add reusable working knowledge without activating a cloud
+provider, installing an MCP server or starting scheduled model runs.

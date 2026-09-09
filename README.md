@@ -7,7 +7,7 @@ Repository: `@@GITHUB_OWNER@@/@@PROJECT_SLUG@@` · Owner: @@CODEOWNER@@
 ## Start here
 
 This is a reusable repository foundation for applications, services, automation,
-and AI projects. It bundles 24 reusable engineering skills, 10 specialist agents,
+and AI projects. It bundles 34 reusable engineering skills, 13 specialist agents,
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
@@ -67,7 +67,10 @@ not certify an application's behavior, security, or production readiness.
 | AI assistance | [Specialist agents and shared skills](docs/ai-catalog.md), default task routing, clean-code guidance, scoped instructions |
 | Agent design | [ADRs](docs/adr/README.md), [Agent Design Documents and bound-file gate](docs/add/README.md), [operational runbooks](docs/runbooks/README.md) |
 | Agent hooks and commands | [Pre-tool checks, post-edit Ruff/Gitleaks and three task commands](hooks/README.md); host-specific configuration |
-| Engineering | Domain and acceptance context, maintained architecture decisions, operations and troubleshooting guides |
+| Engineering | [Discovery, solution design, principal review, operational handoff](docs/engineering-workflows.md), maintained decisions and troubleshooting |
+| Documentation | [Reader-focused writing, technical contracts and verified walkthroughs](docs/documentation.md) |
+| Azure tasks | [Prepare, validate, deploy and discover resources](docs/azure-capabilities.md), plus conditional diagnosis, cost and Foundry references |
+| Agentic workflows | [Authoring and bounded documentation-maintenance recipe](docs/agentic-workflows.md); engine and activation are project choices |
 | AI experiments | Optional [evaluation contract](docs/ai-evaluation.md) for baselines, outcomes, budgets and provenance |
 | Working assets | Research, plans, handoffs, tests, experiments, data/tool contracts, dependency and release records bundled with their skills |
 | Executable AI tooling | Static catalog with drift checks, [offline evaluation-report gate](docs/evaluation-reports.md), Copilot environment setup |

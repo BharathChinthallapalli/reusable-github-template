@@ -40,3 +40,6 @@ This adapts [nanochat's measurement-boundary documentation](https://github.com/k
 and [micrograd's independent reference checks](https://github.com/karpathy/micrograd/blob/7bc720e951fe422b8f8814aa5aa1b64121d26b4c/test/test_engine.py).
 See [the llm.c review](../../../docs/research/repository-inventory/karpathy-notes.md)
 for why complete measurements and machine-detectable failures matter.
+
+For Azure spending, resource utilization or model-service costs, read
+[the Azure procedure](references/azure.md) before selecting tools or evidence.

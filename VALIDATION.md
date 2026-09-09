@@ -1,13 +1,13 @@
 # Validation record
 
-Template version: 3.0.0. Prepared 9 September 2026.
+Template version: 3.1.0. Prepared 9 September 2026.
 
 ## Results and scope
 
 - Linux, Python 3.12.14 and Git 2.51.1; pre-commit 4.6.2, PyYAML 6.0.3.
 - **136 offline tests** pass in the source and a disposable initialized project: the prior 80 tests plus 24 hook CLI, 18 design-gate and 14 installer tests.
 - The existing **15 real Git integration tests** pass locally. The seven new real-scanner cases require Ruff 0.16.6 and Gitleaks 8.30.1; local absence is reported as a skip, while CI requires the tools and runs those cases as a failing gate if setup is missing.
-- Foundation checks, static diagnostics for **24 skills and 10 agents**, catalog freshness, scoped design coverage/bindings and all-files Git hook scans pass in source and initialized copies. All 24 skill entrypoints pass the skill format validator.
+- Foundation checks, static diagnostics for **34 skills and 13 agents**, catalog freshness, scoped design coverage/bindings and all-files Git hook scans pass in source and initialized copies. All 34 skill entrypoints pass the skill format validator.
 - Initialization preview changes no deliverable; writing customizes exactly six declared files; repeating identical inputs preserves deliverable bytes. The sealed design remains valid because project identity customization is outside its protected implementation scope.
 - Independent review resolved input-controlled secret suppression, scanner module shadowing, host path/error differences, literal command variants, setup usability and generated-bytecode handling. See [hook verification](docs/research/hook-validation.md) for evidence and limits.
 
@@ -19,6 +19,16 @@ The delivery response records whether the exact delivered commit passed. Native
 Windows/macOS execution and live Copilot/VS Code/Codex hook invocation were not
 performed locally. The Windows command override and six installer targets are
 configured and tested structurally; the configured runtime test target is Linux CI.
+
+## Version 3.1 skill behavior
+
+[Four independent forward exercises](docs/research/engineering-validation.md)
+checked reader command accuracy, architecture/contract reasoning, stale Azure
+validation with an existing Terraform pipeline, and a failed workflow output
+handler. These qualitative synthetic/local exercises are separate from the 136
+tooling tests and do not establish native agent activation, live cloud operation,
+compiled gh-aw behavior or a model-quality benchmark. No new runtime dependency,
+workflow trigger or executable validation contract was added in version 3.1.
 
 ## Commands and evidence levels
 
@@ -48,9 +58,10 @@ separate evidence categories.
 ## Published evidence
 
 Version 2.0 passed [GitHub CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34405570005).
-For version 3.0, match [CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/ci.yml)
-and [Copilot setup](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/copilot-setup-steps.yml)
-to the delivered commit. The delivery response records the exact observed runs;
+Version 3.0 passed [GitHub CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34408755763) with 136 unit and 22 integration tests.
+For version 3.1, match [CI](https://github.com/BharathChinthallapalli/reusable-github-template/actions/workflows/ci.yml)
+to the delivered commit. The unchanged Copilot setup was verified for version 3.0
+in [its setup run](https://github.com/BharathChinthallapalli/reusable-github-template/actions/runs/34408755680); its path-filtered workflow need not run for prose/profile-only changes. The delivery response records the exact observed runs;
 this file cannot contain the hash of its own future commit.
 
 CI prepares the checksum-pinned scanner, checks current design bindings, runs

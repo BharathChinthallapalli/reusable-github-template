@@ -1,8 +1,8 @@
 # Capability expansion and research coverage
 
 The template now maps **all 32 reusable improvement families** to shipped procedures,
-references, records or repository tooling. The actual inventory is **24 shared skills
-and 10 agent profiles**. Multiple families deliberately share a procedure; the count
+references, records or repository tooling. The actual inventory is **34 shared skills
+and 13 agent profiles**. Multiple families deliberately share a procedure; the count
 of profiles is not a measure of readiness. The [machine-readable map](capability-expansion.json)
 retains every family ID, source URL, execution boundary and repository-root-relative
 artifact path. The [generated catalog](../ai-catalog.md) lists the actual skills and agents.
@@ -122,7 +122,7 @@ provider or application test has run.
 | User outcome | Does the expansion support a concrete request or merely increase the number of profiles? | Map all 32 families to a working procedure/artifact, route by the actual task, and preserve direct execution when no custom agent is selected. |
 | Evidence | Could overview inventory, a mutable source link or a static pass be mistaken for verified implementation behavior? | Retain source tiers/revisions, independent oracles and explicit unrun/inconclusive states; keep upstream inspection separate from local and host execution. |
 | Runtime | Would a neutral template silently select providers, publish artifacts or require unavailable infrastructure? | Ship executable local metadata/report tools and reusable integration procedures; actual external execution uses the adopted project and existing authorization. |
-| Maintainability | Would separate agents for every family duplicate instructions and drift? | Use the canonical skills and 10 agent profiles, merge overlapping roles, link focused references and generate the catalog from real metadata. |
+| Maintainability | Would separate agents for every family duplicate instructions and drift? | Use the canonical skills and initial 10 agent profiles (expanded by later releases), merge overlapping roles, link focused references and generate the catalog from real metadata. |
 | Integration | Could parallel file edits, stale output identity or a failing dependency be hidden by a successful summary? | Give shared files one writer, inspect actual handoffs, bind checks to the combined artifact and require machine-detectable failure paths. |
 
 The stopping rule is to resolve a finding through a plan change, acceptance evidence

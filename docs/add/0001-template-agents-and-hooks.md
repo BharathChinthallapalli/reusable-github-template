@@ -92,7 +92,8 @@ adrs:
 - docs/adr/0003-portable-git-checks.md
 - docs/adr/0004-portable-engineering-capabilities.md
 - docs/adr/0005-scoped-agent-design-gate.md
-binding_sha256: 2ded516774e4568e7a4e5b7715c5d1c36462f2020e57a719082c0509cdc17160
+- docs/adr/0006-evidence-based-engineering-workflows.md
+binding_sha256: 0477afa7f307cd817d49b4a932b8feec02aa581188cf8372f34c9736b76cbc87
 ---
 # Template agents, design gate and local hooks
 
@@ -106,6 +107,12 @@ supply the task workflow; this design makes their boundaries and the new local
 checks explicit. The user's request authorizes implementation of this template
 change. It does not supply an application's domain, cloud account or deployment
 authorization.
+
+Version 3.1 extends the existing routing and procedures with documentation,
+solution and principal architecture, Azure phase guidance and workflow authoring.
+New files are covered separately by [ADD-0002](0002-engineering-workflows.md);
+this record retains existing file ownership and the unchanged runtime gate/hook
+contracts. Decision 0006 records the additive role and procedure boundaries.
 
 ## Scope and non-goals
 

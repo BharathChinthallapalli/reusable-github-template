@@ -1,0 +1,1039 @@
+{
+  "repository": "asw101/gh-aw",
+  "commit": "bc153047bde1afe62da5cd4bf03a9dc607d79c7d",
+  "retrieved_at": "2026-09-09",
+  "tree_entries": 2959,
+  "tree_truncated": false,
+  "license": "MIT",
+  "coverage": {
+    "all_top_level_skills": 24,
+    "github_skills": 1,
+    "agent_profiles": 8,
+    "agent_instruction_files": 1,
+    "workflow_sources": 149,
+    "additional_sources": 19,
+    "limitations": "All 185 selected definition files fetched. Every workflow metadata and section taxonomy inspected; detailed body review selected for transferable families. Generated workflow and compiler tests read statically, not executed."
+  },
+  "sources": [
+    {
+      "path": ".github/agents/agentic-campaign-designer.agent.md",
+      "sha": "ddcd9215b69cbe71f99e0c9db4adafab66dd36fc",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/agentic-campaign-designer.agent.md"
+    },
+    {
+      "path": ".github/agents/agentic-workflows.agent.md",
+      "sha": "c00386ad0842b3a08fb133da1b8df6361d1b2bf0",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/agentic-workflows.agent.md"
+    },
+    {
+      "path": ".github/agents/ci-cleaner.agent.md",
+      "sha": "74b071bf68a62cc7a0a54de03736521690bac796",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/ci-cleaner.agent.md"
+    },
+    {
+      "path": ".github/agents/create-safe-output-type.agent.md",
+      "sha": "dd68f287d7a2e08c67133768acb33a2cc0a4e64a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/create-safe-output-type.agent.md"
+    },
+    {
+      "path": ".github/agents/developer.instructions.md",
+      "sha": "3f66e7a3f5cb20bb9e0edd35e9ec84d87bb6bf94",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/developer.instructions.md"
+    },
+    {
+      "path": ".github/agents/grumpy-reviewer.agent.md",
+      "sha": "c8ac8b6ad75f7282ffec02b215fb3143a45152f9",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/grumpy-reviewer.agent.md"
+    },
+    {
+      "path": ".github/agents/interactive-agent-designer.agent.md",
+      "sha": "3ea25957b6de1905cded80bc5fc7724456117dac",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/interactive-agent-designer.agent.md"
+    },
+    {
+      "path": ".github/agents/technical-doc-writer.agent.md",
+      "sha": "1269435924f62ace1f9f9bd6c1fac604dc6c7713",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/technical-doc-writer.agent.md"
+    },
+    {
+      "path": ".github/agents/w3c-specification-writer.agent.md",
+      "sha": "d4a84a14849bc169d3107afda90bc3c3787b0e27",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/agents/w3c-specification-writer.agent.md"
+    },
+    {
+      "path": ".github/skills/debugging-workflows/SKILL.md",
+      "sha": "6de57841dbe06e26da1248e4d74aea96ad0b9d43",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/skills/debugging-workflows/SKILL.md"
+    },
+    {
+      "path": ".github/workflows/agent-performance-analyzer.md",
+      "sha": "0b17b15b2b98e307d47ee9431d73c960bead33a1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/agent-performance-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/agent-persona-explorer.md",
+      "sha": "74341b0dd0680cccb6423fece0da6d71a1fc62ad",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/agent-persona-explorer.md"
+    },
+    {
+      "path": ".github/workflows/ai-moderator.md",
+      "sha": "a8f6224f743d603c250a83d4b53ea6b752d76cee",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/ai-moderator.md"
+    },
+    {
+      "path": ".github/workflows/archie.md",
+      "sha": "69e40328f28d97b4b960a022957e3d3bd55ea93f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/archie.md"
+    },
+    {
+      "path": ".github/workflows/artifacts-summary.md",
+      "sha": "c16522f6377f5b5c4da81e7f35bf2662b518b478",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/artifacts-summary.md"
+    },
+    {
+      "path": ".github/workflows/audit-workflows.md",
+      "sha": "8ae4957977dbef4d4022254d5a0e1bdefa2bd7d8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/audit-workflows.md"
+    },
+    {
+      "path": ".github/workflows/auto-triage-issues.md",
+      "sha": "10d0c311b52547ab0a1e24aaed39664e7de456b2",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/auto-triage-issues.md"
+    },
+    {
+      "path": ".github/workflows/blog-auditor.md",
+      "sha": "10939cbdc628cc22d84604a2cb0d6af665eb8304",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/blog-auditor.md"
+    },
+    {
+      "path": ".github/workflows/brave.md",
+      "sha": "7a249c141c0912b04bf35a14445dccb60d7f76c0",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/brave.md"
+    },
+    {
+      "path": ".github/workflows/breaking-change-checker.md",
+      "sha": "d9e5e5754d2716cab97d23df0b77ab54853f29dd",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/breaking-change-checker.md"
+    },
+    {
+      "path": ".github/workflows/changeset.md",
+      "sha": "40e378cae30efe7a5fd7fbf72666a88ea514b8c5",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/changeset.md"
+    },
+    {
+      "path": ".github/workflows/chroma-issue-indexer.md",
+      "sha": "8abbc96d0bbc50d9e714ed8eb1f1b47d8e0bb95d",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/chroma-issue-indexer.md"
+    },
+    {
+      "path": ".github/workflows/ci-coach.md",
+      "sha": "1537aa1157e26dd29c9d34ae85fb3844fe00139f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/ci-coach.md"
+    },
+    {
+      "path": ".github/workflows/ci-doctor.md",
+      "sha": "1fa604b245baf412e5b15126aa16ceada89e2d2a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/ci-doctor.md"
+    },
+    {
+      "path": ".github/workflows/claude-code-user-docs-review.md",
+      "sha": "037497adba21fea647057421aa591b27cb51ca7c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/claude-code-user-docs-review.md"
+    },
+    {
+      "path": ".github/workflows/cli-consistency-checker.md",
+      "sha": "b534c0e0acd84de687b53d19e2f60427ec5e24d5",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/cli-consistency-checker.md"
+    },
+    {
+      "path": ".github/workflows/cli-version-checker.md",
+      "sha": "330332c5533bd2f2627ad09907d03cb488f35dae",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/cli-version-checker.md"
+    },
+    {
+      "path": ".github/workflows/cloclo.md",
+      "sha": "d01d68a3b064db9b5b7ec45ddb0655584667e2a5",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/cloclo.md"
+    },
+    {
+      "path": ".github/workflows/code-scanning-fixer.md",
+      "sha": "b83e3c6923672639abfa02a39960faaaa933e5ee",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/code-scanning-fixer.md"
+    },
+    {
+      "path": ".github/workflows/code-simplifier.md",
+      "sha": "17374818498b4d82cfc91fd4db9ead2fcae59ea6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/code-simplifier.md"
+    },
+    {
+      "path": ".github/workflows/codex-github-remote-mcp-test.md",
+      "sha": "231298f3062a43e40c6925c24a4a41356399e910",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/codex-github-remote-mcp-test.md"
+    },
+    {
+      "path": ".github/workflows/commit-changes-analyzer.md",
+      "sha": "bfe0dbc9ee229776902c02f2f5d148de35d4be6b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/commit-changes-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/copilot-agent-analysis.md",
+      "sha": "f698b73a0d97f10ce4f79bdd918471e5245ab26f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-agent-analysis.md"
+    },
+    {
+      "path": ".github/workflows/copilot-cli-deep-research.md",
+      "sha": "1b415eab272866513205e3c12bfd8398ccba5340",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-cli-deep-research.md"
+    },
+    {
+      "path": ".github/workflows/copilot-pr-merged-report.md",
+      "sha": "60c7b3b4f8fbf4146ca3f56378f305f025902c30",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-pr-merged-report.md"
+    },
+    {
+      "path": ".github/workflows/copilot-pr-nlp-analysis.md",
+      "sha": "8e9636d31c3dc85ebc239dfe0ec62987453a1f7f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-pr-nlp-analysis.md"
+    },
+    {
+      "path": ".github/workflows/copilot-pr-prompt-analysis.md",
+      "sha": "bf03ef3c14446e3d75d299222c02c9f6d35bce93",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-pr-prompt-analysis.md"
+    },
+    {
+      "path": ".github/workflows/copilot-session-insights.md",
+      "sha": "b760cd4ced86a94588bc51a78f87052de82a54a8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/copilot-session-insights.md"
+    },
+    {
+      "path": ".github/workflows/craft.md",
+      "sha": "c33f8fc1e4003c1e6b0f75e840f271982affa9d8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/craft.md"
+    },
+    {
+      "path": ".github/workflows/daily-assign-issue-to-user.md",
+      "sha": "f163b0123c21cf76f3464eff9d013d09af4bdfa2",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-assign-issue-to-user.md"
+    },
+    {
+      "path": ".github/workflows/daily-choice-test.md",
+      "sha": "afbb890c962dad8333b18a5570aa94dfd8829f92",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-choice-test.md"
+    },
+    {
+      "path": ".github/workflows/daily-cli-performance.md",
+      "sha": "703935840c35bb92dcd06dd3945368d9b786ab56",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-cli-performance.md"
+    },
+    {
+      "path": ".github/workflows/daily-code-metrics.md",
+      "sha": "647f25d1dd64cb30bddb1036be2bc8a44b32aa7e",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-code-metrics.md"
+    },
+    {
+      "path": ".github/workflows/daily-compiler-quality.md",
+      "sha": "073895979e5b278b6e55becd6cd0402638d8c419",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-compiler-quality.md"
+    },
+    {
+      "path": ".github/workflows/daily-copilot-token-report.md",
+      "sha": "51627ea78a5f740b0c50811f25e8b90eb27fcb29",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-copilot-token-report.md"
+    },
+    {
+      "path": ".github/workflows/daily-doc-updater.md",
+      "sha": "d135263d3766a6da659c1b7ea8a58610f4ec9cba",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-doc-updater.md"
+    },
+    {
+      "path": ".github/workflows/daily-fact.md",
+      "sha": "dac05e17c23e49d1317f7990e825a9cf0328cfdb",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-fact.md"
+    },
+    {
+      "path": ".github/workflows/daily-file-diet.md",
+      "sha": "b573eaadfd352913b4c6c5132865cacee35d16b4",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-file-diet.md"
+    },
+    {
+      "path": ".github/workflows/daily-firewall-report.md",
+      "sha": "10838f2a17a8adf215c766b63a25f4d8ec2fc464",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-firewall-report.md"
+    },
+    {
+      "path": ".github/workflows/daily-issues-report.md",
+      "sha": "6be2b874aeb5ecdfaabbda04b827566ffd5c6f20",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-issues-report.md"
+    },
+    {
+      "path": ".github/workflows/daily-malicious-code-scan.md",
+      "sha": "3290d4c5b4e6f84b5d9cdb110376f86aa30e7cd6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-malicious-code-scan.md"
+    },
+    {
+      "path": ".github/workflows/daily-multi-device-docs-tester.md",
+      "sha": "63ed78f14b57ee98b4335a95743120b38e58cc52",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-multi-device-docs-tester.md"
+    },
+    {
+      "path": ".github/workflows/daily-news.md",
+      "sha": "dd992609f7ff649542f860ef6145720cea00c4d8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-news.md"
+    },
+    {
+      "path": ".github/workflows/daily-observability-report.md",
+      "sha": "a5a4464b9852388eca8a5680809bec9abb7ade92",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-observability-report.md"
+    },
+    {
+      "path": ".github/workflows/daily-performance-summary.md",
+      "sha": "a81e0b71cf8738658d2c696dbaec2120d27c2b06",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-performance-summary.md"
+    },
+    {
+      "path": ".github/workflows/daily-regulatory.md",
+      "sha": "2c3076945b4fda658c9aeb60e8a833a33909527f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-regulatory.md"
+    },
+    {
+      "path": ".github/workflows/daily-repo-chronicle.md",
+      "sha": "04ffdc97a2c7464b333ef25883ddebecc633a0d1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-repo-chronicle.md"
+    },
+    {
+      "path": ".github/workflows/daily-safe-output-optimizer.md",
+      "sha": "3fdc00e010f4519020aa673a0e143f95ed8e9517",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-safe-output-optimizer.md"
+    },
+    {
+      "path": ".github/workflows/daily-secrets-analysis.md",
+      "sha": "37d338f481da1219a449a8a82bd9d43e6601ce79",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-secrets-analysis.md"
+    },
+    {
+      "path": ".github/workflows/daily-semgrep-scan.md",
+      "sha": "e3b11c288e751905e587e0e9c27c3acfe325a1e6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-semgrep-scan.md"
+    },
+    {
+      "path": ".github/workflows/daily-team-evolution-insights.md",
+      "sha": "637ce1f3e06c9130f1b2b1aa2d1192f3f18082e7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-team-evolution-insights.md"
+    },
+    {
+      "path": ".github/workflows/daily-team-status.md",
+      "sha": "db942900a3a86a786a34f94286f53643b57e7289",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-team-status.md"
+    },
+    {
+      "path": ".github/workflows/daily-testify-uber-super-expert.md",
+      "sha": "79c1f7f4aaac5ac4fd55a17948dbf367fb2b43bf",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-testify-uber-super-expert.md"
+    },
+    {
+      "path": ".github/workflows/daily-workflow-updater.md",
+      "sha": "a6efd4e3dece9d31794177002c5aca0f7b7ea243",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/daily-workflow-updater.md"
+    },
+    {
+      "path": ".github/workflows/deep-report.md",
+      "sha": "a34d25610ac52aff85976ed775164fe754cc8989",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/deep-report.md"
+    },
+    {
+      "path": ".github/workflows/delight.md",
+      "sha": "9e4fb3d06196da24c56d3faf43d2efc875dbeb78",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/delight.md"
+    },
+    {
+      "path": ".github/workflows/dependabot-bundler.md",
+      "sha": "405ea07868a76962ed4b9da7d4441d81242b01d7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dependabot-bundler.md"
+    },
+    {
+      "path": ".github/workflows/dependabot-burner.md",
+      "sha": "65202497b4f933c7b2c02de349e8cd8f4e4db2c4",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dependabot-burner.md"
+    },
+    {
+      "path": ".github/workflows/dependabot-go-checker.md",
+      "sha": "7362ddd9af145ee2aa587238585821bfd6ea3ee1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dependabot-go-checker.md"
+    },
+    {
+      "path": ".github/workflows/dev-hawk.md",
+      "sha": "7e58c3a55448482900f721e101a9b95702b3bc87",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dev-hawk.md"
+    },
+    {
+      "path": ".github/workflows/dev.md",
+      "sha": "7d139d45bd347726ebe2a981e53022504dff7d9c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dev.md"
+    },
+    {
+      "path": ".github/workflows/developer-docs-consolidator.md",
+      "sha": "5db48510ed91e029262c5ffcbe465eb57d2cb1c1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/developer-docs-consolidator.md"
+    },
+    {
+      "path": ".github/workflows/dictation-prompt.md",
+      "sha": "07e4b52adcc41d8f72858d1b15af125983db25f6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/dictation-prompt.md"
+    },
+    {
+      "path": ".github/workflows/discussion-task-miner.md",
+      "sha": "b48af2a48d9d5274e5102dc32f5fbe6cbf895acb",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/discussion-task-miner.md"
+    },
+    {
+      "path": ".github/workflows/docs-noob-tester.md",
+      "sha": "3fc91b9d4c46883cb2249a93a778d5aafd2219c9",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/docs-noob-tester.md"
+    },
+    {
+      "path": ".github/workflows/draft-pr-cleanup.md",
+      "sha": "88fa53e0897a9ed958c6c64a5b5fb73f1ad3d8d7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/draft-pr-cleanup.md"
+    },
+    {
+      "path": ".github/workflows/duplicate-code-detector.md",
+      "sha": "c485cf6f47862aa7fa08842e95bc529954d20edf",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/duplicate-code-detector.md"
+    },
+    {
+      "path": ".github/workflows/example-custom-error-patterns.md",
+      "sha": "cbcd4a6e5243a5e682404a760d186093aecac8f6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/example-custom-error-patterns.md"
+    },
+    {
+      "path": ".github/workflows/example-permissions-warning.md",
+      "sha": "15631f3c42013a113096a45cfcd8fe0d772301be",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/example-permissions-warning.md"
+    },
+    {
+      "path": ".github/workflows/example-workflow-analyzer.md",
+      "sha": "f382f31e1d16d913ac80bd16635c1a5159fb2872",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/example-workflow-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/firewall-escape.md",
+      "sha": "dbfaabc81ed6c319894a02d067e1b0425e24e4f9",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/firewall-escape.md"
+    },
+    {
+      "path": ".github/workflows/firewall.md",
+      "sha": "e27b4c9c5f1d6273bef4f7a900186d40ce7820db",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/firewall.md"
+    },
+    {
+      "path": ".github/workflows/functional-pragmatist.md",
+      "sha": "ab7c79e62e37accfd2866a1192995b12d54236be",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/functional-pragmatist.md"
+    },
+    {
+      "path": ".github/workflows/github-mcp-structural-analysis.md",
+      "sha": "01141b6abea3864643add540605a15ac4db82b00",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/github-mcp-structural-analysis.md"
+    },
+    {
+      "path": ".github/workflows/github-mcp-tools-report.md",
+      "sha": "efc40a5b53c3adb74a709cb9767e6ed9a9a32ba7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/github-mcp-tools-report.md"
+    },
+    {
+      "path": ".github/workflows/github-remote-mcp-auth-test.md",
+      "sha": "9457a6b57907b4ff3a0554cc29fb66634eb2608c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/github-remote-mcp-auth-test.md"
+    },
+    {
+      "path": ".github/workflows/glossary-maintainer.md",
+      "sha": "6ff68b2cac93b1a27f71dfd1f73f1a9ee874401b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/glossary-maintainer.md"
+    },
+    {
+      "path": ".github/workflows/go-fan.md",
+      "sha": "4b6bc16480ce4232f2a93664196f202860073c82",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/go-fan.md"
+    },
+    {
+      "path": ".github/workflows/go-logger.md",
+      "sha": "e53dbfe83e912aae4e00dae8995a6222cd6b232b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/go-logger.md"
+    },
+    {
+      "path": ".github/workflows/go-pattern-detector.md",
+      "sha": "c2b30a4070ccaa4743edfd3a2a316e1115224d3e",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/go-pattern-detector.md"
+    },
+    {
+      "path": ".github/workflows/grumpy-reviewer.md",
+      "sha": "a6d66443d5027d42fab6288d461effe093fae8d7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/grumpy-reviewer.md"
+    },
+    {
+      "path": ".github/workflows/hourly-ci-cleaner.md",
+      "sha": "0fb0452f73d27b28d8c8dc9c817c85e67e86fcfd",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/hourly-ci-cleaner.md"
+    },
+    {
+      "path": ".github/workflows/instructions-janitor.md",
+      "sha": "1bb53c0c0917eb001e8ecd2f63a038829a72552f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/instructions-janitor.md"
+    },
+    {
+      "path": ".github/workflows/issue-arborist.md",
+      "sha": "a1560fdcc5c0249cb0c1fd86193b88ccee565fe7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/issue-arborist.md"
+    },
+    {
+      "path": ".github/workflows/issue-classifier.md",
+      "sha": "fcc513c36b3397ac65855c0c5f4c802876c9733c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/issue-classifier.md"
+    },
+    {
+      "path": ".github/workflows/issue-monster.md",
+      "sha": "c76636de2016ead0d10908718600f1f405747f62",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/issue-monster.md"
+    },
+    {
+      "path": ".github/workflows/issue-triage-agent.md",
+      "sha": "e116b0169266a270d5d61741617c1059aae95338",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/issue-triage-agent.md"
+    },
+    {
+      "path": ".github/workflows/jsweep.md",
+      "sha": "ef9151d6b1576d920c01df65ccf6ca84c6a739a3",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/jsweep.md"
+    },
+    {
+      "path": ".github/workflows/layout-spec-maintainer.md",
+      "sha": "567e8180bcd512339a8744c9111718e4c154a28d",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/layout-spec-maintainer.md"
+    },
+    {
+      "path": ".github/workflows/lockfile-stats.md",
+      "sha": "6b70776a90857bbf97c9184ef45cc9ebb2501b43",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/lockfile-stats.md"
+    },
+    {
+      "path": ".github/workflows/mcp-inspector.md",
+      "sha": "21cc5aa8cf8c106bc813fbca2c1b80a7603f13d6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/mcp-inspector.md"
+    },
+    {
+      "path": ".github/workflows/mergefest.md",
+      "sha": "3be54cea82f2b897cf1b38319ed0b82de6d884bc",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/mergefest.md"
+    },
+    {
+      "path": ".github/workflows/metrics-collector.md",
+      "sha": "9b5c3727ef7ce6dd1041734814a24089eff210c8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/metrics-collector.md"
+    },
+    {
+      "path": ".github/workflows/notion-issue-summary.md",
+      "sha": "aeb594fa5ac77b983382f4d2a9daf5a6888f6402",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/notion-issue-summary.md"
+    },
+    {
+      "path": ".github/workflows/org-health-report.md",
+      "sha": "fce676270535110b0e64f5f6b653d43f107ade2c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/org-health-report.md"
+    },
+    {
+      "path": ".github/workflows/pdf-summary.md",
+      "sha": "b1d8cb8b7c109857f5990c5767a1cef060660d83",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/pdf-summary.md"
+    },
+    {
+      "path": ".github/workflows/plan.md",
+      "sha": "3a1d6d4d6149edf5b0203343dff72ad820fb55a5",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/plan.md"
+    },
+    {
+      "path": ".github/workflows/poem-bot.md",
+      "sha": "0fbaba4a2b6b8d984575b68402e5f00845558506",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/poem-bot.md"
+    },
+    {
+      "path": ".github/workflows/portfolio-analyst.md",
+      "sha": "ade702fe032abdd339fb5e2b250b5a2b398e1483",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/portfolio-analyst.md"
+    },
+    {
+      "path": ".github/workflows/pr-nitpick-reviewer.md",
+      "sha": "6e59df2ca4df1c75344d096010abe81d37ce9565",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/pr-nitpick-reviewer.md"
+    },
+    {
+      "path": ".github/workflows/pr-triage-agent.md",
+      "sha": "65b98828739f2165c90064e1cb96c47979fcbc96",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/pr-triage-agent.md"
+    },
+    {
+      "path": ".github/workflows/prompt-clustering-analysis.md",
+      "sha": "edb76a30a92d3643b120d05091f06127e39420d1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/prompt-clustering-analysis.md"
+    },
+    {
+      "path": ".github/workflows/python-data-charts.md",
+      "sha": "cea14e444fc26a115e7481c04d4e0f5bea97816a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/python-data-charts.md"
+    },
+    {
+      "path": ".github/workflows/q.md",
+      "sha": "1794acff058635f40de41747e03df056fe29f42f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/q.md"
+    },
+    {
+      "path": ".github/workflows/release.md",
+      "sha": "6a4b3b2a132955b9904a4219537579f43092b1f1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/release.md"
+    },
+    {
+      "path": ".github/workflows/repo-audit-analyzer.md",
+      "sha": "839715e9d3001730ce922cdc132420599a180501",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/repo-audit-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/repo-tree-map.md",
+      "sha": "231aba105029cbd22dc90305f4229b8b7aa31ebe",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/repo-tree-map.md"
+    },
+    {
+      "path": ".github/workflows/repository-quality-improver.md",
+      "sha": "58460bb211d7296bfb2b444267562d226d32d6b8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/repository-quality-improver.md"
+    },
+    {
+      "path": ".github/workflows/research.md",
+      "sha": "23fe529c8f02bd431e5197b6ae096bf4c08fdc99",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/research.md"
+    },
+    {
+      "path": ".github/workflows/safe-output-health.md",
+      "sha": "be35f0163115695e961ad0076b2b84a606970274",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/safe-output-health.md"
+    },
+    {
+      "path": ".github/workflows/schema-consistency-checker.md",
+      "sha": "858e0cc9f423d65095da8c5c277544398796df79",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/schema-consistency-checker.md"
+    },
+    {
+      "path": ".github/workflows/scout.md",
+      "sha": "4022a3aa37ce1020fc69f3ba606ed9849d5b97ca",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/scout.md"
+    },
+    {
+      "path": ".github/workflows/secret-scanning-triage.md",
+      "sha": "4790e0157be483f0c3343edfc538544089d3ab2c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/secret-scanning-triage.md"
+    },
+    {
+      "path": ".github/workflows/security-alert-burndown.md",
+      "sha": "701d9e4c02c76919ac1822e789468c059fea2d30",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/security-alert-burndown.md"
+    },
+    {
+      "path": ".github/workflows/security-compliance.md",
+      "sha": "fa5a528621b64504cdcc00abbe796b2581b6e932",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/security-compliance.md"
+    },
+    {
+      "path": ".github/workflows/security-fix-pr.md",
+      "sha": "214d0b39fc6a5a93a4495d1f51bd03ff53d048e1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/security-fix-pr.md"
+    },
+    {
+      "path": ".github/workflows/security-guard.md",
+      "sha": "3e4328e4cf8ae9cfcf81d2e3c4b596267bf2beb2",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/security-guard.md"
+    },
+    {
+      "path": ".github/workflows/security-review.md",
+      "sha": "e21256ceb6a9baec4c100f7c10ecad50cac5a984",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/security-review.md"
+    },
+    {
+      "path": ".github/workflows/semantic-function-refactor.md",
+      "sha": "ebd73d0d1a153cb3366abfc071d75352a1db3ca3",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/semantic-function-refactor.md"
+    },
+    {
+      "path": ".github/workflows/sergo.md",
+      "sha": "5fbdf1f75ca534fdf92d60a99a7b1893929d33b1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/sergo.md"
+    },
+    {
+      "path": ".github/workflows/slide-deck-maintainer.md",
+      "sha": "98766fb9cec2635591ae1cedca625ae0c340e24b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/slide-deck-maintainer.md"
+    },
+    {
+      "path": ".github/workflows/smoke-claude.md",
+      "sha": "f5098cd6fdcd8d8f739e7b496ee827adb15622f7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-claude.md"
+    },
+    {
+      "path": ".github/workflows/smoke-codex.md",
+      "sha": "48e740f636a9848c255add7ec87de309b5d50ef1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-codex.md"
+    },
+    {
+      "path": ".github/workflows/smoke-copilot.md",
+      "sha": "a09369706d4912f6bbe02446de61cf1f598205ae",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-copilot.md"
+    },
+    {
+      "path": ".github/workflows/smoke-opencode.md",
+      "sha": "1d0e96bbd545f22288dcd28052b4596ed6307ea3",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-opencode.md"
+    },
+    {
+      "path": ".github/workflows/smoke-project.md",
+      "sha": "b716f2a15974d2084662966171e19f506674f64d",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-project.md"
+    },
+    {
+      "path": ".github/workflows/smoke-test-tools.md",
+      "sha": "09c231cf576117e1f1df46802fd257e3cdb49ec3",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/smoke-test-tools.md"
+    },
+    {
+      "path": ".github/workflows/stale-repo-identifier.md",
+      "sha": "0e87bcc01b79a9b35c6d915a0887d7446993e87b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/stale-repo-identifier.md"
+    },
+    {
+      "path": ".github/workflows/static-analysis-report.md",
+      "sha": "09d9c0856d19b5132ace2f0cc4b0625927e2286c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/static-analysis-report.md"
+    },
+    {
+      "path": ".github/workflows/step-name-alignment.md",
+      "sha": "b537f082b750b08b8f9c1e65086edca78855ee7f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/step-name-alignment.md"
+    },
+    {
+      "path": ".github/workflows/sub-issue-closer.md",
+      "sha": "6c92aec804b65a90f1ec80b3e2047e11b51feed9",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/sub-issue-closer.md"
+    },
+    {
+      "path": ".github/workflows/super-linter.md",
+      "sha": "f1f78e2b770779d1ed4edbaba6927ba2c20d3246",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/super-linter.md"
+    },
+    {
+      "path": ".github/workflows/technical-doc-writer.md",
+      "sha": "f1acae9f6d7d0c2f0ef76045438652e164ed5b19",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/technical-doc-writer.md"
+    },
+    {
+      "path": ".github/workflows/terminal-stylist.md",
+      "sha": "f5b823ec46f3815e23850f72c54e9d72333a0244",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/terminal-stylist.md"
+    },
+    {
+      "path": ".github/workflows/test-create-pr-error-handling.md",
+      "sha": "8b47a4e45015e79a9d1a58bb93bce0e66209892e",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/test-create-pr-error-handling.md"
+    },
+    {
+      "path": ".github/workflows/test-dispatcher.md",
+      "sha": "8e3604aa216b9e31b26bec9d64fc4a948267061c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/test-dispatcher.md"
+    },
+    {
+      "path": ".github/workflows/test-project-url-default.md",
+      "sha": "fad609ea02f14ea4c852bbd8b278b6d97279cc54",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/test-project-url-default.md"
+    },
+    {
+      "path": ".github/workflows/test-workflow.md",
+      "sha": "611b7d027770f0f9105626c0c08e99f4b5518525",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/test-workflow.md"
+    },
+    {
+      "path": ".github/workflows/test-yaml-import.md",
+      "sha": "9e147d9b551073768b4821f8f20bb923a43415dc",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/test-yaml-import.md"
+    },
+    {
+      "path": ".github/workflows/tidy.md",
+      "sha": "e4afffd17a0d564d8b14493fc50bae5bfe1389f2",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/tidy.md"
+    },
+    {
+      "path": ".github/workflows/typist.md",
+      "sha": "8542f0c2a0b438ec60b4f60c3a47949cf2bf9c10",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/typist.md"
+    },
+    {
+      "path": ".github/workflows/ubuntu-image-analyzer.md",
+      "sha": "e76a0424f939fd031bbe3d892fc42e0a6673d756",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/ubuntu-image-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/unbloat-docs.md",
+      "sha": "ea8ac20fde498fdd0855d6b6a6017e9b5f7b7f05",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/unbloat-docs.md"
+    },
+    {
+      "path": ".github/workflows/video-analyzer.md",
+      "sha": "c716a4da0467d8b0ac19294b72933d14ce246e6a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/video-analyzer.md"
+    },
+    {
+      "path": ".github/workflows/weekly-issue-summary.md",
+      "sha": "40e2029177d08dd5244fc9325f5da524c7413cd5",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/weekly-issue-summary.md"
+    },
+    {
+      "path": ".github/workflows/workflow-generator.md",
+      "sha": "f7b143a891d5feaa93430d68ad9526c7b1384faf",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/workflow-generator.md"
+    },
+    {
+      "path": ".github/workflows/workflow-health-manager.md",
+      "sha": "9067da229348f09677c38605e627587aaac65108",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/workflow-health-manager.md"
+    },
+    {
+      "path": ".github/workflows/workflow-normalizer.md",
+      "sha": "ec596c967db92f8ac8e2fb3bb6f97a78f8a2a23a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/workflow-normalizer.md"
+    },
+    {
+      "path": ".github/workflows/workflow-skill-extractor.md",
+      "sha": "fbcdd5426d1bf6757bc84897071c2bdada351640",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/workflow-skill-extractor.md"
+    },
+    {
+      "path": "LICENSE",
+      "sha": "141b3723d3c84a5805d9c4a6cc60339d2ae2050f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/LICENSE"
+    },
+    {
+      "path": "README.md",
+      "sha": "f6fae37daaece48ec952dc20abd39efeca242928",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/README.md"
+    },
+    {
+      "path": "skills/agentic-chat/SKILL.md",
+      "sha": "e00114d85f090287674b27cf492826b01f6b9a53",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/agentic-chat/SKILL.md"
+    },
+    {
+      "path": "skills/console-rendering/SKILL.md",
+      "sha": "2ec2d3b66c9e48f49cc453410dff7d564bdc5a9d",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/console-rendering/SKILL.md"
+    },
+    {
+      "path": "skills/copilot-cli/SKILL.md",
+      "sha": "505c1fc14113516862e92547adc065ac78ec4be4",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/copilot-cli/SKILL.md"
+    },
+    {
+      "path": "skills/custom-agents/SKILL.md",
+      "sha": "961cb49ee4da67cc7162e0f5997c99b0ba2eba6b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/custom-agents/SKILL.md"
+    },
+    {
+      "path": "skills/developer/SKILL.md",
+      "sha": "c364d0c8a3b1499fcb5c8854f40b1582978b1ccf",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/developer/SKILL.md"
+    },
+    {
+      "path": "skills/dictation/SKILL.md",
+      "sha": "08d80af902f0cf49925385f5ac1efb0b3fc301fb",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/dictation/SKILL.md"
+    },
+    {
+      "path": "skills/documentation/SKILL.md",
+      "sha": "0f76a69e18b25c48a5ac44c5ae09daab25e1f84f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/documentation/SKILL.md"
+    },
+    {
+      "path": "skills/error-messages/SKILL.md",
+      "sha": "04388ef9bbbf4a4a1a71e141375128b4aa141865",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/error-messages/SKILL.md"
+    },
+    {
+      "path": "skills/error-pattern-safety/SKILL.md",
+      "sha": "fd65f51c9da14b2675362a88c5db1937de1ad41c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/error-pattern-safety/SKILL.md"
+    },
+    {
+      "path": "skills/error-recovery-patterns/SKILL.md",
+      "sha": "ad21b071ac9ff7bfe3849545d5389efdd186e9bb",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/error-recovery-patterns/SKILL.md"
+    },
+    {
+      "path": "skills/gh-agent-session/SKILL.md",
+      "sha": "776f314158d0d2dfca845584ebb0533831222d72",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/gh-agent-session/SKILL.md"
+    },
+    {
+      "path": "skills/gh-agent-task/SKILL.md",
+      "sha": "4f06d7d33dcb8b167fc18db78f22dcc1b3cc86f7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/gh-agent-task/SKILL.md"
+    },
+    {
+      "path": "skills/github-copilot-agent-tips-and-tricks/SKILL.md",
+      "sha": "54b1d18758e06ff50b74e189f41e8198001c8f98",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-copilot-agent-tips-and-tricks/SKILL.md"
+    },
+    {
+      "path": "skills/github-discussion-query/SKILL.md",
+      "sha": "0cbdafc485093d7be37348ea64f10c395298de65",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-discussion-query/SKILL.md"
+    },
+    {
+      "path": "skills/github-issue-query/SKILL.md",
+      "sha": "94bbebcb8a6e90384630cd6425ffbfef56ec567f",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-issue-query/SKILL.md"
+    },
+    {
+      "path": "skills/github-mcp-server/SKILL.md",
+      "sha": "1125305bf3033b73b21915bfc2f0e42c4fc1bbe0",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-mcp-server/SKILL.md"
+    },
+    {
+      "path": "skills/github-pr-query/SKILL.md",
+      "sha": "9f4be87119e8146406308ea6cf8401087c059fcd",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-pr-query/SKILL.md"
+    },
+    {
+      "path": "skills/github-script/SKILL.md",
+      "sha": "28600c7251b45a81f4543581a31aaaaf128842bd",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-script/SKILL.md"
+    },
+    {
+      "path": "skills/http-mcp-headers/SKILL.md",
+      "sha": "bca9bf76ac0e8ef41ff3013cec8e2c0ecc5850eb",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/http-mcp-headers/SKILL.md"
+    },
+    {
+      "path": "skills/javascript-refactoring/SKILL.md",
+      "sha": "fa99b1cf6d2c279d842a2871d10e99672d9c2268",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/javascript-refactoring/SKILL.md"
+    },
+    {
+      "path": "skills/messages/SKILL.md",
+      "sha": "2f8f88daba08bed52c6751432bc49884d6b3dec1",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/messages/SKILL.md"
+    },
+    {
+      "path": "skills/reporting/SKILL.md",
+      "sha": "48a51bece23853a20fb723d9d9fc0f865591d60a",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/reporting/SKILL.md"
+    },
+    {
+      "path": "skills/skillz-integration/SKILL.md",
+      "sha": "56b6aea3d5b133164a93a3967be3fbaece16f946",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/skillz-integration/SKILL.md"
+    },
+    {
+      "path": "skills/temporary-id-safe-output/SKILL.md",
+      "sha": "26e28b8f00d937631094caee17b3233ec72cf545",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/temporary-id-safe-output/SKILL.md"
+    },
+    {
+      "path": ".github/workflows/technical-doc-writer.lock.yml",
+      "sha": "944a40e386194afd58ba9c227ccfce8b31f00dc7",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/technical-doc-writer.lock.yml"
+    },
+    {
+      "path": "docs/src/content/docs/reference/safe-outputs.md",
+      "sha": "36093a6b9c2badc7ae66ebb160ce974389862651",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/docs/src/content/docs/reference/safe-outputs.md"
+    },
+    {
+      "path": "docs/src/content/docs/reference/custom-agents.md",
+      "sha": "3619cc32898e47db682bc58d324320a184de8d68",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/docs/src/content/docs/reference/custom-agents.md"
+    },
+    {
+      "path": "pkg/workflow/safe_outputs_max_test.go",
+      "sha": "f23b0138a734ed66dc62dad8742fe30b34185d0c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/pkg/workflow/safe_outputs_max_test.go"
+    },
+    {
+      "path": "pkg/workflow/safe_outputs_target_validation_test.go",
+      "sha": "7af61dcceede08aec9950508c12dda34ad917151",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/pkg/workflow/safe_outputs_target_validation_test.go"
+    },
+    {
+      "path": "pkg/workflow/imports_recursive_test.go",
+      "sha": "6bcc1b7daa2513e6be68d8ab2689e8f44144dc39",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/pkg/workflow/imports_recursive_test.go"
+    },
+    {
+      "path": "pkg/workflow/sandbox_custom_agent_test.go",
+      "sha": "884fd06dd5cd3c9b67cf1efcc22055a6b580ba7c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/pkg/workflow/sandbox_custom_agent_test.go"
+    },
+    {
+      "path": "pkg/cli/workflows/test-custom-agent.md",
+      "sha": "6f10a1aa7f3658233cb697a90ceef9ce18ad3e1b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/pkg/cli/workflows/test-custom-agent.md"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha": "b52a6de9640efed8ab963c5ead45dc988632d05c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/ci.yml"
+    },
+    {
+      "path": "Makefile",
+      "sha": "5b3d529597c0cd86bb40b0dd5c844edf56cfc480",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/Makefile"
+    },
+    {
+      "path": ".github/aw/create-agentic-workflow.md",
+      "sha": "762451dc8013e8339cf3c9b28f04f640ff9a9f05",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/aw/create-agentic-workflow.md"
+    },
+    {
+      "path": ".github/aw/create-shared-agentic-workflow.md",
+      "sha": "c7ace9159b18fccc3bdca90156aa2783371f191b",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/aw/create-shared-agentic-workflow.md"
+    },
+    {
+      "path": ".github/aw/debug-agentic-workflow.md",
+      "sha": "5d9200d4dd974b2c108b192108caa76d7ce89947",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/aw/debug-agentic-workflow.md"
+    },
+    {
+      "path": ".github/aw/update-agentic-workflow.md",
+      "sha": "d46ab7cb9a26639a0f95713e01e8d8d3ea2047b9",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/aw/update-agentic-workflow.md"
+    },
+    {
+      "path": ".github/aw/upgrade-agentic-workflows.md",
+      "sha": "d07264b9709ef5d1835ab9a9b83ea4481c9e400c",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/aw/upgrade-agentic-workflows.md"
+    },
+    {
+      "path": ".github/workflows/shared/docs-server-lifecycle.md",
+      "sha": "8067e6462635124feeef5c4317f40887f45efb54",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/shared/docs-server-lifecycle.md"
+    },
+    {
+      "path": ".github/workflows/shared/github-queries-safe-input.md",
+      "sha": "ad3a225b819c1fb7c5479943551814e2b8936fe8",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/.github/workflows/shared/github-queries-safe-input.md"
+    },
+    {
+      "path": "skills/github-issue-query/query-issues.sh",
+      "sha": "68cd955f85783066105a63ff10bb0aa22973f329",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/skills/github-issue-query/query-issues.sh"
+    },
+    {
+      "path": "docs/src/content/docs/blog/2026-01-13-meet-the-workflows-documentation.md",
+      "sha": "2bb0cb5641d7bc57d24c3916c9b27b661d5c48f6",
+      "url": "https://github.com/asw101/gh-aw/blob/bc153047bde1afe62da5cd4bf03a9dc607d79c7d/docs/src/content/docs/blog/2026-01-13-meet-the-workflows-documentation.md"
+    }
+  ]
+}

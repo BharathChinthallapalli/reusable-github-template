@@ -54,3 +54,16 @@ identified and used only to discuss historical structural patterns.
 The research is original paraphrase with links. No company endorsement, company-wide
 adoption, or production certification is implied. Recheck release versions and
 feature support when adopting the template in a different GitHub environment.
+
+## Version 3.1: agents and engineering procedures
+
+- [gh-aw review](gh-aw-skills.md) and [204-file source ledger](gh-aw-coverage.json):
+  every skill/agent definition and all 149 workflow purposes inventoried, with
+  selected consumer/compiler/test traces; no upstream workflow executed.
+- [Azure Skills review](azure-skills.md) and [coverage ledger](azure-skills-coverage.json):
+  28 canonical families, 38 entrypoints including nested phases, and three graph
+  plugin families; package identity, concrete contradictions and adoption choices.
+- [Architecture practice and book coverage](architecture-practice.md): actual
+  primary articles, author-hosted material and publisher excerpts inspected.
+- [Shipped improvement map](engineering-expansion.md): additions, extensions,
+  explicit non-adoptions and verification scope.

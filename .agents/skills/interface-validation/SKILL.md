@@ -35,3 +35,10 @@ Keep the inspected artifact/revision, environment and case results together.
 If a required browser, editor host, provider or test identity is unavailable,
 report that boundary as blocked or not run with a precise next check. Do not
 claim that inspecting markup or configuration exercised the interface.
+
+For a versioned contract, compare the declared schema, parser/runtime behavior,
+documented errors and representative examples. Trace a requirement ID to the
+consumer-visible assertion; successful schema parsing alone does not establish
+runtime conformance. Include a compatible existing consumer and the changed
+failure case when relevant. Use the specification mode in
+[solution-architecture](../solution-architecture/SKILL.md) when defining the contract.

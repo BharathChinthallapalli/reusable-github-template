@@ -31,3 +31,11 @@ Complete authorized publication/deployment, verify the delivered revision or
 digest and perform the agreed smoke check. If required access or authorization is
 missing, return the prepared artifact and the precise blocked action. Report
 prepared, published, deployed and healthy as separate observed states.
+
+For an Azure target, use [azure-prepare](../azure-prepare/SKILL.md) only for missing
+or changed preparation, [azure-validate](../azure-validate/SKILL.md) for applicable
+artifact/environment evidence, and [azure-deploy](../azure-deploy/SKILL.md) for the
+authorized execution. This skill remains the delivery coordinator. Preserve
+Terraform, Bicep, azd or the existing pipeline rather than converting tools to
+satisfy a template. Use [operational-readiness](../operational-readiness/SKILL.md)
+for the actual service handoff; a proof of value alone is not production evidence.

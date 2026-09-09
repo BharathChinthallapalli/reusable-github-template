@@ -34,3 +34,9 @@ for bounded independent work that improves the result. Otherwise perform the
 relevant procedure directly. Keep the user's selected model and host approvals.
 Do not claim that installing these files guarantees invocation or starts a
 background process. Discovery checks are in `docs/ai-assistance.md`.
+
+For documentation, solution discovery/design, principal review, operational
+handoff, Azure phases or agentic workflows, use the precise routes in AGENTS.md
+and docs/engineering-workflows.md. Keep the existing deployment toolchain. A
+skill or upstream plugin description is not evidence that an MCP tool exists,
+that cloud access is available or that validation ran.

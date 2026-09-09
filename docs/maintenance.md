@@ -199,3 +199,23 @@ and [hook verification](../hooks/README.md) on a disposable initialized copy too
 | Actions usage | Unused workflows, excessive runtime, unnecessary artifact retention |
 
 Choose the review frequency based on project activity. Changes to organizational policy, repository visibility, ownership, or deployment identity should trigger an immediate targeted review. Archive abandoned projects through the team's normal process and remove their unused deployment access.
+
+## Adopt version 3.1
+
+Version 3.1 adds ten skills and three profiles, bringing the catalog to 34 and 13.
+The initializer, application stack, required CI job, hook behavior and host
+configuration remain compatible with 3.0. No upstream plugin, MCP server, model
+engine, cloud resource or scheduled workflow is activated.
+
+Merge new task procedures and assets, preserve project-specific skills, and
+reconcile routing in AGENTS.md and the engineer/architect profiles. Keep the
+existing `architect` name. Review conditional Azure reference links instead of
+copying provider instructions into unrelated work. The optional agentic-workflow
+recipe needs a selected compiler/engine and verified generated output before use.
+
+Merge the new ADR and ADD design only after reconciling project decisions and
+scope; never overwrite a consumer's live records with this template's bound
+record. Reconcile and seal affected designs, regenerate the catalog, validate
+skills and run source/initialized checks. See [the engineering map](research/engineering-expansion.md)
+for concrete behavior and research limits. Existing generated projects require
+an explicit upgrade; they do not receive these changes automatically.

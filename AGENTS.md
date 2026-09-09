@@ -29,6 +29,16 @@ its purpose and declared availability. Skills live once in `.agents/skills`.
 
 | Work | Relevant procedures |
 | --- | --- |
+| Write or repair reader-facing technical documentation | [documentation-writing](.agents/skills/documentation-writing/SKILL.md) |
+| Clarify a solution need or prove feasibility with users | [solution-discovery](.agents/skills/solution-discovery/SKILL.md) |
+| Design a workload, integration or interface specification | [solution-architecture](.agents/skills/solution-architecture/SKILL.md) |
+| Review architectural tradeoffs or shared platform strategy | [architecture-review](.agents/skills/architecture-review/SKILL.md) |
+| Establish operational readiness and hand off a service | [operational-readiness](.agents/skills/operational-readiness/SKILL.md) |
+| Author or repair a GitHub Agentic Workflow | [agentic-workflow-development](.agents/skills/agentic-workflow-development/SKILL.md) |
+| Prepare an Azure application or infrastructure change | [azure-prepare](.agents/skills/azure-prepare/SKILL.md) |
+| Validate a prepared Azure target or diagnose stale readiness | [azure-validate](.agents/skills/azure-validate/SKILL.md) |
+| Execute an authorized Azure delivery | [azure-deploy](.agents/skills/azure-deploy/SKILL.md) within [release-delivery](.agents/skills/release-delivery/SKILL.md) |
+| Inventory actual Azure resources and relationships | [azure-resource-discovery](.agents/skills/azure-resource-discovery/SKILL.md) |
 | Verify current claims or learn from repositories and community fixes | [evidence-research](.agents/skills/evidence-research/SKILL.md) |
 | Design a material change and challenge alternatives | [implementation-planning](.agents/skills/implementation-planning/SKILL.md) |
 | Split independent work and preserve a useful handoff | [task-orchestration](.agents/skills/task-orchestration/SKILL.md) |
@@ -49,6 +59,11 @@ the specialists in the catalog. Delegate independent
 work when it resolves a concrete uncertainty; keep one writer per file area.
 If custom-agent invocation is unavailable, apply the same procedures yourself.
 An ordinary documentation edit does not require a multi-agent review chain.
+Use `architect` for a workload design, `principal-architect` for cross-system
+tradeoffs, `solutions-engineer` for discovery and a working proof, and
+`documentation-writer` for reader-facing docs. See [role boundaries and evidence](docs/engineering-workflows.md).
+Keep the current project toolchain; Azure references apply only to Azure work.
+Load the selected skill and relevant references, not every bundled procedure.
 
 Before code edits, load the clean-code skill. Prefer intention-revealing names,
 cohesive functions, explicit side effects, and established error contracts.

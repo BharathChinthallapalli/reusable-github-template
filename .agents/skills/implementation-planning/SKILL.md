@@ -40,3 +40,9 @@ deployment or other external action that requires its own authorization.
 Proceed with authorized implementation using [clean-code](../clean-code/SKILL.md)
 and [verify-change](../verify-change/SKILL.md); a plan alone does not complete a
 request to make the change.
+
+For a workload or interface design, use
+[solution-architecture](../solution-architecture/SKILL.md) to select the smallest
+useful design packet. For cross-system or significant quality tradeoffs, use
+[architecture-review](../architecture-review/SKILL.md). These supply scenario and
+contract evidence; they do not add a formal architecture exercise to routine edits.

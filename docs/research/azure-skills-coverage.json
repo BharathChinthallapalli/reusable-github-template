@@ -1,0 +1,445 @@
+{
+  "commit": "d4259f09db8f5631dce643427f0a55619b3f854f",
+  "tree_sha": "bfe3c6a579a09ae4071baf95b6b2d82239fb6ad1",
+  "tree_entries": 2522,
+  "tree_truncated": false,
+  "canonical_skill_families": [
+    "airunway-aks-setup",
+    "appinsights-instrumentation",
+    "azure-ai",
+    "azure-aigateway",
+    "azure-app-onboard",
+    "azure-app-onboard-prereq",
+    "azure-cloud-migrate",
+    "azure-compliance",
+    "azure-compute",
+    "azure-cost",
+    "azure-deploy",
+    "azure-diagnostics",
+    "azure-enterprise-infra-planner",
+    "azure-kubernetes",
+    "azure-kusto",
+    "azure-messaging",
+    "azure-prepare",
+    "azure-quotas",
+    "azure-reliability",
+    "azure-resource-lookup",
+    "azure-resource-visualizer",
+    "azure-storage",
+    "azure-upgrade",
+    "azure-validate",
+    "entra-agent-id",
+    "entra-app-registration",
+    "microsoft-foundry",
+    "python-appservice-deploy"
+  ],
+  "canonical_skill_entrypoints": 38,
+  "canonical_files": 925,
+  "mirror_files": 925,
+  "mirrors_hash_identical": true,
+  "additional_graph_families": [
+    "azure-kusto-graph",
+    "azure-kusto-irql-graph",
+    "azure-kusto-irql"
+  ],
+  "native_agent_definitions": 0,
+  "reviewed": [
+    {
+      "path": "skills/airunway-aks-setup/SKILL.md",
+      "sha": "48df683b3762fe8641c5276f1d85120c5b4a7bfa",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/airunway-aks-setup/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/appinsights-instrumentation/SKILL.md",
+      "sha": "1febee945655469943278b79c242fed76a95991c",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/appinsights-instrumentation/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-ai/SKILL.md",
+      "sha": "55e8b924e6f33d8c4e6eb967dc45bcfc33d3de71",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-ai/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-aigateway/SKILL.md",
+      "sha": "2a02dbfc3871846ede816112878cf65f7c8427ca",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-aigateway/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard-prereq/SKILL.md",
+      "sha": "8ff9d058f33225d795d3d2bfee980a074c47b485",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard-prereq/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard/SKILL.md",
+      "sha": "f30c027341e63c02508473ddad73a46bf287e6d5",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard/deploy/SKILL.md",
+      "sha": "22f2b21f005cca523f3dd9c6ccf11bd6e183fb26",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/deploy/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-app-onboard/prepare/SKILL.md",
+      "sha": "dbe9d9e93f6208bd3419f88feb6129e91cbfa133",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/prepare/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-app-onboard/scaffold/SKILL.md",
+      "sha": "24e461da90d1e0f5abe74d4df2ed0fe20d57f40b",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/scaffold/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-cloud-migrate/SKILL.md",
+      "sha": "8daa1b9e40e4657671553958ec8b30bfd710eefb",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-cloud-migrate/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-compliance/SKILL.md",
+      "sha": "28fa6cf4637e4a6033b62d0ac281b001fdc904a7",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-compliance/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-compute/SKILL.md",
+      "sha": "8a1d1eabfe5c336f7977afc34439779f76612189",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-compute/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-cost/SKILL.md",
+      "sha": "6415f74b278ea22d857e81585ab97e7198c39e5d",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-cost/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-deploy/SKILL.md",
+      "sha": "911caa7e6d5c7c77cdeb0acd1fe23386ff7dbc57",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-deploy/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-diagnostics/SKILL.md",
+      "sha": "b313ce4e86454e0c7cff14467d1de837c266c0df",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-diagnostics/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-enterprise-infra-planner/SKILL.md",
+      "sha": "eccc653c8569c9be26dc5d75249452018a0c8505",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-enterprise-infra-planner/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-kubernetes/SKILL.md",
+      "sha": "147099a0115dd1be57f1d67375901f63bb19c087",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-kubernetes/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-kubernetes/azure-kubernetes-app-deploy/SKILL.md",
+      "sha": "e3e148299871832471b4b056093e386a132e8d4a",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-kubernetes/azure-kubernetes-app-deploy/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-kubernetes/azure-kubernetes-automatic-readiness/SKILL.md",
+      "sha": "452449d067b912207e88e2e4c0358571aba6ec66",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-kubernetes/azure-kubernetes-automatic-readiness/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-kusto/SKILL.md",
+      "sha": "f38550b877b705ae589888307a41cc413cbcc32f",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-kusto/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-messaging/SKILL.md",
+      "sha": "9a92df2d9548d268548d22d3f4b2cfd705c96a4c",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-messaging/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-prepare/SKILL.md",
+      "sha": "bf9c38ae7c85fc93348a6c285c1559b339b4ca22",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-prepare/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-quotas/SKILL.md",
+      "sha": "d63e38e2d0465e9f82622b6709f1c61460382413",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-quotas/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-reliability/SKILL.md",
+      "sha": "3d067da26938a090bb78fffc686a7e8087b058c5",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-reliability/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-resource-lookup/SKILL.md",
+      "sha": "f9f827553f6a3cf0dd323fb74220d47a5c6f8a4d",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-resource-lookup/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/azure-resource-visualizer/SKILL.md",
+      "sha": "7f9e222610251938ee85b1ef7ee21b454fbd2eeb",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-resource-visualizer/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-storage/SKILL.md",
+      "sha": "e6ddfe8a8a717d8c3f1ae86f5d9f9b746e577bda",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-storage/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-upgrade/SKILL.md",
+      "sha": "ae851861e22dd8ee11947d051cb8ba2b9c13f967",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-upgrade/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/azure-validate/SKILL.md",
+      "sha": "92f74dcc7b6e6bb31f107e0ed03198f65a17056d",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-validate/SKILL.md",
+      "review": "entrypoint body reviewed"
+    },
+    {
+      "path": "skills/entra-agent-id/SKILL.md",
+      "sha": "ec3318657c9709665e9f22c70e4820cb5bacb986",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/entra-agent-id/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/entra-app-registration/SKILL.md",
+      "sha": "f7f472ade6f8ce489f3efae8bb8533dd0be6b3f0",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/entra-app-registration/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/SKILL.md",
+      "sha": "c0bd7a1727ce3e26c3243d0df464aefc6d9c320a",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/finetuning/SKILL.md",
+      "sha": "428b2f3648500aede49730c5e233b7c5dd554ac5",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/finetuning/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/models/deploy-model/SKILL.md",
+      "sha": "fd954ccf1ed94a451cf37a4770dff6f375ccb00e",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/models/deploy-model/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md",
+      "sha": "46935315ebdf18fbc93771efb72e7f8f9e9980ac",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/models/deploy-model/capacity/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/models/deploy-model/customize/SKILL.md",
+      "sha": "eb4887175301b4751cca679e11863d1ba6f34bc9",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/models/deploy-model/customize/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/models/deploy-model/preset/SKILL.md",
+      "sha": "deec344e2ac5fed6808a1f3c9ac0bacb02cfdde7",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/models/deploy-model/preset/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/python-appservice-deploy/SKILL.md",
+      "sha": "ca5cc00ee36032b5552bca1ff56d9110341c6396",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/python-appservice-deploy/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "README.md",
+      "sha": "1f27f728b97a79b19382fadec09cd71f81462238",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/README.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "LICENSE",
+      "sha": "356b112bcc4f07e03b6e57569eedf9d79978d2d5",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/LICENSE",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".mcp.json",
+      "sha": "90cf4d2d9ddfc6c438f120633b3dd11fe83de7ef",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.mcp.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "plugin.json",
+      "sha": "d765ef38c0b8f031c0899d2ad335d37c34362c64",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/plugin.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".claude-plugin/plugin.json",
+      "sha": "75e94688b37f6d8e59065c93723715d75f2313f2",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.claude-plugin/plugin.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "apm.yml",
+      "sha": "0e0da4c50b795a2f8bae57c3f1fba35138f2b98a",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/apm.yml",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/plugins/azure-skills/.mcp.json",
+      "sha": "90cf4d2d9ddfc6c438f120633b3dd11fe83de7ef",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-skills/.mcp.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/plugins/azure-skills/.plugin/plugin.json",
+      "sha": "d765ef38c0b8f031c0899d2ad335d37c34362c64",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-skills/.plugin/plugin.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "hooks/scripts/track-telemetry.js",
+      "sha": "f16586e02553959b424c36ea706e7f102b76e068",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/hooks/scripts/track-telemetry.js",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-validate/references/scripts/workflow.sh",
+      "sha": "3896dc3db8efd83eaa71cfc1ce5a661784cb6791",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-validate/references/scripts/workflow.sh",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-cost/references/tools-and-best-practices.md",
+      "sha": "17189a31beb77e48d6a8b7030ed3a8b539b213af",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-cost/references/tools-and-best-practices.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard/references/handoff-protocol.md",
+      "sha": "98c54a9277115c3934163d45cd01bdcbf2937de3",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/references/handoff-protocol.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard/prepare/references/validation-rubric.md",
+      "sha": "bcaaa59745e4457ef3b6c6221e9a5b42848dcd66",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard/prepare/references/validation-rubric.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/microsoft-foundry/foundry-agent/validate/validate.md",
+      "sha": "9798f9a9f1dd30fc93488f462e0beb1bfcd44f98",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/foundry-agent/validate/validate.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/microsoft-foundry/foundry-agent/trace/trace.md",
+      "sha": "1e42f72b7eed1005ba61d1e6c4326cc4ef71e57e",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/foundry-agent/trace/trace.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/plugins/azure-kusto-graph-skills/skills/azure-kusto-graph/SKILL.md",
+      "sha": "c178ce599f816bf6cb35a749582fd71dab5d5f69",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-graph/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": ".github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md",
+      "sha": "285dc22f943a9b1bdf4f48bd2b861fbaba2273bf",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql-graph/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": ".github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
+      "sha": "3af32cdbe307d0d23ea884dead1a0a9a09334390",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-kusto-graph-skills/skills/azure-kusto-irql/SKILL.md",
+      "review": "entrypoint retrieved and routing/sections screened"
+    },
+    {
+      "path": "skills/microsoft-foundry/foundry-agent/eval-datasets/eval-datasets.md",
+      "sha": "a297882b68ab8e04dea593855862c3673570aeb7",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/foundry-agent/eval-datasets/eval-datasets.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/microsoft-foundry/foundry-agent/observe/observe.md",
+      "sha": "1a5ca381b0b28049cb6bdf921ba972e6d0099dc7",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/microsoft-foundry/foundry-agent/observe/observe.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard-prereq/references/build-check.md",
+      "sha": "9ae58a26706a0af995f8fcb717f154c06a683f33",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard-prereq/references/build-check.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": "skills/azure-app-onboard-prereq/references/readiness-gate.md",
+      "sha": "34cb195de7cfb763bc916aef98bf12011f9c1f6e",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/skills/azure-app-onboard-prereq/references/readiness-gate.md",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".claude-plugin/marketplace.json",
+      "sha": "26421d5f8f35fdf9b9c16b3154bc7420d33b9458",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.claude-plugin/marketplace.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".cursor-plugin/marketplace.json",
+      "sha": "cbb8650e3c2f21b04d40c79f545a96f503d64d98",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.cursor-plugin/marketplace.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/plugins/azure-kusto-graph-skills/.plugin/plugin.json",
+      "sha": "d589df823c1b2ab8b662c5b1fb7d49d590b4288f",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-kusto-graph-skills/.plugin/plugin.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/plugins/azure-kusto-graph-skills/.mcp.json",
+      "sha": "90cf4d2d9ddfc6c438f120633b3dd11fe83de7ef",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/plugins/azure-kusto-graph-skills/.mcp.json",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/workflows/create-release.yml",
+      "sha": "69b74dda44c4aac58a6ace94a7cf91e3f260e45c",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/workflows/create-release.yml",
+      "review": "targeted supporting content reviewed"
+    },
+    {
+      "path": ".github/workflows/pages.yml",
+      "sha": "3a4542c335d5e7165064588bac03fbf11ddfda54",
+      "url": "https://github.com/microsoft/azure-skills/blob/d4259f09db8f5631dce643427f0a55619b3f854f/.github/workflows/pages.yml",
+      "review": "targeted supporting content reviewed"
+    }
+  ],
+  "execution": "No upstream code or cloud operation executed"
+}

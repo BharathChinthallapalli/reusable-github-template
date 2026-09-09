@@ -36,3 +36,10 @@ Finish when requested coverage and the decision's material uncertainties are
 resolved, or document the access limit and its impact. Send material design work
 to [implementation-planning](../implementation-planning/SKILL.md); use
 [repo-discovery](../repo-discovery/SKILL.md) for an implementation trace.
+
+For large repository, issue or discussion queries, inspect available schema and
+result counts, then request fields needed for the decision. Follow pagination and
+record access limits, filters, time window and truncation. Distinguish a complete
+inventory within that scope from ranked search matches. Fetch full bodies only
+for the relevant claims; a query estimate or fetched file count does not prove
+semantic review of every result.

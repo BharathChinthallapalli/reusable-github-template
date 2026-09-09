@@ -34,3 +34,11 @@ Use [code-review](../code-review/SKILL.md) for findings and
 [verify-change](../verify-change/SKILL.md) for the integrated verification.
 Stop or reassign a stalled subtask when its bounded result cannot be obtained;
 do not create an indefinite retry or delegation chain.
+
+For a multi-run campaign, identify the finite target population, expected change
+per target, dependencies, write owner, time/cost ceiling, duplicate-work key and
+stop condition before starting. Empty/no-change results may be valid; record them
+without opening repetitive issues or escalating scope. Count actual delivered
+artifacts separately from completed model runs. Use
+[agentic-workflow-development](../agentic-workflow-development/SKILL.md) when the
+orchestration will run through GitHub Actions rather than an active local session.

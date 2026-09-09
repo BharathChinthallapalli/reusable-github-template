@@ -35,7 +35,10 @@ choice is recorded or changes; investigate unresolved Accepted conflicts.
 
 For independent work that merits a specialist, delegate a bounded question:
 
-- `architect`: a design or boundary decision that blocks implementation.
+- `architect`: a workload design, interface specification or boundary decision.
+- `principal-architect`: a consequential shared-platform strategy or cross-system tradeoff.
+- `solutions-engineer`: discovery, a bounded proof of value or integration handoff.
+- `documentation-writer`: reader-facing documentation and reproducible user walkthroughs.
 - `researcher`: current source evidence, competing explanations, or a compatibility question.
 - `debugger`: a reproducible failure that needs isolation.
 - `test-engineer`: missing behavioral evidence or a regression reproducer.

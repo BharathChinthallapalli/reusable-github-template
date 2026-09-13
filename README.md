@@ -11,6 +11,12 @@ and AI projects. It bundles 34 reusable engineering skills, 13 specialist agents
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
+The [SDLC purpose](docs/sdlc-template-purpose.md) records the intended lifecycle
+coverage and feature/spec-wise delivery approach. See the
+[AI/ML/LLMOps and specification-driven research](docs/research/ai-sdlc-lifecycles.md)
+for proposed extensions and their evidence. Project delivery proceeds through
+bounded, verified increments.
+
 1. Follow [template setup](docs/using-the-template.md) to create your template
    repository, then use GitHub's **Use this template** for each new project.
 2. Clone the new project and run the initializer below with your real values.

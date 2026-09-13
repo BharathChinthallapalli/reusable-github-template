@@ -1,5 +1,13 @@
 # Research and design evidence
 
+## SDLC purpose and lifecycle research
+
+- [Template purpose](../sdlc-template-purpose.md): the owner's lifecycle scope,
+  beginner needs and required feature/spec-wise delivery boundaries.
+- [AI, LLMOps, ML and specification-driven lifecycles](ai-sdlc-lifecycles.md):
+  primary-source comparison, bounded delivery proposal, existing capability map
+  and source/verification limits.
+
 ## Version 3.3: Agent tooling defaults
 
 - [Agent tooling follow-up](agent-tooling.md): requested shared CLI defaults,

@@ -1,22 +1,37 @@
 # Create and reuse the template
 
+Prepare the [agent tooling defaults](agent-tooling.md#prepare-an-environment) in
+the environment where your assistant runs. Copilot cloud setup installs the
+noninteractive tools; local clients use their workstation installation. The
+shared policy covers ripgrep, fd, fzf, jq, lazygit and Hack Nerd Font.
+
 ## Prepare local validation
 
 The initializer and foundation checker run with Python 3.12+ alone. The AI
 configuration checker uses PyYAML; Git checks use pre-commit. Install the pinned
-development dependencies for these checks. Create a virtual environment in the repository root:
+development dependencies for these checks. Prefer an installed uv (hosted setup
+pins 0.12.13); use its [official installation options](https://docs.astral.sh/uv/getting-started/installation/)
+when preparing a new environment. With Python 3.12+ already available, create a
+virtual environment in the repository root:
 
 ```bash
-python3 -m venv .venv
+uv venv --python python3 .venv
 source .venv/bin/activate
-python -m pip install -r requirements-dev.txt
+uv pip install --python python -r requirements-dev.txt
 python tools/install_hook_tools.py
 ```
 
-On Windows PowerShell, create it with `py -3.12 -m venv .venv` and activate with
+If uv is unavailable, use `python3 -m venv .venv`, activate it, then run
+`python -m pip install -r requirements-dev.txt`; the checks are identical.
+On Windows PowerShell, create it with `uv venv --python 3.12 .venv`
+(or `py -3.12 -m venv .venv`) and activate with
 `.venv\Scripts\Activate.ps1`. If activation is unavailable, invoke
 `.venv\Scripts\python.exe` directly for the commands below; no shell policy
 change is needed. On macOS/Linux, `.venv/bin/python` also works without activation.
+For dependency installation without activation, pass that environment's Python
+path to `uv pip install --python PATH -r requirements-dev.txt`, or run
+`PATH -m pip install -r requirements-dev.txt` with the pip-created environment.
+Do not use the CI-only `--system` flag for workstation setup.
 Reuse the environment; reinstall dependencies when `requirements-dev.txt` changes.
 
 From that environment, run the offline checks (also supported in a ZIP):

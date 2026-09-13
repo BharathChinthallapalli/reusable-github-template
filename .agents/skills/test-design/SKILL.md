@@ -16,6 +16,12 @@ known expected value, or consumer-observable state. Copying the production
 formula into an expected-value helper can reproduce the same bug. A snapshot
 alone does not establish semantic validity of generated output.
 
+The presence of implementation strings, function names or syntax is not proof
+of behavior. For declarative artifacts, exercise the consumer or assert their
+parsed meaning. Text assertions fit an explicitly required textual interface,
+such as emitted messages or generated files; they do not establish behavior
+beyond that textual interface or prove that a model follows instructions.
+
 Adapt the [behavior case matrix](assets/behavior-case-matrix.md) to the changed
 contract. Select meaningful success, rejection and boundary cases, including
 false/zero/empty distinctions only when the API treats them differently.

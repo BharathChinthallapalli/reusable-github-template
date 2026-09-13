@@ -91,6 +91,8 @@ scope:
 - docs/engineering-principles.md
 - docs/repository-tools.md
 - tools/ai_catalog.py
+- docs/agent-tooling.md
+- .vscode/settings.json
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
 - docs/adr/0003-portable-git-checks.md
@@ -98,7 +100,9 @@ adrs:
 - docs/adr/0005-scoped-agent-design-gate.md
 - docs/adr/0006-evidence-based-engineering-workflows.md
 - docs/adr/0007-local-engineering-guidance.md
-binding_sha256: a2cb43a649e1ef8cedf069eb8a8da76f1017fb722d78f399aa81d65458d1dca6
+- docs/adr/0008-efficient-agent-tooling.md
+- docs/adr/0009-native-tooling-and-review-evidence.md
+binding_sha256: 8bb06bd5ead59bb1c51bd0237935c82b3bcb405ef4b8da9a4cccd16c43910c69
 ---
 # Template agents, design gate and local hooks
 
@@ -123,6 +127,19 @@ Version 3.2 implements the researched Kun adaptation described in
 [the adoption plan](../research/kun-adoption.md). This record also binds the
 canonical task routes, principles and tool references plus the catalog renderer
 that links them. Existing profiles and skills retain their names and tool scopes.
+
+Version 3.3 follows the user's request for ripgrep, fd, fzf, jq, lazygit and
+Hack Nerd Font under [ADR 0008](../adr/0008-efficient-agent-tooling.md). The
+Copilot setup job installs and verifies the four noninteractive tools. Shared
+instructions and discovery select tools by task; interactive Git and terminal
+font setup remain workstation behavior. No profile gains execute permission.
+
+The 3.3 follow-up adopts [ADR 0009](../adr/0009-native-tooling-and-review-evidence.md):
+pinned uv installs the existing Python requirements in both setup workflows;
+Copilot also receives the pinned ast-grep CLI for structural searches. Shared
+review, test-design and verification procedures make repair-test independence
+and revision-specific evidence explicit. Research records the reviewed
+no-mistakes source and the limits of native-tool performance claims.
 
 ## Scope and non-goals
 
@@ -204,6 +221,30 @@ Context maintenance classifies a claim against its canonical source, records
 supporting evidence and scope, consolidates duplicates and preserves supersession.
 Temporary run state and unresolved claims do not become permanent policy.
 
+The shared [tool policy](../agent-tooling.md) requires applicable available CLI
+tools for shell-capable agents, with scoped searches, structured JSON handling,
+noninteractive filtering and explicit fallbacks. Read/search-only hosts retain
+their existing tools. Copilot setup uses Ubuntu packages for ripgrep, fd-find,
+fzf and jq; resolved versions and smoke failures are visible in that job. A
+missing package fails setup rather than appearing installed. Lazygit needs a
+human-driven terminal; the font setting falls back if the font is unavailable.
+These defaults guide execution without overriding permissions or guaranteeing
+native client compliance.
+
+Both jobs keep setup-python and its selected Python 3.12 interpreter. uv uses
+that interpreter explicitly for runner-only installation; local setup uses a
+virtual environment. Tool versions are logged and install failures fail the
+step. No Python project manifest, dependency sync/removal, cache persistence,
+formatter migration or application stack is introduced. Copilot's ast-grep
+smoke case checks syntax matches against a misleading comment and string.
+It does not enable a blanket lint policy or replace Semgrep/Gitleaks.
+
+After repairs, code review independently checks both implementation and tests
+against accepted behavior. Test design separates textual interface assertions
+from behavioral evidence. Verification associates results with the checked
+state and reruns affected checks after later changes. These instructions do not
+create an autonomous Git proxy, compulsory agent chain or approval checkpoint.
+
 Pre-tool hooks reject inputs that violate their supported policy; malformed or
 unsupported host payloads must not be reported as verified safe. Exact behavior
 and error propagation are tested at the adapter boundary. Post-edit checks keep
@@ -235,6 +276,19 @@ independent synthetic requests, and verify tool-reference examples against the
 shipped CLI interfaces. Record outcomes and baseline failures in
 [Kun adaptation validation](../research/kun-validation.md). This checks the
 guidance's behavior in bounded exercises, not universal model performance.
+
+For the tooling follow-up, run the modified Copilot setup job, including CLI
+version checks and noninteractive smoke cases, and record the observed scope in
+[the tooling evidence](../research/agent-tooling.md). Verify the updated
+discovery skill, shared links and terminal setting structurally. Workstation
+installation and font rendering are separate from Linux setup evidence.
+
+For the native-tool follow-up, exercise fresh uv dependency installation,
+the structural-search smoke case and failure detection, and both hosted jobs.
+Run bounded review exercises for a self-confirming test and stale CI evidence.
+Record exact commands, source revisions, results and measurement limits in
+[native tooling research](../research/native-tooling.md) and
+[no-mistakes adoption](../research/no-mistakes-adoption.md).
 
 ## Risks and alternatives
 

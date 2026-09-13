@@ -5,8 +5,11 @@ Prepared 13 September 2026 for template 3.2.0, based on template commit
 [source review and implementation plan](kun-adoption.md) and
 [accepted decision](../adr/0007-local-engineering-guidance.md).
 
-The checked implementation adds guidance and catalog navigation; it does not
-change scanner policy, initializer inputs, dependencies or CI configuration.
+This record covers the initial Kun adaptation at
+`098348b77e5b4e24f3fc7d5348820be91717a866`, which added guidance and catalog
+navigation without changing scanner policy, initializer inputs, dependencies or
+CI configuration. The later [agent tooling follow-up](agent-tooling.md) records
+the user's additional command defaults and Copilot setup changes separately.
 
 ## Environment and command evidence
 

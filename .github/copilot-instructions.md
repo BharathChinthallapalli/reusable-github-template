@@ -5,6 +5,12 @@ actual project's purpose, architecture, commands, and operational constraints.
 Follow `AGENTS.md` for repository work and validation. There is no application
 stack until its manifests and code are added.
 
+Apply the shared tool defaults in `AGENTS.md` and `docs/agent-tooling.md`:
+`rg`, `fd`/`fdfind`, `jq` and noninteractive `fzf --filter` for their matching
+tasks. Copilot setup prepares these CLIs. Lazygit requires a human-driven
+terminal; Hack Nerd Font is local terminal presentation. Use the documented
+fallback when a tool or shell capability is unavailable.
+
 Prepare the validation environment described in `docs/using-the-template.md`.
 Use the command map and required checks in `AGENTS.md`, including the skill
 catalog and separate Git integration lane. These checks exercise

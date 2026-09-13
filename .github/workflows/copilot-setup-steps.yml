@@ -32,8 +32,43 @@ jobs:
         uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: '3.12'
+      - name: Set up uv
+        uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9 # v9.0.0
+        with:
+          version: '0.12.13'
+          enable-cache: false
       - name: Install repository validation dependencies
-        run: python -m pip install --disable-pip-version-check -r requirements-dev.txt
+        run: |
+          uv --version
+          uv pip install --system --python python -r requirements-dev.txt
+      - name: Install structural search tool
+        run: |
+          uv pip install --system --python python --only-binary :all: ast-grep-cli==0.45.3
+      - name: Install agent search and JSON tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends ripgrep fd-find fzf jq
+      - name: Verify noninteractive agent tools
+        env:
+          FZF_DEFAULT_OPTS: ''
+          FZF_DEFAULT_OPTS_FILE: ''
+        run: |
+          set -euo pipefail
+          rg --version
+          fdfind --version
+          fzf --version
+          jq --version
+          rg -q -F -- 'template_version' template.json
+          fdfind --quiet --hidden --type f --glob 'copilot-setup-steps.yml' .github
+          printf 'alpha\0beta with space\0' | fzf --read0 --print0 --filter='beta' | python -c 'import sys; assert sys.stdin.buffer.read() == b"beta with space\0"'
+          jq -e '.schema_version == 1 and (.template_version | type == "string")' template.json
+      - name: Verify structural search
+        run: |
+          set -euo pipefail
+          ast-grep --version
+          printf 'print("actual")\n# print("comment")\ntext = "print(42)"\n' |
+            ast-grep run --lang python --pattern 'print($$$ARGS)' --stdin --json=compact |
+            jq -e 'length == 1 and .[0].text == "print(\"actual\")"'
       - name: Install pinned secret scanner
         run: python tools/install_hook_tools.py
       - name: Confirm validation tools are available

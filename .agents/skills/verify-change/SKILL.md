@@ -23,6 +23,10 @@ description: "Choose and run proportionate checks for a code or configuration ch
    preserve independent acceptance cases within an agreed budget.
 6. Report the revision or working tree checked, exact commands, results and
    material limitations. Distinguish passed, failed, blocked and not run.
+   If code or configuration changes after a check, identify the affected evidence
+   and rerun those checks before attributing success to the final state. An
+   earlier passing result belongs to the earlier revision. Do not repeat
+   unrelated checks solely because an evidence note or PR description changed.
 
 Do not silence a failure, weaken assertions or update expected output merely to
 make a check pass. Diagnose whether the expectation or implementation is wrong.

@@ -2,5 +2,6 @@
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "chat.useAgentsMdFile": true,
   "chat.includeApplyingInstructions": true,
-  "chat.useAgentSkills": true
+  "chat.useAgentSkills": true,
+  "terminal.integrated.fontFamily": "'Hack Nerd Font Mono', monospace"
 }

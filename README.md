@@ -11,6 +11,12 @@ and AI projects. It bundles 34 reusable engineering skills, 13 specialist agents
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
+The [SDLC purpose](docs/sdlc-template-purpose.md) records the intended lifecycle
+coverage and feature/spec-wise delivery approach. See the
+[AI/ML/LLMOps and specification-driven research](docs/research/ai-sdlc-lifecycles.md)
+for proposed extensions and their evidence. Project delivery proceeds through
+bounded, verified increments.
+
 1. Follow [template setup](docs/using-the-template.md) to create your template
    repository, then use GitHub's **Use this template** for each new project.
 2. Clone the new project and run the initializer below with your real values.
@@ -34,7 +40,7 @@ security address or private HTTPS reporting page. Initialization is local and
 does not create a GitHub repository or grant access.
 
 ```bash
-python3 -m pip install -r requirements-dev.txt
+uv pip install --python python3 -r requirements-dev.txt
 python3 tools/install_hook_tools.py
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py
@@ -89,6 +95,9 @@ Select `engineer` for coordinated implementation, or choose a specialist directl
 Start with the [task routes](docs/engineering-workflows.md#choose-the-task-route),
 consult [engineering principles](docs/engineering-principles.md) for tradeoffs,
 and use the [tool guide](docs/repository-tools.md) to select a shipped command.
+The [agent tooling defaults](docs/agent-tooling.md) require the applicable
+available ripgrep, fd, fzf and jq commands, with lazygit and Hack Nerd Font for
+interactive terminal work. Copilot setup prepares the noninteractive tools.
 See [example tasks](docs/working-with-agents.md) and [AI assistance](docs/ai-assistance.md)
 for the inventory
 and a discovery check that separates valid files from observed host behavior.

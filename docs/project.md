@@ -50,7 +50,7 @@ after verifying them against the project's actual entrypoints.
 
 | Task | Current command |
 | --- | --- |
-| Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
+| Validation dependency setup | `uv pip install --python python3 -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |
 | Repository validation | `python3 tools/check_repository.py` |
 | Static agent and skill diagnostics | `python3 tools/check_ai_configuration.py` |
 | Install pinned secret scanner | `python3 tools/install_hook_tools.py` after dependency setup |

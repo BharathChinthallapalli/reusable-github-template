@@ -1,17 +1,41 @@
 # Extend CI when an application exists
 
-The base workflow is named **CI** and exposes one job named **Repository checks**. It runs on `ubuntu-24.04` with Python 3.12, uses full commit SHA references for checkout and Python setup, and requests `contents: read`.
+The base workflow is named **CI** and exposes one job named **Repository checks**. It runs on `ubuntu-24.04` with Python 3.12, uses full commit SHA references for checkout, Python setup and uv setup, and requests `contents: read`.
 
-Its commands are:
+Its validation commands include the following; the [workflow](../.github/workflows/ci.yml)
+is the complete ordered contract, including Ruff/Gitleaks, pre-commit, design,
+catalog and integration checks:
 
 ```bash
-python -m pip install --disable-pip-version-check -r requirements-dev.txt
+uv pip install --system --python python -r requirements-dev.txt
 python tools/check_repository.py
 python tools/check_ai_configuration.py
 python -m unittest discover -s tests -v
 ```
 
 Passing these checks means the repository scaffold meets its local checks. It does not establish application correctness, security, deployment readiness, or that GitHub settings are active.
+
+uv 0.12.13 installs the existing requirements into the runner's selected Python.
+Keep setup-python: these tools require an interpreter and GitHub can supply a
+cached one. Local installs use a virtual environment. No persistent uv cache is
+enabled yet; measure its restore/save cost before adopting it for this small
+dependency set. See [the research and measurement scope](research/native-tooling.md).
+
+## Select native tools for a real bottleneck
+
+Ruff already checks this template's Python. A future Python app can evaluate
+`ruff format --check` against its formatting contract and remaining plugin rules
+before replacing Black/Flake8. Native compilation alone does not justify removal
+of established checks. Use available rg for scoped text checks, Gitleaks for
+secrets, and tested ast-grep/Semgrep rules for the policies they actually cover.
+
+For a frontend app, compare the framework's supported SWC/Rolldown/Rspack path
+and Biome/Oxc linting with the actual manifest, plugins, transforms and targets.
+Verify production behavior, source maps, output size and rule compatibility.
+Record repeated cold/warm build timings and peak memory on the same runner and
+revision; account for download, setup, cache and JS-plugin costs. Adopt the
+simplest compatible improvement, not every named tool. This foundation has no
+frontend build to migrate. See [primary sources](research/native-tooling.md).
 
 ## Add a concrete application contract
 

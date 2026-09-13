@@ -14,6 +14,10 @@ decision status before relying on historical design guidance; see
 
 Use the relevant bundled skills without waiting for the user to name them.
 Read each selected SKILL.md and only the references needed by the current task.
+Choose the [task route](docs/engineering-workflows.md#choose-the-task-route)
+for the requested outcome. Use the [engineering principles](docs/engineering-principles.md)
+when a tradeoff needs context and the [tool guide](docs/repository-tools.md)
+when selecting a repository command. These are local references, read as needed.
 
 | Work | Procedure |
 | --- | --- |

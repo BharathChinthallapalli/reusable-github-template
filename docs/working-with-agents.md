@@ -6,6 +6,10 @@ Choose `engineer` for implementation when your client exposes the profile.
 [The catalog](ai-catalog.md) is the complete list and [AI assistance](ai-assistance.md)
 explains native host support.
 
+Use the [task routes](engineering-workflows.md#choose-the-task-route) to select
+the first unresolved step. The [principles](engineering-principles.md) explain
+tradeoffs; the [tool guide](repository-tools.md) maps problems to local commands.
+
 The examples below are task requests, not claims that an application or model
 has already been run. Replace file names, budgets and acceptance criteria with
 project facts. Copy a skill asset into your project's work record when useful;

@@ -1,5 +1,14 @@
 # Research and design evidence
 
+## Version 3.2: Kun-inspired local guidance
+
+- [Source review and adoption decisions](kun-adoption.md): pinned Kun tree,
+  inspected sections, existing-template overlap and four scoped improvements.
+- [Implementation validation](kun-validation.md): command checks, independent
+  task exercises, initialized-copy evidence and platform limits.
+
+## Foundation research
+
 Reviewed on **9 September 2026**. This is a synthesis of first-party examples and
 current official documentation, not a ranking of companies or a claim about
 their internal engineering standards.

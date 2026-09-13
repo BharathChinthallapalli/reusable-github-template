@@ -4,6 +4,34 @@ Start at the task the user actually needs. An agreed bug fix can go straight to
 implementation; a wording correction can go straight to the documentation writer.
 The stages below are available procedures, not a required approval chain.
 
+## Choose the task route
+
+Match the requested outcome to a route, then start at the first unresolved step.
+Research means inspecting the relevant repository and evidence; external research
+is needed when the question depends on information outside that evidence.
+An agreed feature does not require another approval of its intent. Reuse sufficient
+existing tests, current decisions and still-applicable validation results.
+
+| Request | Working sequence and relevant procedures | Evidence to finish |
+| --- | --- | --- |
+| Explore an idea or compare approaches | [Discover the need](../.agents/skills/solution-discovery/SKILL.md), research unknowns, then [compare feasible plans](../.agents/skills/implementation-planning/SKILL.md). Implement only when the request includes implementation. | A recommendation tied to the user outcome, meaningful alternatives and explicit remaining questions. |
+| Implement a feature | [Trace affected behavior](../.agents/skills/repo-discovery/SKILL.md), plan material unknowns, implement with [clean-code](../.agents/skills/clean-code/SKILL.md), then [verify](../.agents/skills/verify-change/SKILL.md). | The requested behavior works through its consumer and relevant existing contracts still hold. |
+| Fix a reported bug | [Reproduce and isolate the cause](../.agents/skills/systematic-debugging/SKILL.md), make a focused correction, then verify the reproducer and affected behavior. Use [Actions debugging](../.agents/skills/github-actions-debug/SKILL.md) for a workflow-run failure. | Evidence connects the reported failure to the correction; an unreproduced report remains an uncertainty, not a verified fix. |
+| Refactor existing code | Identify behavior to preserve, inspect coverage with [test-design](../.agents/skills/test-design/SKILL.md), fill meaningful gaps, then [refactor in checked increments](../.agents/skills/clean-code/references/safe-changes.md). | Relevant behavior checks pass before and after; necessary behavior changes are identified separately. |
+| Explain a system or decision | Trace the relevant code or sources, then use [documentation-writing](../.agents/skills/documentation-writing/SKILL.md) for the reader's question. | A traceable explanation with a concrete example; a diagram or interactive example when it improves understanding. |
+| Make a routine prose or configuration correction | Inspect the affected contract, edit directly, and run the relevant link, parser or other focused check. | The correction is usable and verified without an unrelated design or test exercise. |
+
+Use the existing [role map](#select-a-responsibility-by-its-output) if specialist
+help resolves a concrete uncertainty. Review substantial completed changes against
+the original intent and raw diff; the implementer's summary alone is insufficient.
+Available tools and authorization govern execution. No route requires a named
+external product, a fixed agent chain or loading the whole reference library.
+
+For tradeoffs, read the relevant [engineering principle](engineering-principles.md)
+and follow its link to the current decision or procedure. Choose executable checks
+with the [repository tool guide](repository-tools.md); application commands still
+come from [project context](project.md) and actual manifests.
+
 ## Select a responsibility by its output
 
 | Need | Profile when supported | Procedure and useful output |

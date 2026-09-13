@@ -12,6 +12,8 @@ Routine edits do not need one. Start from [the outline](template.md).
 | [0003: Portable Git checks](0003-portable-git-checks.md) | Accepted | Staged commit checks and independent CI invocation |
 | [0004: Portable engineering capabilities](0004-portable-engineering-capabilities.md) | Accepted | Shared skill location, expanded task workflows, catalog and offline evaluation gate |
 | [0005: Scoped agent design gate](0005-scoped-agent-design-gate.md) | Accepted | Explicit agent and hook designs, pre-edit coverage and delivered-content bindings |
+| [0006: Evidence-based engineering workflows](0006-evidence-based-engineering-workflows.md) | Accepted | Engineering roles, conditional Azure guidance and portable workflow procedures |
+| [0007: Local engineering guidance](0007-local-engineering-guidance.md) | Accepted | Task routes, principles, repository tool guide and evidence-based context consolidation |
 
 This index is navigation. Read each relevant decision's current status and
 reasoning, and compare its assumptions with repository evidence. Update the

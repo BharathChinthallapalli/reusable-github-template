@@ -44,6 +44,10 @@ what callers need to know; avoid duplicating implementation details. The
 
 ## Commands
 
+Use the [repository tool guide](repository-tools.md) for prerequisites, side
+effects and the limits of each foundation check. Add application commands here
+after verifying them against the project's actual entrypoints.
+
 | Task | Current command |
 | --- | --- |
 | Validation dependency setup | `python3 -m pip install -r requirements-dev.txt` in [the prepared environment](using-the-template.md) |

@@ -86,6 +86,9 @@ procedures. The expanded catalog covers research, planning, orchestration,
 debugging, test design, AI/data/retrieval/tool engineering, security, performance,
 interfaces, dependency upgrades, context maintenance and release delivery.
 Select `engineer` for coordinated implementation, or choose a specialist directly.
+Start with the [task routes](docs/engineering-workflows.md#choose-the-task-route),
+consult [engineering principles](docs/engineering-principles.md) for tradeoffs,
+and use the [tool guide](docs/repository-tools.md) to select a shipped command.
 See [example tasks](docs/working-with-agents.md) and [AI assistance](docs/ai-assistance.md)
 for the inventory
 and a discovery check that separates valid files from observed host behavior.

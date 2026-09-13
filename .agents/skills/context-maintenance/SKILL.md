@@ -11,6 +11,23 @@ and relevant callers before changing them. Use
 [repo-discovery](../repo-discovery/SKILL.md) when the actual project boundary is
 unclear; an example directory or tooling dependency does not define the app stack.
 
+When consolidating guidance:
+
+1. Capture the supporting file, command result or explicit user decision, its
+   revision or date, and affected version, environment and scope. Label inference.
+2. Find the canonical owner and classify each incoming claim as new, duplicate,
+   changed, superseded or conflicting before adding another instruction.
+3. Merge duplicates at the owner and update consumers to point there. Replace
+   changed guidance with current evidence; retain useful historical rationale and
+   a replacement pointer for superseded guidance. Preserve distinct facts and
+   unresolved conflicts instead of choosing by recency alone.
+4. Check affected links, commands and consumers. State a recheck trigger when a
+   runtime, interface or external assumption could invalidate the guidance.
+
+Inspect only context relevant to the requested work. An explicit user choice is
+authoritative within its stated scope; an inferred preference is not a durable
+rule. If evidence adds no durable information, leave permanent instructions alone.
+
 Refresh the smallest source of truth. Record commands from manifests/CI and
 contracts from code/tests; label proposed behavior and unverified environments.
 Preserve the user's active objective, corrections, authorized scope, unfinished

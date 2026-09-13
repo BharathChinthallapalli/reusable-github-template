@@ -28,6 +28,7 @@ for every edit. Preserve current project facts and verify the behavior that chan
 | Agent/skill metadata or routing | Definitions, `AGENTS.md`, Copilot instructions, generated catalog, AI checker/tests and [AI assistance](ai-assistance.md) | Static diagnostics and catalog freshness; separate host discovery/invocation evidence for runtime claims |
 | Task routes or engineering principles | [Canonical routes](engineering-workflows.md#choose-the-task-route), [principles](engineering-principles.md), their source skills/ADRs and linked entrypoints | Concrete task exercises; preserve authorized scope and proportional validation |
 | Repository tool interface | Owning CLI/help, [tool guide](repository-tools.md), command map, generated catalog links and setup/runbooks | Actual prerequisites, write behavior, output and exit status agree with the guide |
+| Agent CLI defaults or terminal setup | [Tool policy](agent-tooling.md), root/Copilot/discovery links, Copilot setup workflow, VS Code terminal setting and setup docs | CLI availability and bounded noninteractive smoke checks; font rendering and native agent use are separate |
 | Durable context or a superseded workaround | Canonical instruction/runbook, context skill and refresh asset, affected consumers and decision status | Scoped evidence with revision/date, retained rationale, explicit unresolved conflicts and recheck trigger |
 | Hook selection, revision, arguments or filters | `.pre-commit-config.yaml`, `tests/integration`, CI and [hook guide](git-hooks.md) | Clean-checkout scan, affected rejection/acceptance cases, staged-content behavior |
 | Tooling dependency or Python version | `requirements-dev.txt`, CI setup, hook environment, setup docs and Dependabot configuration | Fresh environment plus relevant offline and integration lanes |
@@ -243,3 +244,18 @@ customized project. Regenerate the catalog and run the relevant checks. See
 [research and adoption choices](research/kun-adoption.md) and
 [validation evidence](research/kun-validation.md). Generated projects need an
 explicit migration; this template update does not change them automatically.
+
+## Adopt version 3.3
+
+Version 3.3 adds [shared tool defaults](agent-tooling.md) and
+installs ripgrep, fd-find, fzf and jq in Copilot setup. Merge that workflow with
+existing environment preparation, observe its version/smoke checks, and retain
+platform-specific command names. Configure lazygit and Hack Nerd Font in local
+interactive workstations as needed. Preserve a project's preferred terminal
+settings when merging the font default; font installation is a separate step.
+The policy uses fallbacks when a host lacks a CLI or shell capability.
+Python validation dependencies, the initializer interface, hook behavior and
+required `Repository checks` job name retain their existing contracts. Reconcile
+the affected ADD scope and ADR before resealing the merged project guidance.
+See [tooling sources and evidence](research/agent-tooling.md) for verification
+boundaries. Existing projects need an explicit update.

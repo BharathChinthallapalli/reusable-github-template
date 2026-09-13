@@ -1,5 +1,10 @@
 # Research and design evidence
 
+## Version 3.3: Agent tooling defaults
+
+- [Agent tooling follow-up](agent-tooling.md): requested shared CLI defaults,
+  Copilot setup, terminal presentation, primary sources and verification scope.
+
 ## Version 3.2: Kun-inspired local guidance
 
 - [Source review and adoption decisions](kun-adoption.md): pinned Kun tree,

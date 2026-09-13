@@ -1,6 +1,13 @@
 # Validation record
 
-Template version: 3.2.0. Prepared 13 September 2026.
+Template version: 3.3.0. Prepared 13 September 2026.
+
+## Version 3.3 validation
+
+The [agent tooling follow-up](docs/research/agent-tooling.md) adds shared command
+defaults, Copilot package preparation/smoke checks and a terminal font setting.
+Match both `Repository checks` and `Copilot Setup Steps` to the latest PR revision;
+earlier green runs do not verify that setup change.
 
 ## Version 3.2 validation
 

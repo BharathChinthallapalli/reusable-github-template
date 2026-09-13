@@ -1,5 +1,10 @@
 # Create and reuse the template
 
+Prepare the [agent tooling defaults](agent-tooling.md#prepare-an-environment) in
+the environment where your assistant runs. Copilot cloud setup installs the
+noninteractive tools; local clients use their workstation installation. The
+shared policy covers ripgrep, fd, fzf, jq, lazygit and Hack Nerd Font.
+
 ## Prepare local validation
 
 The initializer and foundation checker run with Python 3.12+ alone. The AI

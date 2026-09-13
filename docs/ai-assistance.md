@@ -1,10 +1,16 @@
 # Default agents, skills, and clean code
 
-Version 3.1.0 bundles **34 skills and 13 agents**. New repositories receive the
+Version 3.3.0 bundles **34 skills and 13 agents**. New repositories receive the
 files, routing instructions and VS Code settings automatically. The
 [generated catalog](ai-catalog.md) lists every capability, its trigger, declared
 tools and invocation flags. [Working examples](working-with-agents.md) show how
 to use them for ordinary engineering and AI projects.
+
+The [agent tool policy](agent-tooling.md) supplies shared defaults for ripgrep,
+fd, fzf, jq, lazygit and Hack Nerd Font. Copilot's setup job installs and checks
+the four noninteractive CLIs. The root instructions reach every bundled profile;
+Copilot also references the policy directly and Claude imports it through
+AGENTS.md. Read/search-only profiles retain their declared tool scopes.
 
 ## Default behavior and host support
 

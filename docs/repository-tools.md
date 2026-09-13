@@ -6,6 +6,10 @@ the repository root with the Python environment prepared in
 tools; it does not select an application stack. Pins belong in the manifests and
 installer, not in a second dependency list here.
 
+For everyday file/content search, JSON inspection and terminal work, follow the
+[agent tooling defaults and setup](agent-tooling.md). The commands below are the
+foundation's validation and setup interfaces.
+
 ## Inspect and validate
 
 These commands do not intentionally rewrite project source. Tests and tooling

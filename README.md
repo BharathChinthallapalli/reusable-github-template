@@ -89,6 +89,9 @@ Select `engineer` for coordinated implementation, or choose a specialist directl
 Start with the [task routes](docs/engineering-workflows.md#choose-the-task-route),
 consult [engineering principles](docs/engineering-principles.md) for tradeoffs,
 and use the [tool guide](docs/repository-tools.md) to select a shipped command.
+The [agent tooling defaults](docs/agent-tooling.md) require the applicable
+available ripgrep, fd, fzf and jq commands, with lazygit and Hack Nerd Font for
+interactive terminal work. Copilot setup prepares the noninteractive tools.
 See [example tasks](docs/working-with-agents.md) and [AI assistance](docs/ai-assistance.md)
 for the inventory
 and a discovery check that separates valid files from observed host behavior.

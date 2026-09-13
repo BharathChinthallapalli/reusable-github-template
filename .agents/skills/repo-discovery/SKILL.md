@@ -5,6 +5,11 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
 
 # Discover the repository
 
+Use the [shared agent tool policy](../../../docs/agent-tooling.md): `fd`/`fdfind`
+for path lookup, `rg` for content, `jq` for JSON and `fzf --filter` when fuzzy
+candidate selection helps. Keep searches scoped and include relevant hidden
+instruction directories. Read/search-only hosts use their existing tools.
+
 1. Read applicable repository instructions, README and project context. Record
    the revision inspected and distinguish committed content from local edits.
 2. Inspect manifests, lockfiles, runtime configuration, CI and directory layout

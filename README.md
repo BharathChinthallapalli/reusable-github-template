@@ -34,7 +34,7 @@ security address or private HTTPS reporting page. Initialization is local and
 does not create a GitHub repository or grant access.
 
 ```bash
-python3 -m pip install -r requirements-dev.txt
+uv pip install --python python3 -r requirements-dev.txt
 python3 tools/install_hook_tools.py
 python3 -m pre_commit run --all-files
 python3 tools/check_repository.py

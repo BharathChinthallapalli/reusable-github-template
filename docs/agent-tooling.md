@@ -15,6 +15,9 @@ Do not change a profile's permissions just to run a preferred command.
 | Locate files or directories | **fd (`fd`, packaged as `fdfind` on Ubuntu/Debian)** | Use filename/glob/type filters and a root, such as `fd --type f --glob '*.py' tools`. Both executable names satisfy this policy |
 | Narrow a candidate list by approximate name | **fzf** | Feed a bounded list and use `--filter` for unattended work. Inspect the matches before acting; fuzzy ranking is not proof that a file is the intended target |
 | Inspect or filter JSON | **jq** | Use selectors, `-r` for string output and `-e` for assertions. Pass external values with `--arg`/`--argjson`; do not interpolate them into jq source or parse JSON with regex |
+| Search code by syntax | **ast-grep** | Use an explicit language, quoted pattern, scoped input and JSON output; use `ast-grep`, since Linux's `sg` can mean a different program |
+| Install this template's Python validation dependencies | **uv** | Use `uv pip install --python python -r requirements-dev.txt` in the prepared virtual environment; retain the application's chosen package manager |
+| Lint this template's Python | **Ruff** | Use the existing hook/check commands and pinned rules. Formatting changes require a project formatting contract |
 | Inspect Git interactively with a person | **lazygit** | Use in a human-driven terminal. Automated agents use `git status --short`, `git --no-pager diff` and other explicit Git commands; do not open a TUI that waits for input |
 | Render terminal text and icons | **Hack Nerd Font Mono** | Select the installed font in the local terminal. The VS Code workspace selects it with `monospace` fallback. Fonts do not change agent parsing or headless execution |
 
@@ -25,6 +28,21 @@ scan, use the project's Semgrep rules when present; otherwise select relevant
 reviewed rules, disable metrics for a local scan, and record rule/tool versions
 and coverage. A Semgrep finding needs a code-path review; zero findings do not
 prove the absence of defects. Semgrep is not a dependency of routine searches.
+
+For syntax-aware investigations, use ast-grep's scoped `run` command. For example,
+`ast-grep run --lang python --pattern 'subprocess.run($$$ARGS)' --json=compact tools`
+lists matching calls, not vulnerabilities. Inspect arguments and affected callers
+before drawing conclusions. Quote metavariables to prevent shell expansion and
+avoid rewrite/interactive options during searches. JSON `[]` is no result, not a
+policy pass. Check command failures separately from a no-match result.
+
+When a project has `sgconfig.yml` and tested policy rules, use its documented
+`ast-grep test` and `ast-grep scan` commands. Add rules only for an explicit
+project contract, with violating and allowed examples, then verify the failure
+exit before making them a CI gate. This template ships tool availability, not
+a blanket structural rule pack. Keep Gitleaks for secret detection; a fast
+regex search is not a replacement. TODOs and debug output need project-specific
+scope and exceptions, not a universal ban. See [native tool research](research/native-tooling.md).
 
 ## Keep searches useful and automation finite
 
@@ -62,6 +80,11 @@ authorized. Do not repeatedly install tools during investigation or edit global
 shell aliases, key bindings, Git configuration or fonts as a side effect of a
 routine task.
 
+If ast-grep is unavailable, use scoped rg results plus manual syntax inspection
+and report that structural matching was not run. For uv, use the documented pip
+fallback in [local setup](using-the-template.md#prepare-local-validation). Missing
+Ruff in a required check is a setup failure; do not silently skip that gate.
+
 ## Command examples
 
 Run from the repository root. These are reads; replace the query/root with the
@@ -88,6 +111,14 @@ It records resolved versions. These OS packages follow the configured Ubuntu
 repositories; this is not a completely pinned toolchain. Lazygit and fonts are
 workstation tools and are not installed by the headless job. The workflow must
 be on the default branch for normal Copilot cloud-agent setup discovery.
+
+Both hosted setup jobs pin uv 0.12.13 and retain Python 3.12. Copilot also installs
+the ast-grep-cli 0.45.3 binary wheel and checks a real call against comment/string
+lookalikes. Only the hosted runners use `uv pip install --system`; local setup stays in
+a virtual environment. Ruff is already pinned in `requirements-dev.txt`.
+Install ast-grep locally with `uv pip install --python python --only-binary :all:
+ast-grep-cli==0.45.3` in that environment, or use the upstream platform packages.
+Neither workflow installs frontend frameworks or changes an application's lockfile.
 
 For an authorized macOS workstation setup with Homebrew already installed:
 

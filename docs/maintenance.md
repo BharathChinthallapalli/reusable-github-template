@@ -254,6 +254,15 @@ platform-specific command names. Configure lazygit and Hack Nerd Font in local
 interactive workstations as needed. Preserve a project's preferred terminal
 settings when merging the font default; font installation is a separate step.
 The policy uses fallbacks when a host lacks a CLI or shell capability.
+The same release adds pinned uv setup in both workflows and ast-grep in Copilot
+setup. Merge the selected Python/install commands together with local setup docs;
+keep the project's package manager for application dependencies. uv and ast-grep
+version strings inside workflows require deliberate updates in addition to
+Dependabot's action-SHA PRs. Test fresh installation and both actual jobs.
+Merge the three skill refinements for independent repair/test review, meaningful
+declarative assertions and current verification evidence. See
+[native tooling](research/native-tooling.md) and
+[no-mistakes adoption](research/no-mistakes-adoption.md).
 Python validation dependencies, the initializer interface, hook behavior and
 required `Repository checks` job name retain their existing contracts. Reconcile
 the affected ADD scope and ADR before resealing the merged project guidance.

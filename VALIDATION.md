@@ -9,6 +9,13 @@ defaults, Copilot package preparation/smoke checks and a terminal font setting.
 Match both `Repository checks` and `Copilot Setup Steps` to the latest PR revision;
 earlier green runs do not verify that setup change.
 
+The [native tooling follow-up](docs/research/native-tooling.md) changes dependency
+installation to uv and adds Copilot structural-search setup. The
+[no-mistakes adaptation](docs/research/no-mistakes-adoption.md) refines three
+existing skills. Their evidence records distinguish local behavioral checks,
+synthetic review exercises and hosted runs; PR validation must identify the
+actual tested head or an equivalent merge tree.
+
 ## Version 3.2 validation
 
 The [Kun adoption validation record](docs/research/kun-validation.md) records

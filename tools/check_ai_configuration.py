@@ -16,7 +16,7 @@ except ModuleNotFoundError as exc:
     if exc.name != "yaml":
         raise
     if __name__ == "__main__":
-        raise SystemExit("PyYAML is missing. Install dependencies with: python3 -m pip install -r requirements-dev.txt") from None
+        raise SystemExit("PyYAML is missing. In the prepared environment, run: uv pip install --python python3 -r requirements-dev.txt (or python3 -m pip install -r requirements-dev.txt)") from None
     raise
 
 

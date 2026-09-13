@@ -4,6 +4,10 @@
 
 - [Agent tooling follow-up](agent-tooling.md): requested shared CLI defaults,
   Copilot setup, terminal presentation, primary sources and verification scope.
+- [Native tooling](native-tooling.md): uv and ast-grep adoption, checked action
+  pins, compatibility boundaries and corrections to performance claims.
+- [No-mistakes adoption](no-mistakes-adoption.md): pinned source coverage,
+  independent repair review and verification freshness in the existing skills.
 
 ## Version 3.2: Kun-inspired local guidance
 

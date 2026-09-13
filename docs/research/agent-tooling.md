@@ -41,6 +41,10 @@ workstations; `.vscode/settings.json` selects the font without installing it.
 
 ## Verification record
 
+This section records the initial tool-default change delivered as
+`7ef30d93e522b7833f7214938181e238a78d338c`. The later uv, ast-grep and review-skill
+follow-up has its own [evidence record](native-tooling.md).
+
 Foundation/link validation, AI metadata, catalog freshness, the changed skill's
 format, complete design coverage/bindings and Ruff/Gitleaks checks passed.
 All 136 offline tests passed using Python 3.12 and `TMPDIR=/private/tmp`, with an

@@ -15,6 +15,10 @@ description: "Review a diff for demonstrable bugs, authorization failures, data 
    compatibility, error handling and credible reliability regressions.
 3. For each candidate, trace a concrete input or execution path to the impact.
    Check guards, framework behavior and tests that could disprove the concern.
+   After a repair, review both the implementation and its changed tests against
+   the original acceptance criteria. Prior findings and repair summaries are
+   claims to verify. Check whether the new test can pass while the required
+   behavior remains wrong; preserve legitimate changes to the contract.
 4. Use [the finding standard](references/findings.md) to separate verified
    defects from hypotheses and optional improvements. Use current official
    documentation when a finding depends on platform or version behavior.

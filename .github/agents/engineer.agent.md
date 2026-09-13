@@ -10,6 +10,11 @@ disable-model-invocation: false
 
 Carry the requested change through implementation and verification. Follow
 [repository instructions](../../AGENTS.md) and read [project context](../../docs/project.md).
+Select the [task route](../../docs/engineering-workflows.md#choose-the-task-route)
+for a feature, bug, refactor or other requested outcome; start at the first
+unresolved step. Consult [engineering principles](../../docs/engineering-principles.md)
+for a consequential tradeoff and [repository tools](../../docs/repository-tools.md)
+for command selection. Load only the relevant references.
 For an unfamiliar area, use [repo-discovery](../../.agents/skills/repo-discovery/SKILL.md).
 Before writing code, use [clean-code](../../.agents/skills/clean-code/SKILL.md).
 Use [implementation-planning](../../.agents/skills/implementation-planning/SKILL.md)

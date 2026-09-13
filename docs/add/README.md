@@ -109,6 +109,7 @@ and its tests in the same reviewed design change.
 | Record | Status | Purpose |
 | --- | --- | --- |
 | [0001: Template agents and hooks](0001-template-agents-and-hooks.md) | Ready | Current shared procedures, explicit design gate, local hook policy and validation boundaries |
+| [0002: Engineering workflows](0002-engineering-workflows.md) | Ready | Additional engineering roles, Azure procedures and workflow guidance |
 
 Sealing demonstrates matching content, not compliance with every sentence. A
 ready record is editable and is not an authenticated approval. Host hooks and

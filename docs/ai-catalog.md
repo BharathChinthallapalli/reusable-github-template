@@ -10,6 +10,10 @@ mean user invocation is allowed and model invocation is eligible unless
 disabled in metadata. Deprecated `infer` flags do not establish legacy host behavior.
 Skills describe procedures; the invoking host and agent control their tools.
 
+For executable checks and setup, use the [repository tool guide](repository-tools.md).
+Choose a [task route](engineering-workflows.md#choose-the-task-route) before
+loading individual procedures. These references are local and read as needed.
+
 ## Agents (13)
 
 | Name | When to use | Declared tools | User invocable | Model invocation eligible |

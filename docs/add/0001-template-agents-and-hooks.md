@@ -87,13 +87,18 @@ scope:
 - tools/check_ai_configuration.py
 - tools/check_design.py
 - tools/install_hook_tools.py
+- docs/engineering-workflows.md
+- docs/engineering-principles.md
+- docs/repository-tools.md
+- tools/ai_catalog.py
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
 - docs/adr/0003-portable-git-checks.md
 - docs/adr/0004-portable-engineering-capabilities.md
 - docs/adr/0005-scoped-agent-design-gate.md
 - docs/adr/0006-evidence-based-engineering-workflows.md
-binding_sha256: 0477afa7f307cd817d49b4a932b8feec02aa581188cf8372f34c9736b76cbc87
+- docs/adr/0007-local-engineering-guidance.md
+binding_sha256: a2cb43a649e1ef8cedf069eb8a8da76f1017fb722d78f399aa81d65458d1dca6
 ---
 # Template agents, design gate and local hooks
 
@@ -113,6 +118,11 @@ solution and principal architecture, Azure phase guidance and workflow authoring
 New files are covered separately by [ADD-0002](0002-engineering-workflows.md);
 this record retains existing file ownership and the unchanged runtime gate/hook
 contracts. Decision 0006 records the additive role and procedure boundaries.
+
+Version 3.2 implements the researched Kun adaptation described in
+[the adoption plan](../research/kun-adoption.md). This record also binds the
+canonical task routes, principles and tool references plus the catalog renderer
+that links them. Existing profiles and skills retain their names and tool scopes.
 
 ## Scope and non-goals
 
@@ -185,6 +195,15 @@ default gate. A changed file, changed design or changed referenced ADR makes the
 previous delivery binding stale. Deleted files have a distinct absent state.
 Failed sealing leaves the original record intact.
 
+The engineer and shared root instructions select the task shape in the local
+engineering guide, then load the relevant existing skills. Principles explain
+tradeoffs through current ADRs, and the tool guide distinguishes prerequisites,
+read-only checks, explicit writes and evidence limits. No route requires loading
+all references, an external tool or a fresh approval of already authorized work.
+Context maintenance classifies a claim against its canonical source, records
+supporting evidence and scope, consolidates duplicates and preserves supersession.
+Temporary run state and unresolved claims do not become permanent policy.
+
 Pre-tool hooks reject inputs that violate their supported policy; malformed or
 unsupported host payloads must not be reported as verified safe. Exact behavior
 and error propagation are tested at the adapter boundary. Post-edit checks keep
@@ -210,6 +229,12 @@ through the checked setup to verify real tool invocation. Final default design
 validation must pass after all scoped writers finish and the binding is recorded.
 Host discovery, actual hosted lifecycle events, cloud deployments and application
 quality are separate evidence; report any unexercised boundary explicitly.
+
+For version 3.2, also exercise route choice and evidence consolidation with
+independent synthetic requests, and verify tool-reference examples against the
+shipped CLI interfaces. Record outcomes and baseline failures in
+[Kun adaptation validation](../research/kun-validation.md). This checks the
+guidance's behavior in bounded exercises, not universal model performance.
 
 ## Risks and alternatives
 

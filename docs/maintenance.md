@@ -26,6 +26,9 @@ for every edit. Preserve current project facts and verify the behavior that chan
 | Initializer arguments or project markers | `tools/initialize.py`, `template.json`, declared customization files, `tests/test_initialize.py`, README setup | Preview, intended writes, repeat behavior and initialized-copy checks |
 | Required files or repository checks | `tools/check_repository.py`, `tests/test_check_repository.py`, CI and [command map](project.md) | Relevant missing/invalid-file cases and local-link checks |
 | Agent/skill metadata or routing | Definitions, `AGENTS.md`, Copilot instructions, generated catalog, AI checker/tests and [AI assistance](ai-assistance.md) | Static diagnostics and catalog freshness; separate host discovery/invocation evidence for runtime claims |
+| Task routes or engineering principles | [Canonical routes](engineering-workflows.md#choose-the-task-route), [principles](engineering-principles.md), their source skills/ADRs and linked entrypoints | Concrete task exercises; preserve authorized scope and proportional validation |
+| Repository tool interface | Owning CLI/help, [tool guide](repository-tools.md), command map, generated catalog links and setup/runbooks | Actual prerequisites, write behavior, output and exit status agree with the guide |
+| Durable context or a superseded workaround | Canonical instruction/runbook, context skill and refresh asset, affected consumers and decision status | Scoped evidence with revision/date, retained rationale, explicit unresolved conflicts and recheck trigger |
 | Hook selection, revision, arguments or filters | `.pre-commit-config.yaml`, `tests/integration`, CI and [hook guide](git-hooks.md) | Clean-checkout scan, affected rejection/acceptance cases, staged-content behavior |
 | Tooling dependency or Python version | `requirements-dev.txt`, CI setup, hook environment, setup docs and Dependabot configuration | Fresh environment plus relevant offline and integration lanes |
 | Workflow trigger, permission or check name | CI, reusable-workflow consumers, ruleset recipe, live rules and [GitHub setup](github-setup.md) | Actual run at the changed SHA; no absent required context |
@@ -219,3 +222,24 @@ record. Reconcile and seal affected designs, regenerate the catalog, validate
 skills and run source/initialized checks. See [the engineering map](research/engineering-expansion.md)
 for concrete behavior and research limits. Existing generated projects require
 an explicit upgrade; they do not receive these changes automatically.
+
+## Adopt version 3.2
+
+Version 3.2 adds local task routes, an engineering-principles reference, a
+problem-oriented tool guide and a context consolidation procedure. The catalog
+remains 34 skills and 13 agents. Existing initializer inputs, hook behavior, CI
+job names, dependencies and host configuration remain compatible with 3.1.
+
+Merge the canonical guides and links from the root instructions, engineer
+profile, README and catalog generator. Preserve project-specific commands and
+accepted decisions. Read references as the task requires; no remote instruction
+loader, external product or scheduled update is introduced.
+
+Merge the context procedure and optional refresh-table fields with existing
+handoffs. Classify claims, preserve their scope and sources, and update the
+canonical owner instead of accumulating duplicates. Reconcile project ADD scope
+and decisions before resealing; do not copy the template's binding into a
+customized project. Regenerate the catalog and run the relevant checks. See
+[research and adoption choices](research/kun-adoption.md) and
+[validation evidence](research/kun-validation.md). Generated projects need an
+explicit migration; this template update does not change them automatically.

@@ -1,8 +1,16 @@
 # Validation record
 
-Template version: 3.1.0. Prepared 9 September 2026.
+Template version: 3.2.0. Prepared 13 September 2026.
 
-## Results and scope
+## Version 3.2 validation
+
+The [Kun adoption validation record](docs/research/kun-validation.md) records
+checks of the local task routes, principles, tool guide and context procedure.
+It separates macOS baseline failures from changed behavior and records the
+limits of synthetic task exercises. The catalog remains 34 skills and 13 agents.
+The version 3.1 results below are historical evidence, not a fresh run of 3.2.
+
+## Version 3.1 results and scope (9 September 2026)
 
 - Linux, Python 3.12.14 and Git 2.51.1; pre-commit 4.6.2, PyYAML 6.0.3.
 - **136 offline tests** pass in the source and a disposable initialized project: the prior 80 tests plus 24 hook CLI, 18 design-gate and 14 installer tests.

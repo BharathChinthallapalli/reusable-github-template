@@ -53,6 +53,9 @@ def render_catalog(definitions: list[Definition]) -> str:
         "mean user invocation is allowed and model invocation is eligible unless",
         "disabled in metadata. Deprecated `infer` flags do not establish legacy host behavior.",
         "Skills describe procedures; the invoking host and agent control their tools.", "",
+        "For executable checks and setup, use the [repository tool guide](repository-tools.md).",
+        "Choose a [task route](engineering-workflows.md#choose-the-task-route) before",
+        "loading individual procedures. These references are local and read as needed.", "",
     ]
     for kind, title in (("agent", "Agents"), ("skill", "Skills")):
         entries = sorted((item for item in definitions if item.kind == kind),

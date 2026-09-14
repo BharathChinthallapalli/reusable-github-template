@@ -79,6 +79,7 @@ scope:
 - CLAUDE.md
 - hooks/README.md
 - hooks/agent_hooks.py
+- hooks/run_hook.py
 - hooks/prompts/release-notes.md
 - hooks/prompts/triage-issue.md
 - hooks/prompts/write-adr.md
@@ -102,7 +103,8 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 8bb06bd5ead59bb1c51bd0237935c82b3bcb405ef4b8da9a4cccd16c43910c69
+- docs/adr/0010-worktree-hook-bootstrap.md
+binding_sha256: f4e44a61910d307d947a510331ff492fe33230452d5ba80bf521700e4974e11f
 ---
 # Template agents, design gate and local hooks
 
@@ -190,14 +192,38 @@ because a profile or ADD says ready.
 
 Repository checks read local repository files. Their content is data, not
 instructions to execute. The design checker rejects unsafe scope paths and
-symlinks. The hook tool installer is an explicit setup operation for pinned
-validation tools, separate from the hook event; hooks must not install software
-or contact external services when evaluating an edit. The post-edit scanner operates on a local snapshot without excluded tool
+symlinks. Under ADR 0010, the session-start launcher prepares an ignored,
+worktree-local Python environment from the existing pinned requirements and
+uses the checksum-verifying Gitleaks installer. This fixed setup operation has
+a separate bounded startup deadline and runs only in a trusted repository.
+Pre-tool and post-tool events never install software or contact external
+services. They require a completed environment and retain all policy checks.
+The post-edit scanner operates on a local snapshot without excluded tool
 caches. Git enumeration omits ignored untracked files. A ZIP has no Git ignore
 selection and its fallback can scan local environment files; this is local,
 redacted secret detection, not a promise that those files are outside coverage. Use synthetic secrets in tests.
 
 ## Behavior and failure modes
+
+The launcher prepares `.tools/venv` at session start and records the requirements
+digest only after dependency installation, scanner installation and the original
+session diagnostic succeed. The receipt binds requirements, the installer source
+and Python runtime. Repeated starts reuse a complete environment; changed inputs
+or failed diagnostics require setup again. An OS file lock serializes concurrent
+starts and is released on process exit. A missing,
+stale or incomplete environment denies pre-tool operations with actionable
+startup guidance. Setup errors and timeouts leave no completion record and
+never expose installer output or candidate arguments. Ordinary events retain
+the existing 20-second policy deadline; startup has a separate 150-second
+deadline inside a 180-second host timeout. Native invocation remains a separate
+acceptance check from replaying hook input.
+
+Startup rejects nested environment links that redirect package writes outside
+the worktree while allowing standard Python interpreter links. On timeout it
+terminates the setup process tree and reaps the installer before releasing the
+lock. Windows cleanup failures produce a bounded error requiring remaining
+setup processes to be stopped before retrying; native Windows execution is
+not part of the macOS acceptance evidence.
 
 Before protected edits, inspect the design and referenced decisions and run
 `python3 tools/check_design.py --paths` with the concrete affected paths.
@@ -255,6 +281,15 @@ CI remain separate controls. A successful local hook does not prove remote
 server rules are enabled.
 
 ## Validation
+
+For the 3.3.1 startup repair, `tests/test_hook_bootstrap.py` exercises the public
+launcher in a fresh worktree with controlled offline packages, successful reads,
+secret/destructive denials, reuse, changed inputs, failure recovery, redirected
+paths, lock contention and descendant timeout cleanup. Real pinned dependency
+and Gitleaks setup was also exercised on macOS. The full unit and separate
+real-scanner/Git integration lanes remain required. Native Copilot invocation
+is recorded separately from these fixture and CLI checks; Windows runtime
+behavior is unverified.
 
 Run `python3 -m unittest discover -s tests -p test_design.py -v` for ready-path success, uncovered
 future files, non-ready rejection, accepted-decision references, malformed YAML,

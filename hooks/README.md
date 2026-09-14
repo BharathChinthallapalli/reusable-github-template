@@ -23,17 +23,38 @@ and extracts its executable into the ignored `.tools/bin` directory. It does not
 install a global executable or run an upstream install script. Pin updates need
 source verification, archive-digest review and the scanner integration tests.
 
-Activate the same environment before starting a local coding client so `python`
-or `python3` resolves to the prepared interpreter. The GitHub setup workflow
-prepares these prerequisites for Copilot cloud sessions. A session diagnostic
-failure is a setup failure, not evidence that scanning succeeded. Use the
-installer's help for supported invocation details.
+Configured clients call `hooks/run_hook.py`. In a trusted repository, session
+start creates an ignored `.tools/venv` per worktree, installs the existing pinned
+requirements with uv when available (pip fallback), and runs the verified
+Gitleaks installer. It verifies PyYAML, Ruff and Gitleaks before recording a
+readiness receipt. It leaves application environments and global packages alone.
+This also covers desktop-created worktrees that do not inherit ignored tools.
+
+Repeated starts reuse healthy tools. Changed requirements, installer release pins
+or Python runtime invalidate the receipt. Concurrent starts serialize on an OS
+file lock; failed or interrupted setup leaves no valid receipt. Startup has one
+150-second deadline within the host's 180-second timeout. Network or package
+failures remain setup failures, not successful scans. Pre/post hooks never
+install dependencies and deny operations when setup is missing or stale.
+
+For recovery outside a blocked agent, use Python 3.12 or newer in the exact
+worktree's terminal:
+
+```bash
+python3 hooks/run_hook.py --event session
+```
+
+Then retry the original tool operation. After changing configured hook commands,
+restart the client session so it loads them. The prepared `.tools/venv/bin/python`
+(Windows: `.tools/venv/Scripts/python.exe`) can also run the repository's documented
+checks. Direct `hooks/agent_hooks.py` calls remain read-only diagnostics using
+the invoking environment. The cloud setup workflow remains supported.
 
 ## What the checks do
 
 | Event | Behavior | Result |
 | --- | --- | --- |
-| Session start | Check that the required scanner tools are usable | Sanitized setup diagnostics; this event alone is not a host security gate |
+| Session start | Prepare worktree-local validation dependencies, then verify scanners | Readiness receipt only after success; sanitized failures and no automatic tool approval |
 | Pre-tool | Parse the host envelope, scan proposed arguments for detected secrets, reject known destructive command forms and credential-file access, and check declared ADD coverage for recognized structured edits | A denial stops the attempted call in a supporting host; clean checks return no automatic approval |
 | Post-edit or covered shell tool | Run read-only Ruff and Gitleaks checks on the selected repository files | Failures report repair feedback after the edit; they cannot undo the completed tool call |
 | Standalone `--event check` | Run the working-tree Ruff/Gitleaks checks without a model session | Nonzero exit on findings or unavailable/failed checks; used in CI |

@@ -5,9 +5,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event session --host codex",
-            "timeout": 30,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event session --host codex\""
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event session --host codex",
+            "timeout": 180,
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event session --host codex\""
           }
         ]
       }
@@ -17,9 +17,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event pre --host codex",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event pre --host codex",
             "timeout": 30,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event pre --host codex\""
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event pre --host codex\""
           }
         ]
       }
@@ -29,9 +29,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/agent_hooks.py\" --event post --host codex",
+            "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event post --host codex",
             "timeout": 30,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/agent_hooks.py') --event post --host codex\""
+            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event post --host codex\""
           }
         ]
       }

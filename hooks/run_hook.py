@@ -26,6 +26,49 @@ SETUP_TIMEOUT = 150
 RECOVERY = "Run python3 hooks/run_hook.py --event session in this worktree's terminal, then retry."
 
 
+def supported_runtime():
+    """Desktop launch environments can resolve Apple's older system Python."""
+    candidates = []
+    for name in ("python3.14", "python3.13", "python3.12", "python3", "python"):
+        executable = shutil.which(name)
+        if executable:
+            candidates.append([executable])
+    if sys.platform == "darwin":
+        for path in (
+            "/opt/homebrew/bin/python3",
+            "/usr/local/bin/python3",
+            "/Library/Frameworks/Python.framework/Versions/Current/bin/python3",
+        ):
+            if Path(path).is_file():
+                candidates.append([path])
+    if os.name == "nt" and (launcher := shutil.which("py")):
+        candidates.append([launcher, "-3"])
+    seen = set()
+    for candidate in candidates:
+        identity = tuple(candidate)
+        if identity in seen:
+            continue
+        seen.add(identity)
+        try:
+            result = subprocess.run(
+                [
+                    *candidate,
+                    "-I",
+                    "-c",
+                    "import sys; sys.exit(sys.version_info < (3, 12))",
+                ],
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=1,
+                check=False,
+            )
+        except (OSError, subprocess.SubprocessError):
+            continue
+        if result.returncode == 0:
+            return candidate
+    return None
+
+
 def environment_paths(root):
     tools = root / ".tools"
     environment = tools / "venv"
@@ -64,7 +107,7 @@ def validate_environment_tree(environment):
             interpreter = (
                 path.parent == environment / "bin"
                 and (re.fullmatch(r"python(?:3(?:\.\d+)?)?", name) or name == "𝜋thon")
-                and path.is_file()
+                and not path.is_dir()
             )
             if not interpreter and not path.resolve().is_relative_to(environment):
                 raise policy.CheckFailure(
@@ -213,7 +256,7 @@ def prepare_environment(root, deadline):
                 pass
         receipt.unlink(missing_ok=True)
         setup_command(
-            [sys.executable, "-I", "-m", "venv", str(environment)],
+            [sys.executable, "-I", "-m", "venv", "--clear", str(environment)],
             root,
             deadline,
             "Python environment creation",
@@ -275,7 +318,11 @@ def main(argv=None):
     host = options.host
     try:
         if sys.version_info < (3, 12):
-            raise policy.CheckFailure("Hook setup requires Python 3.12 or newer.")
+            runtime = supported_runtime()
+            if runtime:
+                os.execv(
+                    runtime[0], [*runtime, str(Path(__file__).resolve()), *sys.argv[1:]]
+                )
         interactive_setup = options.event == "session" and sys.stdin.isatty()
         raw = (
             b""
@@ -295,6 +342,11 @@ def main(argv=None):
                     )
             except (ValueError, RecursionError):
                 pass  # The original policy rejects malformed tool envelopes.
+        if sys.version_info < (3, 12):
+            raise policy.CheckFailure(
+                "Hook setup requires an installed Python 3.12 or newer; "
+                "make it available to the desktop host and retry."
+            )
         root = options.root.resolve(strict=True)
         deadline = time.monotonic() + (
             SETUP_TIMEOUT if options.event == "session" else 20

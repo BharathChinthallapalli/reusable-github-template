@@ -64,10 +64,10 @@ class HookBootstrapTests(unittest.TestCase):
             "FIXTURE_SETUP_LOG": str(self.log),
         }
 
-    def invoke(self, event, payload=None, host="github"):
+    def invoke(self, event, payload=None, host="github", executable=None):
         return subprocess.run(
             [
-                sys.executable,
+                executable or sys.executable,
                 str(self.root / "hooks/run_hook.py"),
                 "--event",
                 event,
@@ -168,6 +168,17 @@ class HookBootstrapTests(unittest.TestCase):
             run_hook.prepare_environment(self.root, time.monotonic() - 1)
         self.assertFalse((self.root / ".tools/hook-environment.sha256").exists())
 
+    def test_removed_base_interpreter_is_repaired_on_next_start(self):
+        self.assertEqual(self.invoke("session").returncode, 0)
+        interpreter = self.root / ".tools/venv/bin/python"
+        interpreter.unlink()
+        interpreter.symlink_to(self.root.parent / "removed-python")
+        self.assertFalse(interpreter.exists())
+        repaired = self.invoke("session")
+        self.assertEqual(repaired.returncode, 0, repaired.stderr)
+        self.assertTrue(interpreter.is_file())
+        self.assertEqual(self.log.read_text().splitlines(), ["install", "install"])
+
     def test_nested_environment_redirect_cannot_receive_package_writes(self):
         external = self.root.parent / "external-packages"
         external.mkdir()
@@ -186,6 +197,25 @@ class HookBootstrapTests(unittest.TestCase):
         binaries.mkdir(parents=True)
         (binaries / "𝜋thon").symlink_to(sys.executable)
         run_hook.validate_environment_tree(environment)
+
+    @unittest.skipUnless(
+        sys.platform == "darwin", "Apple system Python is macOS-specific"
+    )
+    def test_apple_system_python_discovers_supported_runtime_and_reuses_it(self):
+        system_python = "/usr/bin/python3"
+        if not Path(system_python).is_file():
+            self.skipTest("Apple developer tools Python is not installed")
+        started = self.invoke("session", executable=system_python)
+        self.assertEqual(started.returncode, 0, started.stderr)
+        resumed = self.invoke("session", executable=system_python)
+        self.assertEqual(resumed.returncode, 0, resumed.stderr)
+        self.assertEqual(self.log.read_text().splitlines(), ["install"])
+        clean = self.invoke(
+            "pre",
+            {"toolName": "view", "toolArgs": {"path": "README.md"}},
+            executable=system_python,
+        )
+        self.assertEqual(json.loads(clean.stdout), {})
 
     def test_concurrent_setup_wait_is_bounded_and_lock_is_released(self):
         lock = self.root / "setup.lock"

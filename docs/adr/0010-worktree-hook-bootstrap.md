@@ -9,7 +9,12 @@ The WorkBoard Copilot desktop trial reproduced a bootstrap deadlock: a new
 worktree omitted ignored `.tools/bin/gitleaks`, while the pre-tool hook denied
 both normal operations and the command to install that scanner. The desktop's
 Python also lacked Ruff. The cloud setup workflow does not prepare local
-desktop worktrees. Skill files were valid; live skill loading must be retested
+desktop worktrees. Native retesting also found that desktop hooks resolved an
+older system Python even when a supported Homebrew Python was installed. The
+launcher therefore discovers and verifies an installed supported interpreter
+before consuming hook input; it does not install Python or change global PATH.
+
+Skill files were valid; live skill loading must be retested
 after setup to distinguish a blocked invocation from a discovery defect.
 
 ## Decision

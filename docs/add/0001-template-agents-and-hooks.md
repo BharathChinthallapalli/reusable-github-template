@@ -104,7 +104,7 @@ adrs:
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
 - docs/adr/0010-worktree-hook-bootstrap.md
-binding_sha256: f4e44a61910d307d947a510331ff492fe33230452d5ba80bf521700e4974e11f
+binding_sha256: 4fb23557e7df5320326360ec6742c07fc6531fc21992ea5af04034e24e37a78e
 ---
 # Template agents, design gate and local hooks
 
@@ -209,7 +209,10 @@ The launcher prepares `.tools/venv` at session start and records the requirement
 digest only after dependency installation, scanner installation and the original
 session diagnostic succeed. The receipt binds requirements, the installer source
 and Python runtime. Repeated starts reuse a complete environment; changed inputs
-or failed diagnostics require setup again. An OS file lock serializes concurrent
+or failed diagnostics require setup again. Rebuilding clears the managed
+virtual environment so old interpreter
+links do not survive a runtime change; recognized dangling Python aliases can
+be removed during this recovery. An OS file lock serializes concurrent
 starts and is released on process exit. A missing,
 stale or incomplete environment denies pre-tool operations with actionable
 startup guidance. Setup errors and timeouts leave no completion record and
@@ -217,6 +220,13 @@ never expose installer output or candidate arguments. Ordinary events retain
 the existing 20-second policy deadline; startup has a separate 150-second
 deadline inside a 180-second host timeout. Native invocation remains a separate
 acceptance check from replaying hook input.
+
+When a desktop host starts the launcher under an older system Python, it
+discovers an installed supported interpreter using bounded version probes and
+re-executes before consuming stdin. Standard macOS installation locations and
+the Windows Python launcher supplement PATH discovery. It never installs a
+runtime or changes global configuration. The Apple system-Python regression
+checks setup, reuse and a clean pre-tool request through this actual entrypoint.
 
 Startup rejects nested environment links that redirect package writes outside
 the worktree while allowing standard Python interpreter links. On timeout it

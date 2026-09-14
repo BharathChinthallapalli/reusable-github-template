@@ -37,7 +37,12 @@ file lock; failed or interrupted setup leaves no valid receipt. Startup has one
 failures remain setup failures, not successful scans. Pre/post hooks never
 install dependencies and deny operations when setup is missing or stale.
 
-For recovery outside a blocked agent, use Python 3.12 or newer in the exact
+If a desktop host resolves an older system Python, the launcher first discovers
+an installed Python 3.12+ through versioned commands, standard macOS Homebrew or
+Python.org locations, or the Windows Python launcher. It re-executes before
+reading hook input; it does not install a runtime or change the host's PATH.
+
+For recovery outside a blocked agent, use the launcher in the exact
 worktree's terminal:
 
 ```bash

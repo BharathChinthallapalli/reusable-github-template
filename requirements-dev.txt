@@ -4,4 +4,4 @@ PyYAML==6.0.3
 pre-commit==4.6.2
 
 # Python lint checks; verified https://github.com/astral-sh/ruff/releases/tag/0.16.6
-ruff==0.16.6
+ruff==0.16.7

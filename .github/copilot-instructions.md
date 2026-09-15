@@ -5,6 +5,13 @@ actual project's purpose, architecture, commands, and operational constraints.
 Follow `AGENTS.md` for repository work and validation. There is no application
 stack until its manifests and code are added.
 
+Use the conditional rules in [the scoped instruction map](../docs/development-instructions.md)
+only for the affected project's actual stack. Follow the authorized-execution and
+endpoint boundaries in `AGENTS.md`: normal development tools remain usable, while
+credential/mailbox collection and unrelated endpoint scans remain prohibited.
+Keep planning, review and verification proportional; do not add repeated human
+approval stops or an endless correction loop from an imported rule catalog.
+
 Apply the shared tool defaults in `AGENTS.md` and `docs/agent-tooling.md`:
 `rg`, `fd`/`fdfind`, `jq` and noninteractive `fzf --filter` for their matching
 tasks. Copilot setup prepares these CLIs. Lazygit requires a human-driven

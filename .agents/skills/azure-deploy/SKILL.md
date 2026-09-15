@@ -5,6 +5,9 @@ description: Deliver an already-prepared Azure change using current validation e
 
 # Deliver a prepared Azure change
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 [release-delivery](../release-delivery/SKILL.md) remains the general artifact and
 release coordinator; this procedure supplies the Azure execution phase. Reuse
 valid preparation and evidence rather than forcing an unchanged project through

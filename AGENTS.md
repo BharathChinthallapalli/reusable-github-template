@@ -1,5 +1,16 @@
 # Repository instructions
 
+## Official documentation and tools
+
+Always fetch the relevant official documentation before relying on external
+technical claims, API behavior, configuration or command syntax. Model recall,
+assumptions and search snippets are not evidence. All skills, profiles and
+references follow [the documentation contract](docs/official-documentation.md).
+Discover actual available tools, record fetched URLs and versions, and use the
+Rust-based tool preferences in [the tool guide](docs/agent-tooling.md).
+Missing web access blocks the dependent claim or implementation; continue useful
+local work and report the gap. Never invent a fetch or widen tool permissions.
+
 ## Context
 
 Read README.md, docs/project.md, and relevant manifests before editing.

@@ -5,6 +5,9 @@ description: Assess and prepare a workload's operational handoff using evidence 
 
 # Establish what can actually be operated
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the exact workload, revision, environment, transition, and receiving
 owner. Read the project's operational requirements, relevant ADRs, deployment
 configuration, and existing runbooks. Do not infer a live service or configured

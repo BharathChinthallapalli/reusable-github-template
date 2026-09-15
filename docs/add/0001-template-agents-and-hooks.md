@@ -92,6 +92,7 @@ scope:
 - docs/repository-tools.md
 - tools/ai_catalog.py
 - docs/agent-tooling.md
+- docs/official-documentation.md
 - .vscode/settings.json
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
@@ -102,7 +103,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 3852fc34838fb0e705c0aeb9f8115240fdb0c9489fe81c711e7d3dcea25e1d52
+binding_sha256: 300d03e7d5595406c230e60c5291904ccd00f3ef7a3873f1d0f7b8a06b80c4d0
 ---
 # Template agents, design gate and local hooks
 
@@ -206,6 +207,14 @@ selection and its fallback can scan local environment files; this is local,
 redacted secret detection, not a promise that those files are outside coverage. Use synthetic secrets in tests.
 
 ## Behavior and failure modes
+
+The user requires fresh official documentation for external technical claims in
+every skill and role. The shared documentation policy defines fetched-source
+provenance, actual tool discovery, version-specific command contracts and a
+blocked-evidence fallback. Rust-based tools are preferred when suitable; no
+application migration, installation or permission expansion follows from this
+preference. Local repository facts still come from inspected files and runs.
+
 
 Before protected edits, inspect the design and referenced decisions and run
 `python3 tools/check_design.py --paths` with the concrete affected paths.

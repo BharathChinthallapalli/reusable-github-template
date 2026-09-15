@@ -5,6 +5,9 @@ description: Produce a code-grounded workload design or interface specification 
 
 # Design a solution that can be implemented and checked
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Use [repository discovery](../repo-discovery/SKILL.md) to establish real entrypoints,
 interfaces, versions, state, and deployment evidence. Read relevant Accepted ADRs
 through [the decision index](../../../docs/adr/README.md). Separate current

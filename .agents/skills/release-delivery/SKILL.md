@@ -5,6 +5,9 @@ description: "Prepare, verify and deliver a scoped package or deployment release
 
 # Deliver a reviewed artifact
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Establish the requested release target and existing authorization. Read actual
 build/package/deployment entrypoints, environments and release conventions.
 Use [the release record](assets/release-record.md) to identify the candidate;

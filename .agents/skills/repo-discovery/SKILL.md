@@ -5,6 +5,9 @@ description: "Trace an unfamiliar repository's entrypoints, dependencies, behavi
 
 # Discover the repository
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Use the [shared agent tool policy](../../../docs/agent-tooling.md): `fd`/`fdfind`
 for path lookup, `rg` for content, `jq` for JSON and `fzf --filter` when fuzzy
 candidate selection helps. Keep searches scoped and include relevant hidden

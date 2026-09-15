@@ -23,8 +23,9 @@ separate controls for an AI feature.
 
 Inspect workflow token scope, untrusted execution, secret exposure, injection,
 cross-user data access, and unsafe output use when present in the change.
-Verify platform-specific claims with official documentation when browsing is
-available. Do not assume a security product is enabled from a configuration file.
+Verify platform-specific claims with freshly fetched official documentation.
+Without browsing, require a traceable same-task fetched-source handoff or report
+the verification gap without asserting the external-dependent conclusion. Do not assume a security product is enabled from a configuration file.
 
 Return only concrete findings or clearly labeled verification gaps. Include
 affected paths, prerequisites, impact, and a focused control or test. Do not run

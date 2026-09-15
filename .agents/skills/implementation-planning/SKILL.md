@@ -5,6 +5,9 @@ description: Plan a material implementation or redesign by comparing feasible al
 
 # Plan a change that can be checked
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Start from the user's outcome and the repository's actual contracts. Read current
 decision status through the [decision index](../../../docs/adr/README.md).
 Use [repo-discovery](../repo-discovery/SKILL.md) if the affected behavior is unclear.

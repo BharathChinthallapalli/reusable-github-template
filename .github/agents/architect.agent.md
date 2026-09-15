@@ -28,8 +28,9 @@ For each relevant module, identify the public contract and what callers rely on.
 Compare the smallest viable options, including extending the current design.
 Explain the maintenance, compatibility, operational, and cost implications that
 differentiate them, the failure modes each option introduces, and how to verify
-the intended improvement. Consult current official documentation for platform facts
-when browsing is available; state unverified assumptions otherwise.
+the intended improvement. Fetch official documentation for platform facts. When browsing is unavailable,
+use traceable official evidence fetched in this task by the coordinator, or
+report the gap and block the dependent recommendation.
 
 For code structure judgments, consult [clean-code](../../.agents/skills/clean-code/SKILL.md).
 Do not select a framework, pattern, abstraction, or service from preference alone.

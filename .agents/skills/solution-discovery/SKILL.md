@@ -5,6 +5,9 @@ description: Turn an unclear business request into a scoped solution brief and a
 
 # Discover the outcome and the smallest useful proof
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Start with the user's task and existing project evidence. Separate the requested
 feature or technology from the outcome it should produce. Identify the affected
 people, current workflow, concrete failure or friction, and the decision this work

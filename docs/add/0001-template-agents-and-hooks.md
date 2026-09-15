@@ -102,7 +102,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 8bb06bd5ead59bb1c51bd0237935c82b3bcb405ef4b8da9a4cccd16c43910c69
+binding_sha256: 3852fc34838fb0e705c0aeb9f8115240fdb0c9489fe81c711e7d3dcea25e1d52
 ---
 # Template agents, design gate and local hooks
 
@@ -142,6 +142,14 @@ and revision-specific evidence explicit. Research records the reviewed
 no-mistakes source and the limits of native-tool performance claims.
 
 ## Scope and non-goals
+
+Version 3.4 adds root routing to conditional development guidance and explicit
+endpoint-data boundaries. Ordinary development tools remain usable; shell and
+package-script side effects must be assessed within the authorized task. The
+new instruction files are owned by ADD-0003. Hook implementation and host tool
+permissions retain their existing contracts; the new prose does not extend the
+hook parser's enforcement coverage. Research and validation are recorded in
+`docs/research/scoped-development-rules.md`.
 
 The frontmatter enumerates the shared instructions, skill files and assets,
 agent profiles, hook implementation and configuration, design checker, supporting

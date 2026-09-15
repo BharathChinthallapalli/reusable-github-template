@@ -1,0 +1,5 @@
+# Prepared outside hooks; binary wheels only. See docs/guardian.md.
+tree-sitter==0.26.0
+tree-sitter-bash==0.25.1
+tree-sitter-powershell==0.26.4
+cryptography==50.0.1

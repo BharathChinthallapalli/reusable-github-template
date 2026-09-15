@@ -17,6 +17,16 @@
         "hooks": [
           {
             "type": "command",
+            "command": "guardian_root=\"$(git rev-parse --show-toplevel)\" || exit 2; guardian_python=\"$guardian_root/.guardian/venv/bin/python\"; if [ ! -x \"$guardian_python\" ]; then printf \"%s\\n\" \"Guardian runtime unavailable; operation denied.\" >&2; exit 2; fi; \"$guardian_python\" -I \"$guardian_root/.guardian/adapters/dispatch.py\" --runtime codex --surface unknown; guardian_status=$?; if [ \"$guardian_status\" -ne 0 ]; then exit 2; fi",
+            "commandWindows": "powershell.exe -NoProfile -File .guardian/adapters/codex.ps1",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
             "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event pre --host codex",
             "timeout": 30,
             "commandWindows": "powershell -NoProfile -Command \"& py -3 ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event pre --host codex\""

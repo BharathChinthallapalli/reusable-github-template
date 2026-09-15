@@ -19,6 +19,7 @@ else:
 
 PROTECTED_FOLDERS = (
     ".agents/skills", ".github/agents", ".github/instructions", ".github/hooks", "hooks",
+    ".guardian/engine", ".guardian/adapters", ".guardian/profiles", ".claude/agents", ".codex/agents",
 )
 PROTECTED_FILES = (
     "AGENTS.md", "CLAUDE.md", ".github/copilot-instructions.md", ".codex/hooks.json",
@@ -26,6 +27,7 @@ PROTECTED_FILES = (
     "ruff.toml", ".gitleaks.toml", ".github/workflows/ci.yml",
     ".github/workflows/copilot-setup-steps.yml",
     "tools/check_ai_configuration.py", "requirements-dev.txt", ".gitignore",
+    ".guardian/policy.json", ".guardian/requirements.txt", ".guardian/ledger.schema.json", ".claude/settings.json",
 )
 REQUIRED_SECTIONS = (
     "Purpose", "Scope and non-goals", "Inputs and outputs", "Capabilities and permissions",

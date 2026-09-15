@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Guardian ledger entry",
+  "type": "object",
+  "required": ["timestamp", "runtime", "surface", "session_id", "agent", "tool_name", "raw_command", "parsed_command", "command_hash", "request_hash", "answers", "decision", "rationale", "triggering_rule", "layer", "identity", "pivot_flag", "defender_verdict", "token_expiry", "previous_hash"],
+  "properties": {
+    "timestamp": {"type": "string", "format": "date-time"},
+    "runtime": {"enum": ["copilot", "claude", "codex"]},
+    "surface": {"enum": ["cli", "vscode", "cloud", "unknown"]},
+    "session_id": {"type": "string", "minLength": 1},
+    "command_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "request_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "previous_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "decision": {"enum": ["HARD_DENY", "AUTO_ALLOW", "IN_SCOPE", "APPROVED", "APPROVAL_ISSUED", "GUARDIAN_DENIED", "PIVOT_ATTEMPT"]},
+    "answers": {"type": ["object", "null"]},
+    "layer": {"enum": [1, 2]},
+    "pivot_flag": {"type": "boolean"},
+    "defender_verdict": {"type": "string"}
+  }
+}

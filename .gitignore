@@ -33,3 +33,7 @@ Thumbs.db
 
 # Pinned local hook executables installed by tools/install_hook_tools.py.
 .tools/
+
+# Prepared guardian runtime and transient audit lock; never commit live ledger data.
+.guardian/venv/
+.guardian/*.lock

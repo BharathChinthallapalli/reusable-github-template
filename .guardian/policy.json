@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "policy_version": "guardian-1",
+  "approval_public_key": null,
+  "ledger": ".guardian/ledger.jsonl",
+  "max_ledger_bytes": 8388608,
+  "approval_ttl_seconds": 600,
+  "cloud_identity_verification": "unavailable-deny"
+}

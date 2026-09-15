@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "bash": ".guardian/venv/bin/python -I .guardian/adapters/dispatch.py --runtime copilot --surface unknown || exit 2",
+        "powershell": "powershell.exe -NoProfile -File .guardian/adapters/copilot.ps1",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "permissionRequest": [
+      {
+        "type": "command",
+        "bash": ".guardian/venv/bin/python -I .guardian/adapters/dispatch.py --runtime copilot --surface unknown --event permissionRequest || exit 2",
+        "powershell": "powershell.exe -NoProfile -File .guardian/adapters/copilot.ps1 -Event permissionRequest",
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

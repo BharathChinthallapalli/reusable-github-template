@@ -103,7 +103,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 300d03e7d5595406c230e60c5291904ccd00f3ef7a3873f1d0f7b8a06b80c4d0
+binding_sha256: 3c63d8d631183596ef48ba4ee93fd7514b8bc3ee76dc23be0cf36cc9a4c41dbb
 ---
 # Template agents, design gate and local hooks
 
@@ -272,6 +272,13 @@ CI remain separate controls. A successful local hook does not prove remote
 server rules are enabled.
 
 ## Validation
+
+Dependency maintenance on 2026-09-15 updates setup-uv to the immutable v10.1.0
+commit in both workflows while retaining uv 0.12.13, disabled persistent caching,
+read-only permissions and Python 3.12. The upstream action declares Node 24.
+The original dependency PR failed this gate because it changed bound workflows
+without updating this record; review and bind the changed files before delivery.
+
 
 Run `python3 -m unittest discover -s tests -p test_design.py -v` for ready-path success, uncovered
 future files, non-ready rejection, accepted-decision references, malformed YAML,

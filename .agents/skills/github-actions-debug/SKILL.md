@@ -5,6 +5,9 @@ description: "Diagnose failed GitHub Actions runs or pending required checks fro
 
 # Diagnose GitHub Actions
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Identify the repository, required check or workflow, event and commit SHA.
    For an existing run, record its URL or ID, attempt, and failing or pending job.
    Do not substitute the latest branch tip for the tested SHA.

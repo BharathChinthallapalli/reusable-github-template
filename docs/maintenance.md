@@ -192,6 +192,21 @@ Ruff checks do not format application files automatically; post-edit findings
 need repair and cannot undo a completed write. Complete [ADD validation](add/README.md)
 and [hook verification](../hooks/README.md) on a disposable initialized copy too.
 
+## Adopt version 3.4
+
+Merge the [conditional development instructions](development-instructions.md)
+that match the actual project, plus the small root routing and endpoint-boundary
+updates. Preserve the application's framework, formatter, test runner and local
+security requirements. Merge the ADD scope into project-owned designs and seal
+the actual merged content; do not copy a template fingerprint into modified files.
+
+This release adds guidance, not an application stack or a new tool permission.
+It preserves the 34 skills, 13 agents, runtime hooks and required CI contract.
+Run the repository checks, inspect matching and unrelated tasks in the actual
+client, and record the adopted template version. Existing generated repositories
+need this explicit migration and do not change automatically. See the
+[research and evidence](research/scoped-development-rules.md).
+
 ## Periodically inspect operational drift
 
 | Inspect | Resolve |

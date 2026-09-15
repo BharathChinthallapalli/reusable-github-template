@@ -5,6 +5,9 @@ description: "Run a finite sequence of measurable candidate changes with a fixed
 
 # Run a controlled experiment
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Establish a measurable hypothesis and an independent success contract. Read
    the existing baseline command, workload, evaluator and relevant decisions.
    Use [ai-evaluation](../ai-evaluation/SKILL.md) for AI behavior or

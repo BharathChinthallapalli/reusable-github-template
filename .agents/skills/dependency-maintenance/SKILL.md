@@ -5,6 +5,9 @@ description: "Upgrade dependencies, action pins or hook revisions; assess compat
 
 # Maintain dependencies
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Locate the dependency's actual consumers, manifest, lockfile and update mechanism.
 Use [the maintenance map](../../../docs/maintenance.md) to identify coupled files.
 A source pin, top-level package pin and resolved dependency closure are different

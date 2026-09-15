@@ -7,7 +7,7 @@
             "type": "command",
             "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event session --host codex",
             "timeout": 180,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event session --host codex\""
+            "commandWindows": "powershell -NoProfile -Command \"& py -3 ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event session --host codex\""
           }
         ]
       }
@@ -19,7 +19,7 @@
             "type": "command",
             "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event pre --host codex",
             "timeout": 30,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event pre --host codex\""
+            "commandWindows": "powershell -NoProfile -Command \"& py -3 ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event pre --host codex\""
           }
         ]
       }
@@ -31,7 +31,7 @@
             "type": "command",
             "command": "python3 \"$(git rev-parse --show-toplevel)/hooks/run_hook.py\" --event post --host codex",
             "timeout": 30,
-            "commandWindows": "powershell -NoProfile -Command \"& python ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event post --host codex\""
+            "commandWindows": "powershell -NoProfile -Command \"& py -3 ((git rev-parse --show-toplevel) + '/hooks/run_hook.py') --event post --host codex\""
           }
         ]
       }

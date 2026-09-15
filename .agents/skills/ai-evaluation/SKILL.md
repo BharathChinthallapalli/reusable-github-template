@@ -5,6 +5,9 @@ description: "Design and assess behavioral evaluations for prompts, models, retr
 
 # Evaluate AI behavior
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Identify the user task and changed layer. Read the project's actual runner,
    cases and [evaluation contract](../../../docs/ai-evaluation.md). Separate
    deterministic code/data checks from model behavior and provider availability.

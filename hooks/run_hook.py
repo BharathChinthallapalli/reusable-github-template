@@ -23,7 +23,10 @@ else:
 
 ROOT = Path(__file__).resolve().parents[1]
 SETUP_TIMEOUT = 150
-RECOVERY = "Run python3 hooks/run_hook.py --event session in this worktree's terminal, then retry."
+RECOVERY = (
+    "Run " + ("py -3" if os.name == "nt" else "python3")
+    + " hooks/run_hook.py --event session in this worktree's terminal, then retry."
+)
 
 
 def supported_runtime():
@@ -95,7 +98,7 @@ def environment_fingerprint(root):
     return digest.hexdigest()
 
 
-def validate_environment_tree(environment):
+def validate_environment_tree(environment, *, rebuilding=False):
     """Do not let a partially prepared environment redirect package writes."""
     if not environment.exists():
         return
@@ -109,21 +112,56 @@ def validate_environment_tree(environment):
                 and (re.fullmatch(r"python(?:3(?:\.\d+)?)?", name) or name == "𝜋thon")
                 and not path.is_dir()
             )
-            if not interpreter and not path.resolve().is_relative_to(environment):
+            trusted_interpreter = interpreter and (
+                path.resolve() == Path(sys._base_executable).resolve()
+                or (rebuilding and not path.exists())
+            )
+            if not trusted_interpreter and (
+                interpreter or not path.resolve().is_relative_to(environment)
+            ):
                 raise policy.CheckFailure(
                     "Hook environment contains a path redirected outside the worktree."
                 )
 
 
+def executable_state(root):
+    """Bind prepared executable bytes; never execute a candidate to trust it."""
+    _, environment, python, _, _ = environment_paths(root)
+    validate_environment_tree(environment)
+    scanner = root / ".tools/bin" / ("gitleaks.exe" if os.name == "nt" else "gitleaks")
+    for path in (scanner.parent, scanner):
+        if path.is_symlink() or path.is_junction():
+            raise policy.CheckFailure("Hook scanner path uses a symlink or junction.")
+    state = {"inputs": environment_fingerprint(root), "files": {}}
+    for path in (python, scanner, environment / "pyvenv.cfg"):
+        if not path.is_file():
+            raise OSError("Hook executable or configuration is missing or not regular.")
+        if path.name == "pyvenv.cfg" and path.is_symlink():
+            raise policy.CheckFailure("Hook environment configuration uses a symlink.")
+        if path.stat().st_size > 64 * 1024 * 1024:
+            raise policy.CheckFailure("Hook executable exceeds the verification size limit.")
+        with path.open("rb") as source:
+            digest = hashlib.file_digest(source, "sha256").hexdigest()
+        state["files"][str(path.relative_to(root))] = {
+            "resolved": str(path.resolve(strict=True)), "sha256": digest,
+        }
+    return state
+
+
 def environment_ready(root):
     _, _, python, receipt, _ = environment_paths(root)
-    scanner = root / ".tools/bin" / ("gitleaks.exe" if os.name == "nt" else "gitleaks")
-    return (
-        python.is_file()
-        and scanner.is_file()
-        and receipt.is_file()
-        and receipt.read_text(encoding="utf-8").strip() == environment_fingerprint(root)
-    )
+    if not python.is_file():
+        return False
+    try:
+        # A malformed receipt is incomplete setup, not a permanent recovery error.
+        with receipt.open("rb") as source:
+            content = source.read(8193)
+        if len(content) > 8192:
+            return False
+        recorded = json.loads(content)
+        return recorded == executable_state(root)
+    except (OSError, ValueError, UnicodeError, RecursionError):
+        return False
 
 
 @contextmanager
@@ -247,7 +285,7 @@ def prepare_environment(root, deadline):
     tools.mkdir(exist_ok=True)
     with setup_lock(lock, deadline):
         environment_paths(root)
-        validate_environment_tree(environment)
+        validate_environment_tree(environment, rebuilding=True)
         if environment_ready(root):
             try:
                 verify_environment(root, python, deadline)
@@ -300,7 +338,7 @@ def prepare_environment(root, deadline):
         with tempfile.NamedTemporaryFile(
             mode="w", dir=tools, delete=False, encoding="utf-8"
         ) as temporary:
-            temporary.write(environment_fingerprint(root) + "\n")
+            temporary.write(json.dumps(executable_state(root)) + "\n")
         try:
             os.replace(temporary.name, receipt)
         finally:
@@ -335,11 +373,10 @@ def main(argv=None):
             try:
                 payload = json.loads(raw)
                 if isinstance(payload, dict):
-                    host = (
-                        "github"
-                        if "toolName" in payload or "sessionId" in payload
-                        else None
-                    )
+                    if "toolName" in payload or "sessionId" in payload:
+                        host = "github"
+                    elif "tool_name" in payload or "session_id" in payload:
+                        host = "vscode"
             except (ValueError, RecursionError):
                 pass  # The original policy rejects malformed tool envelopes.
         if sys.version_info < (3, 12):

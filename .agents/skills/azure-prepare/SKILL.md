@@ -5,6 +5,9 @@ description: Prepare an application or infrastructure change for Azure by tracin
 
 # Prepare an Azure change
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Produce a concrete plan and the requested local artifacts. Preparation does not
 provision resources. For a resource inventory alone, use
 [azure-resource-discovery](../azure-resource-discovery/SKILL.md).

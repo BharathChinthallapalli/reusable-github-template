@@ -5,6 +5,9 @@ description: "Choose and run proportionate checks for a code or configuration ch
 
 # Verify the change
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Read the diff and affected callers. Identify the observable behavior and the
    credible failure modes introduced or corrected by the change.
 2. Derive commands, working directories, runtime versions and prerequisites

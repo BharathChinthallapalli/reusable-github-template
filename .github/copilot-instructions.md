@@ -1,9 +1,22 @@
 # Repository context for Copilot
 
+Always follow [the official-documentation contract](../docs/official-documentation.md):
+fetch the relevant official page for external technical claims and command
+syntax; do not substitute training knowledge, assumptions or search snippets.
+Discover actual tool availability. Prefer suitable Rust-based tools as described
+in the shared tool guide, preserving the project stack and permission boundaries.
+
 This repository starts as a reusable foundation. Read `docs/project.md` for the
 actual project's purpose, architecture, commands, and operational constraints.
 Follow `AGENTS.md` for repository work and validation. There is no application
 stack until its manifests and code are added.
+
+Use the conditional rules in [the scoped instruction map](../docs/development-instructions.md)
+only for the affected project's actual stack. Follow the authorized-execution and
+endpoint boundaries in `AGENTS.md`: normal development tools remain usable, while
+credential/mailbox collection and unrelated endpoint scans remain prohibited.
+Keep planning, review and verification proportional; do not add repeated human
+approval stops or an endless correction loop from an imported rule catalog.
 
 Apply the shared tool defaults in `AGENTS.md` and `docs/agent-tooling.md`:
 `rg`, `fd`/`fdfind`, `jq` and noninteractive `fzf --filter` for their matching

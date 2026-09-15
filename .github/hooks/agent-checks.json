@@ -5,7 +5,7 @@
       {
         "type": "command",
         "bash": "python3 hooks/run_hook.py --event session",
-        "powershell": "python hooks/run_hook.py --event session",
+        "powershell": "py -3 hooks/run_hook.py --event session",
         "cwd": ".",
         "timeoutSec": 180
       }
@@ -14,7 +14,7 @@
       {
         "type": "command",
         "bash": "python3 hooks/run_hook.py --event pre",
-        "powershell": "python hooks/run_hook.py --event pre",
+        "powershell": "py -3 hooks/run_hook.py --event pre",
         "cwd": ".",
         "timeoutSec": 30
       }
@@ -23,7 +23,7 @@
       {
         "type": "command",
         "bash": "python3 hooks/run_hook.py --event post",
-        "powershell": "python hooks/run_hook.py --event post",
+        "powershell": "py -3 hooks/run_hook.py --event post",
         "cwd": ".",
         "timeoutSec": 30
       }

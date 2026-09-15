@@ -93,6 +93,7 @@ scope:
 - docs/repository-tools.md
 - tools/ai_catalog.py
 - docs/agent-tooling.md
+- docs/official-documentation.md
 - .vscode/settings.json
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
@@ -104,7 +105,7 @@ adrs:
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
 - docs/adr/0010-worktree-hook-bootstrap.md
-binding_sha256: 4fb23557e7df5320326360ec6742c07fc6531fc21992ea5af04034e24e37a78e
+binding_sha256: 50f8b10514edd3b75d65512e531d3aa5ce4de7d5814e99deb26d8f4b6006a06f
 ---
 # Template agents, design gate and local hooks
 
@@ -144,6 +145,14 @@ and revision-specific evidence explicit. Research records the reviewed
 no-mistakes source and the limits of native-tool performance claims.
 
 ## Scope and non-goals
+
+Version 3.4 adds root routing to conditional development guidance and explicit
+endpoint-data boundaries. Ordinary development tools remain usable; shell and
+package-script side effects must be assessed within the authorized task. The
+new instruction files are owned by ADD-0003. Hook implementation and host tool
+permissions retain their existing contracts; the new prose does not extend the
+hook parser's enforcement coverage. Research and validation are recorded in
+`docs/research/scoped-development-rules.md`.
 
 The frontmatter enumerates the shared instructions, skill files and assets,
 agent profiles, hook implementation and configuration, design checker, supporting
@@ -205,10 +214,17 @@ redacted secret detection, not a promise that those files are outside coverage. 
 
 ## Behavior and failure modes
 
+PR 5 repair binds scanner and interpreter contents in the readiness receipt,
+validates environment links before execution, recovers malformed receipts at
+session start, detects both host envelope styles and starts Windows through the
+Python launcher. Windows CI checks actual bootstrap and policy rejection.
+
+
 The launcher prepares `.tools/venv` at session start and records the requirements
 digest only after dependency installation, scanner installation and the original
-session diagnostic succeed. The receipt binds requirements, the installer source
-and Python runtime. Repeated starts reuse a complete environment; changed inputs
+session diagnostic succeed. The receipt binds requirements, installer source, resolved interpreter and
+scanner bytes, and venv configuration. Each dispatch rechecks these before
+executing prepared tools; malformed receipts trigger session recovery. Repeated starts reuse a complete environment; changed inputs
 or failed diagnostics require setup again. Rebuilding clears the managed
 virtual environment so old interpreter
 links do not survive a runtime change; recognized dangling Python aliases can
@@ -234,6 +250,13 @@ terminates the setup process tree and reaps the installer before releasing the
 lock. Windows cleanup failures produce a bounded error requiring remaining
 setup processes to be stopped before retrying; native Windows execution is
 not part of the macOS acceptance evidence.
+The user requires fresh official documentation for external technical claims in
+every skill and role. The shared documentation policy defines fetched-source
+provenance, actual tool discovery, version-specific command contracts and a
+blocked-evidence fallback. Rust-based tools are preferred when suitable; no
+application migration, installation or permission expansion follows from this
+preference. Local repository facts still come from inspected files and runs.
+
 
 Before protected edits, inspect the design and referenced decisions and run
 `python3 tools/check_design.py --paths` with the concrete affected paths.
@@ -299,7 +322,19 @@ paths, lock contention and descendant timeout cleanup. Real pinned dependency
 and Gitleaks setup was also exercised on macOS. The full unit and separate
 real-scanner/Git integration lanes remain required. Native Copilot invocation
 is recorded separately from these fixture and CLI checks; Windows runtime
-behavior is unverified.
+behavior is checked by a separate native Windows bootstrap CI job; its result
+must be reported independently from Linux execution.
+Dependency maintenance on 2026-09-15 adopts Ruff 0.16.7 with the existing rule
+configuration and checks. The original dependency PR left this record stale
+after changing its bound requirements; verify the new linter and bind the
+reviewed dependency update without weakening lint rules or the design gate.
+
+Dependency maintenance on 2026-09-15 updates setup-uv to the immutable v10.1.0
+commit in both workflows while retaining uv 0.12.13, disabled persistent caching,
+read-only permissions and Python 3.12. The upstream action declares Node 24.
+The original dependency PR failed this gate because it changed bound workflows
+without updating this record; review and bind the changed files before delivery.
+
 
 Run `python3 -m unittest discover -s tests -p test_design.py -v` for ready-path success, uncovered
 future files, non-ready rejection, accepted-decision references, malformed YAML,
@@ -336,6 +371,11 @@ Record exact commands, source revisions, results and measurement limits in
 [no-mistakes adoption](../research/no-mistakes-adoption.md).
 
 ## Risks and alternatives
+
+The local receipt is mutable and does not authenticate installed Python modules
+or prevent a concurrent writer replacing files after verification. The hook and
+its base runtime remain trusted prerequisites; these checks are not OS isolation.
+
 
 Instructions alone cannot detect an unrelated design or stale delivered files.
 A compulsory human approval for every small edit would add a new permission

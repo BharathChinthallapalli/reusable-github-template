@@ -53,3 +53,31 @@ tool requests, and actual Copilot skill loading. Record untested hosts honestly.
 [GitHub hook reference](https://docs.github.com/en/copilot/reference/hooks-reference)
 documents session-start command hooks and notes that pre-tool command timeouts
 fall through to normal host permission checks. Checked 2026-09-14.
+
+## Review repair, 2026-09-15
+
+The readiness receipt now binds the resolved interpreter, scanner and venv
+configuration bytes to the setup inputs. Every dispatch checks these without
+executing an unverified candidate. Scanner paths reject symlinks and junctions;
+external interpreter links must resolve to the launcher's actual base runtime.
+A missing base-runtime link may be cleared only during session recovery.
+Malformed, oversized and non-UTF8 receipts require setup again. Windows uses
+`py -3` at the configured entrypoint, and failures infer VS Code's snake_case
+payload to return its structured denial.
+
+This detects stale or replaced executables relative to a local receipt. A writer
+can still modify that receipt, the hook code or installed Python modules, or race
+a check with execution. It is not an authenticated trust anchor or OS sandbox.
+
+Official references fetched with the web tool on 2026-09-15:
+
+- [Python venv](https://docs.python.org/3/library/venv.html): base environments,
+  interpreter copies/symlinks and explicit environment interpreter execution.
+- [Python pathlib](https://docs.python.org/3/library/pathlib.html): path resolution,
+  symlink and junction checks.
+- [Python on Windows](https://docs.python.org/3/using/windows.html): `py` launcher.
+- [VS Code hook reference](https://code.visualstudio.com/docs/agents/reference/hooks-reference):
+  snake_case event fields and structured pre-tool output.
+- [GitHub hook reference](https://docs.github.com/en/copilot/reference/hooks-reference):
+  platform commands and GitHub event/output fields. Host fallthrough on failures
+  remains a host limitation; the launcher emits explicit denial when callable.

@@ -17,7 +17,7 @@ python hooks/agent_hooks.py --event check
 python tools/check_design.py
 ```
 
-Ruff is pinned to 0.16.6. The installer obtains Gitleaks 8.30.1 for a supported
+Ruff follows the pin in `requirements-dev.txt` (currently 0.16.7). The installer obtains Gitleaks 8.30.1 for a supported
 Linux, macOS or Windows x64/ARM64 platform, verifies the reviewed archive SHA-256,
 and extracts its executable into the ignored `.tools/bin` directory. It does not
 install a global executable or run an upstream install script. Pin updates need
@@ -48,6 +48,11 @@ worktree's terminal:
 ```bash
 python3 hooks/run_hook.py --event session
 ```
+
+On Windows, use `py -3 hooks/run_hook.py --event session` instead. The configured
+Windows hooks require the installed Python launcher (`py`); they do not require
+a `python` command on PATH or change execution policy.
+
 
 Then retry the original tool operation. After changing configured hook commands,
 restart the client session so it loads them. The prepared `.tools/venv/bin/python`
@@ -86,7 +91,7 @@ exact supported paths, command forms and event aliases.
 | --- | --- | --- |
 | Copilot CLI/cloud | `.github/hooks/*.json`; camelCase events and tool fields | Cloud uses its default-branch files and Unix command. CLI should restart after hook changes. A host-level timeout can allow a call to continue. |
 | VS Code Copilot | Reads the same configuration and supplies snake_case event fields | Preview behavior and organizational settings apply; matchers are currently ignored, so the script filters tools itself. Inspect agent debug logs. |
-| Current Codex | `.codex/hooks.json`; nested handler groups and snake_case fields | Trust the project and review the exact hooks through `/hooks`. The launcher resolves Git root, with `python3` on Unix and an explicit PowerShell/`python` override on Windows. Hosted tools and later `write_stdin` input are outside pre-tool coverage. |
+| Current Codex | `.codex/hooks.json`; nested handler groups and snake_case fields | Trust the project and review the exact hooks through `/hooks`. The launcher resolves Git root, with `python3` on Unix and an explicit PowerShell/`py -3` override on Windows. Hosted tools and later `write_stdin` input are outside pre-tool coverage. |
 
 The dispatcher distinguishes the GitHub denial schema from the VS Code/Codex
 schema. Malformed input with an unknown host uses exit 2 and a generic diagnostic
@@ -157,3 +162,14 @@ Current primary sources, checked 9 September 2026:
 [Ruff configuration](https://docs.astral.sh/ruff/configuration/),
 [Gitleaks 8.30.1](https://github.com/gitleaks/gitleaks/tree/v8.30.1),
 and [Cloudflare source lessons](../docs/research/cloudflare-agents.md).
+
+### Executable readiness and limits
+
+Before dispatch, the launcher checks scanner and interpreter hashes, resolved
+paths and venv configuration against the completed receipt. Scanner links and
+redirected environment paths are rejected. Malformed receipts are stale and
+session start can rebuild them. These checks do not authenticate a mutable local
+receipt, hook source or installed modules, and cannot prevent concurrent writes
+between checking and execution. Use host isolation and permissions for that
+boundary. The Windows CI job exercises the shipped PowerShell command with only
+`py` on PATH; it does not certify native Copilot or Defender behavior.

@@ -123,6 +123,81 @@ class HookBootstrapTests(unittest.TestCase):
         self.assertEqual(self.invoke("session").returncode, 0)
         self.assertEqual(self.log.read_text().splitlines(), ["install", "install"])
 
+    def test_corrupt_receipt_denies_pre_and_session_recovers(self):
+        self.assertEqual(self.invoke("session").returncode, 0)
+        receipt = self.root / ".tools/hook-environment.sha256"
+        for content in (b"\xff\xfe", b'{"partial":', b"a" * 9000, b"[" * 1100, receipt.read_bytes() + b" " * 9000):
+            with self.subTest(content=content[:10]):
+                receipt.write_bytes(content)
+                denied = self.invoke("pre", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+                self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
+                self.assertEqual(self.invoke("session").returncode, 0)
+
+    def test_replaced_scanner_denied_without_executing_replacement(self):
+        self.assertEqual(self.invoke("session").returncode, 0)
+        scanner = self.root / ".tools/bin/gitleaks"
+        marker = self.root / "untrusted-ran"
+        scanner.write_text(f"#!{sys.executable}\nfrom pathlib import Path\nPath({str(marker)!r}).touch()\n")
+        denied = self.invoke("pre", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+        self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
+        self.assertFalse(marker.exists())
+        self.assertEqual(self.invoke("session").returncode, 0)
+        self.assertFalse(marker.exists())
+
+    def test_interpreter_link_to_arbitrary_executable_is_rejected(self):
+        self.assertEqual(self.invoke("session").returncode, 0)
+        interpreter = self.root / ".tools/venv/bin/python"
+        interpreter.unlink()
+        replacement = self.root / "untrusted-python"
+        marker = self.root / "untrusted-ran"
+        replacement.write_text(f"#!{sys.executable}\nfrom pathlib import Path\nPath({str(marker)!r}).touch()\n")
+        replacement.chmod(0o755)
+        interpreter.symlink_to(replacement)
+        denied = self.invoke("pre", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+        self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
+        self.assertEqual(self.invoke("session").returncode, 2)
+        self.assertFalse(marker.exists())
+        # An in-environment replacement is not a legitimate base interpreter either.
+        interpreter.unlink()
+        internal = interpreter.parent / "alternate"
+        shutil.copyfile(replacement, internal)
+        internal.chmod(0o755)
+        interpreter.symlink_to(internal)
+        denied = self.invoke("pre", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+        self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
+        self.assertFalse(marker.exists())
+        # Replacing a copied interpreter also invalidates its recorded digest.
+        interpreter.unlink()
+        shutil.copyfile(replacement, interpreter)
+        interpreter.chmod(0o755)
+        denied = self.invoke("pre", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+        self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
+        self.assertFalse(marker.exists())
+
+    def test_scanner_symlink_and_parent_symlink_are_rejected(self):
+        self.assertEqual(self.invoke("session").returncode, 0)
+        scanner = self.root / ".tools/bin/gitleaks"
+        target = self.root.parent / "external-scanner"
+        shutil.copyfile(scanner, target)
+        scanner.unlink()
+        scanner.symlink_to(target)
+        with self.assertRaisesRegex(run_hook.policy.CheckFailure, "scanner path"):
+            run_hook.environment_ready(self.root)
+        scanner.unlink()
+        scanner.parent.rmdir()
+        scanner.parent.symlink_to(self.root.parent, target_is_directory=True)
+        with self.assertRaisesRegex(run_hook.policy.CheckFailure, "scanner path"):
+            run_hook.environment_ready(self.root)
+
+    def test_snake_case_missing_setup_returns_vscode_denial(self):
+        result = subprocess.run(
+            [sys.executable, str(self.root / "hooks/run_hook.py"), "--event", "pre"],
+            input=json.dumps({"tool_name": "Read", "tool_input": {"path": "README.md"}}),
+            cwd=self.root, env=self.environment, capture_output=True, text=True, timeout=10,
+        )
+        self.assertEqual(result.returncode, 0)
+        self.assertEqual(json.loads(result.stdout)["hookSpecificOutput"]["permissionDecision"], "deny")
+
     def test_failed_install_leaves_no_receipt_and_recovers_on_next_start(self):
         self.environment["FIXTURE_SETUP_FAIL"] = "1"
         failed = self.invoke("session")
@@ -254,6 +329,49 @@ class HookBootstrapTests(unittest.TestCase):
             json.loads(result.stdout)["hookSpecificOutput"]["permissionDecision"],
             "deny",
         )
+
+@unittest.skipUnless(os.name == "nt", "Requires native Windows executables and PowerShell")
+class WindowsHookBootstrapTests(unittest.TestCase):
+    def test_configured_launcher_bootstrap_recovery_and_denial(self):
+        with tempfile.TemporaryDirectory(prefix="hook-windows-") as directory:
+            root = Path(directory) / "repo with spaces"
+            (root / "hooks").mkdir(parents=True)
+            (root / "tools").mkdir()
+            for relative in ("hooks/run_hook.py", "hooks/agent_hooks.py", "tools/install_hook_tools.py", "requirements-dev.txt", ".gitleaks.toml"):
+                shutil.copyfile(ROOT / relative, root / relative)
+            configuration = json.loads((ROOT / ".github/hooks/agent-checks.json").read_text())
+            commands = configuration["hooks"]
+            # Execute the shipped PowerShell command with no python command on PATH.
+            launcher = shutil.which("py")
+            self.assertIsNotNone(launcher, "Windows CI must provide the Python launcher")
+            path = root / "launcher-only"
+            path.mkdir()
+            shutil.copyfile(launcher, path / "py.exe")
+            environment = {**os.environ, "PATH": str(path)}
+            shell = str(Path(os.environ["SystemRoot"]) / "System32/WindowsPowerShell/v1.0/powershell.exe")
+
+            def invoke(event, payload):
+                return subprocess.run(
+                    [shell, "-NoProfile", "-NonInteractive", "-Command", commands[event][0]["powershell"]],
+                    cwd=root, env=environment, input=json.dumps(payload), capture_output=True,
+                    text=True, timeout=180, check=False,
+                )
+
+            started = invoke("sessionStart", {})
+            self.assertEqual(started.returncode, 0, started.stderr)
+            clean = invoke("preToolUse", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+            self.assertEqual(json.loads(clean.stdout), {})
+            receipt = root / ".tools/hook-environment.sha256"
+            receipt.write_bytes(b"\xff\xfe")
+            denied = invoke("preToolUse", {"tool_name": "Read", "tool_input": {"path": "README.md"}})
+            self.assertEqual(json.loads(denied.stdout)["hookSpecificOutput"]["permissionDecision"], "deny")
+            self.assertIn("py -3", denied.stderr)
+            repaired = invoke("sessionStart", {})
+            self.assertEqual(repaired.returncode, 0, repaired.stderr)
+            scanner = root / ".tools/bin/gitleaks.exe"
+            scanner.write_bytes(b"invalid executable, must never launch")
+            denied = invoke("preToolUse", {"toolName": "view", "toolArgs": {"path": "README.md"}})
+            self.assertEqual(json.loads(denied.stdout)["permissionDecision"], "deny")
 
 
 if __name__ == "__main__":

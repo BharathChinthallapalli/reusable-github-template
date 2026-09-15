@@ -71,6 +71,7 @@ not certify an application's behavior, security, or production readiness.
 | Maintenance | Dependabot for GitHub Actions and validation dependencies; release-note categories; template version tracking |
 | Governance | Disabled ruleset for import; explicit activation instructions |
 | AI assistance | [Specialist agents and shared skills](docs/ai-catalog.md), default task routing, clean-code guidance, scoped instructions |
+| Conditional development | [TypeScript, Next.js, UI, tests and PowerShell](docs/development-instructions.md), selected by actual project scope and installed versions |
 | Agent design | [ADRs](docs/adr/README.md), [Agent Design Documents and bound-file gate](docs/add/README.md), [operational runbooks](docs/runbooks/README.md) |
 | Agent hooks and commands | [Pre-tool checks, post-edit Ruff/Gitleaks and three task commands](hooks/README.md); host-specific configuration |
 | Engineering | [Discovery, solution design, principal review, operational handoff](docs/engineering-workflows.md), maintained decisions and troubleshooting |

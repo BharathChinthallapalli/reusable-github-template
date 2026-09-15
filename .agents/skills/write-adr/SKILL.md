@@ -5,6 +5,9 @@ description: "Draft or update an architecture decision record with alternatives,
 
 # Write an architecture decision record
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Read and follow the shared [ADR procedure](../../../hooks/prompts/write-adr.md).
 Create ADRs from the canonical [template](../../../docs/adr/template.md) and
 maintain [decision status and index](../../../docs/adr/README.md).

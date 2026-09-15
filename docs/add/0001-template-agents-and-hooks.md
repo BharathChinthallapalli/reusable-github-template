@@ -92,6 +92,7 @@ scope:
 - docs/repository-tools.md
 - tools/ai_catalog.py
 - docs/agent-tooling.md
+- docs/official-documentation.md
 - .vscode/settings.json
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
@@ -102,7 +103,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 8bb06bd5ead59bb1c51bd0237935c82b3bcb405ef4b8da9a4cccd16c43910c69
+binding_sha256: 300d03e7d5595406c230e60c5291904ccd00f3ef7a3873f1d0f7b8a06b80c4d0
 ---
 # Template agents, design gate and local hooks
 
@@ -142,6 +143,14 @@ and revision-specific evidence explicit. Research records the reviewed
 no-mistakes source and the limits of native-tool performance claims.
 
 ## Scope and non-goals
+
+Version 3.4 adds root routing to conditional development guidance and explicit
+endpoint-data boundaries. Ordinary development tools remain usable; shell and
+package-script side effects must be assessed within the authorized task. The
+new instruction files are owned by ADD-0003. Hook implementation and host tool
+permissions retain their existing contracts; the new prose does not extend the
+hook parser's enforcement coverage. Research and validation are recorded in
+`docs/research/scoped-development-rules.md`.
 
 The frontmatter enumerates the shared instructions, skill files and assets,
 agent profiles, hook implementation and configuration, design checker, supporting
@@ -198,6 +207,14 @@ selection and its fallback can scan local environment files; this is local,
 redacted secret detection, not a promise that those files are outside coverage. Use synthetic secrets in tests.
 
 ## Behavior and failure modes
+
+The user requires fresh official documentation for external technical claims in
+every skill and role. The shared documentation policy defines fetched-source
+provenance, actual tool discovery, version-specific command contracts and a
+blocked-evidence fallback. Rust-based tools are preferred when suitable; no
+application migration, installation or permission expansion follows from this
+preference. Local repository facts still come from inspected files and runs.
+
 
 Before protected edits, inspect the design and referenced decisions and run
 `python3 tools/check_design.py --paths` with the concrete affected paths.

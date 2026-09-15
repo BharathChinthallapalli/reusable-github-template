@@ -5,6 +5,9 @@ description: Design, implement or debug GitHub Agentic Workflows with gh-aw, con
 
 # Develop an agentic workflow
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Establish the repository, task, trigger, inputs, acceptable outputs and finite
 execution budget. Inspect existing workflow sources, generated files, agent/skill
 consumers and the selected compiler version. A prompt file is not a running

@@ -5,6 +5,9 @@ description: "Triage a reported repository issue from evidence, classify impact 
 
 # Triage an issue
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Read and follow the shared [triage procedure](../../../hooks/prompts/triage-issue.md).
 Use the supplied issue and repository evidence to produce a useful next action;
 continue a requested fix when already authorized. The shared procedure owns the

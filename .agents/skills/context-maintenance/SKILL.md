@@ -5,6 +5,9 @@ description: Refresh repository instructions, project context or a work handoff 
 
 # Maintain reliable working context
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the context consumer: the next implementation session, a maintainer,
 a specialist subtask or a host reading instructions. Inspect the current files
 and relevant callers before changing them. Use

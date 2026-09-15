@@ -5,6 +5,9 @@ description: Inventory Azure resources and evidence-backed relationships within 
 
 # Discover Azure resources
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Resolve the requested cloud, tenant, subscription/resource group and purpose
    from task context. Do not scan every accessible subscription by default.
 2. Use [discovery](references/discovery.md) to select an available read operation,

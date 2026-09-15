@@ -5,6 +5,9 @@ description: "Diagnose and verify latency, throughput, memory, token or cost imp
 
 # Measure and improve performance
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Establish the user-visible requirement or observed regression. Trace the
    relevant request/job and inspect existing telemetry or benchmark commands.
    Identify what must remain behaviorally correct; do not optimize an invented

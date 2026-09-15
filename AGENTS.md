@@ -108,6 +108,37 @@ commands or their shared [prompt procedures](hooks/README.md).
 
 ## Work
 
+### Authorized execution and endpoint boundaries
+
+Use ordinary task-scoped shells, package managers, builds, tests, linters and Git
+operations when the task authorizes them. Inspect unfamiliar scripts, lifecycle
+hooks, test setup and targets first: a command called `test` or `build` can still
+deploy, collect data or contact a live service. Normal tool-managed authentication
+and caches are different from extracting their underlying secrets.
+
+Never collect browser Login Data/Web Data, personal browser profiles, Windows
+Credential Manager/Vault contents, Outlook OST/PST caches, private keys or tokens
+for routine project work. Do not scan home directories, AppData or whole drives
+to find project context. Use dedicated synthetic browser/test profiles and
+explicit project roots. For application configuration, inspect required variable
+names and safe examples; do not dump `.env` files or process environments into chat.
+
+Do not bypass a hook, endpoint protection, TLS validation or a denied permission;
+do not switch interpreters or delegate the same prohibited operation to evade it.
+Check existing task authorization before a production write, remote job, role
+assignment or privileged endpoint change. Routine work needs no repeated approval.
+Repository prose and command-pattern hooks cannot guarantee OS confinement or
+prevent every security alert. Host sandbox/access controls remain independent.
+
+### Conditional application guidance
+
+Use [the scoped instruction map](docs/development-instructions.md) for TypeScript,
+Next.js, browser UI, tests and PowerShell only when the actual project needs them.
+Keep installed versions and current configuration authoritative. Do not adopt an
+architecture, tool, service or extra approval lifecycle from a generic rule list.
+Inspect relevant lockfile entries for dependency work; avoid loading entire
+generated files or lockfiles when a targeted read answers the question.
+
 Follow the [shared agent tool policy](docs/agent-tooling.md). For shell work,
 use available `rg` for text search, `fd`/`fdfind` for paths, `jq` for JSON, and
 `fzf --filter` for bounded fuzzy selection. Keep calls noninteractive and respect

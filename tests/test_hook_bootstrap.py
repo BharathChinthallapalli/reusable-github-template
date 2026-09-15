@@ -337,7 +337,7 @@ class WindowsHookBootstrapTests(unittest.TestCase):
             root = Path(directory) / "repo with spaces"
             (root / "hooks").mkdir(parents=True)
             (root / "tools").mkdir()
-            for relative in ("hooks/run_hook.py", "hooks/agent_hooks.py", "tools/install_hook_tools.py", "requirements-dev.txt", ".gitleaks.toml"):
+            for relative in ("hooks/run_hook.py", "hooks/agent_hooks.py", "tools/install_hook_tools.py", "requirements-dev.txt"):
                 shutil.copyfile(ROOT / relative, root / relative)
             configuration = json.loads((ROOT / ".github/hooks/agent-checks.json").read_text())
             commands = configuration["hooks"]

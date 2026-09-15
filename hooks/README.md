@@ -17,23 +17,54 @@ python hooks/agent_hooks.py --event check
 python tools/check_design.py
 ```
 
-Ruff is pinned to 0.16.6. The installer obtains Gitleaks 8.30.1 for a supported
+Ruff follows the pin in `requirements-dev.txt` (currently 0.16.7). The installer obtains Gitleaks 8.30.1 for a supported
 Linux, macOS or Windows x64/ARM64 platform, verifies the reviewed archive SHA-256,
 and extracts its executable into the ignored `.tools/bin` directory. It does not
 install a global executable or run an upstream install script. Pin updates need
 source verification, archive-digest review and the scanner integration tests.
 
-Activate the same environment before starting a local coding client so `python`
-or `python3` resolves to the prepared interpreter. The GitHub setup workflow
-prepares these prerequisites for Copilot cloud sessions. A session diagnostic
-failure is a setup failure, not evidence that scanning succeeded. Use the
-installer's help for supported invocation details.
+Configured clients call `hooks/run_hook.py`. In a trusted repository, session
+start creates an ignored `.tools/venv` per worktree, installs the existing pinned
+requirements with uv when available (pip fallback), and runs the verified
+Gitleaks installer. It verifies PyYAML, Ruff and Gitleaks before recording a
+readiness receipt. It leaves application environments and global packages alone.
+This also covers desktop-created worktrees that do not inherit ignored tools.
+
+Repeated starts reuse healthy tools. Changed requirements, installer release pins
+or Python runtime invalidate the receipt. Concurrent starts serialize on an OS
+file lock; failed or interrupted setup leaves no valid receipt. Startup has one
+150-second deadline within the host's 180-second timeout. Network or package
+failures remain setup failures, not successful scans. Pre/post hooks never
+install dependencies and deny operations when setup is missing or stale.
+
+If a desktop host resolves an older system Python, the launcher first discovers
+an installed Python 3.12+ through versioned commands, standard macOS Homebrew or
+Python.org locations, or the Windows Python launcher. It re-executes before
+reading hook input; it does not install a runtime or change the host's PATH.
+
+For recovery outside a blocked agent, use the launcher in the exact
+worktree's terminal:
+
+```bash
+python3 hooks/run_hook.py --event session
+```
+
+On Windows, use `py -3 hooks/run_hook.py --event session` instead. The configured
+Windows hooks require the installed Python launcher (`py`); they do not require
+a `python` command on PATH or change execution policy.
+
+
+Then retry the original tool operation. After changing configured hook commands,
+restart the client session so it loads them. The prepared `.tools/venv/bin/python`
+(Windows: `.tools/venv/Scripts/python.exe`) can also run the repository's documented
+checks. Direct `hooks/agent_hooks.py` calls remain read-only diagnostics using
+the invoking environment. The cloud setup workflow remains supported.
 
 ## What the checks do
 
 | Event | Behavior | Result |
 | --- | --- | --- |
-| Session start | Check that the required scanner tools are usable | Sanitized setup diagnostics; this event alone is not a host security gate |
+| Session start | Prepare worktree-local validation dependencies, then verify scanners | Readiness receipt only after success; sanitized failures and no automatic tool approval |
 | Pre-tool | Parse the host envelope, scan proposed arguments for detected secrets, reject known destructive command forms and credential-file access, and check declared ADD coverage for recognized structured edits | A denial stops the attempted call in a supporting host; clean checks return no automatic approval |
 | Post-edit or covered shell tool | Run read-only Ruff and Gitleaks checks on the selected repository files | Failures report repair feedback after the edit; they cannot undo the completed tool call |
 | Standalone `--event check` | Run the working-tree Ruff/Gitleaks checks without a model session | Nonzero exit on findings or unavailable/failed checks; used in CI |
@@ -60,7 +91,7 @@ exact supported paths, command forms and event aliases.
 | --- | --- | --- |
 | Copilot CLI/cloud | `.github/hooks/*.json`; camelCase events and tool fields | Cloud uses its default-branch files and Unix command. CLI should restart after hook changes. A host-level timeout can allow a call to continue. |
 | VS Code Copilot | Reads the same configuration and supplies snake_case event fields | Preview behavior and organizational settings apply; matchers are currently ignored, so the script filters tools itself. Inspect agent debug logs. |
-| Current Codex | `.codex/hooks.json`; nested handler groups and snake_case fields | Trust the project and review the exact hooks through `/hooks`. The launcher resolves Git root, with `python3` on Unix and an explicit PowerShell/`python` override on Windows. Hosted tools and later `write_stdin` input are outside pre-tool coverage. |
+| Current Codex | `.codex/hooks.json`; nested handler groups and snake_case fields | Trust the project and review the exact hooks through `/hooks`. The launcher resolves Git root, with `python3` on Unix and an explicit PowerShell/`py -3` override on Windows. Hosted tools and later `write_stdin` input are outside pre-tool coverage. |
 
 The dispatcher distinguishes the GitHub denial schema from the VS Code/Codex
 schema. Malformed input with an unknown host uses exit 2 and a generic diagnostic
@@ -131,3 +162,14 @@ Current primary sources, checked 9 September 2026:
 [Ruff configuration](https://docs.astral.sh/ruff/configuration/),
 [Gitleaks 8.30.1](https://github.com/gitleaks/gitleaks/tree/v8.30.1),
 and [Cloudflare source lessons](../docs/research/cloudflare-agents.md).
+
+### Executable readiness and limits
+
+Before dispatch, the launcher checks scanner and interpreter hashes, resolved
+paths and venv configuration against the completed receipt. Scanner links and
+redirected environment paths are rejected. Malformed receipts are stale and
+session start can rebuild them. These checks do not authenticate a mutable local
+receipt, hook source or installed modules, and cannot prevent concurrent writes
+between checking and execution. Use host isolation and permissions for that
+boundary. The Windows CI job exercises the shipped PowerShell command with only
+`py` on PATH; it does not certify native Copilot or Defender behavior.

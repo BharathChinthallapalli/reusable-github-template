@@ -283,3 +283,20 @@ required `Repository checks` job name retain their existing contracts. Reconcile
 the affected ADD scope and ADR before resealing the merged project guidance.
 See [tooling sources and evidence](research/agent-tooling.md) for verification
 boundaries. Existing projects need an explicit update.
+
+## Adopt version 3.3.1
+
+Version 3.3.1 fixes fresh local Copilot worktrees blocking every tool request
+when their ignored scanner and Python dependencies are absent. Merge
+`hooks/run_hook.py`, the two host hook configurations and the regression tests.
+Reconcile the owning ADD and [startup decision](adr/0010-worktree-hook-bootstrap.md)
+with project-specific scope, then review and seal the updated design.
+
+Restart the trusted agent session so it loads the new commands. Session start
+prepares pinned tools in `.tools/venv` and `.tools/bin`; the first setup needs
+network access. A failed setup leaves tool requests blocked with the terminal
+recovery command `python3 hooks/run_hook.py --event session`. No global package
+installation, scanner exemption or hook disabling is needed. Pre/post hooks
+remain read-only, and the existing Git/CI checks run independently. Python 3.12
+or newer remains required. Existing generated projects need this explicit
+migration; updating the template alone does not repair their worktrees.

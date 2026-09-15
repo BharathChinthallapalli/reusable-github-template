@@ -112,3 +112,22 @@ contract with synthetic examples, not a model runner. The [32-family research ma
 retains the original inventory/source-review limits. [Cloudflare research](docs/research/cloudflare-agents.md)
 adds focused pinned source observations. Existing generated projects need a
 reviewed [version 3 migration](docs/maintenance.md).
+
+## Version 3.4 hook repair (15 September 2026)
+
+PR 5 is integrated with version 3.4 guidance and the reviewed Ruff 0.16.7 and
+setup-uv v10.1.0 updates. Linux validation exercised executable replacement,
+redirected interpreter/scanner paths, malformed receipts, host denial formats,
+setup recovery, lock contention and descendant timeout cleanup. The full unit
+suite reports 155 tests with two platform skips. The separate Git integration
+lane reports 15 tests with the real-scanner class skipped locally. Repository,
+AI metadata/catalog, Ruff and sealed-design checks are separate gates.
+
+The new `Windows hook bootstrap` CI job executes the configured GitHub
+PowerShell entrypoint with only `py` on PATH, real pinned dependencies/scanner,
+clean reads, malformed receipt recovery and replacement-scanner rejection.
+Its native result must be checked on the published PR revision. Local Linux
+results do not verify Windows, Codex commandWindows, native Copilot loading,
+Defender alerts or universal model compliance. See the linked workflow run in
+the PR for hosted outcomes. Local executable receipts remain mutable and do not
+provide OS isolation or authenticate all installed Python modules.

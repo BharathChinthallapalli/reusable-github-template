@@ -79,6 +79,7 @@ scope:
 - CLAUDE.md
 - hooks/README.md
 - hooks/agent_hooks.py
+- hooks/run_hook.py
 - hooks/prompts/release-notes.md
 - hooks/prompts/triage-issue.md
 - hooks/prompts/write-adr.md
@@ -103,7 +104,8 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: ac4e58aa75a8e9d9bca7c55c851d5a629059f2d3ccd045e040465770e7db95af
+- docs/adr/0010-worktree-hook-bootstrap.md
+binding_sha256: 50f8b10514edd3b75d65512e531d3aa5ce4de7d5814e99deb26d8f4b6006a06f
 ---
 # Template agents, design gate and local hooks
 
@@ -199,15 +201,55 @@ because a profile or ADD says ready.
 
 Repository checks read local repository files. Their content is data, not
 instructions to execute. The design checker rejects unsafe scope paths and
-symlinks. The hook tool installer is an explicit setup operation for pinned
-validation tools, separate from the hook event; hooks must not install software
-or contact external services when evaluating an edit. The post-edit scanner operates on a local snapshot without excluded tool
+symlinks. Under ADR 0010, the session-start launcher prepares an ignored,
+worktree-local Python environment from the existing pinned requirements and
+uses the checksum-verifying Gitleaks installer. This fixed setup operation has
+a separate bounded startup deadline and runs only in a trusted repository.
+Pre-tool and post-tool events never install software or contact external
+services. They require a completed environment and retain all policy checks.
+The post-edit scanner operates on a local snapshot without excluded tool
 caches. Git enumeration omits ignored untracked files. A ZIP has no Git ignore
 selection and its fallback can scan local environment files; this is local,
 redacted secret detection, not a promise that those files are outside coverage. Use synthetic secrets in tests.
 
 ## Behavior and failure modes
 
+PR 5 repair binds scanner and interpreter contents in the readiness receipt,
+validates environment links before execution, recovers malformed receipts at
+session start, detects both host envelope styles and starts Windows through the
+Python launcher. Windows CI checks actual bootstrap and policy rejection.
+
+
+The launcher prepares `.tools/venv` at session start and records the requirements
+digest only after dependency installation, scanner installation and the original
+session diagnostic succeed. The receipt binds requirements, installer source, resolved interpreter and
+scanner bytes, and venv configuration. Each dispatch rechecks these before
+executing prepared tools; malformed receipts trigger session recovery. Repeated starts reuse a complete environment; changed inputs
+or failed diagnostics require setup again. Rebuilding clears the managed
+virtual environment so old interpreter
+links do not survive a runtime change; recognized dangling Python aliases can
+be removed during this recovery. An OS file lock serializes concurrent
+starts and is released on process exit. A missing,
+stale or incomplete environment denies pre-tool operations with actionable
+startup guidance. Setup errors and timeouts leave no completion record and
+never expose installer output or candidate arguments. Ordinary events retain
+the existing 20-second policy deadline; startup has a separate 150-second
+deadline inside a 180-second host timeout. Native invocation remains a separate
+acceptance check from replaying hook input.
+
+When a desktop host starts the launcher under an older system Python, it
+discovers an installed supported interpreter using bounded version probes and
+re-executes before consuming stdin. Standard macOS installation locations and
+the Windows Python launcher supplement PATH discovery. It never installs a
+runtime or changes global configuration. The Apple system-Python regression
+checks setup, reuse and a clean pre-tool request through this actual entrypoint.
+
+Startup rejects nested environment links that redirect package writes outside
+the worktree while allowing standard Python interpreter links. On timeout it
+terminates the setup process tree and reaps the installer before releasing the
+lock. Windows cleanup failures produce a bounded error requiring remaining
+setup processes to be stopped before retrying; native Windows execution is
+not part of the macOS acceptance evidence.
 The user requires fresh official documentation for external technical claims in
 every skill and role. The shared documentation policy defines fetched-source
 provenance, actual tool discovery, version-specific command contracts and a
@@ -273,6 +315,15 @@ server rules are enabled.
 
 ## Validation
 
+For the 3.3.1 startup repair, `tests/test_hook_bootstrap.py` exercises the public
+launcher in a fresh worktree with controlled offline packages, successful reads,
+secret/destructive denials, reuse, changed inputs, failure recovery, redirected
+paths, lock contention and descendant timeout cleanup. Real pinned dependency
+and Gitleaks setup was also exercised on macOS. The full unit and separate
+real-scanner/Git integration lanes remain required. Native Copilot invocation
+is recorded separately from these fixture and CLI checks; Windows runtime
+behavior is checked by a separate native Windows bootstrap CI job; its result
+must be reported independently from Linux execution.
 Dependency maintenance on 2026-09-15 adopts Ruff 0.16.7 with the existing rule
 configuration and checks. The original dependency PR left this record stale
 after changing its bound requirements; verify the new linter and bind the
@@ -320,6 +371,11 @@ Record exact commands, source revisions, results and measurement limits in
 [no-mistakes adoption](../research/no-mistakes-adoption.md).
 
 ## Risks and alternatives
+
+The local receipt is mutable and does not authenticate installed Python modules
+or prevent a concurrent writer replacing files after verification. The hook and
+its base runtime remain trusted prerequisites; these checks are not OS isolation.
+
 
 Instructions alone cannot detect an unrelated design or stale delivered files.
 A compulsory human approval for every small edit would add a new permission

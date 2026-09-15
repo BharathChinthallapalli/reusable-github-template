@@ -53,6 +53,13 @@ for setup failures, native host trust and exact coverage.
 Static AI validation does not inspect your editor. Complete the separate
 [host discovery check](ai-assistance.md) in the actual client.
 
+For trusted local agent sessions, the configured session-start hook prepares
+`.tools/venv` and the pinned scanner in each worktree automatically. This avoids
+depending on the launching desktop application's Python packages. If startup
+fails, run `python3 hooks/run_hook.py --event session` from that worktree's terminal
+and retry. See [bootstrap behavior and limits](../hooks/README.md). Manual setup
+above remains available for standalone validation and CI.
+
 For a Git clone, also follow [hook setup](git-hooks.md), run
 `python -m pre_commit run --all-files`, and run
 `python -m unittest discover -s tests/integration -v`. The integration lane uses

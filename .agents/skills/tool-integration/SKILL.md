@@ -5,6 +5,9 @@ description: "Implement or repair model-provider, agent-tool and MCP boundaries 
 
 # Integrate a provider or tool boundary
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Trace the existing caller, handler, transport and side effect. Read the
    selected SDK/protocol's current official documentation for the actual version
    in the project. Record effective inference, embeddings, memory, evaluation and

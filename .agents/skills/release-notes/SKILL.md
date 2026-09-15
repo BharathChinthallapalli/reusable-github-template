@@ -5,6 +5,9 @@ description: "Prepare release notes from a verified comparison range, with user-
 
 # Prepare release notes
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Read and follow the shared
 [release-notes procedure](../../../hooks/prompts/release-notes.md).
 Use existing project release conventions and exact comparison identities.

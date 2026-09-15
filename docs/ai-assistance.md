@@ -1,6 +1,6 @@
 # Default agents, skills, and clean code
 
-Version 3.3.0 bundles **34 skills and 13 agents**. New repositories receive the
+Version 3.4.0 bundles **34 skills and 13 agents**. New repositories receive the
 files, routing instructions and VS Code settings automatically. The
 [generated catalog](ai-catalog.md) lists every capability, its trigger, declared
 tools and invocation flags. [Working examples](working-with-agents.md) show how
@@ -13,6 +13,11 @@ Copilot also references the policy directly and Claude imports it through
 AGENTS.md. Read/search-only profiles retain their declared tool scopes.
 
 ## Default behavior and host support
+
+The [scoped development map](development-instructions.md) adds conditional
+TypeScript, Next.js, browser UI, testing and PowerShell guidance. Apply only the
+actual project's stack and installed APIs; file globs are not evidence that a
+framework is present. Existing profiles, hook behavior and permissions are unchanged.
 
 Use a normal task request: repository instructions route an active assistant to
 relevant skills. Skill names and descriptions are discoverable in supported

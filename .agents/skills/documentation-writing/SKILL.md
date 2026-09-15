@@ -5,6 +5,9 @@ description: Write or repair developer documentation, onboarding guides, technic
 
 # Write documentation readers can use
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the reader, their starting knowledge, the task and the intended result.
 Read the relevant implementation, manifests, accepted decisions and existing
 documentation before selecting claims or commands. Preserve the requested format

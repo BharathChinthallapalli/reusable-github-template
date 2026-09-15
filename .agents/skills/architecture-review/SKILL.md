@@ -5,6 +5,9 @@ description: Evaluate a proposed or implemented architecture against business co
 
 # Review architecture through evidence and counterexamples
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Establish the decision under review, its current revision, relevant Accepted ADRs,
 stakeholders, hard constraints, and claimed improvement. Inspect real contracts
 and implementation evidence; distinguish an observed system from a proposed

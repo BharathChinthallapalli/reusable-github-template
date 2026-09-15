@@ -5,6 +5,9 @@ description: "Review a diff for demonstrable bugs, authorization failures, data 
 
 # Review a change
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Establish the base and head revisions and the intended behavior. Read the
    complete diff and applicable instructions; inspect affected callers and
    contracts before judging a suspicious line in isolation.

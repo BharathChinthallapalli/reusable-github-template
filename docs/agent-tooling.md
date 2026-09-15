@@ -7,6 +7,39 @@ Check availability once per environment, then reuse that knowledge. Built-in
 read/search tools remain the route for hosts or profiles without shell execution.
 Do not change a profile's permissions just to run a preferred command.
 
+Before external technical claims or command choices, follow the mandatory
+[official-documentation contract](official-documentation.md). Fetch the actual
+official page, match the installed version and discover the host's real tools.
+
+## Prefer suitable Rust-based tools
+
+Prefer ripgrep, fd, ast-grep, uv and Ruff for their matching operations. Consider
+Biome for a frontend project that already uses it, or when selecting new tooling
+within the requested scope. Keep established ESLint/Prettier behavior unless a
+migration is requested and verified. Retain jq, fzf, Git and existing checks where
+they fit; implementation language alone is not a reason to replace them. These
+preferences do not select Rust as the application language or authorize downloads.
+
+The following POSIX-shell examples run from the repository root. Check the named
+binary's `--version` and relevant `--help`, plus its official documentation,
+before use. Substitute only task-scoped paths. Windows needs its actual shell
+quoting and executable paths, not an assumed translation of these examples.
+
+| Tool and prerequisite | Exact example | Effects and expected result | Official syntax |
+| --- | --- | --- | --- |
+| Installed ripgrep; `docs` exists | `rg -n -F -- 'check_design' docs` | Reads scoped text; matching lines, exit 1 for no match, 2 for error | [ripgrep guide](https://github.com/BurntSushi/ripgrep/blob/master/GUIDE.md) |
+| Installed fd or fdfind; `tools` exists | `fd --type f --glob '*.py' tools` | Lists matching paths; no command execution | [fd usage](https://github.com/sharkdp/fd#usage) |
+| Installed ast-grep; Python sources in `tools` | `ast-grep run --lang python --pattern 'subprocess.run($$$ARGS)' --json=compact tools` | Reads syntax and emits JSON matches; no rewrite | [ast-grep run](https://ast-grep.github.io/reference/cli/run.html) |
+| Prepared local venv with pinned Ruff | `.venv/bin/ruff check tools tests hooks` | Reports lint diagnostics; may write a local cache; no source fixes | [Ruff tutorial](https://docs.astral.sh/ruff/tutorial/) |
+| uv installed; environment preparation authorized | `uv venv .venv` then `uv pip install --python .venv/bin/python -r requirements-dev.txt` | Creates local environment and installs dependencies; network, cache and build effects possible; not a read-only check | [uv environments](https://docs.astral.sh/uv/pip/environments/) |
+| Biome already installed locally and configured; `src` exists | `./node_modules/.bin/biome check src` | Reports configured formatting/lint/import diagnostics; no `--write`; not installed by this template | [Biome CLI](https://biomejs.dev/reference/cli/) |
+| An actual Rust project, installed Cargo and existing lockfile | `cargo check --locked` | Checks compilation and writes build output; may fetch dependencies and execute project/dependency build code; not installed or required by this template | [Cargo check](https://doc.rust-lang.org/cargo/commands/cargo-check.html) |
+
+Use the repository's required full validation commands when completing a change;
+scoped examples do not replace those gates. Do not use `npx`, `uvx`, `cargo install`
+or an installer pipeline merely to discover a missing tool. Report availability
+and use the documented fallback until installation is within the authorized task.
+
 ## Choose the tool by the operation
 
 | Operation | Required default when available | Noninteractive use and limits |

@@ -92,6 +92,7 @@ scope:
 - docs/repository-tools.md
 - tools/ai_catalog.py
 - docs/agent-tooling.md
+- docs/official-documentation.md
 - .vscode/settings.json
 adrs:
 - docs/adr/0002-validate-ai-metadata.md
@@ -102,7 +103,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 8bb06bd5ead59bb1c51bd0237935c82b3bcb405ef4b8da9a4cccd16c43910c69
+binding_sha256: 3c63d8d631183596ef48ba4ee93fd7514b8bc3ee76dc23be0cf36cc9a4c41dbb
 ---
 # Template agents, design gate and local hooks
 
@@ -142,6 +143,14 @@ and revision-specific evidence explicit. Research records the reviewed
 no-mistakes source and the limits of native-tool performance claims.
 
 ## Scope and non-goals
+
+Version 3.4 adds root routing to conditional development guidance and explicit
+endpoint-data boundaries. Ordinary development tools remain usable; shell and
+package-script side effects must be assessed within the authorized task. The
+new instruction files are owned by ADD-0003. Hook implementation and host tool
+permissions retain their existing contracts; the new prose does not extend the
+hook parser's enforcement coverage. Research and validation are recorded in
+`docs/research/scoped-development-rules.md`.
 
 The frontmatter enumerates the shared instructions, skill files and assets,
 agent profiles, hook implementation and configuration, design checker, supporting
@@ -199,6 +208,14 @@ redacted secret detection, not a promise that those files are outside coverage. 
 
 ## Behavior and failure modes
 
+The user requires fresh official documentation for external technical claims in
+every skill and role. The shared documentation policy defines fetched-source
+provenance, actual tool discovery, version-specific command contracts and a
+blocked-evidence fallback. Rust-based tools are preferred when suitable; no
+application migration, installation or permission expansion follows from this
+preference. Local repository facts still come from inspected files and runs.
+
+
 Before protected edits, inspect the design and referenced decisions and run
 `python3 tools/check_design.py --paths` with the concrete affected paths.
 Malformed metadata, incomplete ready sections, non-Accepted referenced decisions,
@@ -255,6 +272,13 @@ CI remain separate controls. A successful local hook does not prove remote
 server rules are enabled.
 
 ## Validation
+
+Dependency maintenance on 2026-09-15 updates setup-uv to the immutable v10.1.0
+commit in both workflows while retaining uv 0.12.13, disabled persistent caching,
+read-only permissions and Python 3.12. The upstream action declares Node 24.
+The original dependency PR failed this gate because it changed bound workflows
+without updating this record; review and bind the changed files before delivery.
+
 
 Run `python3 -m unittest discover -s tests -p test_design.py -v` for ready-path success, uncovered
 future files, non-ready rejection, accepted-decision references, malformed YAML,

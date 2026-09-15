@@ -46,7 +46,7 @@ adrs:
 - docs/adr/0004-portable-engineering-capabilities.md
 - docs/adr/0005-scoped-agent-design-gate.md
 - docs/adr/0006-evidence-based-engineering-workflows.md
-binding_sha256: 52073d982dee10152a8c7defceab57dd3ed927df0ff099ebe9023bbd620f1ef5
+binding_sha256: feeaefe987e40682802f21c24d43148a5c801f0e94b9f4d994aa28b97a1a876d
 ---
 # Evidence-based engineering workflows
 
@@ -86,6 +86,12 @@ record cannot grant access, authorize spending, approve a design on behalf of a
 person or prove a deployed workload healthy.
 
 ## Behavior and failure modes
+
+All ten skill entrypoints load the shared official-documentation policy before
+external technical work. Fresh fetched evidence and actual tool capabilities
+are required; unavailable web access blocks dependent claims, not unrelated
+repository-grounded work. These links do not grant any new tool permissions.
+
 
 Descriptions route precise tasks and keep code maintenance separate from new
 solution discovery. Entry points load only relevant references. Existing project

@@ -5,6 +5,9 @@ description: Review a requested security concern or a consequential change to au
 
 # Review an actual trust boundary
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Establish the requested scope, affected revision, assets and real actors. Read the
 entrypoint and data flow: what an untrusted caller or artifact can control, which
 identity executes the operation and what state or destination it can affect.
@@ -14,7 +17,7 @@ Document declared controls separately from observed enforcement. Use the
 Trace each candidate from controlled input through checks to concrete impact.
 Look for evidence that disproves it: validation before use, authorization scoped
 to the target object, constrained execution, output handling or platform controls.
-Inspect framework/version semantics in current official documentation when needed.
+Fetch official documentation before relying on framework/version semantics.
 The absence of a check in one file does not prove the entire system lacks it.
 
 For agent/tool paths, distinguish model guidance, local hooks, process boundaries

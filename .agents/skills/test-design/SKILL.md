@@ -5,6 +5,9 @@ description: Design meaningful regression, boundary and contract tests using ind
 
 # Design tests that can falsify a claim
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the public seam and observable behavior before choosing a framework:
 function result, serialized artifact, CLI exit/output, HTTP response, rendered
 interaction or state transition. Read existing tests and commands; use

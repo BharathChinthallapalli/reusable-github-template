@@ -5,6 +5,9 @@ description: Research current technical guidance or compare external repositorie
 
 # Research an engineering decision
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Define the decision, requested sources and coverage before searching. If the user
 requests every repository, enumerate the visible population and track every entry;
 separate metadata, overview, selected-source and complete-file coverage. Record

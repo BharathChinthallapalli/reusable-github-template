@@ -14,7 +14,7 @@ For executable checks and setup, use the [repository tool guide](repository-tool
 Choose a [task route](engineering-workflows.md#choose-the-task-route) before
 loading individual procedures. These references are local and read as needed.
 
-## Agents (13)
+## Agents (14)
 
 | Name | When to use | Declared tools | User invocable | Model invocation eligible |
 | --- | --- | --- | --- | --- |
@@ -24,6 +24,7 @@ loading individual procedures. These references are local and read as needed.
 | [documentation-writer](../.github/agents/documentation-writer.agent.md) | Write and repair repository documentation, onboarding, how-to guides and technical references; verify claims against code and the reader's actual commands. | read, search, edit, execute, web | true (declared) | true (declared) |
 | [engineer](../.github/agents/engineer.agent.md) | Implement features and code changes from repository evidence, using clean-code guidance and focused validation. Coordinate specialist help when it resolves a concrete uncertainty. | read, search, edit, execute, agent, web | true (declared) | true (declared) |
 | [evaluator](../.github/agents/evaluator.agent.md) | Evaluate AI candidates and experiments against fixed acceptance criteria. Run an existing evaluation harness, inspect failures and report comparable evidence without changing candidates or acceptance rules. | read, search, execute | true (declared) | true (declared) |
+| [guardian](../.github/agents/guardian.agent.md) | Review exact command purpose, necessity and impact; issue only authenticated, bounded approvals. | read, search, guardian/append\_decision | true (declared) | true (declared) |
 | [principal-architect](../.github/agents/principal-architect.agent.md) | Review cross-system architecture, shared-platform strategy, migration dependencies, and exception proposals using actual decisions and quality evidence. Return advisory findings and a scoped recommendation. | read, search, web | true (declared) | true (declared) |
 | [release-engineer](../.github/agents/release-engineer.agent.md) | Prepare dependency updates and software releases with compatibility checks, reproducible evidence and recovery plans. Perform publication or deployment only when covered by the active task's authorization. | read, search, edit, execute | true (declared) | true (declared) |
 | [researcher](../.github/agents/researcher.agent.md) | Resolve current technical questions through primary sources and repository evidence. Compare options, track coverage and uncertainty, and return actionable findings without editing files. | read, search, web | true (declared) | true (declared) |

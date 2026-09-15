@@ -105,7 +105,7 @@ adrs:
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
 - docs/adr/0010-worktree-hook-bootstrap.md
-binding_sha256: 50f8b10514edd3b75d65512e531d3aa5ce4de7d5814e99deb26d8f4b6006a06f
+binding_sha256: cf2c420fe2292e09c747ed0a6bda3fc0e71ea184b34888ceb206941f6a733d05
 ---
 # Template agents, design gate and local hooks
 
@@ -213,6 +213,13 @@ selection and its fallback can scan local environment files; this is local,
 redacted secret detection, not a promise that those files are outside coverage. Use synthetic secrets in tests.
 
 ## Behavior and failure modes
+
+The guardian follow-up adds its PreToolUse adapter without removing existing
+checks, routes root instructions to the signed review contract, and protects
+new engine/configuration paths with ADD-0004. Runtime dependency installation
+remains outside pre-tool execution. Native host coverage and managed deployment
+are separate from synthetic tests; see docs/research/guardian-validation.md.
+
 
 PR 5 repair binds scanner and interpreter contents in the readiness receipt,
 validates environment links before execution, recovers malformed receipts at

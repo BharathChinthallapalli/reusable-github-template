@@ -1,0 +1,90 @@
+{
+  "env": {
+    "CLAUDE_CODE_USE_POWERSHELL_TOOL": "1"
+  },
+  "permissions": {
+    "defaultMode": "default",
+    "deny": [
+      "Bash(cmdkey *)",
+      "Bash(vaultcmd *)",
+      "Bash(certutil *)",
+      "Bash(bitsadmin *)",
+      "Bash(mshta *)",
+      "Bash(regsvr32 *)",
+      "Bash(rundll32 *)",
+      "Bash(psexec *)",
+      "Bash(procdump *)",
+      "Bash(Invoke-Expression *)",
+      "Bash(Set-MpPreference *)",
+      "Bash(Add-MpPreference *)",
+      "Bash(Register-WmiEvent *)",
+      "Bash(Invoke-Command *)",
+      "Bash(Enter-PSSession *)",
+      "Bash(New-AzRoleAssignment *)",
+      "Bash(Get-StoredCredential *)",
+      "Bash(az role assignment create *)",
+      "Bash(az group delete *)",
+      "Bash(az keyvault secret delete *)",
+      "Bash(az keyvault secret purge *)",
+      "Bash(az keyvault secret backup *)",
+      "Bash(az keyvault key delete *)",
+      "Bash(az keyvault key purge *)",
+      "Bash(az keyvault key backup *)",
+      "Bash(az keyvault delete *)",
+      "Bash(az ad app create *)",
+      "Bash(az ad app credential reset *)",
+      "Bash(az ad sp credential reset *)",
+      "PowerShell(cmdkey *)",
+      "PowerShell(vaultcmd *)",
+      "PowerShell(certutil *)",
+      "PowerShell(bitsadmin *)",
+      "PowerShell(mshta *)",
+      "PowerShell(regsvr32 *)",
+      "PowerShell(rundll32 *)",
+      "PowerShell(psexec *)",
+      "PowerShell(procdump *)",
+      "PowerShell(Invoke-Expression *)",
+      "PowerShell(Set-MpPreference *)",
+      "PowerShell(Add-MpPreference *)",
+      "PowerShell(Register-WmiEvent *)",
+      "PowerShell(Invoke-Command *)",
+      "PowerShell(Enter-PSSession *)",
+      "PowerShell(New-AzRoleAssignment *)",
+      "PowerShell(Get-StoredCredential *)",
+      "PowerShell(az role assignment create *)",
+      "PowerShell(az group delete *)",
+      "PowerShell(az keyvault secret delete *)",
+      "PowerShell(az keyvault secret purge *)",
+      "PowerShell(az keyvault secret backup *)",
+      "PowerShell(az keyvault key delete *)",
+      "PowerShell(az keyvault key purge *)",
+      "PowerShell(az keyvault key backup *)",
+      "PowerShell(az keyvault delete *)",
+      "PowerShell(az ad app create *)",
+      "PowerShell(az ad app credential reset *)",
+      "PowerShell(az ad sp credential reset *)"
+    ],
+    "disableBypassPermissionsMode": "disable",
+    "disableAutoMode": "disable"
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell.exe",
+            "args": [
+              "-NoProfile",
+              "-File",
+              "${CLAUDE_PROJECT_DIR}/.guardian/adapters/claude.ps1"
+            ],
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "allowManagedHooksOnly": true
+}

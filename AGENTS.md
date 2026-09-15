@@ -119,6 +119,15 @@ commands or their shared [prompt procedures](hooks/README.md).
 
 ## Work
 
+### Guardian command review
+
+The [guardian gate](docs/guardian.md) adds signed review for supported shell and
+file-edit operations. Obtain all four review answers and an authentic token;
+never mint a token as the working agent. Prohibited effects remain denied.
+No missing hook, timeout, alternate tool or subagent authorizes bypass. Unknown
+identity or unavailable review service blocks dependent execution. Deployment
+and native-runtime acceptance gaps are recorded explicitly in the guide.
+
 ### Authorized execution and endpoint boundaries
 
 Use ordinary task-scoped shells, package managers, builds, tests, linters and Git

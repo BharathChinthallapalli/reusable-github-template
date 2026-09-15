@@ -7,7 +7,7 @@ Repository: `@@GITHUB_OWNER@@/@@PROJECT_SLUG@@` · Owner: @@CODEOWNER@@
 ## Start here
 
 This is a reusable repository foundation for applications, services, automation,
-and AI projects. It bundles 34 reusable engineering skills, 13 specialist agents,
+and AI projects. It bundles 34 reusable engineering skills, 14 specialist agents,
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
@@ -111,6 +111,14 @@ clients. `CLAUDE.md` imports the shared instructions for Claude Code. Custom-age
 menus and invocation differ by client; the [host guide](docs/ai-assistance.md)
 records those boundaries. The Copilot setup workflow prepares repository tools;
 CI remains the independent required-check source.
+
+## Guardian command gate
+
+The [guardian guide](docs/guardian.md) covers shared deterministic command policy,
+signed review, runtime adapters, the audit ledger, installation and known gaps.
+It requires managed deployment before claiming mandatory enforcement. See the
+[actual validation record](docs/research/guardian-validation.md) and
+[SOC activity profile](docs/guardian-soc-profile.md).
 
 ## Project status
 

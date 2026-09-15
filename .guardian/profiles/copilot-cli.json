@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "hooks": {
+    "preToolUse": [
+      {
+        "type": "command",
+        "exec": "powershell.exe",
+        "args": [
+          "-NoProfile",
+          "-File",
+          ".guardian/adapters/copilot.ps1",
+          "-Surface",
+          "cli"
+        ],
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ],
+    "permissionRequest": [
+      {
+        "type": "command",
+        "exec": "powershell.exe",
+        "args": [
+          "-NoProfile",
+          "-File",
+          ".guardian/adapters/copilot.ps1",
+          "-Surface",
+          "cli",
+          "-Event",
+          "permissionRequest"
+        ],
+        "cwd": ".",
+        "timeoutSec": 10
+      }
+    ]
+  }
+}

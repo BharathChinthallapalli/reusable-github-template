@@ -103,7 +103,7 @@ adrs:
 - docs/adr/0007-local-engineering-guidance.md
 - docs/adr/0008-efficient-agent-tooling.md
 - docs/adr/0009-native-tooling-and-review-evidence.md
-binding_sha256: 3c63d8d631183596ef48ba4ee93fd7514b8bc3ee76dc23be0cf36cc9a4c41dbb
+binding_sha256: ac4e58aa75a8e9d9bca7c55c851d5a629059f2d3ccd045e040465770e7db95af
 ---
 # Template agents, design gate and local hooks
 
@@ -272,6 +272,11 @@ CI remain separate controls. A successful local hook does not prove remote
 server rules are enabled.
 
 ## Validation
+
+Dependency maintenance on 2026-09-15 adopts Ruff 0.16.7 with the existing rule
+configuration and checks. The original dependency PR left this record stale
+after changing its bound requirements; verify the new linter and bind the
+reviewed dependency update without weakening lint rules or the design gate.
 
 Dependency maintenance on 2026-09-15 updates setup-uv to the immutable v10.1.0
 commit in both workflows while retaining uv 0.12.13, disabled persistent caching,

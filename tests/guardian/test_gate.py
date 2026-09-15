@@ -19,7 +19,7 @@ from ledger import LedgerError, canonical, locked  # noqa: E402
 
 class GateTests(unittest.TestCase):
     def setUp(self):
-        self.temp = tempfile.TemporaryDirectory()
+        self.temp = tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2])
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name).resolve()
         (self.root / ".guardian").mkdir()

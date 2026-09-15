@@ -16,7 +16,7 @@ SPEC.loader.exec_module(policy)
 
 class PolicyTests(unittest.TestCase):
     def setUp(self):
-        self.tmp = tempfile.TemporaryDirectory()
+        self.tmp = tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2])
         self.addCleanup(self.tmp.cleanup)
         self.root = Path(self.tmp.name)
         (self.root / "a.txt").write_text("fixture")

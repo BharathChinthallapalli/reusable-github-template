@@ -26,7 +26,7 @@ scope:
 - .codex/agents/guardian.toml
 adrs:
 - docs/adr/0011-guardian-command-gate.md
-binding_sha256: 00a8c5893c18e172566a8a2a1b9fd1b527e1cdea36e29eb451444cd9cb7fe2e8
+binding_sha256: e2a228f183d814627bfcfb49d0c0b39cbcbff5d00cf83165609ca0c593747a5d
 ---
 # Guardian command gate
 

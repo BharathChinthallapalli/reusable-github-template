@@ -153,10 +153,10 @@ def _path(value, workspace, directory=False):
         checked = normal[2:]
     if normal.startswith("//") or any(p in {"..", "~"} for p in parts) or any(c in checked for c in "*?[]:$%"):
         return False
-    path = Path(normal)
-    path = path if path.is_absolute() else workspace / path
     try:
         root = workspace.resolve(strict=True)
+        path = Path(normal)
+        path = path if path.is_absolute() else root / path
         resolved = path.resolve(strict=False)
         resolved.relative_to(root)
         current = path

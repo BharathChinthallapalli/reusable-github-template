@@ -108,3 +108,9 @@ no live subagent/model test was run. Native timeout behavior remains untested.
 Independent review found and fixed shell/native tamper-path inconsistency and
 immediate same-session retry after an explicit guardian denial. Regression tests
 exercise both; missing-token requests still permit the intended review flow.
+
+The first Windows CI fixture run exposed a canonical-root mismatch and profile-
+backed temporary fixture paths. Tests now create synthetic workspaces inside the
+checkout; the policy canonicalizes the authorized root before joining relative
+paths. This keeps actual sensitive-location denial intact. The subsequent CI
+result, not the original Linux run, establishes native Windows fixture behavior.

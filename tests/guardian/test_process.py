@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class ProcessTests(unittest.TestCase):
     def test_real_adapter_process_denial_and_diagnostic_all_protocols(self):
-        with tempfile.TemporaryDirectory() as directory:
+        with tempfile.TemporaryDirectory(dir=Path(__file__).resolve().parents[2]) as directory:
             root = Path(directory)
             guardian = root / ".guardian"
             shutil.copytree(ROOT / ".guardian/engine", guardian / "engine", ignore=shutil.ignore_patterns("__pycache__"))

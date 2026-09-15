@@ -5,6 +5,9 @@ description: "Implement or diagnose retrieval-augmented generation across ingest
 
 # Build and verify grounded retrieval
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Trace the actual path from source document to extraction, chunking, index,
    query, retrieved evidence and final answer. Record effective embeddings,
    generation and reranking configuration rather than inferring it from a model

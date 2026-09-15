@@ -5,6 +5,9 @@ description: "Define and verify dataset schema, identity, transformations, label
 
 # Define and verify data contracts
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 1. Identify the producer, consumer and decision the data supports. Inspect the
    actual loading/transformation code and representative approved samples. Record
    the dataset snapshot or hash, schema, stable identity and labeling provenance

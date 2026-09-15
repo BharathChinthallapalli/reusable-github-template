@@ -5,6 +5,9 @@ description: Validate an Azure change against its actual application artifacts, 
 
 # Validate an Azure change
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Verify the target artifact and deployment plan using
 [the validation procedure](references/validation.md). Reuse an existing equivalent
 plan and evidence; there is no required vendor-specific status file.

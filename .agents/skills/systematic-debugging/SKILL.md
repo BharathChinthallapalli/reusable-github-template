@@ -5,6 +5,9 @@ description: Diagnose a reproducible application, tool or runtime failure by tra
 
 # Establish the cause before changing behavior
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Capture the observed symptom, expected result, relevant revision, environment and
 smallest reproduction. Record exact commands and the first causal error with
 surrounding context. Keep secrets and unrelated personal data out of captured
@@ -22,7 +25,7 @@ relevant failure evidence and recovery check.
 
 Keep a small set of plausible hypotheses and choose the next check that best
 distinguishes them. Change one relevant factor at a time where practical. Inspect
-versions and current official documentation when platform behavior is uncertain;
+versions and freshly fetched official documentation for platform behavior;
 use forum fixes as hypotheses tied to their original environment.
 
 Preserve unrelated work and evidence. Do not start with destructive resets,

@@ -5,6 +5,9 @@ description: Implement features, fix bugs, and refactor code with readable names
 
 # Clean code
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Deliver the requested behavior with code that the next maintainer can follow.
 Respect repository instructions, existing contracts, and established formatting.
 
@@ -17,8 +20,8 @@ verify the result. Discover commands from repository evidence.
 - For bug fixes, legacy code, or structural changes, read
   [safe changes](references/safe-changes.md).
 - For attribution and the boundaries of this guidance, read
-  [sources](references/sources.md). Consult official runtime documentation when
-  an API or language behavior is uncertain.
+  [sources](references/sources.md). Fetch official runtime documentation before relying on
+  API or language behavior, even when it appears familiar.
 
 Implement in small, reviewable increments. Limit cleanup to the affected
 responsibility. Keep behavior changes distinguishable from refactoring, and

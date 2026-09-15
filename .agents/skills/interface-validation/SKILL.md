@@ -5,6 +5,9 @@ description: Validate a changed UI, CLI, API or packaged integration through the
 
 # Check the consumer's interface
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the changed consumer contract and the real entrypoint from code and
 project commands. Select only the relevant mode in the
 [interface case record](assets/interface-cases.md). Use the project's existing

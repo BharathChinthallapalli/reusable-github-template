@@ -5,6 +5,9 @@ description: Coordinate independent engineering subtasks with explicit dependenc
 
 # Coordinate useful parallel work
 
+Required: follow [official documentation and actual tool contracts](../../../docs/official-documentation.md)
+before external technical claims, commands or implementation choices.
+
 Identify the integration result and dependencies before delegating. Split by
 independent question or file area, not by an arbitrary list of agent titles.
 Keep dependent edits sequential and assign one writer to each shared file area.

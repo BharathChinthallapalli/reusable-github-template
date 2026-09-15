@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "template_version": "3.3.0",
+  "template_version": "3.4.0",
   "initialized": false,
   "project": {
     "name": "@@PROJECT_NAME@@",

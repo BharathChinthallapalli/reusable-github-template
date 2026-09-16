@@ -1,0 +1,13 @@
+# SPDX-License-Identifier: Apache-2.0
+# Modified adaptation; see NOTICE. Override roles require authenticated approval.
+schema_version: 1
+gates:
+  - {name: guardian, tier: hard, overrideRole: null}
+  - {name: protected-paths, tier: hard, overrideRole: null}
+  - {name: schema-and-traceability, tier: hard, overrideRole: null}
+  - {name: independent-attestation, tier: hard, overrideRole: null}
+  - {name: tests-and-evals, tier: hard, overrideRole: null}
+  - {name: production-authorization, tier: hard, overrideRole: null}
+  - {name: junior-change-budget, tier: hard, overrideRole: null}
+  - {name: project-quality-target, tier: soft, overrideRole: technical-lead}
+  - {name: editorial-improvement, tier: advisory, overrideRole: maintainer}

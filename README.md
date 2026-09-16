@@ -7,7 +7,7 @@ Repository: `@@GITHUB_OWNER@@/@@PROJECT_SLUG@@` · Owner: @@CODEOWNER@@
 ## Start here
 
 This is a reusable repository foundation for applications, services, automation,
-and AI projects. It bundles 34 reusable engineering skills, 14 specialist agents,
+and AI projects. It bundles 40 reusable engineering skills, 14 specialist agents,
 task records, AI evaluation tooling, CI and collaboration conventions. Application
 code, application tests, providers and deployment use each project's requirements.
 
@@ -16,6 +16,19 @@ coverage and feature/spec-wise delivery approach. See the
 [AI/ML/LLMOps and specification-driven research](docs/research/ai-sdlc-lifecycles.md)
 for proposed extensions and their evidence. Project delivery proceeds through
 bounded, verified increments.
+
+The [AI-native SDLC foundation](docs/SDLC.md) now adds Kiro-style artifact
+validation, seven-signal DoR checks, bounded-change governance, proposal-only
+monitoring, event metrics and five project profiles. Start with the
+[worked example](docs/sdlc/WORKED-EXAMPLE.md). The
+[source log and two authorized omissions](.guardian/READING-LOG.md) and
+[activation findings](docs/sdlc/ACTIVATION.md) distinguish implemented local checks
+from unconfigured runtime, approval, GitHub and Azure integrations. Guardian is
+unchanged; structural readiness never grants execution authority.
+
+See [what we took from AI-SDLC and why](docs/AI-SDLC-COMPARISON.md), with pinned
+source attribution in [NOTICE](NOTICE). This is not a compliance certification
+or a guarantee that an agent cannot trigger endpoint detection.
 
 1. Follow [template setup](docs/using-the-template.md) to create your template
    repository, then use GitHub's **Use this template** for each new project.

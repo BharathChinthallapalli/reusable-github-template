@@ -1,0 +1,11 @@
+# SPDX-License-Identifier: Apache-2.0
+# Modified adaptation; see NOTICE. Trusted CI ingestion not yet activated.
+schema_version: 1
+deployment: ci
+activation: blocked-pending-trusted-diff-adapter
+protectedPolicySource: protected-base-revision
+denyWins: true
+allowedMutationGlobs: ["src/**", "app/**", "docs/**", "intent/**", "specs/**", "mlops/**", "llmops/**"]
+contentHeuristics: [new-actions-uses, lockfile-change, pre-commit-change, hook-change, deferred-design-documentation]
+binaryOrLinkedChange: human-review
+credentialsInUntrustedJob: none

@@ -1,0 +1,20 @@
+# SPDX-License-Identifier: Apache-2.0
+# Modified adaptation; see NOTICE. Desired policy, not an active dispatcher.
+schema_version: 1
+roles:
+  researcher: {level: 0, writes: false}
+  reviewer: {level: 0, writes: false}
+  engineer:
+    level: 1
+    maxLinesPerPR: 200
+    maxFilesPerChange: 5
+    requireTests: true
+    requireAuthenticatedAcceptedTasks: true
+    blockedPaths: [".guardian/**", ".github/**", ".claude/**", ".codex/**", ".agents/**", ".ai-sdlc/**", "hooks/**", "rules/**", "tests/**", "evals/**", "scripts/**", "tools/**", "*.lock", "*.lockb", "package-lock.json", "**/package-lock.json", "pnpm-lock.yaml", "**/pnpm-lock.yaml", "npm-shrinkwrap.json", "**/npm-shrinkwrap.json", "Pipfile.lock", "AGENTS.md", "CLAUDE.md", "CONTRIBUTING.md", "CODEOWNERS", "docs/add/**", ".pre-commit-config.*", "requirements*.txt", "compliance/**", "monitoring/**"]
+promotion:
+  maximumActiveLevel: 1
+  level2: requires-human-policy-change
+demotion:
+  failedTestWindowDays: 7
+  securityFindingWindowDays: 30
+  ledgerIntegration: not-activated

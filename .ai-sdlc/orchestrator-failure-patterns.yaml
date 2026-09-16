@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: Apache-2.0
+# Modified adaptation; unsafe upstream retry/remediation recipes deliberately omitted.
+schema_version: 1
+unknownFailure: escalateImmediately
+modes:
+  GuardianDenied: {retryBudget: 0, action: escalateImmediately}
+  PivotAttempt: {retryBudget: 0, action: escalateImmediately}
+  HookTimeoutFailOpen: {retryBudget: 0, action: escalateImmediately}
+  TransientReadFailure: {retryBudget: 2, action: retryReadOnly}
+  ValidationFailure: {retryBudget: 1, action: escalate}
+  ReviewFailure: {retryBudget: 1, action: escalate}
+  Conflict: {retryBudget: 0, action: escalate}

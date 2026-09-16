@@ -1,0 +1,29 @@
+AI-native SDLC governance adaptations
+
+Source project: ai-sdlc-framework/ai-sdlc
+Source: https://github.com/ai-sdlc-framework/ai-sdlc
+Pinned revision: 4ad7699af244d709625afe65e42b1f06f1770c3f
+License: Apache License 2.0; see LICENSES/Apache-2.0.txt.
+No endorsement or trademark permission is implied.
+The pinned upstream tree contains no NOTICE file.
+
+Modified on 2026-09-16 for this repository. Python checks are independently
+implemented adaptations; no upstream TypeScript orchestrator or executable
+plugin hook is included.
+
+Derived file -> upstream concept/source
+tools/sdlc_governance.py -> RFC-0011; .ai-sdlc/dor-config.yaml,
+  autonomy-policy.yaml, untrusted-pr-gate.yaml, review-principles.md,
+  orchestrator-failure-patterns.yaml; attestation-envelope-v6.schema.json
+.ai-sdlc/dor-config.yaml -> .ai-sdlc/dor-config.yaml; RFC-0011
+.ai-sdlc/autonomy-policy.yaml -> .ai-sdlc/autonomy-policy.yaml, agent-role.yaml
+.ai-sdlc/quality-gate.yaml -> .ai-sdlc/quality-gate.yaml
+.ai-sdlc/orchestrator-failure-patterns.yaml -> same upstream filename; RFC-0015 section5.1
+.ai-sdlc/untrusted-pr-gate.yaml -> same upstream filename; RFC-0043
+compliance/posture.yaml -> compliance-posture.v1.schema.json; RFC-0022
+intent/captures/template.md -> RFC-0024
+specs/_template/exploration.md -> RFC-0026
+docs/sdlc/automations/reviewer.md -> .ai-sdlc/review-principles.md, RFC-0025
+docs/sdlc/automations/engineer.md -> ai-sdlc-plugin/agents/developer.md,
+  ai-sdlc-plugin/commands/execute.md, import-spec.md
+docs/AI-SDLC-COMPARISON.md -> concept mapping of the above, not an upstream document

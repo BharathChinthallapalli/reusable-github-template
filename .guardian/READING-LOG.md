@@ -185,7 +185,7 @@ The implementation plan is [ADD-0005](../docs/add/0005-ai-native-sdlc.md). Diffe
 | https://github.com/ai-sdlc-framework/ai-sdlc/blob/4ad7699af244d709625afe65e42b1f06f1770c3f/ai-sdlc-plugin/hooks/lib/governance-resolver.test.mjs | 2026-09-16 | Full | Governance parsing; strictdefaults/presetsoverrides; doesnotauthenticateprotectedorigin. |
 | https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf | 2026-09-16 | Full 48 pages | AI RMF1.0;Govern/Map/Measure/Manage; voluntaryriskmanagementnotcertification. |
 | https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf | 2026-09-16 | Full 64 pages | GenAIProfile2024; contextualrisk/actions; notallactionsapplyequally. |
-| https://genai.owasp.org/llm-top-10/ | 2026-09-16 | 2026 full extracted text; image-only appendix not visually read | 2026 list differsfrom2025; excessiveagency03; hiddencontext08; supplychain04. |
+| https://genai.owasp.org/llm-top-10/ | 2026-09-16 (merge recheck) | Official page headings and all ten risk IDs inspected | The page identifies the 2025 edition: supply chain03; excessive agency06; system prompt leakage07; vector/embedding weaknesses08. This recheck supersedes the earlier unsupported 2026 edition/numbering record. |
 | https://genai.owasp.org/download/52117/?tmstv=1765059207 | 2026-09-16 | Full57pages | Agentic threatmodel; tool/identity/trustboundaries; containmentandhumanoversight. |
 | https://genai.owasp.org/download/45674/?tmstv=1739819891 | 2026-09-16 | Full53pages, v1.1 | Agentic threatsandmitigations; untrustedhandoffs; defenseindepth. |
 | https://baseline.openssf.org/versions/2026-08-28/ | 2026-09-16 | Full current baseline | Maturitygradedcontrols; protectedreviewandCI; nonauthorhumanreviewnotbotapproval. |

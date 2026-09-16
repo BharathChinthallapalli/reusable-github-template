@@ -87,7 +87,7 @@ adrs:
 - docs/adr/0004-portable-engineering-capabilities.md
 - docs/adr/0005-scoped-agent-design-gate.md
 - docs/adr/0011-guardian-command-gate.md
-binding_sha256: dc49cfb7a33686ac62a7bad1c9bd7a5d4c537b86d9af2f6590ca8e5ab5a96a26
+binding_sha256: bb2ead7824e5b8bf6bde638ee89362719bfe04a987a6a5ee321a7624d1a52d6b
 ---
 # AI-native SDLC: local admission and artifact foundation
 
@@ -143,6 +143,11 @@ provenance, task cycles, omitted tests, missing compliance, protected renames,
 new Actions references, same-harness review, stale/invalid bands and missing notes.
 Keep fixture results separate from native Windows, real review attestations,
 GitHub workflow execution and Azure what-if/deployment results.
+
+Merge review on 2026-09-16 re-fetched the cited OWASP page and corrected the
+compliance matrix, control-map edition and source-log record to its observed
+2025 risk IDs. No executable control, policy or scope changed. The updated
+content binding must pass the existing hosted design check before merge.
 
 ## Risks and alternatives
 

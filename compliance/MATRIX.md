@@ -60,21 +60,23 @@ content approval does not establish later formal adoption.
 
 ## OWASP LLM risks
 
-Source: [OWASP LLM Top10, current2026 edition](https://genai.owasp.org/llm-top-10/),
-not the differently numbered2025 list. These are candidate controls requiring tests.
+Source: [OWASP Top 10 for LLM Applications 2025](https://genai.owasp.org/llm-top-10/),
+rechecked during merge review on 2026-09-16. The cited official page identifies
+the 2025 edition; the earlier 2026 edition claim and numbering were not supported
+by this fetch. These are candidate controls requiring project-specific tests.
 
 | ID / risk | Artifact / gate | Automation / evidence | Owner |
 | --- | --- | --- | --- |
-| LLM01 Prompt injection | External tool authorization, untrusted input boundaries | Guardian fixtures + project injection evals | Security |
-| LLM02 Sensitive information disclosure | Data minimisation, retrieval authorization, log redaction | Data contracts and leakage evals | Data/security |
-| LLM03 Excessive agency | Minimal tools, approval, budgets | Guardian and declared roster; runtime validation pending | Platform |
-| LLM04 Supply-chain failures | Pin models/prompts/dependencies; provenance | AI supply-chain inventory and scanning | Platform |
-| LLM05 Data/model poisoning | Dataset provenance and validated splits | Data-card review and poisoning evals | ML |
-| LLM06 Unbounded consumption | Time, steps, tokens and cost ceilings | Budget tests and calibrated bands | Operations |
-| LLM07 Misinformation | Grounding and supported claims | Groundedness/error-analysis evals | Evaluation lead |
-| LLM08 Hidden context risks | Scoped memory/context; trust between agents | Memory review and cross-agent injection cases | AI engineer |
-| LLM09 Vector/embedding weaknesses | Retrieval access and index integrity | Tenant-filter and retrieval-quality tests | Retrieval owner |
-| LLM10 Improper output handling | Validate before rendering/querying/executing | Contract/injection tests; no direct model-to-shell path | Application owner |
+| LLM01:2025 Prompt Injection | External tool authorization, untrusted input boundaries | Guardian fixtures + project injection evals | Security |
+| LLM02:2025 Sensitive Information Disclosure | Data minimisation, retrieval authorization, log redaction | Data contracts and leakage evals | Data/security |
+| LLM03:2025 Supply Chain | Pin models/prompts/dependencies; provenance | AI supply-chain inventory and scanning | Platform |
+| LLM04:2025 Data and Model Poisoning | Dataset provenance and validated splits | Data-card review and poisoning evals | ML |
+| LLM05:2025 Improper Output Handling | Validate before rendering/querying/executing | Contract/injection tests; no direct model-to-shell path | Application owner |
+| LLM06:2025 Excessive Agency | Minimal tools, approval, budgets | Guardian and declared roster; runtime validation pending | Platform |
+| LLM07:2025 System Prompt Leakage | Keep credentials and authorization decisions outside prompts | Prompt-disclosure tests and server-side authorization checks | AI/security |
+| LLM08:2025 Vector and Embedding Weaknesses | Retrieval access and index integrity | Tenant-filter and retrieval-quality tests | Retrieval owner |
+| LLM09:2025 Misinformation | Grounding and supported claims | Groundedness/error-analysis evals | Evaluation lead |
+| LLM10:2025 Unbounded Consumption | Time, steps, tokens and cost ceilings | Budget tests and calibrated bands | Operations |
 
 Agentic guidance adds inter-agent trust, identity, tool permissions and containment;
 use the [read agentic source](https://genai.owasp.org/download/52117/?tmstv=1765059207).

@@ -1,0 +1,15 @@
+# SPDX-License-Identifier: Apache-2.0
+# Modified concept adaptation; see NOTICE. Local policy, not full upstream schema port.
+schema_version: 1
+evaluationMode: enforce
+rubricVersion: v1
+staleness:
+  warnAfterDays: 14
+  closeAfterDays: 28
+  automaticClosure: false
+autoPassRules:
+  - sources: [spec-job, monitor]
+    requiresAuthenticatedProvenance: true
+    gatesSkipped: [1, 4, 5, 6]
+    gatesRetained: [2, 3, 7]
+    cliEnabled: false

@@ -1,0 +1,93 @@
+[
+  {
+    "event_id": "synthetic-0",
+    "change": "monitor-smoke",
+    "kind": "conversation",
+    "timestamp": "2026-09-16T09:00:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-1",
+    "change": "monitor-smoke",
+    "kind": "intent",
+    "timestamp": "2026-09-16T09:05:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-2",
+    "change": "monitor-smoke",
+    "kind": "accepted",
+    "timestamp": "2026-09-16T09:10:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-3",
+    "change": "monitor-smoke",
+    "kind": "spec",
+    "timestamp": "2026-09-16T09:15:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-4",
+    "change": "monitor-smoke",
+    "kind": "tasks",
+    "timestamp": "2026-09-16T09:20:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-5",
+    "change": "monitor-smoke",
+    "kind": "pr_opened",
+    "timestamp": "2026-09-16T09:30:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-6",
+    "change": "monitor-smoke",
+    "kind": "pr_merged",
+    "timestamp": "2026-09-16T09:40:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-7",
+    "change": "monitor-smoke",
+    "kind": "success",
+    "timestamp": "2026-09-16T09:41:00Z",
+    "value": null
+  },
+  {
+    "event_id": "synthetic-8",
+    "change": "monitor-smoke",
+    "kind": "eval",
+    "timestamp": "2026-09-16T09:42:00Z",
+    "value": 1
+  },
+  {
+    "event_id": "synthetic-9",
+    "change": "monitor-smoke",
+    "kind": "cost",
+    "timestamp": "2026-09-16T09:43:00Z",
+    "value": 0.2
+  },
+  {
+    "event_id": "synthetic-10",
+    "change": "monitor-smoke",
+    "kind": "gate_wait",
+    "timestamp": "2026-09-16T09:44:00Z",
+    "value": 60
+  },
+  {
+    "event_id": "breach-1",
+    "change": "followup",
+    "kind": "breach",
+    "timestamp": "2026-09-16T10:00:00Z",
+    "value": null
+  },
+  {
+    "event_id": "followup-intent",
+    "change": "followup",
+    "kind": "intent",
+    "timestamp": "2026-09-16T10:02:00Z",
+    "value": null
+  }
+]

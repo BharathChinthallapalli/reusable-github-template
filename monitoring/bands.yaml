@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "metrics": [
+    {
+      "name": "p95-latency",
+      "mean": 100,
+      "stddev": 10,
+      "direction": "high",
+      "max_age_seconds": 300,
+      "owner": "Template fixture maintainer",
+      "baseline_version": "synthetic-v1-not-production",
+      "archetypes": [
+        "A"
+      ]
+    }
+  ]
+}

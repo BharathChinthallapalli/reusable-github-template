@@ -23,9 +23,14 @@ file, passing build, or generated screen alone does not establish user success.
 
 ## Domain terms
 
-Define terms whose meaning affects behavior or naming. State their scope and
-source; different domains may use the same word differently. Leave unknown
-meanings unresolved rather than inventing a shared definition.
+Define application terms whose meaning affects behavior or naming. State their
+scope and source; different domains may use the same word differently. Leave
+unknown meanings unresolved rather than inventing a shared definition.
+Use the [harness domain glossary](harness/domainglossary.md) for development and
+control terminology; keep business definitions here, or link a single
+project-owned glossary if this section grows. Include aliases, invariants and
+examples when they prevent ambiguity. Update the owning definition alongside
+changed contracts, and use those terms consistently in specs, code and tests.
 
 | Term | Meaning and scope | Source or owner |
 | --- | --- | --- |

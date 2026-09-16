@@ -60,6 +60,23 @@ in [environment setup](docs/using-the-template.md).
 `Repository checks` validates this foundation and tests its setup tools. It does
 not certify an application's behavior, security, or production readiness.
 
+## Harness foundations
+
+These pages describe the reusable harness. An adopting application's facts and
+business vocabulary belong in [project context](docs/project.md). Read the page
+needed for the task; the eight documents are not an always-loaded instruction pack.
+
+| Question | Canonical page |
+| --- | --- |
+| What does a term mean, and what must not be confused with it? | [Domain glossary](docs/harness/domainglossary.md) |
+| Where is the harness going? | [Vision](docs/harness/vision.md) |
+| What observable outcomes matter? | [Goals](docs/harness/goals.md) |
+| What is deliberately outside its remit? | [Non-goals](docs/harness/nongoals.md) |
+| How should design tradeoffs be judged? | [Philosophy](docs/harness/philosophy.md) |
+| Which defaults are revisable judgments? | [Opinions](docs/harness/opinion.md) |
+| What contracts exist, and what remains unverified? | [Specification](docs/harness/spec.md) |
+| What work is proposed next, with which dependencies? | [Roadmap](docs/harness/roadmap.md) |
+
 ## Included
 
 | Area | Files and purpose |
